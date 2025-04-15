@@ -1,0 +1,25 @@
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\bin\Debug\net8.0-windows\Project Akhir Baru.exe
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\bin\Debug\net8.0-windows\Project Akhir Baru.deps.json
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\bin\Debug\net8.0-windows\Project Akhir Baru.runtimeconfig.json
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\bin\Debug\net8.0-windows\Project Akhir Baru.dll
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\bin\Debug\net8.0-windows\Project Akhir Baru.pdb
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\bin\Debug\net8.0-windows\MySql.Data.dll
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\bin\Debug\net8.0-windows\MySql.Data.xml
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.vbproj.AssemblyReference.cache
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form1.resources
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form2.resources
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Resources.resources
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.vbproj.GenerateResource.cache
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.GeneratedMSBuildEditorConfig.editorconfig
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.AssemblyInfoInputs.cache
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.AssemblyInfo.vb
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.vbproj.CoreCompileInputs.cache
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project .5AB32E1B.Up2Date
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.dll
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\refint\Project Akhir Baru.dll
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.pdb
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.genruntimeconfig.cache
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\ref\Project Akhir Baru.dll
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form3.resources
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form4.resources
+D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form5.resources
