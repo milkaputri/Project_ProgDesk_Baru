@@ -37,9 +37,6 @@ Public Class Form3
     End Sub
     Public Sub LoadEvents()
         Try
-            ' Buka koneksi
-            'myConn.Open()
-
             ' Query untuk mengambil data acara
             Dim sql As String = "SELECT * FROM acara ORDER BY tanggal_pelaksanaan ASC"
             myCommand = New MySqlCommand(sql, myConn)
@@ -62,6 +59,8 @@ Public Class Form3
                 Dim alamat As String = myDataReader("alamat_pemesan").ToString()
                 Dim noHpPertama As String = myDataReader("no_hp_pertama").ToString()
                 Dim noHpKedua As String = myDataReader("no_hp_kedua").ToString()
+                Dim waktuDb As String = myDataReader("waktu").ToString()
+                Dim waktuTampil As String = Convert.ToDateTime(waktuDb).ToString("HH:mm")
                 Dim lokasiAcara As String = myDataReader("lokasi").ToString()
 
                 ' Hitung H-
@@ -121,7 +120,7 @@ Public Class Form3
                 lblCountdown.Location = New Point(eventPanel.Width - lblCountdown.Width - 5, 0)
 
                 ' Event handler klik panel
-                AddHandler eventPanel.Click, Sub(sender, e) OpenForm5(idAcara, namaAcara, namaPemesan, alamat, noHpPertama, noHpKedua, lokasiAcara)
+                AddHandler eventPanel.Click, Sub(sender, e) OpenForm5(idAcara, namaAcara, tanggalDb, namaPemesan, alamat, noHpPertama, noHpKedua, waktuTampil, lokasiAcara)
 
                 ' Tambahkan kontrol ke panel
                 eventPanel.Controls.Add(lblAcara)
@@ -146,7 +145,7 @@ Public Class Form3
             'myConn.Close()
         End Try
     End Sub
-    Private Sub OpenForm5(idAcara As String, namaAcara As String, namaPemesan As String, alamat As String, noHpPertama As String, noHpKedua As String, lokasiAcara As String)
+    Private Sub OpenForm5(idAcara As String, namaAcara As String, tanggalDb As Date, namaPemesan As String, alamat As String, noHpPertama As String, noHpKedua As String, waktuTampil As String, lokasiAcara As String)
         Dim form As New Form5()
 
         ' Kirim data ke Form5
@@ -156,7 +155,11 @@ Public Class Form3
         form.tbAlamat.Text = alamat
         form.tbNoHpPertama.Text = noHpPertama
         form.tbNoHpKedua.Text = noHpKedua
+        form.tglPelaksanaan.SetDate(tanggalDb)
+        form.tbWaktu.Text = waktuTampil
         form.tbLokasi.Text = lokasiAcara
+
+        form.TampilDataPaket()
 
         ' Atur tampilan Form5 untuk mode edit
         form.lblBaru.Visible = False

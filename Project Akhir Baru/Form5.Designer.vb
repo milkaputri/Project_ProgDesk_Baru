@@ -215,14 +215,15 @@ Partial Class Form5
         Label59 = New Label()
         Panel18 = New Panel()
         llPesananTersimpan2 = New LinkLabel()
-        Label47 = New Label()
+        lblTotalHargaTambahan = New Label()
         btnSimpanTambahan = New Button()
         Label53 = New Label()
         Label58 = New Label()
         DataGridView2 = New DataGridView()
-        DataGridViewTextBoxColumn1 = New DataGridViewTextBoxColumn()
-        DataGridViewTextBoxColumn2 = New DataGridViewTextBoxColumn()
-        DataGridViewTextBoxColumn3 = New DataGridViewTextBoxColumn()
+        colPaketTambahan = New DataGridViewTextBoxColumn()
+        colJumlahTambahan = New DataGridViewTextBoxColumn()
+        colTotalTambahan = New DataGridViewTextBoxColumn()
+        colIdTambahan = New DataGridViewTextBoxColumn()
         btnBersihkanTambahan = New Button()
         Label41 = New Label()
         tpPaket = New TabPage()
@@ -2601,7 +2602,7 @@ Partial Class Form5
         ' Panel18
         ' 
         Panel18.Controls.Add(llPesananTersimpan2)
-        Panel18.Controls.Add(Label47)
+        Panel18.Controls.Add(lblTotalHargaTambahan)
         Panel18.Controls.Add(btnSimpanTambahan)
         Panel18.Controls.Add(Label53)
         Panel18.Controls.Add(Label58)
@@ -2623,15 +2624,15 @@ Partial Class Form5
         llPesananTersimpan2.TabStop = True
         llPesananTersimpan2.Text = "Pesanan Tersimpan"
         ' 
-        ' Label47
+        ' lblTotalHargaTambahan
         ' 
-        Label47.AutoSize = True
-        Label47.Font = New Font("Segoe UI Semibold", 16F, FontStyle.Bold)
-        Label47.Location = New Point(262, 4)
-        Label47.Name = "Label47"
-        Label47.Size = New Size(32, 37)
-        Label47.TabIndex = 24
-        Label47.Text = "0"
+        lblTotalHargaTambahan.AutoSize = True
+        lblTotalHargaTambahan.Font = New Font("Segoe UI Semibold", 16F, FontStyle.Bold)
+        lblTotalHargaTambahan.Location = New Point(244, 4)
+        lblTotalHargaTambahan.Name = "lblTotalHargaTambahan"
+        lblTotalHargaTambahan.Size = New Size(32, 37)
+        lblTotalHargaTambahan.TabIndex = 24
+        lblTotalHargaTambahan.Text = "0"
         ' 
         ' btnSimpanTambahan
         ' 
@@ -2651,7 +2652,7 @@ Partial Class Form5
         ' 
         Label53.AutoSize = True
         Label53.Font = New Font("Segoe UI Semibold", 16F, FontStyle.Bold)
-        Label53.Location = New Point(219, 4)
+        Label53.Location = New Point(205, 4)
         Label53.Name = "Label53"
         Label53.Size = New Size(50, 37)
         Label53.TabIndex = 1
@@ -2671,7 +2672,7 @@ Partial Class Form5
         ' 
         DataGridView2.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
         DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView2.Columns.AddRange(New DataGridViewColumn() {DataGridViewTextBoxColumn1, DataGridViewTextBoxColumn2, DataGridViewTextBoxColumn3})
+        DataGridView2.Columns.AddRange(New DataGridViewColumn() {colPaketTambahan, colJumlahTambahan, colTotalTambahan, colIdTambahan})
         DataGridView2.Location = New Point(0, 77)
         DataGridView2.Name = "DataGridView2"
         DataGridView2.RightToLeft = RightToLeft.No
@@ -2679,26 +2680,35 @@ Partial Class Form5
         DataGridView2.Size = New Size(395, 403)
         DataGridView2.TabIndex = 24
         ' 
-        ' DataGridViewTextBoxColumn1
+        ' colPaketTambahan
         ' 
-        DataGridViewTextBoxColumn1.HeaderText = "Paket"
-        DataGridViewTextBoxColumn1.MinimumWidth = 6
-        DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        DataGridViewTextBoxColumn1.Width = 125
+        colPaketTambahan.HeaderText = "Paket"
+        colPaketTambahan.MinimumWidth = 6
+        colPaketTambahan.Name = "colPaketTambahan"
+        colPaketTambahan.Width = 125
         ' 
-        ' DataGridViewTextBoxColumn2
+        ' colJumlahTambahan
         ' 
-        DataGridViewTextBoxColumn2.HeaderText = "Jumlah"
-        DataGridViewTextBoxColumn2.MinimumWidth = 6
-        DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        DataGridViewTextBoxColumn2.Width = 125
+        colJumlahTambahan.HeaderText = "Jumlah"
+        colJumlahTambahan.MinimumWidth = 6
+        colJumlahTambahan.Name = "colJumlahTambahan"
+        colJumlahTambahan.Width = 125
         ' 
-        ' DataGridViewTextBoxColumn3
+        ' colTotalTambahan
         ' 
-        DataGridViewTextBoxColumn3.HeaderText = "Total"
-        DataGridViewTextBoxColumn3.MinimumWidth = 6
-        DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        DataGridViewTextBoxColumn3.Width = 125
+        colTotalTambahan.HeaderText = "Total"
+        colTotalTambahan.MinimumWidth = 6
+        colTotalTambahan.Name = "colTotalTambahan"
+        colTotalTambahan.Width = 125
+        ' 
+        ' colIdTambahan
+        ' 
+        colIdTambahan.HeaderText = "Id"
+        colIdTambahan.MinimumWidth = 6
+        colIdTambahan.Name = "colIdTambahan"
+        colIdTambahan.ReadOnly = True
+        colIdTambahan.Visible = False
+        colIdTambahan.Width = 125
         ' 
         ' btnBersihkanTambahan
         ' 
@@ -3930,7 +3940,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(21172, 30)
+        Label10.Size = New Size(23998, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -3974,7 +3984,7 @@ Partial Class Form5
         ' 
         lblTotalHargaPaket.AutoSize = True
         lblTotalHargaPaket.Font = New Font("Segoe UI Semibold", 16F, FontStyle.Bold)
-        lblTotalHargaPaket.Location = New Point(262, 4)
+        lblTotalHargaPaket.Location = New Point(244, 4)
         lblTotalHargaPaket.Name = "lblTotalHargaPaket"
         lblTotalHargaPaket.Size = New Size(32, 37)
         lblTotalHargaPaket.TabIndex = 24
@@ -3998,7 +4008,7 @@ Partial Class Form5
         ' 
         Label32.AutoSize = True
         Label32.Font = New Font("Segoe UI Semibold", 16F, FontStyle.Bold)
-        Label32.Location = New Point(219, 4)
+        Label32.Location = New Point(205, 4)
         Label32.Name = "Label32"
         Label32.Size = New Size(50, 37)
         Label32.TabIndex = 1
@@ -4624,7 +4634,7 @@ Partial Class Form5
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents Label59 As Label
     Friend WithEvents Panel18 As Panel
-    Friend WithEvents Label47 As Label
+    Friend WithEvents lblTotalHargaTambahan As Label
     Friend WithEvents btnSimpanTambahan As Button
     Friend WithEvents Label53 As Label
     Friend WithEvents Label58 As Label
@@ -4831,11 +4841,13 @@ Partial Class Form5
     Friend WithEvents Label144 As Label
     Friend WithEvents lblEdit As Label
     Friend WithEvents btnSimpan As Button
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents colPaket As DataGridViewTextBoxColumn
     Friend WithEvents colJumlah As DataGridViewTextBoxColumn
     Friend WithEvents colTotal As DataGridViewTextBoxColumn
     Friend WithEvents ColId As DataGridViewTextBoxColumn
+    Friend WithEvents DateTimePicker5 As DateTimePicker
+    Friend WithEvents colPaketTambahan As DataGridViewTextBoxColumn
+    Friend WithEvents colJumlahTambahan As DataGridViewTextBoxColumn
+    Friend WithEvents colTotalTambahan As DataGridViewTextBoxColumn
+    Friend WithEvents colIdTambahan As DataGridViewTextBoxColumn
 End Class

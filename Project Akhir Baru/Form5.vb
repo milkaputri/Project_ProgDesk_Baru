@@ -2,10 +2,19 @@
 
 Public Class Form5
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
-        Dim sql As String = "insert into acara(nama_acara,tanggal_pelaksanaan,waktu,lokasi,nama_pemesan,alamat_pemesan,no_hp_pertama,no_hp_kedua) values ('" & tbNamaKegiatan.Text & "','" & tglPelaksanaan.SelectionStart.ToString("yyyy-MM-dd") & "','" & tbWaktu.Text & "','" & tbLokasi.Text & "','" & tbNamaPemesan.Text & "','" & tbAlamat.Text & "','" & tbNoHpPertama.Text & "','" & tbNoHpKedua.Text & "')"
-        myCommand.CommandText = sql
-        myCommand.ExecuteNonQuery()
-        MessageBox.Show("Data berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Dim waktuInput As String = tbWaktu.Text
+        Dim waktuValid As DateTime = Convert.ToDateTime(waktuInput)
+        If DateTime.TryParse(waktuInput, waktuValid) Then
+            Dim waktuUntukDb As String = waktuValid.ToString("HH:mm:ss")
+            Dim sql As String = "insert into acara(nama_acara,tanggal_pelaksanaan,waktu,lokasi,nama_pemesan,alamat_pemesan,no_hp_pertama,no_hp_kedua) values ('" & tbNamaKegiatan.Text & "','" & tglPelaksanaan.SelectionStart.ToString("yyyy-MM-dd") & "','" & waktuUntukDb & "','" & tbLokasi.Text & "','" & tbNamaPemesan.Text & "','" & tbAlamat.Text & "','" & tbNoHpPertama.Text & "','" & tbNoHpKedua.Text & "')"
+            myCommand.CommandText = sql
+            myCommand.ExecuteNonQuery()
+            MessageBox.Show("Data berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("Format waktu tidak valid. Contoh: 14:30 atau 2:30 PM", "Error")
+        End If
+
+
     End Sub
 
     'Code untuk CheckBox di Tab "Paket" '
@@ -84,6 +93,8 @@ Public Class Form5
                 tbPrasA.Text = "0"
             ElseIf nilai > 300 Then
                 tbPrasA.Text = (nilai - 1).ToString()
+                TampilTambahan("Prasmanan A", tbPrasA.Text.ToString(), 34500, 11)
+                UpdateTotalHargaTambahan()
             End If
         Else
             tbPrasA.Text = "0"
@@ -98,6 +109,8 @@ Public Class Form5
                 tbPrasA.Text = "300"
             ElseIf nilai >= 300 Then
                 tbPrasA.Text = (nilai + 1).ToString()
+                TampilTambahan("Prasmanan A", tbPrasA.Text.ToString(), 34500, 11)
+                UpdateTotalHargaTambahan()
             End If
         Else
             tbPrasA.Text = "300"
@@ -127,6 +140,8 @@ Public Class Form5
                 tbPrasB.Text = "0"
             ElseIf nilai > 300 Then
                 tbPrasB.Text = (nilai - 1).ToString()
+                TampilTambahan("Prasmanan B", tbPrasB.Text.ToString(), 37000, 12)
+                UpdateTotalHargaTambahan()
             End If
         Else
             tbPrasB.Text = "0"
@@ -141,6 +156,8 @@ Public Class Form5
                 tbPrasB.Text = "300"
             ElseIf nilai >= 300 Then
                 tbPrasB.Text = (nilai + 1).ToString()
+                TampilTambahan("Prasmanan B", tbPrasB.Text.ToString(), 37000, 12)
+                UpdateTotalHargaTambahan()
             End If
         Else
             tbPrasB.Text = "300"
@@ -170,6 +187,7 @@ Public Class Form5
                 tbPrasC.Text = "0"
             ElseIf nilai > 300 Then
                 tbPrasC.Text = (nilai - 1).ToString()
+                TampilTambahan("Prasmanan C", tbPrasC.Text.ToString(), 40500, 13)
             End If
         Else
             tbPrasC.Text = "0"
@@ -184,6 +202,7 @@ Public Class Form5
                 tbPrasC.Text = "300"
             ElseIf nilai >= 300 Then
                 tbPrasC.Text = (nilai + 1).ToString()
+                TampilTambahan("Prasmanan C", tbPrasC.Text.ToString(), 40500, 13)
             End If
         Else
             tbPrasC.Text = "300"
@@ -783,39 +802,7 @@ Public Class Form5
 
     Private Sub Form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Form3.Hide()
-        Dim i
-        i = 0
-        Dim sql As String = "select * from pesanan join detail_paket on pesanan.id_paket = detail_paket.id_paket where id_acara = " & originalIdAcara
-        myCommand.CommandText = sql
-        myDataReader = myCommand.ExecuteReader
-        If myDataReader.HasRows Then
-            While myDataReader.Read()
-                DataGridView1.Rows.Add()
-                DataGridView1.Item(0, i).Value = myDataReader("nama_paket")
-                DataGridView1.Item(1, i).Value = "1"
-                DataGridView1.Item(2, i).Value = myDataReader("harga_paket")
-                DataGridView1.Item(3, i).Value = myDataReader("id_paket")
-                lblTotalHargaPaket.Text = myDataReader("harga_paket")
-                i = i + 1
-            End While
-            myDataReader.Close()
-        End If
-        If DataGridView1.Item(3, 0).Value = "1" Then
-            cbJasmine.Checked = True
-            SembunyikanCheckboxLain(cbJasmine)
-            cbJasmine.Enabled = False
-        ElseIf DataGridView1.Item(3, 0).Value = "2" Then
-            cbOrchid.Checked = True
-            SembunyikanCheckboxLain(cbOrchid)
-            cbOrchid.Enabled = False
-        ElseIf DataGridView1.Item(3, 0).Value = "3" Then
-            cbTulip.Checked = True
-            SembunyikanCheckboxLain(cbTulip)
-            cbTulip.Enabled = False
-        End If
-        If myDataReader.IsClosed = False Then
-            myDataReader.Close()
-        End If
+
     End Sub
 
     Private Sub Panel19_Paint(sender As Object, e As PaintEventArgs) Handles Panel19.Paint
@@ -945,13 +932,40 @@ Public Class Form5
                 DataGridView1.Item(1, i).Value = "1"
                 DataGridView1.Item(2, i).Value = myDataReader("harga_paket")
                 DataGridView1.Item(3, i).Value = idPaket.ToString
-                lblTotalHargaPaket.Text = myDataReader("harga_paket")
+                Dim totalPaket As Integer = myDataReader("harga_paket")
+                lblTotalHargaPaket.Text = totalPaket.ToString("N0")
                 i = i + 1
             End While
         End If
         If myDataReader.IsClosed = False Then
             myDataReader.Close()
         End If
+    End Sub
+    Private Sub TampilTambahan(nama_paket As String, jumlah As Integer, harga As Integer, idTambahan As Integer)
+        Dim found As Boolean = False
+        For Each row As DataGridViewRow In DataGridView2.Rows
+            If Not row.IsNewRow AndAlso row.Cells("colPaketTambahan").Value = nama_paket Then
+                row.Cells("colJumlahTambahan").Value = jumlah
+                row.Cells("colTotalTambahan").Value = jumlah * harga
+                row.Cells("colIdTambahan").Value = idTambahan
+                found = True
+                Exit For
+            End If
+        Next
+
+        If Not found Then
+            DataGridView2.Rows.Add(nama_paket, jumlah, jumlah * harga, idTambahan)
+        End If
+    End Sub
+    Private Sub UpdateTotalHargaTambahan()
+        Dim totalPengeluaran As Integer = 0
+        For Each row As DataGridViewRow In DataGridView2.Rows
+            If Not row.IsNewRow AndAlso Not IsDBNull(row.Cells("colTotalTambahan").Value) Then
+                totalPengeluaran += Convert.ToInt32(row.Cells("colTotalTambahan").Value)
+            End If
+        Next
+
+        lblTotalHargaTambahan.Text = totalPengeluaran.ToString("N0")
     End Sub
     Private Sub UncheckedBox(idPaket As Integer)
         For Each row As DataGridViewRow In DataGridView1.Rows
@@ -973,11 +987,12 @@ Public Class Form5
         cbTulip.Checked = False
     End Sub
     Private Sub btnSimpanPaket_Click(sender As Object, e As EventArgs) Handles btnSimpanPaket.Click
+        Dim angka As Integer = Convert.ToInt32(lblTotalHargaPaket.Text.Replace(".", ""))
         For Each row As DataGridViewRow In DataGridView1.Rows
             If Not row.IsNewRow Then
-                'Dim id_paket As String = row.Cells("colId").Value
                 Dim id_paket As Integer = Integer.Parse(row.Cells("colId").Value.ToString())
-                Dim sql As String = "INSERT INTO pesanan (id_acara, id_paket, total_pengeluaran) VALUES ('" & originalIdAcara & "','" & id_paket & "','" & lblTotalHargaPaket.Text & "')"
+                Dim jumlah_paket As Integer = Integer.Parse(row.Cells("colJumlah").Value.ToString())
+                Dim sql As String = "INSERT INTO pesanan (id_acara, id_paket, total_pengeluaran, jumlah_paket) VALUES ('" & originalIdAcara & "','" & id_paket & "','" & angka & "','" & jumlah_paket & "')"
                 myCommand.CommandText = sql
                 myCommand.ExecuteNonQuery()
                 MessageBox.Show("Data berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -986,5 +1001,55 @@ Public Class Form5
         If cbJasmine.Checked Then cbJasmine.Enabled = False
         If cbOrchid.Checked Then cbOrchid.Enabled = False
         If cbTulip.Checked Then cbTulip.Enabled = False
+    End Sub
+
+    Public Sub TampilDataPaket()
+        Dim i
+        i = 0
+        Dim sql As String = "select * from pesanan join detail_paket on pesanan.id_paket = detail_paket.id_paket where id_acara = " & originalIdAcara
+        myCommand.CommandText = sql
+        myDataReader = myCommand.ExecuteReader
+        If myDataReader.HasRows Then
+            While myDataReader.Read()
+                DataGridView1.Rows.Add()
+                DataGridView1.Item(0, i).Value = myDataReader("nama_paket")
+                DataGridView1.Item(1, i).Value = "1"
+                DataGridView1.Item(2, i).Value = myDataReader("harga_paket")
+                DataGridView1.Item(3, i).Value = myDataReader("id_paket")
+                lblTotalHargaPaket.Text = myDataReader("harga_paket")
+                i = i + 1
+            End While
+            myDataReader.Close()
+        End If
+        If DataGridView1.Item(3, 0).Value = "1" Then
+            cbJasmine.Checked = True
+            SembunyikanCheckboxLain(cbJasmine)
+            cbJasmine.Enabled = False
+        ElseIf DataGridView1.Item(3, 0).Value = "2" Then
+            cbOrchid.Checked = True
+            SembunyikanCheckboxLain(cbOrchid)
+            cbOrchid.Enabled = False
+        ElseIf DataGridView1.Item(3, 0).Value = "3" Then
+            cbTulip.Checked = True
+            SembunyikanCheckboxLain(cbTulip)
+            cbTulip.Enabled = False
+        End If
+        If myDataReader.IsClosed = False Then
+            myDataReader.Close()
+        End If
+    End Sub
+
+    Private Sub btnSimpanTambahan_Click(sender As Object, e As EventArgs) Handles btnSimpanTambahan.Click
+        Dim angka As Integer = Convert.ToInt32(lblTotalHargaTambahan.Text.Replace(".", ""))
+        For Each row As DataGridViewRow In DataGridView2.Rows
+            If Not row.IsNewRow Then
+                Dim id_paket As Integer = Integer.Parse(row.Cells("colIdTambahan").Value.ToString())
+                Dim jumlah_paket As Integer = Integer.Parse(row.Cells("colJumlahTambahan").Value.ToString())
+                Dim sql As String = "INSERT INTO pesanan (id_acara, id_paket, total_pengeluaran, jumlah_paket) VALUES ('" & originalIdAcara & "','" & id_paket & "','" & angka & "','" & jumlah_paket & "')"
+                myCommand.CommandText = sql
+                myCommand.ExecuteNonQuery()
+            End If
+        Next
+        MessageBox.Show("Data berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class
