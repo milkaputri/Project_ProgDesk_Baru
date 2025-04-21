@@ -783,6 +783,39 @@ Public Class Form5
 
     Private Sub Form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Form3.Hide()
+        Dim i
+        i = 0
+        Dim sql As String = "select * from pesanan join detail_paket on pesanan.id_paket = detail_paket.id_paket where id_acara = " & originalIdAcara
+        myCommand.CommandText = sql
+        myDataReader = myCommand.ExecuteReader
+        If myDataReader.HasRows Then
+            While myDataReader.Read()
+                DataGridView1.Rows.Add()
+                DataGridView1.Item(0, i).Value = myDataReader("nama_paket")
+                DataGridView1.Item(1, i).Value = "1"
+                DataGridView1.Item(2, i).Value = myDataReader("harga_paket")
+                DataGridView1.Item(3, i).Value = myDataReader("id_paket")
+                lblTotalHargaPaket.Text = myDataReader("harga_paket")
+                i = i + 1
+            End While
+            myDataReader.Close()
+        End If
+        If DataGridView1.Item(3, 0).Value = "1" Then
+            cbJasmine.Checked = True
+            SembunyikanCheckboxLain(cbJasmine)
+            cbJasmine.Enabled = False
+        ElseIf DataGridView1.Item(3, 0).Value = "2" Then
+            cbOrchid.Checked = True
+            SembunyikanCheckboxLain(cbOrchid)
+            cbOrchid.Enabled = False
+        ElseIf DataGridView1.Item(3, 0).Value = "3" Then
+            cbTulip.Checked = True
+            SembunyikanCheckboxLain(cbTulip)
+            cbTulip.Enabled = False
+        End If
+        If myDataReader.IsClosed = False Then
+            myDataReader.Close()
+        End If
     End Sub
 
     Private Sub Panel19_Paint(sender As Object, e As PaintEventArgs) Handles Panel19.Paint
@@ -912,6 +945,7 @@ Public Class Form5
                 DataGridView1.Item(1, i).Value = "1"
                 DataGridView1.Item(2, i).Value = myDataReader("harga_paket")
                 DataGridView1.Item(3, i).Value = idPaket.ToString
+                lblTotalHargaPaket.Text = myDataReader("harga_paket")
                 i = i + 1
             End While
         End If
@@ -923,11 +957,36 @@ Public Class Form5
         For Each row As DataGridViewRow In DataGridView1.Rows
             If Not row.IsNewRow AndAlso Convert.ToInt32(row.Cells("ColId").Value) = idPaket Then
                 DataGridView1.Rows.Remove(row)
+                lblTotalHargaPaket.Text = "0"
                 Exit For
             End If
         Next
         If myDataReader.IsClosed = False Then
             myDataReader.Close()
         End If
+    End Sub
+
+    Private Sub btnBersihkanPaket_Click(sender As Object, e As EventArgs) Handles btnBersihkanPaket.Click
+        DataGridView1.Rows.Clear()
+        lblTotalHargaPaket.Text = "0"
+        cbJasmine.Checked = False
+        cbOrchid.Checked = False
+        cbTulip.Checked = False
+    End Sub
+
+    Private Sub btnSimpanPaket_Click(sender As Object, e As EventArgs) Handles btnSimpanPaket.Click
+        For Each row As DataGridViewRow In DataGridView1.Rows
+            If Not row.IsNewRow Then
+                'Dim id_paket As String = row.Cells("colId").Value
+                Dim id_paket As Integer = Integer.Parse(row.Cells("colId").Value.ToString())
+                Dim sql As String = "INSERT INTO pesanan (id_acara, id_paket, total_pengeluaran) VALUES ('" & originalIdAcara & "','" & id_paket & "','" & lblTotalHargaPaket.Text & "')"
+                myCommand.CommandText = sql
+                myCommand.ExecuteNonQuery()
+                MessageBox.Show("Data berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        Next
+        If cbJasmine.Checked Then cbJasmine.Enabled = False
+        If cbOrchid.Checked Then cbOrchid.Enabled = False
+        If cbTulip.Checked Then cbTulip.Enabled = False
     End Sub
 End Class
