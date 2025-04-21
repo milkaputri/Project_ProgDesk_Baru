@@ -12,24 +12,30 @@ Public Class Form5
     Private Sub cbJasmine_CheckedChanged(sender As Object, e As EventArgs) Handles cbJasmine.CheckedChanged
         If cbJasmine.Checked Then
             SembunyikanCheckboxLain(cbJasmine)
+            TampilPaket(1)
         Else
             TampilkanSemuaCheckbox()
+            UncheckedBox(1)
         End If
     End Sub
 
     Private Sub cbTulip_CheckedChanged(sender As Object, e As EventArgs) Handles cbTulip.CheckedChanged
         If cbTulip.Checked Then
             SembunyikanCheckboxLain(cbTulip)
+            TampilPaket(3)
         Else
             TampilkanSemuaCheckbox()
+            UncheckedBox(3)
         End If
     End Sub
 
     Private Sub cbOrchid_CheckedChanged(sender As Object, e As EventArgs) Handles cbOrchid.CheckedChanged
         If cbOrchid.Checked Then
             SembunyikanCheckboxLain(cbOrchid)
+            TampilPaket(2)
         Else
             TampilkanSemuaCheckbox()
+            UncheckedBox(2)
         End If
     End Sub
 
@@ -74,7 +80,9 @@ Public Class Form5
         ' Mengurangkan nilai di tbPaketA
         If IsNumeric(tbPrasA.Text) Then
             Dim nilai As Integer = Integer.Parse(tbPrasA.Text)
-            If nilai > 0 Then
+            If nilai = 300 Then
+                tbPrasA.Text = "0"
+            ElseIf nilai > 300 Then
                 tbPrasA.Text = (nilai - 1).ToString()
             End If
         Else
@@ -86,9 +94,13 @@ Public Class Form5
         ' Menambahkan nilai di tbPaketA
         If IsNumeric(tbPrasA.Text) Then
             Dim nilai As Integer = Integer.Parse(tbPrasA.Text)
-            tbPrasA.Text = (nilai + 1).ToString()
+            If nilai = 0 Then
+                tbPrasA.Text = "300"
+            ElseIf nilai >= 300 Then
+                tbPrasA.Text = (nilai + 1).ToString()
+            End If
         Else
-            tbPrasA.Text = "1"
+            tbPrasA.Text = "300"
         End If
     End Sub
 
@@ -107,11 +119,13 @@ Public Class Form5
     End Sub
 
     ' Pras B '
-    Private Sub btnMinPaketB_Click(sender As Object, e As EventArgs) Handles btnMinPrasA.Click
+    Private Sub btnMinPaketB_Click(sender As Object, e As EventArgs) Handles btnMinPrasB.Click
         ' Mengurangkan nilai di tbPaketB
         If IsNumeric(tbPrasB.Text) Then
             Dim nilai As Integer = Integer.Parse(tbPrasB.Text)
-            If nilai > 0 Then
+            If nilai = 300 Then
+                tbPrasB.Text = "0"
+            ElseIf nilai > 300 Then
                 tbPrasB.Text = (nilai - 1).ToString()
             End If
         Else
@@ -123,9 +137,13 @@ Public Class Form5
         ' Menambahkan nilai di tbPaketB
         If IsNumeric(tbPrasB.Text) Then
             Dim nilai As Integer = Integer.Parse(tbPrasB.Text)
-            tbPrasB.Text = (nilai + 1).ToString()
+            If nilai = 0 Then
+                tbPrasB.Text = "300"
+            ElseIf nilai >= 300 Then
+                tbPrasB.Text = (nilai + 1).ToString()
+            End If
         Else
-            tbPrasB.Text = "1"
+            tbPrasB.Text = "300"
         End If
     End Sub
 
@@ -148,7 +166,9 @@ Public Class Form5
         ' Mengurangkan nilai di tbPaketC
         If IsNumeric(tbPrasC.Text) Then
             Dim nilai As Integer = Integer.Parse(tbPrasC.Text)
-            If nilai > 0 Then
+            If nilai = 300 Then
+                tbPrasC.Text = "0"
+            ElseIf nilai > 300 Then
                 tbPrasC.Text = (nilai - 1).ToString()
             End If
         Else
@@ -160,9 +180,13 @@ Public Class Form5
         ' Menambahkan nilai di tbPaketB
         If IsNumeric(tbPrasC.Text) Then
             Dim nilai As Integer = Integer.Parse(tbPrasC.Text)
-            tbPrasC.Text = (nilai + 1).ToString()
+            If nilai = 0 Then
+                tbPrasC.Text = "300"
+            ElseIf nilai >= 300 Then
+                tbPrasC.Text = (nilai + 1).ToString()
+            End If
         Else
-            tbPrasC.Text = "1"
+            tbPrasC.Text = "300"
         End If
     End Sub
 
@@ -185,7 +209,9 @@ Public Class Form5
         ' Mengurangkan nilai di tbPaketC
         If IsNumeric(tbStall1.Text) Then
             Dim nilai As Integer = Integer.Parse(tbStall1.Text)
-            If nilai > 0 Then
+            If nilai = 250 Then
+                tbStall1.Text = "0"
+            ElseIf nilai > 250 Then
                 tbStall1.Text = (nilai - 1).ToString()
             End If
         Else
@@ -197,9 +223,13 @@ Public Class Form5
         ' Menambahkan nilai di tbPaketB
         If IsNumeric(tbStall1.Text) Then
             Dim nilai As Integer = Integer.Parse(tbStall1.Text)
-            tbStall1.Text = (nilai + 1).ToString()
+            If nilai = 0 Then
+                tbStall1.Text = "250"
+            ElseIf nilai >= 250 Then
+                tbStall1.Text = (nilai + 1).ToString()
+            End If
         Else
-            tbStall1.Text = "1"
+            tbStall1.Text = "250"
         End If
     End Sub
 
@@ -222,7 +252,9 @@ Public Class Form5
         ' Mengurangkan nilai di tbPaketC
         If IsNumeric(tbStall2.Text) Then
             Dim nilai As Integer = Integer.Parse(tbStall2.Text)
-            If nilai > 0 Then
+            If nilai = 250 Then
+                tbStall2.Text = "0"
+            ElseIf nilai > 250 Then
                 tbStall2.Text = (nilai - 1).ToString()
             End If
         Else
@@ -234,9 +266,13 @@ Public Class Form5
         ' Menambahkan nilai di tbPaketB
         If IsNumeric(tbStall2.Text) Then
             Dim nilai As Integer = Integer.Parse(tbStall2.Text)
-            tbStall2.Text = (nilai + 1).ToString()
+            If nilai = 0 Then
+                tbStall2.Text = "250"
+            ElseIf nilai >= 250 Then
+                tbStall2.Text = (nilai + 1).ToString()
+            End If
         Else
-            tbStall2.Text = "1"
+            tbStall2.Text = "250"
         End If
     End Sub
 
@@ -259,7 +295,9 @@ Public Class Form5
         ' Mengurangkan nilai di tbPaketC
         If IsNumeric(tbStall3.Text) Then
             Dim nilai As Integer = Integer.Parse(tbStall3.Text)
-            If nilai > 0 Then
+            If nilai = 250 Then
+                tbStall3.Text = "0"
+            ElseIf nilai > 250 Then
                 tbStall3.Text = (nilai - 1).ToString()
             End If
         Else
@@ -271,9 +309,13 @@ Public Class Form5
         ' Menambahkan nilai di tbPaketB
         If IsNumeric(tbStall3.Text) Then
             Dim nilai As Integer = Integer.Parse(tbStall3.Text)
-            tbStall3.Text = (nilai + 1).ToString()
+            If nilai = 0 Then
+                tbStall3.Text = "250"
+            ElseIf nilai >= 250 Then
+                tbStall3.Text = (nilai + 1).ToString()
+            End If
         Else
-            tbStall3.Text = "1"
+            tbStall3.Text = "250"
         End If
     End Sub
 
@@ -740,7 +782,7 @@ Public Class Form5
     End Sub
 
     Private Sub Form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Form3.Hide()
     End Sub
 
     Private Sub Panel19_Paint(sender As Object, e As PaintEventArgs) Handles Panel19.Paint
@@ -764,6 +806,8 @@ Public Class Form5
 
         ' Optional: Bring the panel to front if there are overlapping controls
         detailForm.pnlDetailJasmine.BringToFront()
+
+        Me.Hide()
     End Sub
 
     Private Sub llOrchid_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llOrchid.LinkClicked
@@ -779,9 +823,10 @@ Public Class Form5
 
         ' Optional: Bring the panel to front if there are overlapping controls
         detailForm.pnlDetailOrchid.BringToFront()
+        Me.Hide()
     End Sub
 
-    Public originalNamaAcara As String
+    Public originalIdAcara As String
 
     Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
         Try
@@ -801,7 +846,7 @@ Public Class Form5
                            "alamat_pemesan = @alamat, " &
                            "no_hp_pertama = @hp1, " &
                            "no_hp_kedua = @hp2 " &
-                           "WHERE nama_acara = @original_nama"
+                           "WHERE id_acara = @id_acara"
 
             ' Create and configure the command with parameters to prevent SQL injection
             myCommand.CommandText = sql
@@ -814,7 +859,7 @@ Public Class Form5
             myCommand.Parameters.AddWithValue("@alamat", tbAlamat.Text)
             myCommand.Parameters.AddWithValue("@hp1", tbNoHpPertama.Text)
             myCommand.Parameters.AddWithValue("@hp2", tbNoHpKedua.Text)
-            myCommand.Parameters.AddWithValue("@original_nama", originalNamaAcara) ' Assuming nama_acara is the identifier
+            myCommand.Parameters.AddWithValue("@id_acara", originalIdAcara)
 
             ' Execute the update
             Dim rowsAffected As Integer = myCommand.ExecuteNonQuery()
@@ -846,12 +891,43 @@ Public Class Form5
 
     Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles Button1.Click
         tbNamaKegiatan.Text = ""
-        originalNamaAcara = ""
+        originalIdAcara = ""
         tbNamaPemesan.Text = ""
         tbAlamat.Text = ""
         tbNoHpPertama.Text = ""
         tbNoHpKedua.Text = ""
         tbLokasi.Text = ""
 
+    End Sub
+    Private Sub TampilPaket(idPaket As Integer)
+        Dim i
+        i = 0
+        Dim sqlPaket As String = "SELECT * FROM detail_paket where id_paket = " & idPaket
+        myCommand.CommandText = sqlPaket
+        myDataReader = myCommand.ExecuteReader
+        If myDataReader.HasRows Then
+            While myDataReader.Read()
+                DataGridView1.Rows.Add()
+                DataGridView1.Item(0, i).Value = myDataReader("nama_paket")
+                DataGridView1.Item(1, i).Value = "1"
+                DataGridView1.Item(2, i).Value = myDataReader("harga_paket")
+                DataGridView1.Item(3, i).Value = idPaket.ToString
+                i = i + 1
+            End While
+        End If
+        If myDataReader.IsClosed = False Then
+            myDataReader.Close()
+        End If
+    End Sub
+    Private Sub UncheckedBox(idPaket As Integer)
+        For Each row As DataGridViewRow In DataGridView1.Rows
+            If Not row.IsNewRow AndAlso Convert.ToInt32(row.Cells("ColId").Value) = idPaket Then
+                DataGridView1.Rows.Remove(row)
+                Exit For
+            End If
+        Next
+        If myDataReader.IsClosed = False Then
+            myDataReader.Close()
+        End If
     End Sub
 End Class
