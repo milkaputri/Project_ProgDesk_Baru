@@ -23,47 +23,47 @@ Partial Class Form4
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         pnlDetailOrchid = New Panel()
-        Label34 = New Label()
-        Label33 = New Label()
-        ListBox28 = New ListBox()
-        Label32 = New Label()
-        ListBox27 = New ListBox()
-        Label31 = New Label()
-        ListBox26 = New ListBox()
-        Label30 = New Label()
-        Label18 = New Label()
-        ListBox14 = New ListBox()
-        Label17 = New Label()
-        ListBox12 = New ListBox()
-        Label14 = New Label()
-        Label19 = New Label()
-        Label20 = New Label()
-        ListBox15 = New ListBox()
-        ListBox16 = New ListBox()
-        ListBox17 = New ListBox()
         Panel1 = New Panel()
-        Label13 = New Label()
-        ListBox11 = New ListBox()
-        Label12 = New Label()
-        ListBox9 = New ListBox()
-        Label11 = New Label()
-        ListBox8 = New ListBox()
-        Label10 = New Label()
-        Label9 = New Label()
-        ListBox7 = New ListBox()
-        Label8 = New Label()
-        ListBox6 = New ListBox()
-        Label6 = New Label()
-        Label5 = New Label()
-        Label4 = New Label()
-        ListBox5 = New ListBox()
-        ListBox4 = New ListBox()
-        ListBox3 = New ListBox()
-        Label3 = New Label()
-        Label2 = New Label()
-        ListBox2 = New ListBox()
-        Label1 = New Label()
         ListBox1 = New ListBox()
+        Label1 = New Label()
+        ListBox2 = New ListBox()
+        Label2 = New Label()
+        Label3 = New Label()
+        ListBox3 = New ListBox()
+        ListBox4 = New ListBox()
+        ListBox5 = New ListBox()
+        Label4 = New Label()
+        Label5 = New Label()
+        Label6 = New Label()
+        ListBox6 = New ListBox()
+        Label8 = New Label()
+        ListBox7 = New ListBox()
+        Label9 = New Label()
+        Label10 = New Label()
+        ListBox8 = New ListBox()
+        Label11 = New Label()
+        ListBox9 = New ListBox()
+        Label12 = New Label()
+        ListBox11 = New ListBox()
+        Label13 = New Label()
+        ListBox17 = New ListBox()
+        ListBox16 = New ListBox()
+        ListBox15 = New ListBox()
+        Label20 = New Label()
+        Label19 = New Label()
+        Label14 = New Label()
+        ListBox12 = New ListBox()
+        Label17 = New Label()
+        ListBox14 = New ListBox()
+        Label18 = New Label()
+        Label30 = New Label()
+        ListBox26 = New ListBox()
+        Label31 = New Label()
+        ListBox27 = New ListBox()
+        Label32 = New Label()
+        ListBox28 = New ListBox()
+        Label33 = New Label()
+        Label34 = New Label()
         pnlDetailJasmine = New Panel()
         ListBox10 = New ListBox()
         Label7 = New Label()
@@ -114,200 +114,6 @@ Partial Class Form4
         pnlDetailOrchid.TabIndex = 31
         pnlDetailOrchid.Visible = False
         ' 
-        ' Label34
-        ' 
-        Label34.AutoSize = True
-        Label34.Font = New Font("Rockwell", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label34.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label34.Location = New Point(13, 10)
-        Label34.Name = "Label34"
-        Label34.Size = New Size(411, 28)
-        Label34.TabIndex = 4
-        Label34.Text = "PAKET ORCHID UNTUK 500 PORSI"
-        ' 
-        ' Label33
-        ' 
-        Label33.AutoSize = True
-        Label33.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label33.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label33.Location = New Point(13, 76)
-        Label33.Name = "Label33"
-        Label33.Size = New Size(105, 24)
-        Label33.TabIndex = 5
-        Label33.Text = "Katering:"
-        ' 
-        ' ListBox28
-        ' 
-        ListBox28.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox28.BorderStyle = BorderStyle.None
-        ListBox28.FormattingEnabled = True
-        ListBox28.Items.AddRange(New Object() {"Katering:", "    1. Nasi putih", "    2. Soup kombinasi", "    3. Sambal goreng kreni", "    4. Ayam fillet asam manis", "    5. Bistik galantin", "    6. Soon ayu jamur", "    7. Kerupuk", "    8. Buah iris", "    9. Es cream + agar-agar", "  10. Es seruni, teh, air mineral", "Stal/Gubukan:", "    1. Bakso, 300 porsi ", "    2. Es Dawet, 300 porsi", "    3. Siomay, 300 porsi"})
-        ListBox28.Location = New Point(33, 103)
-        ListBox28.Name = "ListBox28"
-        ListBox28.Size = New Size(208, 300)
-        ListBox28.TabIndex = 6
-        ' 
-        ' Label32
-        ' 
-        Label32.AutoSize = True
-        Label32.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label32.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label32.Location = New Point(285, 76)
-        Label32.Name = "Label32"
-        Label32.Size = New Size(106, 24)
-        Label32.TabIndex = 10
-        Label32.Text = "Dekorasi:"
-        ' 
-        ' ListBox27
-        ' 
-        ListBox27.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox27.BorderStyle = BorderStyle.None
-        ListBox27.FormattingEnabled = True
-        ListBox27.Items.AddRange(New Object() {"1. Pelaminan gebyok etnik/modern (6-8 meter)", "2. 1 set kursi pengantin", "3. Mini garden depan pelaminan", "4. Lampu hias 2 pcs", "5. Karpet panggung", "6. Karpet jalan", "7. Lighting pelaminan 3 titik", "8. Florist", "9. Welcome gate", "10. Kotak sumbangan 2 pcs (dipinjamkan)", "11. Stand foto 2 pcs (dipinjamkan)"})
-        ListBox27.Location = New Point(313, 103)
-        ListBox27.Name = "ListBox27"
-        ListBox27.Size = New Size(328, 220)
-        ListBox27.TabIndex = 11
-        ' 
-        ' Label31
-        ' 
-        Label31.AutoSize = True
-        Label31.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label31.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label31.Location = New Point(696, 227)
-        Label31.Name = "Label31"
-        Label31.Size = New Size(111, 24)
-        Label31.TabIndex = 12
-        Label31.Text = "Tata Rias:"
-        ' 
-        ' ListBox26
-        ' 
-        ListBox26.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox26.BorderStyle = BorderStyle.None
-        ListBox26.FormattingEnabled = True
-        ListBox26.Items.AddRange(New Object() {"1. Rias pengantin, meliputi : (pilihan *)", "       - sanggul modern", "       - medieval", "       - muslim cantik", "2. Make up sanggul dan hijab untuk mempelai pengantin 2 orang", "3. Baju lengkap untuk mempelai pengantin 2 orang", "4. Rias pengantin busana lengkap 2 orang", "5. Rias orang tua tamu busana lengkap 2 pasang"})
-        ListBox26.Location = New Point(725, 257)
-        ListBox26.Name = "ListBox26"
-        ListBox26.Size = New Size(448, 160)
-        ListBox26.TabIndex = 13
-        ' 
-        ' Label30
-        ' 
-        Label30.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label30.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label30.Location = New Point(696, 81)
-        Label30.Name = "Label30"
-        Label30.Size = New Size(163, 32)
-        Label30.TabIndex = 14
-        Label30.Text = "Entertainment:"
-        ' 
-        ' Label18
-        ' 
-        Label18.AutoSize = True
-        Label18.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label18.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label18.Location = New Point(695, 429)
-        Label18.Name = "Label18"
-        Label18.Size = New Size(78, 24)
-        Label18.TabIndex = 16
-        Label18.Text = "Bonus:"
-        ' 
-        ' ListBox14
-        ' 
-        ListBox14.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox14.BorderStyle = BorderStyle.None
-        ListBox14.FormattingEnabled = True
-        ListBox14.Items.AddRange(New Object() {"1. Free buku tamu 2 pcs", "2. Free spidol/ballpoint 2 pcs", "3. Dekorasi catering standar", "4. Es selasih 150 porsi"})
-        ListBox14.Location = New Point(725, 456)
-        ListBox14.Name = "ListBox14"
-        ListBox14.Size = New Size(220, 80)
-        ListBox14.TabIndex = 17
-        ' 
-        ' Label17
-        ' 
-        Label17.AutoSize = True
-        Label17.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label17.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label17.Location = New Point(696, 545)
-        Label17.Name = "Label17"
-        Label17.Size = New Size(47, 24)
-        Label17.TabIndex = 18
-        Label17.Text = "NB:"
-        ' 
-        ' ListBox12
-        ' 
-        ListBox12.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox12.BorderStyle = BorderStyle.None
-        ListBox12.FormattingEnabled = True
-        ListBox12.Items.AddRange(New Object() {"Bonus yang tidak dipakai tidak bisa diuangkan, ", "tetapi bisa dialihkan ke point isi paket."})
-        ListBox12.Location = New Point(725, 572)
-        ListBox12.Name = "ListBox12"
-        ListBox12.Size = New Size(321, 40)
-        ListBox12.TabIndex = 19
-        ' 
-        ' Label14
-        ' 
-        Label14.AutoSize = True
-        Label14.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label14.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label14.Location = New Point(19, 46)
-        Label14.Name = "Label14"
-        Label14.Size = New Size(99, 20)
-        Label14.TabIndex = 20
-        Label14.Text = "Rp55.500.000"
-        ' 
-        ' Label19
-        ' 
-        Label19.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label19.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label19.Location = New Point(697, 156)
-        Label19.Name = "Label19"
-        Label19.Size = New Size(163, 32)
-        Label19.TabIndex = 21
-        Label19.Text = "MC:"
-        ' 
-        ' Label20
-        ' 
-        Label20.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label20.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label20.Location = New Point(284, 346)
-        Label20.Name = "Label20"
-        Label20.Size = New Size(163, 32)
-        Label20.TabIndex = 22
-        Label20.Text = "Dokumentasi:"
-        ' 
-        ' ListBox15
-        ' 
-        ListBox15.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox15.BorderStyle = BorderStyle.None
-        ListBox15.FormattingEnabled = True
-        ListBox15.Items.AddRange(New Object() {"1 keyboard, 1 singer"})
-        ListBox15.Location = New Point(725, 116)
-        ListBox15.Name = "ListBox15"
-        ListBox15.Size = New Size(146, 20)
-        ListBox15.TabIndex = 23
-        ' 
-        ' ListBox16
-        ' 
-        ListBox16.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox16.BorderStyle = BorderStyle.None
-        ListBox16.FormattingEnabled = True
-        ListBox16.Items.AddRange(New Object() {"Pada waktu resepsi"})
-        ListBox16.Location = New Point(725, 191)
-        ListBox16.Name = "ListBox16"
-        ListBox16.Size = New Size(146, 20)
-        ListBox16.TabIndex = 24
-        ' 
-        ' ListBox17
-        ' 
-        ListBox17.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox17.FormattingEnabled = True
-        ListBox17.Items.AddRange(New Object() {"1. Videography:", "       - Meliput semua acara (pada hari yang sama)", "       - File berbentuk flashdisk", "2. Fotography: ", "       - Mengcover semua acara (hari yang sama)", "       - File foto berupa flashdisk", "       - Cetak foto 4R, 144 lembar"})
-        ListBox17.Location = New Point(313, 381)
-        ListBox17.Name = "ListBox17"
-        ListBox17.Size = New Size(357, 144)
-        ListBox17.TabIndex = 26
-        ' 
         ' Panel1
         ' 
         Panel1.AutoSize = True
@@ -339,210 +145,26 @@ Partial Class Form4
         Panel1.TabIndex = 29
         Panel1.Visible = False
         ' 
-        ' Label13
+        ' ListBox1
         ' 
-        Label13.AutoSize = True
-        Label13.Font = New Font("Rockwell", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label13.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label13.Location = New Point(13, 10)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(486, 28)
-        Label13.TabIndex = 4
-        Label13.Text = "PAKET CASABLANCA UNTUK 1000 PORSI"
+        ListBox1.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox1.BorderStyle = BorderStyle.None
+        ListBox1.FormattingEnabled = True
+        ListBox1.Items.AddRange(New Object() {"1. Pintu masuk", "2. Belakang tempat tidur + sketsel", "3. Meja rias", "4. 2 stand flower"})
+        ListBox1.Location = New Point(313, 557)
+        ListBox1.Name = "ListBox1"
+        ListBox1.Size = New Size(328, 80)
+        ListBox1.TabIndex = 31
         ' 
-        ' ListBox11
+        ' Label1
         ' 
-        ListBox11.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox11.BorderStyle = BorderStyle.None
-        ListBox11.FormattingEnabled = True
-        ListBox11.Items.AddRange(New Object() {"Katering:", "     1. Nasi putih", "     2. Soup kombinasi", "     3. Sambal goreng kreni", "     4. Ayam fillet asam manis", "     5. Bistik galantin", "     6. Soon ayu jamur", "     7. Salad Buah", "     8. Kerupuk", "     9. Buah iris", "   10. Es cream + agar-agar", "   11. Es seruni, teh, air mineral", "Stall/gubukan:", "     1. Bakso, 400 porsi", "     2. Es Dawet, 400 porsi", "     3. Siomay, 400 porsi", "     4. Mie Oriental, 400 porsi"})
-        ListBox11.Location = New Point(36, 116)
-        ListBox11.Name = "ListBox11"
-        ListBox11.Size = New Size(208, 340)
-        ListBox11.TabIndex = 6
-        ' 
-        ' Label12
-        ' 
-        Label12.AutoSize = True
-        Label12.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label12.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label12.Location = New Point(285, 76)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(106, 24)
-        Label12.TabIndex = 10
-        Label12.Text = "Dekorasi:"
-        ' 
-        ' ListBox9
-        ' 
-        ListBox9.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox9.BorderStyle = BorderStyle.None
-        ListBox9.FormattingEnabled = True
-        ListBox9.Items.AddRange(New Object() {"1. Pelaminan gebyok etnik/modern (8-12 meter)", "2. 1 set kursi pengantin", "3. Mini garden depan pelaminan", "4. Standing Flowers 4 pcs", "5. Lampu lilin 4 pcs", "6. Karpet panggung", "7. Karpet jalan", "8. Lighting", "9. Dekorasi foto corner", "10. Inisial nama", "11. Pergola/Welcome gate", "12. Properti pendukung lainnya", "13. Kotak sumbangan 2 pcs (dipinjamkan)", "14. Stand foto 2 pcs (dipinjamkan)", "15. Penjor 1 pcs"})
-        ListBox9.Location = New Point(313, 97)
-        ListBox9.Name = "ListBox9"
-        ListBox9.Size = New Size(328, 320)
-        ListBox9.TabIndex = 11
-        ' 
-        ' Label11
-        ' 
-        Label11.AutoSize = True
-        Label11.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label11.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label11.Location = New Point(683, 219)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(111, 24)
-        Label11.TabIndex = 12
-        Label11.Text = "Tata Rias:"
-        ' 
-        ' ListBox8
-        ' 
-        ListBox8.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox8.BorderStyle = BorderStyle.None
-        ListBox8.FormattingEnabled = True
-        ListBox8.Items.AddRange(New Object() {"1. Rias pengantin, meliputi : (pilihan *)", "       - sanggul modern", "       - medieval", "       - muslim cantik", "2. Make up sanggul dan hijab untuk mempelai pengantin 2 orang", "3. Baju lengkap untuk mempelai pengantin 2 orang", "4. Rias pengantin busana lengkap 2 orang", "5. Rias orang tua tamu busana lengkap 2 pasang"})
-        ListBox8.Location = New Point(710, 245)
-        ListBox8.Name = "ListBox8"
-        ListBox8.Size = New Size(448, 160)
-        ListBox8.TabIndex = 13
-        ' 
-        ' Label10
-        ' 
-        Label10.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label10.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label10.Location = New Point(22, 444)
-        Label10.Name = "Label10"
-        Label10.Size = New Size(163, 32)
-        Label10.TabIndex = 14
-        Label10.Text = "Entertainment:"
-        ' 
-        ' Label9
-        ' 
-        Label9.AutoSize = True
-        Label9.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label9.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label9.Location = New Point(683, 415)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(78, 24)
-        Label9.TabIndex = 16
-        Label9.Text = "Bonus:"
-        ' 
-        ' ListBox7
-        ' 
-        ListBox7.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox7.BorderStyle = BorderStyle.None
-        ListBox7.FormattingEnabled = True
-        ListBox7.Items.AddRange(New Object() {"1. Free buku tamu 2 pcs", "2. Free spidol/ballpoint 2 pcs", "3. Dekorasi catering standar", "4. Buah tropis", "5. Es selasih 300", "6. Nasi dos 15 dos"})
-        ListBox7.Location = New Point(710, 441)
-        ListBox7.Name = "ListBox7"
-        ListBox7.Size = New Size(245, 120)
-        ListBox7.TabIndex = 17
-        ' 
-        ' Label8
-        ' 
-        Label8.AutoSize = True
-        Label8.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label8.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label8.Location = New Point(668, 565)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(47, 24)
-        Label8.TabIndex = 18
-        Label8.Text = "NB:"
-        ' 
-        ' ListBox6
-        ' 
-        ListBox6.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox6.BorderStyle = BorderStyle.None
-        ListBox6.FormattingEnabled = True
-        ListBox6.Items.AddRange(New Object() {"Bonus yang tidak dipakai tidak bisa diuangkan, ", "tetapi bisa dialihkan ke point isi paket."})
-        ListBox6.Location = New Point(695, 592)
-        ListBox6.Name = "ListBox6"
-        ListBox6.Size = New Size(321, 40)
-        ListBox6.TabIndex = 19
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label6.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label6.Location = New Point(19, 46)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(103, 20)
-        Label6.TabIndex = 20
-        Label6.Text = "Rp110.500.000"
-        ' 
-        ' Label5
-        ' 
-        Label5.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label5.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label5.Location = New Point(22, 508)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(163, 20)
-        Label5.TabIndex = 21
-        Label5.Text = "MC:"
-        ' 
-        ' Label4
-        ' 
-        Label4.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label4.Location = New Point(683, 18)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(163, 35)
-        Label4.TabIndex = 22
-        Label4.Text = "Dokumentasi:"
-        ' 
-        ' ListBox5
-        ' 
-        ListBox5.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox5.BorderStyle = BorderStyle.None
-        ListBox5.FormattingEnabled = True
-        ListBox5.Items.AddRange(New Object() {"1 keyboard, 1 singer"})
-        ListBox5.Location = New Point(36, 472)
-        ListBox5.Name = "ListBox5"
-        ListBox5.Size = New Size(146, 20)
-        ListBox5.TabIndex = 23
-        ' 
-        ' ListBox4
-        ' 
-        ListBox4.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox4.BorderStyle = BorderStyle.None
-        ListBox4.FormattingEnabled = True
-        ListBox4.Items.AddRange(New Object() {"Pada waktu resepsi"})
-        ListBox4.Location = New Point(39, 534)
-        ListBox4.Name = "ListBox4"
-        ListBox4.Size = New Size(146, 20)
-        ListBox4.TabIndex = 24
-        ' 
-        ' ListBox3
-        ' 
-        ListBox3.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox3.BorderStyle = BorderStyle.None
-        ListBox3.FormattingEnabled = True
-        ListBox3.Items.AddRange(New Object() {"1. Videography:", "       - Meliput semua acara (pada hari yang sama)", "       - File berbentuk flashdisk", "2. Fotography: ", "       - Mengcover semua acara", "       - File foto berupa flashdisk", "       - Candid", "       - 2 album custom besar 15 sheet (perekat)"})
-        ListBox3.Location = New Point(710, 46)
-        ListBox3.Name = "ListBox3"
-        ListBox3.Size = New Size(357, 160)
-        ListBox3.TabIndex = 26
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label3.Location = New Point(19, 76)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(105, 24)
-        Label3.TabIndex = 27
-        Label3.Text = "Katering:"
-        ' 
-        ' Label2
-        ' 
-        Label2.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label2.Location = New Point(284, 404)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(356, 52)
-        Label2.TabIndex = 28
-        Label2.Text = "Mobil Pengantin + Dekorasi Bunga Segar"
+        Label1.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label1.Location = New Point(284, 525)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(280, 29)
+        Label1.TabIndex = 30
+        Label1.Text = "Dekorasi Kamar Pengantin"
         ' 
         ' ListBox2
         ' 
@@ -555,26 +177,404 @@ Partial Class Form4
         ListBox2.Size = New Size(328, 60)
         ListBox2.TabIndex = 29
         ' 
-        ' Label1
+        ' Label2
         ' 
-        Label1.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label1.Location = New Point(284, 525)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(280, 29)
-        Label1.TabIndex = 30
-        Label1.Text = "Dekorasi Kamar Pengantin"
+        Label2.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label2.Location = New Point(284, 404)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(356, 52)
+        Label2.TabIndex = 28
+        Label2.Text = "Mobil Pengantin + Dekorasi Bunga Segar"
         ' 
-        ' ListBox1
+        ' Label3
         ' 
-        ListBox1.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ListBox1.BorderStyle = BorderStyle.None
-        ListBox1.FormattingEnabled = True
-        ListBox1.Items.AddRange(New Object() {"1. Pintu masuk", "2. Belakang tempat tidur + sketsel", "3. Meja rias", "4. 2 stand flower"})
-        ListBox1.Location = New Point(313, 557)
-        ListBox1.Name = "ListBox1"
-        ListBox1.Size = New Size(328, 80)
-        ListBox1.TabIndex = 31
+        Label3.AutoSize = True
+        Label3.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label3.Location = New Point(19, 76)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(105, 24)
+        Label3.TabIndex = 27
+        Label3.Text = "Katering:"
+        ' 
+        ' ListBox3
+        ' 
+        ListBox3.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox3.BorderStyle = BorderStyle.None
+        ListBox3.FormattingEnabled = True
+        ListBox3.Items.AddRange(New Object() {"1. Videography:", "       - Meliput semua acara (pada hari yang sama)", "       - File berbentuk flashdisk", "2. Fotography: ", "       - Mengcover semua acara", "       - File foto berupa flashdisk", "       - Candid", "       - 2 album custom besar 15 sheet (perekat)"})
+        ListBox3.Location = New Point(710, 46)
+        ListBox3.Name = "ListBox3"
+        ListBox3.Size = New Size(357, 160)
+        ListBox3.TabIndex = 26
+        ' 
+        ' ListBox4
+        ' 
+        ListBox4.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox4.BorderStyle = BorderStyle.None
+        ListBox4.FormattingEnabled = True
+        ListBox4.Items.AddRange(New Object() {"Pada waktu resepsi"})
+        ListBox4.Location = New Point(39, 534)
+        ListBox4.Name = "ListBox4"
+        ListBox4.Size = New Size(146, 20)
+        ListBox4.TabIndex = 24
+        ' 
+        ' ListBox5
+        ' 
+        ListBox5.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox5.BorderStyle = BorderStyle.None
+        ListBox5.FormattingEnabled = True
+        ListBox5.Items.AddRange(New Object() {"1 keyboard, 1 singer"})
+        ListBox5.Location = New Point(36, 472)
+        ListBox5.Name = "ListBox5"
+        ListBox5.Size = New Size(146, 20)
+        ListBox5.TabIndex = 23
+        ' 
+        ' Label4
+        ' 
+        Label4.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label4.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label4.Location = New Point(683, 18)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(163, 35)
+        Label4.TabIndex = 22
+        Label4.Text = "Dokumentasi:"
+        ' 
+        ' Label5
+        ' 
+        Label5.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label5.Location = New Point(22, 508)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(163, 20)
+        Label5.TabIndex = 21
+        Label5.Text = "MC:"
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        Label6.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label6.Location = New Point(19, 46)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(103, 20)
+        Label6.TabIndex = 20
+        Label6.Text = "Rp110.500.000"
+        ' 
+        ' ListBox6
+        ' 
+        ListBox6.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox6.BorderStyle = BorderStyle.None
+        ListBox6.FormattingEnabled = True
+        ListBox6.Items.AddRange(New Object() {"Bonus yang tidak dipakai tidak bisa diuangkan, ", "tetapi bisa dialihkan ke point isi paket."})
+        ListBox6.Location = New Point(695, 592)
+        ListBox6.Name = "ListBox6"
+        ListBox6.Size = New Size(321, 40)
+        ListBox6.TabIndex = 19
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label8.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label8.Location = New Point(668, 565)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(47, 24)
+        Label8.TabIndex = 18
+        Label8.Text = "NB:"
+        ' 
+        ' ListBox7
+        ' 
+        ListBox7.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox7.BorderStyle = BorderStyle.None
+        ListBox7.FormattingEnabled = True
+        ListBox7.Items.AddRange(New Object() {"1. Free buku tamu 2 pcs", "2. Free spidol/ballpoint 2 pcs", "3. Dekorasi catering standar", "4. Buah tropis", "5. Es selasih 300", "6. Nasi dos 15 dos"})
+        ListBox7.Location = New Point(710, 441)
+        ListBox7.Name = "ListBox7"
+        ListBox7.Size = New Size(245, 120)
+        ListBox7.TabIndex = 17
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label9.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label9.Location = New Point(683, 415)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(78, 24)
+        Label9.TabIndex = 16
+        Label9.Text = "Bonus:"
+        ' 
+        ' Label10
+        ' 
+        Label10.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label10.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label10.Location = New Point(22, 444)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(163, 32)
+        Label10.TabIndex = 14
+        Label10.Text = "Entertainment:"
+        ' 
+        ' ListBox8
+        ' 
+        ListBox8.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox8.BorderStyle = BorderStyle.None
+        ListBox8.FormattingEnabled = True
+        ListBox8.Items.AddRange(New Object() {"1. Rias pengantin, meliputi : (pilihan *)", "       - sanggul modern", "       - medieval", "       - muslim cantik", "2. Make up sanggul dan hijab untuk mempelai pengantin 2 orang", "3. Baju lengkap untuk mempelai pengantin 2 orang", "4. Rias pengantin busana lengkap 2 orang", "5. Rias orang tua tamu busana lengkap 2 pasang"})
+        ListBox8.Location = New Point(710, 245)
+        ListBox8.Name = "ListBox8"
+        ListBox8.Size = New Size(448, 160)
+        ListBox8.TabIndex = 13
+        ' 
+        ' Label11
+        ' 
+        Label11.AutoSize = True
+        Label11.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label11.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label11.Location = New Point(683, 219)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(111, 24)
+        Label11.TabIndex = 12
+        Label11.Text = "Tata Rias:"
+        ' 
+        ' ListBox9
+        ' 
+        ListBox9.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox9.BorderStyle = BorderStyle.None
+        ListBox9.FormattingEnabled = True
+        ListBox9.Items.AddRange(New Object() {"1. Pelaminan gebyok etnik/modern (8-12 meter)", "2. 1 set kursi pengantin", "3. Mini garden depan pelaminan", "4. Standing Flowers 4 pcs", "5. Lampu lilin 4 pcs", "6. Karpet panggung", "7. Karpet jalan", "8. Lighting", "9. Dekorasi foto corner", "10. Inisial nama", "11. Pergola/Welcome gate", "12. Properti pendukung lainnya", "13. Kotak sumbangan 2 pcs (dipinjamkan)", "14. Stand foto 2 pcs (dipinjamkan)", "15. Penjor 1 pcs"})
+        ListBox9.Location = New Point(313, 97)
+        ListBox9.Name = "ListBox9"
+        ListBox9.Size = New Size(328, 320)
+        ListBox9.TabIndex = 11
+        ' 
+        ' Label12
+        ' 
+        Label12.AutoSize = True
+        Label12.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label12.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label12.Location = New Point(285, 76)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(106, 24)
+        Label12.TabIndex = 10
+        Label12.Text = "Dekorasi:"
+        ' 
+        ' ListBox11
+        ' 
+        ListBox11.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox11.BorderStyle = BorderStyle.None
+        ListBox11.FormattingEnabled = True
+        ListBox11.Items.AddRange(New Object() {"Katering:", "     1. Nasi putih", "     2. Soup kombinasi", "     3. Sambal goreng kreni", "     4. Ayam fillet asam manis", "     5. Bistik galantin", "     6. Soon ayu jamur", "     7. Salad Buah", "     8. Kerupuk", "     9. Buah iris", "   10. Es cream + agar-agar", "   11. Es seruni, teh, air mineral", "Stall/gubukan:", "     1. Bakso, 400 porsi", "     2. Es Dawet, 400 porsi", "     3. Siomay, 400 porsi", "     4. Mie Oriental, 400 porsi"})
+        ListBox11.Location = New Point(36, 116)
+        ListBox11.Name = "ListBox11"
+        ListBox11.Size = New Size(208, 340)
+        ListBox11.TabIndex = 6
+        ' 
+        ' Label13
+        ' 
+        Label13.AutoSize = True
+        Label13.Font = New Font("Rockwell", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label13.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label13.Location = New Point(13, 10)
+        Label13.Name = "Label13"
+        Label13.Size = New Size(486, 28)
+        Label13.TabIndex = 4
+        Label13.Text = "PAKET CASABLANCA UNTUK 1000 PORSI"
+        ' 
+        ' ListBox17
+        ' 
+        ListBox17.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox17.FormattingEnabled = True
+        ListBox17.Items.AddRange(New Object() {"1. Videography:", "       - Meliput semua acara (pada hari yang sama)", "       - File berbentuk flashdisk", "2. Fotography: ", "       - Mengcover semua acara (hari yang sama)", "       - File foto berupa flashdisk", "       - Cetak foto 4R, 144 lembar"})
+        ListBox17.Location = New Point(313, 381)
+        ListBox17.Name = "ListBox17"
+        ListBox17.Size = New Size(357, 144)
+        ListBox17.TabIndex = 26
+        ' 
+        ' ListBox16
+        ' 
+        ListBox16.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox16.BorderStyle = BorderStyle.None
+        ListBox16.FormattingEnabled = True
+        ListBox16.Items.AddRange(New Object() {"Pada waktu resepsi"})
+        ListBox16.Location = New Point(725, 191)
+        ListBox16.Name = "ListBox16"
+        ListBox16.Size = New Size(146, 20)
+        ListBox16.TabIndex = 24
+        ' 
+        ' ListBox15
+        ' 
+        ListBox15.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox15.BorderStyle = BorderStyle.None
+        ListBox15.FormattingEnabled = True
+        ListBox15.Items.AddRange(New Object() {"1 keyboard, 1 singer"})
+        ListBox15.Location = New Point(725, 116)
+        ListBox15.Name = "ListBox15"
+        ListBox15.Size = New Size(146, 20)
+        ListBox15.TabIndex = 23
+        ' 
+        ' Label20
+        ' 
+        Label20.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label20.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label20.Location = New Point(284, 346)
+        Label20.Name = "Label20"
+        Label20.Size = New Size(163, 32)
+        Label20.TabIndex = 22
+        Label20.Text = "Dokumentasi:"
+        ' 
+        ' Label19
+        ' 
+        Label19.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label19.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label19.Location = New Point(697, 156)
+        Label19.Name = "Label19"
+        Label19.Size = New Size(163, 32)
+        Label19.TabIndex = 21
+        Label19.Text = "MC:"
+        ' 
+        ' Label14
+        ' 
+        Label14.AutoSize = True
+        Label14.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        Label14.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label14.Location = New Point(19, 46)
+        Label14.Name = "Label14"
+        Label14.Size = New Size(99, 20)
+        Label14.TabIndex = 20
+        Label14.Text = "Rp55.500.000"
+        ' 
+        ' ListBox12
+        ' 
+        ListBox12.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox12.BorderStyle = BorderStyle.None
+        ListBox12.FormattingEnabled = True
+        ListBox12.Items.AddRange(New Object() {"Bonus yang tidak dipakai tidak bisa diuangkan, ", "tetapi bisa dialihkan ke point isi paket."})
+        ListBox12.Location = New Point(725, 572)
+        ListBox12.Name = "ListBox12"
+        ListBox12.Size = New Size(321, 40)
+        ListBox12.TabIndex = 19
+        ' 
+        ' Label17
+        ' 
+        Label17.AutoSize = True
+        Label17.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label17.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label17.Location = New Point(696, 545)
+        Label17.Name = "Label17"
+        Label17.Size = New Size(47, 24)
+        Label17.TabIndex = 18
+        Label17.Text = "NB:"
+        ' 
+        ' ListBox14
+        ' 
+        ListBox14.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox14.BorderStyle = BorderStyle.None
+        ListBox14.FormattingEnabled = True
+        ListBox14.Items.AddRange(New Object() {"1. Free buku tamu 2 pcs", "2. Free spidol/ballpoint 2 pcs", "3. Dekorasi catering standar", "4. Es selasih 150 porsi"})
+        ListBox14.Location = New Point(725, 456)
+        ListBox14.Name = "ListBox14"
+        ListBox14.Size = New Size(220, 80)
+        ListBox14.TabIndex = 17
+        ' 
+        ' Label18
+        ' 
+        Label18.AutoSize = True
+        Label18.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label18.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label18.Location = New Point(695, 429)
+        Label18.Name = "Label18"
+        Label18.Size = New Size(78, 24)
+        Label18.TabIndex = 16
+        Label18.Text = "Bonus:"
+        ' 
+        ' Label30
+        ' 
+        Label30.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label30.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label30.Location = New Point(696, 81)
+        Label30.Name = "Label30"
+        Label30.Size = New Size(163, 32)
+        Label30.TabIndex = 14
+        Label30.Text = "Entertainment:"
+        ' 
+        ' ListBox26
+        ' 
+        ListBox26.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox26.BorderStyle = BorderStyle.None
+        ListBox26.FormattingEnabled = True
+        ListBox26.Items.AddRange(New Object() {"1. Rias pengantin, meliputi : (pilihan *)", "       - sanggul modern", "       - medieval", "       - muslim cantik", "2. Make up sanggul dan hijab untuk mempelai pengantin 2 orang", "3. Baju lengkap untuk mempelai pengantin 2 orang", "4. Rias pengantin busana lengkap 2 orang", "5. Rias orang tua tamu busana lengkap 2 pasang"})
+        ListBox26.Location = New Point(725, 257)
+        ListBox26.Name = "ListBox26"
+        ListBox26.Size = New Size(448, 160)
+        ListBox26.TabIndex = 13
+        ' 
+        ' Label31
+        ' 
+        Label31.AutoSize = True
+        Label31.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label31.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label31.Location = New Point(696, 227)
+        Label31.Name = "Label31"
+        Label31.Size = New Size(111, 24)
+        Label31.TabIndex = 12
+        Label31.Text = "Tata Rias:"
+        ' 
+        ' ListBox27
+        ' 
+        ListBox27.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox27.BorderStyle = BorderStyle.None
+        ListBox27.FormattingEnabled = True
+        ListBox27.Items.AddRange(New Object() {"1. Pelaminan gebyok etnik/modern (6-8 meter)", "2. 1 set kursi pengantin", "3. Mini garden depan pelaminan", "4. Lampu hias 2 pcs", "5. Karpet panggung", "6. Karpet jalan", "7. Lighting pelaminan 3 titik", "8. Florist", "9. Welcome gate", "10. Kotak sumbangan 2 pcs (dipinjamkan)", "11. Stand foto 2 pcs (dipinjamkan)"})
+        ListBox27.Location = New Point(313, 103)
+        ListBox27.Name = "ListBox27"
+        ListBox27.Size = New Size(328, 220)
+        ListBox27.TabIndex = 11
+        ' 
+        ' Label32
+        ' 
+        Label32.AutoSize = True
+        Label32.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label32.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label32.Location = New Point(285, 76)
+        Label32.Name = "Label32"
+        Label32.Size = New Size(106, 24)
+        Label32.TabIndex = 10
+        Label32.Text = "Dekorasi:"
+        ' 
+        ' ListBox28
+        ' 
+        ListBox28.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        ListBox28.BorderStyle = BorderStyle.None
+        ListBox28.FormattingEnabled = True
+        ListBox28.Items.AddRange(New Object() {"Katering:", "    1. Nasi putih", "    2. Soup kombinasi", "    3. Sambal goreng kreni", "    4. Ayam fillet asam manis", "    5. Bistik galantin", "    6. Soon ayu jamur", "    7. Kerupuk", "    8. Buah iris", "    9. Es cream + agar-agar", "  10. Es seruni, teh, air mineral", "Stal/Gubukan:", "    1. Bakso, 300 porsi ", "    2. Es Dawet, 300 porsi", "    3. Siomay, 300 porsi"})
+        ListBox28.Location = New Point(33, 103)
+        ListBox28.Name = "ListBox28"
+        ListBox28.Size = New Size(208, 300)
+        ListBox28.TabIndex = 6
+        ' 
+        ' Label33
+        ' 
+        Label33.AutoSize = True
+        Label33.Font = New Font("Rockwell", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label33.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label33.Location = New Point(13, 76)
+        Label33.Name = "Label33"
+        Label33.Size = New Size(105, 24)
+        Label33.TabIndex = 5
+        Label33.Text = "Katering:"
+        ' 
+        ' Label34
+        ' 
+        Label34.AutoSize = True
+        Label34.Font = New Font("Rockwell", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label34.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label34.Location = New Point(13, 10)
+        Label34.Name = "Label34"
+        Label34.Size = New Size(411, 28)
+        Label34.TabIndex = 4
+        Label34.Text = "PAKET ORCHID UNTUK 500 PORSI"
         ' 
         ' pnlDetailJasmine
         ' 
