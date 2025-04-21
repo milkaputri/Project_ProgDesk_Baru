@@ -467,7 +467,7 @@ Partial Class Form5
         ' Label78
         ' 
         Label78.AutoSize = True
-        Label78.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label78.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label78.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label78.Location = New Point(395, 18)
         Label78.Name = "Label78"
@@ -598,7 +598,7 @@ Partial Class Form5
         ' Label138
         ' 
         Label138.AutoSize = True
-        Label138.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label138.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label138.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label138.Location = New Point(23, 70)
         Label138.Name = "Label138"
@@ -666,7 +666,7 @@ Partial Class Form5
         ' Label69
         ' 
         Label69.AutoSize = True
-        Label69.Font = New Font("Segoe UI", 14.0F, FontStyle.Bold)
+        Label69.Font = New Font("Segoe UI", 14F, FontStyle.Bold)
         Label69.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label69.Location = New Point(157, 10)
         Label69.Name = "Label69"
@@ -698,7 +698,7 @@ Partial Class Form5
         ' Label74
         ' 
         Label74.AutoSize = True
-        Label74.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label74.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label74.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label74.Location = New Point(23, 308)
         Label74.Name = "Label74"
@@ -709,7 +709,7 @@ Partial Class Form5
         ' Label75
         ' 
         Label75.AutoSize = True
-        Label75.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label75.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label75.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label75.Location = New Point(23, 229)
         Label75.Name = "Label75"
@@ -720,7 +720,7 @@ Partial Class Form5
         ' Label77
         ' 
         Label77.AutoSize = True
-        Label77.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label77.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label77.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label77.Location = New Point(23, 143)
         Label77.Name = "Label77"
@@ -765,7 +765,7 @@ Partial Class Form5
         ' Label144
         ' 
         Label144.AutoSize = True
-        Label144.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label144.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label144.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label144.Location = New Point(24, 105)
         Label144.Name = "Label144"
@@ -855,7 +855,7 @@ Partial Class Form5
         ' Label63
         ' 
         Label63.AutoSize = True
-        Label63.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label63.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label63.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label63.Location = New Point(24, 279)
         Label63.Name = "Label63"
@@ -866,7 +866,7 @@ Partial Class Form5
         ' Label62
         ' 
         Label62.AutoSize = True
-        Label62.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label62.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label62.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label62.Location = New Point(24, 220)
         Label62.Name = "Label62"
@@ -877,7 +877,7 @@ Partial Class Form5
         ' lblFormAcara
         ' 
         lblFormAcara.AutoSize = True
-        lblFormAcara.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        lblFormAcara.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         lblFormAcara.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         lblFormAcara.Location = New Point(24, 43)
         lblFormAcara.Name = "lblFormAcara"
@@ -888,7 +888,7 @@ Partial Class Form5
         ' Label60
         ' 
         Label60.AutoSize = True
-        Label60.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label60.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label60.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label60.Location = New Point(24, 160)
         Label60.Name = "Label60"
@@ -899,7 +899,7 @@ Partial Class Form5
         ' Label61
         ' 
         Label61.AutoSize = True
-        Label61.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label61.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label61.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label61.Location = New Point(24, 419)
         Label61.Name = "Label61"
@@ -993,7 +993,7 @@ Partial Class Form5
         ' Label134
         ' 
         Label134.AutoSize = True
-        Label134.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label134.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label134.Location = New Point(14, 9)
         Label134.Name = "Label134"
         Label134.Size = New Size(99, 30)
@@ -1004,7 +1004,7 @@ Partial Class Form5
         ' 
         Label135.AutoSize = True
         Label135.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label135.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label135.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label135.Location = New Point(20, 47)
         Label135.Name = "Label135"
         Label135.Size = New Size(69, 20)
@@ -1014,7 +1014,7 @@ Partial Class Form5
         ' btnPlusSnack2
         ' 
         btnPlusSnack2.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusSnack2.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusSnack2.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusSnack2.ForeColor = Color.White
         btnPlusSnack2.Location = New Point(155, 188)
         btnPlusSnack2.Name = "btnPlusSnack2"
@@ -1035,7 +1035,7 @@ Partial Class Form5
         ' btnMinSnack2
         ' 
         btnMinSnack2.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinSnack2.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinSnack2.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinSnack2.ForeColor = Color.White
         btnMinSnack2.Location = New Point(35, 189)
         btnMinSnack2.Name = "btnMinSnack2"
@@ -1083,7 +1083,7 @@ Partial Class Form5
         ' Label131
         ' 
         Label131.AutoSize = True
-        Label131.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label131.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label131.Location = New Point(14, 9)
         Label131.Name = "Label131"
         Label131.Size = New Size(96, 30)
@@ -1094,7 +1094,7 @@ Partial Class Form5
         ' 
         Label132.AutoSize = True
         Label132.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label132.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label132.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label132.Location = New Point(20, 47)
         Label132.Name = "Label132"
         Label132.Size = New Size(69, 20)
@@ -1104,7 +1104,7 @@ Partial Class Form5
         ' btnPlusSnack1
         ' 
         btnPlusSnack1.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusSnack1.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusSnack1.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusSnack1.ForeColor = Color.White
         btnPlusSnack1.Location = New Point(155, 188)
         btnPlusSnack1.Name = "btnPlusSnack1"
@@ -1125,7 +1125,7 @@ Partial Class Form5
         ' btnMinSnack1
         ' 
         btnMinSnack1.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinSnack1.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinSnack1.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinSnack1.ForeColor = Color.White
         btnMinSnack1.Location = New Point(35, 189)
         btnMinSnack1.Name = "btnMinSnack1"
@@ -1184,7 +1184,7 @@ Partial Class Form5
         ' Label127
         ' 
         Label127.AutoSize = True
-        Label127.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label127.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label127.Location = New Point(14, 9)
         Label127.Name = "Label127"
         Label127.Size = New Size(99, 30)
@@ -1195,7 +1195,7 @@ Partial Class Form5
         ' 
         Label128.AutoSize = True
         Label128.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label128.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label128.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label128.Location = New Point(20, 47)
         Label128.Name = "Label128"
         Label128.Size = New Size(71, 20)
@@ -1205,7 +1205,7 @@ Partial Class Form5
         ' btnPlusDos3
         ' 
         btnPlusDos3.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusDos3.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusDos3.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusDos3.ForeColor = Color.White
         btnPlusDos3.Location = New Point(159, 278)
         btnPlusDos3.Name = "btnPlusDos3"
@@ -1226,7 +1226,7 @@ Partial Class Form5
         ' btnMinDos3
         ' 
         btnMinDos3.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinDos3.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinDos3.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinDos3.ForeColor = Color.White
         btnMinDos3.Location = New Point(39, 279)
         btnMinDos3.Name = "btnMinDos3"
@@ -1274,7 +1274,7 @@ Partial Class Form5
         ' Label124
         ' 
         Label124.AutoSize = True
-        Label124.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label124.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label124.Location = New Point(14, 9)
         Label124.Name = "Label124"
         Label124.Size = New Size(99, 30)
@@ -1285,7 +1285,7 @@ Partial Class Form5
         ' 
         Label125.AutoSize = True
         Label125.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label125.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label125.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label125.Location = New Point(20, 47)
         Label125.Name = "Label125"
         Label125.Size = New Size(71, 20)
@@ -1295,7 +1295,7 @@ Partial Class Form5
         ' btnPlusDos2
         ' 
         btnPlusDos2.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusDos2.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusDos2.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusDos2.ForeColor = Color.White
         btnPlusDos2.Location = New Point(155, 277)
         btnPlusDos2.Name = "btnPlusDos2"
@@ -1316,7 +1316,7 @@ Partial Class Form5
         ' btnMinDos2
         ' 
         btnMinDos2.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinDos2.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinDos2.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinDos2.ForeColor = Color.White
         btnMinDos2.Location = New Point(35, 278)
         btnMinDos2.Name = "btnMinDos2"
@@ -1364,7 +1364,7 @@ Partial Class Form5
         ' Label121
         ' 
         Label121.AutoSize = True
-        Label121.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label121.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label121.Location = New Point(14, 9)
         Label121.Name = "Label121"
         Label121.Size = New Size(96, 30)
@@ -1375,7 +1375,7 @@ Partial Class Form5
         ' 
         Label122.AutoSize = True
         Label122.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label122.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label122.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label122.Location = New Point(20, 47)
         Label122.Name = "Label122"
         Label122.Size = New Size(71, 20)
@@ -1385,7 +1385,7 @@ Partial Class Form5
         ' btnPlusDos1
         ' 
         btnPlusDos1.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusDos1.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusDos1.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusDos1.ForeColor = Color.White
         btnPlusDos1.Location = New Point(155, 278)
         btnPlusDos1.Name = "btnPlusDos1"
@@ -1406,7 +1406,7 @@ Partial Class Form5
         ' btnMinDos1
         ' 
         btnMinDos1.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinDos1.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinDos1.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinDos1.ForeColor = Color.White
         btnMinDos1.Location = New Point(35, 279)
         btnMinDos1.Name = "btnMinDos1"
@@ -1465,7 +1465,7 @@ Partial Class Form5
         ' Label117
         ' 
         Label117.AutoSize = True
-        Label117.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label117.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label117.Location = New Point(14, 9)
         Label117.Name = "Label117"
         Label117.Size = New Size(99, 30)
@@ -1476,7 +1476,7 @@ Partial Class Form5
         ' 
         Label118.AutoSize = True
         Label118.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label118.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label118.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label118.Location = New Point(20, 47)
         Label118.Name = "Label118"
         Label118.Size = New Size(71, 20)
@@ -1486,7 +1486,7 @@ Partial Class Form5
         ' btnPlusSyukur4
         ' 
         btnPlusSyukur4.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusSyukur4.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusSyukur4.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusSyukur4.ForeColor = Color.White
         btnPlusSyukur4.Location = New Point(159, 154)
         btnPlusSyukur4.Name = "btnPlusSyukur4"
@@ -1507,7 +1507,7 @@ Partial Class Form5
         ' btnMinSyukur4
         ' 
         btnMinSyukur4.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinSyukur4.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinSyukur4.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinSyukur4.ForeColor = Color.White
         btnMinSyukur4.Location = New Point(39, 155)
         btnMinSyukur4.Name = "btnMinSyukur4"
@@ -1555,7 +1555,7 @@ Partial Class Form5
         ' Label114
         ' 
         Label114.AutoSize = True
-        Label114.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label114.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label114.Location = New Point(14, 9)
         Label114.Name = "Label114"
         Label114.Size = New Size(99, 30)
@@ -1566,7 +1566,7 @@ Partial Class Form5
         ' 
         Label115.AutoSize = True
         Label115.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label115.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label115.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label115.Location = New Point(20, 47)
         Label115.Name = "Label115"
         Label115.Size = New Size(71, 20)
@@ -1576,7 +1576,7 @@ Partial Class Form5
         ' btnPlusSyukur3
         ' 
         btnPlusSyukur3.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusSyukur3.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusSyukur3.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusSyukur3.ForeColor = Color.White
         btnPlusSyukur3.Location = New Point(159, 294)
         btnPlusSyukur3.Name = "btnPlusSyukur3"
@@ -1597,7 +1597,7 @@ Partial Class Form5
         ' btnMinSyukur3
         ' 
         btnMinSyukur3.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinSyukur3.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinSyukur3.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinSyukur3.ForeColor = Color.White
         btnMinSyukur3.Location = New Point(39, 295)
         btnMinSyukur3.Name = "btnMinSyukur3"
@@ -1645,7 +1645,7 @@ Partial Class Form5
         ' Label111
         ' 
         Label111.AutoSize = True
-        Label111.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label111.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label111.Location = New Point(14, 9)
         Label111.Name = "Label111"
         Label111.Size = New Size(99, 30)
@@ -1656,7 +1656,7 @@ Partial Class Form5
         ' 
         Label112.AutoSize = True
         Label112.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label112.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label112.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label112.Location = New Point(20, 47)
         Label112.Name = "Label112"
         Label112.Size = New Size(72, 20)
@@ -1666,7 +1666,7 @@ Partial Class Form5
         ' btnPlusSyukur2
         ' 
         btnPlusSyukur2.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusSyukur2.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusSyukur2.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusSyukur2.ForeColor = Color.White
         btnPlusSyukur2.Location = New Point(155, 294)
         btnPlusSyukur2.Name = "btnPlusSyukur2"
@@ -1687,7 +1687,7 @@ Partial Class Form5
         ' btnMinSyukur2
         ' 
         btnMinSyukur2.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinSyukur2.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinSyukur2.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinSyukur2.ForeColor = Color.White
         btnMinSyukur2.Location = New Point(35, 295)
         btnMinSyukur2.Name = "btnMinSyukur2"
@@ -1746,7 +1746,7 @@ Partial Class Form5
         ' Label107
         ' 
         Label107.AutoSize = True
-        Label107.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label107.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label107.Location = New Point(14, 9)
         Label107.Name = "Label107"
         Label107.Size = New Size(96, 30)
@@ -1757,7 +1757,7 @@ Partial Class Form5
         ' 
         Label108.AutoSize = True
         Label108.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label108.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label108.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label108.Location = New Point(20, 47)
         Label108.Name = "Label108"
         Label108.Size = New Size(71, 20)
@@ -1767,7 +1767,7 @@ Partial Class Form5
         ' btnPlusSyukur1
         ' 
         btnPlusSyukur1.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusSyukur1.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusSyukur1.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusSyukur1.ForeColor = Color.White
         btnPlusSyukur1.Location = New Point(155, 294)
         btnPlusSyukur1.Name = "btnPlusSyukur1"
@@ -1788,7 +1788,7 @@ Partial Class Form5
         ' btnMinSyukur1
         ' 
         btnMinSyukur1.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinSyukur1.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinSyukur1.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinSyukur1.ForeColor = Color.White
         btnMinSyukur1.Location = New Point(35, 295)
         btnMinSyukur1.Name = "btnMinSyukur1"
@@ -1834,7 +1834,7 @@ Partial Class Form5
         ' Label104
         ' 
         Label104.AutoSize = True
-        Label104.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label104.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label104.Location = New Point(14, 9)
         Label104.Name = "Label104"
         Label104.Size = New Size(99, 30)
@@ -1845,7 +1845,7 @@ Partial Class Form5
         ' 
         Label105.AutoSize = True
         Label105.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label105.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label105.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label105.Location = New Point(20, 47)
         Label105.Name = "Label105"
         Label105.Size = New Size(69, 20)
@@ -1855,7 +1855,7 @@ Partial Class Form5
         ' btnPlusStal6
         ' 
         btnPlusStal6.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusStal6.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusStal6.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusStal6.ForeColor = Color.White
         btnPlusStal6.Location = New Point(159, 193)
         btnPlusStal6.Name = "btnPlusStal6"
@@ -1876,7 +1876,7 @@ Partial Class Form5
         ' btnMinStall6
         ' 
         btnMinStall6.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinStall6.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinStall6.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinStall6.ForeColor = Color.White
         btnMinStall6.Location = New Point(39, 194)
         btnMinStall6.Name = "btnMinStall6"
@@ -1922,7 +1922,7 @@ Partial Class Form5
         ' Label101
         ' 
         Label101.AutoSize = True
-        Label101.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label101.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label101.Location = New Point(14, 9)
         Label101.Name = "Label101"
         Label101.Size = New Size(99, 30)
@@ -1933,7 +1933,7 @@ Partial Class Form5
         ' 
         Label102.AutoSize = True
         Label102.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label102.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label102.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label102.Location = New Point(20, 47)
         Label102.Name = "Label102"
         Label102.Size = New Size(69, 20)
@@ -1943,7 +1943,7 @@ Partial Class Form5
         ' btnPlusStall5
         ' 
         btnPlusStall5.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusStall5.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusStall5.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusStall5.ForeColor = Color.White
         btnPlusStall5.Location = New Point(155, 193)
         btnPlusStall5.Name = "btnPlusStall5"
@@ -1964,7 +1964,7 @@ Partial Class Form5
         ' btnMinStall5
         ' 
         btnMinStall5.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinStall5.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinStall5.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinStall5.ForeColor = Color.White
         btnMinStall5.Location = New Point(35, 194)
         btnMinStall5.Name = "btnMinStall5"
@@ -2010,7 +2010,7 @@ Partial Class Form5
         ' Label98
         ' 
         Label98.AutoSize = True
-        Label98.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label98.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label98.Location = New Point(14, 9)
         Label98.Name = "Label98"
         Label98.Size = New Size(100, 30)
@@ -2021,7 +2021,7 @@ Partial Class Form5
         ' 
         Label99.AutoSize = True
         Label99.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label99.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label99.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label99.Location = New Point(20, 47)
         Label99.Name = "Label99"
         Label99.Size = New Size(67, 20)
@@ -2031,7 +2031,7 @@ Partial Class Form5
         ' btnPlusStall4
         ' 
         btnPlusStall4.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusStall4.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusStall4.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusStall4.ForeColor = Color.White
         btnPlusStall4.Location = New Point(155, 193)
         btnPlusStall4.Name = "btnPlusStall4"
@@ -2052,7 +2052,7 @@ Partial Class Form5
         ' btnMinStall4
         ' 
         btnMinStall4.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinStall4.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinStall4.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinStall4.ForeColor = Color.White
         btnMinStall4.Location = New Point(35, 194)
         btnMinStall4.Name = "btnMinStall4"
@@ -2098,7 +2098,7 @@ Partial Class Form5
         ' Label95
         ' 
         Label95.AutoSize = True
-        Label95.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label95.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label95.Location = New Point(14, 9)
         Label95.Name = "Label95"
         Label95.Size = New Size(99, 30)
@@ -2109,7 +2109,7 @@ Partial Class Form5
         ' 
         Label96.AutoSize = True
         Label96.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label96.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label96.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label96.Location = New Point(20, 47)
         Label96.Name = "Label96"
         Label96.Size = New Size(63, 20)
@@ -2119,7 +2119,7 @@ Partial Class Form5
         ' btnPlusStall3
         ' 
         btnPlusStall3.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusStall3.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusStall3.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusStall3.ForeColor = Color.White
         btnPlusStall3.Location = New Point(159, 188)
         btnPlusStall3.Name = "btnPlusStall3"
@@ -2140,7 +2140,7 @@ Partial Class Form5
         ' btnMinStall3
         ' 
         btnMinStall3.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinStall3.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinStall3.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinStall3.ForeColor = Color.White
         btnMinStall3.Location = New Point(39, 189)
         btnMinStall3.Name = "btnMinStall3"
@@ -2186,7 +2186,7 @@ Partial Class Form5
         ' Label92
         ' 
         Label92.AutoSize = True
-        Label92.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label92.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label92.Location = New Point(14, 9)
         Label92.Name = "Label92"
         Label92.Size = New Size(99, 30)
@@ -2197,7 +2197,7 @@ Partial Class Form5
         ' 
         Label93.AutoSize = True
         Label93.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label93.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label93.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label93.Location = New Point(20, 47)
         Label93.Name = "Label93"
         Label93.Size = New Size(63, 20)
@@ -2207,7 +2207,7 @@ Partial Class Form5
         ' btnPlusStall2
         ' 
         btnPlusStall2.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusStall2.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusStall2.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusStall2.ForeColor = Color.White
         btnPlusStall2.Location = New Point(155, 191)
         btnPlusStall2.Name = "btnPlusStall2"
@@ -2228,7 +2228,7 @@ Partial Class Form5
         ' btnMinStall2
         ' 
         btnMinStall2.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinStall2.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinStall2.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinStall2.ForeColor = Color.White
         btnMinStall2.Location = New Point(35, 192)
         btnMinStall2.Name = "btnMinStall2"
@@ -2274,7 +2274,7 @@ Partial Class Form5
         ' Label89
         ' 
         Label89.AutoSize = True
-        Label89.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label89.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label89.Location = New Point(14, 9)
         Label89.Name = "Label89"
         Label89.Size = New Size(96, 30)
@@ -2285,7 +2285,7 @@ Partial Class Form5
         ' 
         Label90.AutoSize = True
         Label90.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label90.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label90.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label90.Location = New Point(20, 47)
         Label90.Name = "Label90"
         Label90.Size = New Size(64, 20)
@@ -2295,7 +2295,7 @@ Partial Class Form5
         ' btnPlusStall1
         ' 
         btnPlusStall1.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusStall1.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusStall1.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusStall1.ForeColor = Color.White
         btnPlusStall1.Location = New Point(155, 192)
         btnPlusStall1.Name = "btnPlusStall1"
@@ -2316,7 +2316,7 @@ Partial Class Form5
         ' btnMinStall1
         ' 
         btnMinStall1.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinStall1.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinStall1.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinStall1.ForeColor = Color.White
         btnMinStall1.Location = New Point(35, 193)
         btnMinStall1.Name = "btnMinStall1"
@@ -2371,7 +2371,7 @@ Partial Class Form5
         ' Label85
         ' 
         Label85.AutoSize = True
-        Label85.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label85.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label85.Location = New Point(14, 9)
         Label85.Name = "Label85"
         Label85.Size = New Size(95, 30)
@@ -2382,7 +2382,7 @@ Partial Class Form5
         ' 
         Label86.AutoSize = True
         Label86.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label86.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label86.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label86.Location = New Point(20, 47)
         Label86.Name = "Label86"
         Label86.Size = New Size(72, 20)
@@ -2392,7 +2392,7 @@ Partial Class Form5
         ' btnPlusPrasC
         ' 
         btnPlusPrasC.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusPrasC.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusPrasC.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusPrasC.ForeColor = Color.White
         btnPlusPrasC.Location = New Point(159, 370)
         btnPlusPrasC.Name = "btnPlusPrasC"
@@ -2413,7 +2413,7 @@ Partial Class Form5
         ' btnMinPrasC
         ' 
         btnMinPrasC.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinPrasC.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinPrasC.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinPrasC.ForeColor = Color.White
         btnMinPrasC.Location = New Point(39, 371)
         btnMinPrasC.Name = "btnMinPrasC"
@@ -2447,7 +2447,7 @@ Partial Class Form5
         ' Label81
         ' 
         Label81.AutoSize = True
-        Label81.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label81.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label81.Location = New Point(14, 9)
         Label81.Name = "Label81"
         Label81.Size = New Size(94, 30)
@@ -2458,7 +2458,7 @@ Partial Class Form5
         ' 
         Label83.AutoSize = True
         Label83.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label83.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label83.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label83.Location = New Point(20, 47)
         Label83.Name = "Label83"
         Label83.Size = New Size(72, 20)
@@ -2468,7 +2468,7 @@ Partial Class Form5
         ' btnPlusPrasB
         ' 
         btnPlusPrasB.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusPrasB.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusPrasB.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusPrasB.ForeColor = Color.White
         btnPlusPrasB.Location = New Point(155, 367)
         btnPlusPrasB.Name = "btnPlusPrasB"
@@ -2489,7 +2489,7 @@ Partial Class Form5
         ' btnMinPrasB
         ' 
         btnMinPrasB.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinPrasB.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinPrasB.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinPrasB.ForeColor = Color.White
         btnMinPrasB.Location = New Point(35, 368)
         btnMinPrasB.Name = "btnMinPrasB"
@@ -2524,7 +2524,7 @@ Partial Class Form5
         ' Label80
         ' 
         Label80.AutoSize = True
-        Label80.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label80.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label80.Location = New Point(14, 9)
         Label80.Name = "Label80"
         Label80.Size = New Size(96, 30)
@@ -2535,7 +2535,7 @@ Partial Class Form5
         ' 
         Label79.AutoSize = True
         Label79.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label79.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label79.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label79.Location = New Point(20, 47)
         Label79.Name = "Label79"
         Label79.Size = New Size(72, 20)
@@ -2545,7 +2545,7 @@ Partial Class Form5
         ' btnPlusPrasA
         ' 
         btnPlusPrasA.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusPrasA.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnPlusPrasA.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusPrasA.ForeColor = Color.White
         btnPlusPrasA.Location = New Point(155, 367)
         btnPlusPrasA.Name = "btnPlusPrasA"
@@ -2566,7 +2566,7 @@ Partial Class Form5
         ' btnMinPrasA
         ' 
         btnMinPrasA.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinPrasA.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        btnMinPrasA.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinPrasA.ForeColor = Color.White
         btnMinPrasA.Location = New Point(35, 368)
         btnMinPrasA.Name = "btnMinPrasA"
@@ -2612,7 +2612,7 @@ Partial Class Form5
         ' llPesananTersimpan2
         ' 
         llPesananTersimpan2.AutoSize = True
-        llPesananTersimpan2.Font = New Font("Segoe UI", 11.0F)
+        llPesananTersimpan2.Font = New Font("Segoe UI", 11F)
         llPesananTersimpan2.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         llPesananTersimpan2.Location = New Point(9, 68)
         llPesananTersimpan2.Name = "llPesananTersimpan2"
@@ -2624,7 +2624,7 @@ Partial Class Form5
         ' Label47
         ' 
         Label47.AutoSize = True
-        Label47.Font = New Font("Segoe UI Semibold", 16.0F, FontStyle.Bold)
+        Label47.Font = New Font("Segoe UI Semibold", 16F, FontStyle.Bold)
         Label47.Location = New Point(262, 4)
         Label47.Name = "Label47"
         Label47.Size = New Size(32, 37)
@@ -2636,7 +2636,7 @@ Partial Class Form5
         Button34.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         Button34.FlatAppearance.BorderColor = Color.Black
         Button34.FlatStyle = FlatStyle.Flat
-        Button34.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button34.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button34.ForeColor = Color.Black
         Button34.Location = New Point(9, 97)
         Button34.Name = "Button34"
@@ -2648,7 +2648,7 @@ Partial Class Form5
         ' Label53
         ' 
         Label53.AutoSize = True
-        Label53.Font = New Font("Segoe UI Semibold", 16.0F, FontStyle.Bold)
+        Label53.Font = New Font("Segoe UI Semibold", 16F, FontStyle.Bold)
         Label53.Location = New Point(219, 4)
         Label53.Name = "Label53"
         Label53.Size = New Size(50, 37)
@@ -2658,7 +2658,7 @@ Partial Class Form5
         ' Label58
         ' 
         Label58.AutoSize = True
-        Label58.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold)
+        Label58.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         Label58.Location = New Point(11, 11)
         Label58.Name = "Label58"
         Label58.Size = New Size(55, 28)
@@ -2808,7 +2808,7 @@ Partial Class Form5
         ' 
         Label52.AutoSize = True
         Label52.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label52.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label52.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label52.Location = New Point(215, 47)
         Label52.Name = "Label52"
         Label52.Size = New Size(97, 20)
@@ -2818,7 +2818,7 @@ Partial Class Form5
         ' LinkLabel14
         ' 
         LinkLabel14.AutoSize = True
-        LinkLabel14.Font = New Font("Segoe UI", 11.0F)
+        LinkLabel14.Font = New Font("Segoe UI", 11F)
         LinkLabel14.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         LinkLabel14.Location = New Point(17, 315)
         LinkLabel14.Name = "LinkLabel14"
@@ -2840,7 +2840,7 @@ Partial Class Form5
         ' Label54
         ' 
         Label54.AutoSize = True
-        Label54.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label54.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label54.Location = New Point(13, 13)
         Label54.Name = "Label54"
         Label54.Size = New Size(167, 30)
@@ -2877,7 +2877,7 @@ Partial Class Form5
         ' 
         Label55.AutoSize = True
         Label55.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label55.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label55.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label55.Location = New Point(215, 47)
         Label55.Name = "Label55"
         Label55.Size = New Size(97, 20)
@@ -2887,7 +2887,7 @@ Partial Class Form5
         ' LinkLabel15
         ' 
         LinkLabel15.AutoSize = True
-        LinkLabel15.Font = New Font("Segoe UI", 11.0F)
+        LinkLabel15.Font = New Font("Segoe UI", 11F)
         LinkLabel15.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         LinkLabel15.Location = New Point(17, 315)
         LinkLabel15.Name = "LinkLabel15"
@@ -2918,7 +2918,7 @@ Partial Class Form5
         ' Label57
         ' 
         Label57.AutoSize = True
-        Label57.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label57.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label57.Location = New Point(13, 13)
         Label57.Name = "Label57"
         Label57.Size = New Size(176, 30)
@@ -2971,7 +2971,7 @@ Partial Class Form5
         ' 
         Label46.AutoSize = True
         Label46.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label46.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label46.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label46.Location = New Point(215, 47)
         Label46.Name = "Label46"
         Label46.Size = New Size(91, 20)
@@ -2981,7 +2981,7 @@ Partial Class Form5
         ' LinkLabel12
         ' 
         LinkLabel12.AutoSize = True
-        LinkLabel12.Font = New Font("Segoe UI", 11.0F)
+        LinkLabel12.Font = New Font("Segoe UI", 11F)
         LinkLabel12.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         LinkLabel12.Location = New Point(17, 315)
         LinkLabel12.Name = "LinkLabel12"
@@ -3003,7 +3003,7 @@ Partial Class Form5
         ' Label48
         ' 
         Label48.AutoSize = True
-        Label48.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label48.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label48.Location = New Point(13, 13)
         Label48.Name = "Label48"
         Label48.Size = New Size(178, 30)
@@ -3014,7 +3014,7 @@ Partial Class Form5
         ' 
         Label49.AutoSize = True
         Label49.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label49.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label49.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label49.Location = New Point(215, 47)
         Label49.Name = "Label49"
         Label49.Size = New Size(103, 20)
@@ -3024,7 +3024,7 @@ Partial Class Form5
         ' Button27
         ' 
         Button27.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Button27.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        Button27.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         Button27.ForeColor = Color.White
         Button27.Location = New Point(285, 312)
         Button27.Name = "Button27"
@@ -3044,7 +3044,7 @@ Partial Class Form5
         ' Button28
         ' 
         Button28.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Button28.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        Button28.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         Button28.ForeColor = Color.White
         Button28.Location = New Point(165, 313)
         Button28.Name = "Button28"
@@ -3056,7 +3056,7 @@ Partial Class Form5
         ' LinkLabel13
         ' 
         LinkLabel13.AutoSize = True
-        LinkLabel13.Font = New Font("Segoe UI", 11.0F)
+        LinkLabel13.Font = New Font("Segoe UI", 11F)
         LinkLabel13.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         LinkLabel13.Location = New Point(17, 315)
         LinkLabel13.Name = "LinkLabel13"
@@ -3086,7 +3086,7 @@ Partial Class Form5
         ' Label51
         ' 
         Label51.AutoSize = True
-        Label51.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label51.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label51.Location = New Point(13, 13)
         Label51.Name = "Label51"
         Label51.Size = New Size(223, 30)
@@ -3139,7 +3139,7 @@ Partial Class Form5
         ' 
         Label40.AutoSize = True
         Label40.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label40.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label40.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label40.Location = New Point(215, 47)
         Label40.Name = "Label40"
         Label40.Size = New Size(91, 20)
@@ -3149,7 +3149,7 @@ Partial Class Form5
         ' LinkLabel10
         ' 
         LinkLabel10.AutoSize = True
-        LinkLabel10.Font = New Font("Segoe UI", 11.0F)
+        LinkLabel10.Font = New Font("Segoe UI", 11F)
         LinkLabel10.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         LinkLabel10.Location = New Point(17, 315)
         LinkLabel10.Name = "LinkLabel10"
@@ -3171,7 +3171,7 @@ Partial Class Form5
         ' Label42
         ' 
         Label42.AutoSize = True
-        Label42.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label42.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label42.Location = New Point(13, 13)
         Label42.Name = "Label42"
         Label42.Size = New Size(158, 30)
@@ -3182,7 +3182,7 @@ Partial Class Form5
         ' 
         Label43.AutoSize = True
         Label43.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label43.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label43.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label43.Location = New Point(215, 47)
         Label43.Name = "Label43"
         Label43.Size = New Size(103, 20)
@@ -3192,7 +3192,7 @@ Partial Class Form5
         ' Button23
         ' 
         Button23.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Button23.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        Button23.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         Button23.ForeColor = Color.White
         Button23.Location = New Point(285, 312)
         Button23.Name = "Button23"
@@ -3212,7 +3212,7 @@ Partial Class Form5
         ' Button24
         ' 
         Button24.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Button24.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        Button24.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         Button24.ForeColor = Color.White
         Button24.Location = New Point(165, 313)
         Button24.Name = "Button24"
@@ -3224,7 +3224,7 @@ Partial Class Form5
         ' LinkLabel11
         ' 
         LinkLabel11.AutoSize = True
-        LinkLabel11.Font = New Font("Segoe UI", 11.0F)
+        LinkLabel11.Font = New Font("Segoe UI", 11F)
         LinkLabel11.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         LinkLabel11.Location = New Point(17, 315)
         LinkLabel11.Name = "LinkLabel11"
@@ -3254,7 +3254,7 @@ Partial Class Form5
         ' Label45
         ' 
         Label45.AutoSize = True
-        Label45.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label45.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label45.Location = New Point(13, 13)
         Label45.Name = "Label45"
         Label45.Size = New Size(223, 30)
@@ -3307,7 +3307,7 @@ Partial Class Form5
         ' 
         Label34.AutoSize = True
         Label34.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label34.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label34.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label34.Location = New Point(215, 47)
         Label34.Name = "Label34"
         Label34.Size = New Size(91, 20)
@@ -3317,7 +3317,7 @@ Partial Class Form5
         ' LinkLabel8
         ' 
         LinkLabel8.AutoSize = True
-        LinkLabel8.Font = New Font("Segoe UI", 11.0F)
+        LinkLabel8.Font = New Font("Segoe UI", 11F)
         LinkLabel8.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         LinkLabel8.Location = New Point(17, 315)
         LinkLabel8.Name = "LinkLabel8"
@@ -3339,7 +3339,7 @@ Partial Class Form5
         ' Label36
         ' 
         Label36.AutoSize = True
-        Label36.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label36.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label36.Location = New Point(13, 13)
         Label36.Name = "Label36"
         Label36.Size = New Size(156, 30)
@@ -3350,7 +3350,7 @@ Partial Class Form5
         ' 
         Label37.AutoSize = True
         Label37.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label37.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label37.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label37.Location = New Point(215, 47)
         Label37.Name = "Label37"
         Label37.Size = New Size(103, 20)
@@ -3360,7 +3360,7 @@ Partial Class Form5
         ' Button19
         ' 
         Button19.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Button19.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        Button19.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         Button19.ForeColor = Color.White
         Button19.Location = New Point(285, 312)
         Button19.Name = "Button19"
@@ -3380,7 +3380,7 @@ Partial Class Form5
         ' Button20
         ' 
         Button20.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Button20.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        Button20.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         Button20.ForeColor = Color.White
         Button20.Location = New Point(165, 313)
         Button20.Name = "Button20"
@@ -3392,7 +3392,7 @@ Partial Class Form5
         ' LinkLabel9
         ' 
         LinkLabel9.AutoSize = True
-        LinkLabel9.Font = New Font("Segoe UI", 11.0F)
+        LinkLabel9.Font = New Font("Segoe UI", 11F)
         LinkLabel9.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         LinkLabel9.Location = New Point(17, 315)
         LinkLabel9.Name = "LinkLabel9"
@@ -3422,7 +3422,7 @@ Partial Class Form5
         ' Label39
         ' 
         Label39.AutoSize = True
-        Label39.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label39.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label39.Location = New Point(13, 13)
         Label39.Name = "Label39"
         Label39.Size = New Size(223, 30)
@@ -3475,7 +3475,7 @@ Partial Class Form5
         ' 
         Label31.AutoSize = True
         Label31.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label31.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label31.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label31.Location = New Point(215, 47)
         Label31.Name = "Label31"
         Label31.Size = New Size(91, 20)
@@ -3485,7 +3485,7 @@ Partial Class Form5
         ' LinkLabel7
         ' 
         LinkLabel7.AutoSize = True
-        LinkLabel7.Font = New Font("Segoe UI", 11.0F)
+        LinkLabel7.Font = New Font("Segoe UI", 11F)
         LinkLabel7.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         LinkLabel7.Location = New Point(17, 315)
         LinkLabel7.Name = "LinkLabel7"
@@ -3507,7 +3507,7 @@ Partial Class Form5
         ' Label33
         ' 
         Label33.AutoSize = True
-        Label33.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label33.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label33.Location = New Point(13, 13)
         Label33.Name = "Label33"
         Label33.Size = New Size(181, 30)
@@ -3518,7 +3518,7 @@ Partial Class Form5
         ' 
         Label28.AutoSize = True
         Label28.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label28.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label28.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label28.Location = New Point(215, 47)
         Label28.Name = "Label28"
         Label28.Size = New Size(103, 20)
@@ -3528,7 +3528,7 @@ Partial Class Form5
         ' Button13
         ' 
         Button13.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Button13.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        Button13.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         Button13.ForeColor = Color.White
         Button13.Location = New Point(285, 312)
         Button13.Name = "Button13"
@@ -3548,7 +3548,7 @@ Partial Class Form5
         ' Button14
         ' 
         Button14.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Button14.Font = New Font("Segoe UI", 10.0F, FontStyle.Bold)
+        Button14.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         Button14.ForeColor = Color.White
         Button14.Location = New Point(165, 313)
         Button14.Name = "Button14"
@@ -3560,7 +3560,7 @@ Partial Class Form5
         ' LinkLabel6
         ' 
         LinkLabel6.AutoSize = True
-        LinkLabel6.Font = New Font("Segoe UI", 11.0F)
+        LinkLabel6.Font = New Font("Segoe UI", 11F)
         LinkLabel6.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         LinkLabel6.Location = New Point(17, 315)
         LinkLabel6.Name = "LinkLabel6"
@@ -3590,7 +3590,7 @@ Partial Class Form5
         ' Label30
         ' 
         Label30.AutoSize = True
-        Label30.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label30.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label30.Location = New Point(13, 13)
         Label30.Name = "Label30"
         Label30.Size = New Size(223, 30)
@@ -3638,7 +3638,7 @@ Partial Class Form5
         ' 
         Label24.AutoSize = True
         Label24.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label24.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label24.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label24.Location = New Point(215, 47)
         Label24.Name = "Label24"
         Label24.Size = New Size(103, 20)
@@ -3648,7 +3648,7 @@ Partial Class Form5
         ' LinkLabel4
         ' 
         LinkLabel4.AutoSize = True
-        LinkLabel4.Font = New Font("Segoe UI", 11.0F)
+        LinkLabel4.Font = New Font("Segoe UI", 11F)
         LinkLabel4.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         LinkLabel4.Location = New Point(17, 315)
         LinkLabel4.Name = "LinkLabel4"
@@ -3679,7 +3679,7 @@ Partial Class Form5
         ' Label19
         ' 
         Label19.AutoSize = True
-        Label19.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label19.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label19.Location = New Point(13, 13)
         Label19.Name = "Label19"
         Label19.Size = New Size(223, 30)
@@ -3716,7 +3716,7 @@ Partial Class Form5
         ' 
         Label23.AutoSize = True
         Label23.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label23.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label23.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label23.Location = New Point(220, 47)
         Label23.Name = "Label23"
         Label23.Size = New Size(99, 20)
@@ -3726,7 +3726,7 @@ Partial Class Form5
         ' LinkLabel2
         ' 
         LinkLabel2.AutoSize = True
-        LinkLabel2.Font = New Font("Segoe UI", 11.0F)
+        LinkLabel2.Font = New Font("Segoe UI", 11F)
         LinkLabel2.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         LinkLabel2.Location = New Point(17, 315)
         LinkLabel2.Name = "LinkLabel2"
@@ -3757,7 +3757,7 @@ Partial Class Form5
         ' Label17
         ' 
         Label17.AutoSize = True
-        Label17.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label17.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label17.Location = New Point(13, 13)
         Label17.Name = "Label17"
         Label17.Size = New Size(138, 30)
@@ -3794,7 +3794,7 @@ Partial Class Form5
         ' 
         Label22.AutoSize = True
         Label22.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label22.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label22.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label22.Location = New Point(219, 47)
         Label22.Name = "Label22"
         Label22.Size = New Size(99, 20)
@@ -3804,7 +3804,7 @@ Partial Class Form5
         ' LinkLabel1
         ' 
         LinkLabel1.AutoSize = True
-        LinkLabel1.Font = New Font("Segoe UI", 11.0F)
+        LinkLabel1.Font = New Font("Segoe UI", 11F)
         LinkLabel1.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         LinkLabel1.Location = New Point(17, 315)
         LinkLabel1.Name = "LinkLabel1"
@@ -3835,7 +3835,7 @@ Partial Class Form5
         ' Label13
         ' 
         Label13.AutoSize = True
-        Label13.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label13.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label13.Location = New Point(13, 13)
         Label13.Name = "Label13"
         Label13.Size = New Size(164, 30)
@@ -3872,7 +3872,7 @@ Partial Class Form5
         ' 
         Label21.AutoSize = True
         Label21.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label21.Font = New Font("Segoe UI Semibold", 9.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label21.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label21.Location = New Point(222, 47)
         Label21.Name = "Label21"
         Label21.Size = New Size(100, 20)
@@ -3882,7 +3882,7 @@ Partial Class Form5
         ' LinkLabel3
         ' 
         LinkLabel3.AutoSize = True
-        LinkLabel3.Font = New Font("Segoe UI", 11.0F)
+        LinkLabel3.Font = New Font("Segoe UI", 11F)
         LinkLabel3.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         LinkLabel3.Location = New Point(17, 315)
         LinkLabel3.Name = "LinkLabel3"
@@ -3913,7 +3913,7 @@ Partial Class Form5
         ' Label16
         ' 
         Label16.AutoSize = True
-        Label16.Font = New Font("Segoe UI Semibold", 13.0F, FontStyle.Bold)
+        Label16.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
         Label16.Location = New Point(13, 13)
         Label16.Name = "Label16"
         Label16.Size = New Size(170, 30)
@@ -3924,11 +3924,11 @@ Partial Class Form5
         ' 
         Label10.Anchor = AnchorStyles.Top Or AnchorStyles.Left Or AnchorStyles.Right
         Label10.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label10.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label10.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(16462, 30)
+        Label10.Size = New Size(16933, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -3959,7 +3959,7 @@ Partial Class Form5
         ' llPesananTersimpan
         ' 
         llPesananTersimpan.AutoSize = True
-        llPesananTersimpan.Font = New Font("Segoe UI", 11.0F)
+        llPesananTersimpan.Font = New Font("Segoe UI", 11F)
         llPesananTersimpan.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         llPesananTersimpan.Location = New Point(9, 64)
         llPesananTersimpan.Name = "llPesananTersimpan"
@@ -3971,7 +3971,7 @@ Partial Class Form5
         ' Label35
         ' 
         Label35.AutoSize = True
-        Label35.Font = New Font("Segoe UI Semibold", 16.0F, FontStyle.Bold)
+        Label35.Font = New Font("Segoe UI Semibold", 16F, FontStyle.Bold)
         Label35.Location = New Point(262, 4)
         Label35.Name = "Label35"
         Label35.Size = New Size(32, 37)
@@ -3983,7 +3983,7 @@ Partial Class Form5
         Button12.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         Button12.FlatAppearance.BorderColor = Color.Black
         Button12.FlatStyle = FlatStyle.Flat
-        Button12.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button12.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button12.ForeColor = Color.Black
         Button12.Location = New Point(9, 97)
         Button12.Name = "Button12"
@@ -3995,7 +3995,7 @@ Partial Class Form5
         ' Label32
         ' 
         Label32.AutoSize = True
-        Label32.Font = New Font("Segoe UI Semibold", 16.0F, FontStyle.Bold)
+        Label32.Font = New Font("Segoe UI Semibold", 16F, FontStyle.Bold)
         Label32.Location = New Point(219, 4)
         Label32.Name = "Label32"
         Label32.Size = New Size(50, 37)
@@ -4005,7 +4005,7 @@ Partial Class Form5
         ' Label27
         ' 
         Label27.AutoSize = True
-        Label27.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold)
+        Label27.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold)
         Label27.Location = New Point(11, 11)
         Label27.Name = "Label27"
         Label27.Size = New Size(55, 28)
@@ -4091,7 +4091,7 @@ Partial Class Form5
         ' 
         btnHome.FlatAppearance.BorderSize = 0
         btnHome.FlatStyle = FlatStyle.Flat
-        btnHome.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnHome.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnHome.ForeColor = Color.White
         btnHome.Image = CType(resources.GetObject("btnHome.Image"), Image)
         btnHome.Location = New Point(36, 19)
@@ -4143,13 +4143,13 @@ Partial Class Form5
         ' Label9
         ' 
         Label9.AutoSize = True
-        Label9.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label9.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label9.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label9.Location = New Point(429, 20)
+        Label9.Location = New Point(518, 20)
         Label9.Name = "Label9"
-        Label9.Size = New Size(335, 41)
+        Label9.Size = New Size(207, 41)
         Label9.TabIndex = 16
-        Label9.Text = "Tambah Kegiatan Baru"
+        Label9.Text = "Edit Kegiatan"
         ' 
         ' Panel2
         ' 
@@ -4343,7 +4343,7 @@ Partial Class Form5
         ' 
         ' Form5
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         ClientSize = New Size(1209, 669)

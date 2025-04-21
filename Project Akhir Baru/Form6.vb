@@ -3,7 +3,7 @@
 
     End Sub
 
-    Private Sub ListBox5_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox5.SelectedIndexChanged
+    Private Sub ListBox5_SelectedIndexChanged(sender As Object, e As EventArgs)
 
     End Sub
 End Class
