@@ -58,8 +58,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 8,
@@ -131,16 +135,12 @@
               "Title": "Form7.vb [Design]",
               "DocumentMoniker": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Form7.vb",
               "RelativeDocumentMoniker": "Project Akhir Baru\\Form7.vb",
-              "ToolTip": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Form7.vb [Design]*",
-              "RelativeToolTip": "Project Akhir Baru\\Form7.vb [Design]*",
+              "ToolTip": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Form7.vb [Design]",
+              "RelativeToolTip": "Project Akhir Baru\\Form7.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-04-21T09:11:16.006Z",
               "IsPinned": true,
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
@@ -148,8 +148,8 @@
               "Title": "Form7.vb",
               "DocumentMoniker": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Form7.vb",
               "RelativeDocumentMoniker": "Project Akhir Baru\\Form7.vb",
-              "ToolTip": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Form7.vb*",
-              "RelativeToolTip": "Project Akhir Baru\\Form7.vb*",
+              "ToolTip": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Form7.vb",
+              "RelativeToolTip": "Project Akhir Baru\\Form7.vb",
               "ViewState": "AgIAAEMAAAAAAAAAAADwv1gAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-04-21T09:34:56.81Z",

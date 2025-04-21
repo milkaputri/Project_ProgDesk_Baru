@@ -216,11 +216,14 @@ Partial Class Form5
         Panel18 = New Panel()
         llPesananTersimpan2 = New LinkLabel()
         Label47 = New Label()
-        Button34 = New Button()
+        btnSimpanTambahan = New Button()
         Label53 = New Label()
         Label58 = New Label()
         DataGridView2 = New DataGridView()
-        Button33 = New Button()
+        DataGridViewTextBoxColumn1 = New DataGridViewTextBoxColumn()
+        DataGridViewTextBoxColumn2 = New DataGridViewTextBoxColumn()
+        DataGridViewTextBoxColumn3 = New DataGridViewTextBoxColumn()
+        btnBersihkanTambahan = New Button()
         Label41 = New Label()
         tpPaket = New TabPage()
         SplitContainer1 = New SplitContainer()
@@ -331,12 +334,16 @@ Partial Class Form5
         Label11 = New Label()
         Panel7 = New Panel()
         llPesananTersimpan = New LinkLabel()
-        Label35 = New Label()
-        Button12 = New Button()
+        lblTotalHargaPaket = New Label()
+        btnSimpanPaket = New Button()
         Label32 = New Label()
         Label27 = New Label()
-        Button11 = New Button()
+        btnBersihkanPaket = New Button()
         DataGridView1 = New DataGridView()
+        colPaket = New DataGridViewTextBoxColumn()
+        colJumlah = New DataGridViewTextBoxColumn()
+        colTotal = New DataGridViewTextBoxColumn()
+        ColId = New DataGridViewTextBoxColumn()
         Label26 = New Label()
         tpDetail = New TabPage()
         btnSimpan = New Button()
@@ -364,13 +371,6 @@ Partial Class Form5
         tbNamaPemesan = New TextBox()
         Label1 = New Label()
         TabControl1 = New TabControl()
-        DataGridViewTextBoxColumn1 = New DataGridViewTextBoxColumn()
-        DataGridViewTextBoxColumn2 = New DataGridViewTextBoxColumn()
-        DataGridViewTextBoxColumn3 = New DataGridViewTextBoxColumn()
-        colPaket = New DataGridViewTextBoxColumn()
-        colJumlah = New DataGridViewTextBoxColumn()
-        colTotal = New DataGridViewTextBoxColumn()
-        ColId = New DataGridViewTextBoxColumn()
         tpPembayaran.SuspendLayout()
         Panel20.SuspendLayout()
         Panel19.SuspendLayout()
@@ -958,7 +958,7 @@ Partial Class Form5
         SplitContainer2.Panel2.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
         SplitContainer2.Panel2.Controls.Add(Panel18)
         SplitContainer2.Panel2.Controls.Add(DataGridView2)
-        SplitContainer2.Panel2.Controls.Add(Button33)
+        SplitContainer2.Panel2.Controls.Add(btnBersihkanTambahan)
         SplitContainer2.Panel2.Controls.Add(Label41)
         SplitContainer2.Size = New Size(1201, 636)
         SplitContainer2.SplitterDistance = 800
@@ -2602,7 +2602,7 @@ Partial Class Form5
         ' 
         Panel18.Controls.Add(llPesananTersimpan2)
         Panel18.Controls.Add(Label47)
-        Panel18.Controls.Add(Button34)
+        Panel18.Controls.Add(btnSimpanTambahan)
         Panel18.Controls.Add(Label53)
         Panel18.Controls.Add(Label58)
         Panel18.Dock = DockStyle.Bottom
@@ -2633,19 +2633,19 @@ Partial Class Form5
         Label47.TabIndex = 24
         Label47.Text = "0"
         ' 
-        ' Button34
+        ' btnSimpanTambahan
         ' 
-        Button34.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Button34.FlatAppearance.BorderColor = Color.Black
-        Button34.FlatStyle = FlatStyle.Flat
-        Button34.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button34.ForeColor = Color.Black
-        Button34.Location = New Point(9, 97)
-        Button34.Name = "Button34"
-        Button34.Size = New Size(379, 46)
-        Button34.TabIndex = 23
-        Button34.Text = "Simpan"
-        Button34.UseVisualStyleBackColor = False
+        btnSimpanTambahan.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        btnSimpanTambahan.FlatAppearance.BorderColor = Color.Black
+        btnSimpanTambahan.FlatStyle = FlatStyle.Flat
+        btnSimpanTambahan.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnSimpanTambahan.ForeColor = Color.Black
+        btnSimpanTambahan.Location = New Point(9, 97)
+        btnSimpanTambahan.Name = "btnSimpanTambahan"
+        btnSimpanTambahan.Size = New Size(379, 46)
+        btnSimpanTambahan.TabIndex = 23
+        btnSimpanTambahan.Text = "Simpan"
+        btnSimpanTambahan.UseVisualStyleBackColor = False
         ' 
         ' Label53
         ' 
@@ -2679,18 +2679,39 @@ Partial Class Form5
         DataGridView2.Size = New Size(395, 403)
         DataGridView2.TabIndex = 24
         ' 
-        ' Button33
+        ' DataGridViewTextBoxColumn1
         ' 
-        Button33.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Button33.FlatAppearance.BorderColor = Color.Black
-        Button33.FlatStyle = FlatStyle.Flat
-        Button33.ForeColor = Color.Black
-        Button33.Location = New Point(292, 42)
-        Button33.Name = "Button33"
-        Button33.Size = New Size(94, 29)
-        Button33.TabIndex = 23
-        Button33.Text = "Bersihkan"
-        Button33.UseVisualStyleBackColor = False
+        DataGridViewTextBoxColumn1.HeaderText = "Paket"
+        DataGridViewTextBoxColumn1.MinimumWidth = 6
+        DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        DataGridViewTextBoxColumn1.Width = 125
+        ' 
+        ' DataGridViewTextBoxColumn2
+        ' 
+        DataGridViewTextBoxColumn2.HeaderText = "Jumlah"
+        DataGridViewTextBoxColumn2.MinimumWidth = 6
+        DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        DataGridViewTextBoxColumn2.Width = 125
+        ' 
+        ' DataGridViewTextBoxColumn3
+        ' 
+        DataGridViewTextBoxColumn3.HeaderText = "Total"
+        DataGridViewTextBoxColumn3.MinimumWidth = 6
+        DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        DataGridViewTextBoxColumn3.Width = 125
+        ' 
+        ' btnBersihkanTambahan
+        ' 
+        btnBersihkanTambahan.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        btnBersihkanTambahan.FlatAppearance.BorderColor = Color.Black
+        btnBersihkanTambahan.FlatStyle = FlatStyle.Flat
+        btnBersihkanTambahan.ForeColor = Color.Black
+        btnBersihkanTambahan.Location = New Point(292, 42)
+        btnBersihkanTambahan.Name = "btnBersihkanTambahan"
+        btnBersihkanTambahan.Size = New Size(94, 29)
+        btnBersihkanTambahan.TabIndex = 23
+        btnBersihkanTambahan.Text = "Bersihkan"
+        btnBersihkanTambahan.UseVisualStyleBackColor = False
         ' 
         ' Label41
         ' 
@@ -2742,7 +2763,7 @@ Partial Class Form5
         ' SplitContainer1.Panel2
         ' 
         SplitContainer1.Panel2.Controls.Add(Panel7)
-        SplitContainer1.Panel2.Controls.Add(Button11)
+        SplitContainer1.Panel2.Controls.Add(btnBersihkanPaket)
         SplitContainer1.Panel2.Controls.Add(DataGridView1)
         SplitContainer1.Panel2.Controls.Add(Label26)
         SplitContainer1.Size = New Size(1195, 630)
@@ -3909,7 +3930,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(20230, 30)
+        Label10.Size = New Size(21172, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -3927,8 +3948,8 @@ Partial Class Form5
         ' Panel7
         ' 
         Panel7.Controls.Add(llPesananTersimpan)
-        Panel7.Controls.Add(Label35)
-        Panel7.Controls.Add(Button12)
+        Panel7.Controls.Add(lblTotalHargaPaket)
+        Panel7.Controls.Add(btnSimpanPaket)
         Panel7.Controls.Add(Label32)
         Panel7.Controls.Add(Label27)
         Panel7.Dock = DockStyle.Bottom
@@ -3949,29 +3970,29 @@ Partial Class Form5
         llPesananTersimpan.TabStop = True
         llPesananTersimpan.Text = "Pesanan Tersimpan"
         ' 
-        ' Label35
+        ' lblTotalHargaPaket
         ' 
-        Label35.AutoSize = True
-        Label35.Font = New Font("Segoe UI Semibold", 16F, FontStyle.Bold)
-        Label35.Location = New Point(262, 4)
-        Label35.Name = "Label35"
-        Label35.Size = New Size(32, 37)
-        Label35.TabIndex = 24
-        Label35.Text = "0"
+        lblTotalHargaPaket.AutoSize = True
+        lblTotalHargaPaket.Font = New Font("Segoe UI Semibold", 16F, FontStyle.Bold)
+        lblTotalHargaPaket.Location = New Point(262, 4)
+        lblTotalHargaPaket.Name = "lblTotalHargaPaket"
+        lblTotalHargaPaket.Size = New Size(32, 37)
+        lblTotalHargaPaket.TabIndex = 24
+        lblTotalHargaPaket.Text = "0"
         ' 
-        ' Button12
+        ' btnSimpanPaket
         ' 
-        Button12.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Button12.FlatAppearance.BorderColor = Color.Black
-        Button12.FlatStyle = FlatStyle.Flat
-        Button12.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button12.ForeColor = Color.Black
-        Button12.Location = New Point(9, 97)
-        Button12.Name = "Button12"
-        Button12.Size = New Size(379, 46)
-        Button12.TabIndex = 23
-        Button12.Text = "Simpan"
-        Button12.UseVisualStyleBackColor = False
+        btnSimpanPaket.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        btnSimpanPaket.FlatAppearance.BorderColor = Color.Black
+        btnSimpanPaket.FlatStyle = FlatStyle.Flat
+        btnSimpanPaket.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnSimpanPaket.ForeColor = Color.Black
+        btnSimpanPaket.Location = New Point(9, 97)
+        btnSimpanPaket.Name = "btnSimpanPaket"
+        btnSimpanPaket.Size = New Size(379, 46)
+        btnSimpanPaket.TabIndex = 23
+        btnSimpanPaket.Text = "Simpan"
+        btnSimpanPaket.UseVisualStyleBackColor = False
         ' 
         ' Label32
         ' 
@@ -3993,18 +4014,18 @@ Partial Class Form5
         Label27.TabIndex = 0
         Label27.Text = "Total"
         ' 
-        ' Button11
+        ' btnBersihkanPaket
         ' 
-        Button11.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Button11.FlatAppearance.BorderColor = Color.Black
-        Button11.FlatStyle = FlatStyle.Flat
-        Button11.ForeColor = Color.Black
-        Button11.Location = New Point(296, 42)
-        Button11.Name = "Button11"
-        Button11.Size = New Size(94, 29)
-        Button11.TabIndex = 22
-        Button11.Text = "Bersihkan"
-        Button11.UseVisualStyleBackColor = False
+        btnBersihkanPaket.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        btnBersihkanPaket.FlatAppearance.BorderColor = Color.Black
+        btnBersihkanPaket.FlatStyle = FlatStyle.Flat
+        btnBersihkanPaket.ForeColor = Color.Black
+        btnBersihkanPaket.Location = New Point(296, 42)
+        btnBersihkanPaket.Name = "btnBersihkanPaket"
+        btnBersihkanPaket.Size = New Size(94, 29)
+        btnBersihkanPaket.TabIndex = 22
+        btnBersihkanPaket.Text = "Bersihkan"
+        btnBersihkanPaket.UseVisualStyleBackColor = False
         ' 
         ' DataGridView1
         ' 
@@ -4017,6 +4038,36 @@ Partial Class Form5
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.Size = New Size(395, 400)
         DataGridView1.TabIndex = 21
+        ' 
+        ' colPaket
+        ' 
+        colPaket.HeaderText = "Paket"
+        colPaket.MinimumWidth = 6
+        colPaket.Name = "colPaket"
+        colPaket.Width = 125
+        ' 
+        ' colJumlah
+        ' 
+        colJumlah.HeaderText = "Jumlah"
+        colJumlah.MinimumWidth = 6
+        colJumlah.Name = "colJumlah"
+        colJumlah.Width = 125
+        ' 
+        ' colTotal
+        ' 
+        colTotal.HeaderText = "Total"
+        colTotal.MinimumWidth = 6
+        colTotal.Name = "colTotal"
+        colTotal.Width = 125
+        ' 
+        ' ColId
+        ' 
+        ColId.HeaderText = "Id"
+        ColId.MinimumWidth = 6
+        ColId.Name = "ColId"
+        ColId.ReadOnly = True
+        ColId.Visible = False
+        ColId.Width = 125
         ' 
         ' Label26
         ' 
@@ -4313,57 +4364,6 @@ Partial Class Form5
         TabControl1.Size = New Size(1209, 669)
         TabControl1.TabIndex = 0
         ' 
-        ' DataGridViewTextBoxColumn1
-        ' 
-        DataGridViewTextBoxColumn1.HeaderText = "Paket"
-        DataGridViewTextBoxColumn1.MinimumWidth = 6
-        DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        DataGridViewTextBoxColumn1.Width = 125
-        ' 
-        ' DataGridViewTextBoxColumn2
-        ' 
-        DataGridViewTextBoxColumn2.HeaderText = "Jumlah"
-        DataGridViewTextBoxColumn2.MinimumWidth = 6
-        DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        DataGridViewTextBoxColumn2.Width = 125
-        ' 
-        ' DataGridViewTextBoxColumn3
-        ' 
-        DataGridViewTextBoxColumn3.HeaderText = "Total"
-        DataGridViewTextBoxColumn3.MinimumWidth = 6
-        DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        DataGridViewTextBoxColumn3.Width = 125
-        ' 
-        ' colPaket
-        ' 
-        colPaket.HeaderText = "Paket"
-        colPaket.MinimumWidth = 6
-        colPaket.Name = "colPaket"
-        colPaket.Width = 125
-        ' 
-        ' colJumlah
-        ' 
-        colJumlah.HeaderText = "Jumlah"
-        colJumlah.MinimumWidth = 6
-        colJumlah.Name = "colJumlah"
-        colJumlah.Width = 125
-        ' 
-        ' colTotal
-        ' 
-        colTotal.HeaderText = "Total"
-        colTotal.MinimumWidth = 6
-        colTotal.Name = "colTotal"
-        colTotal.Width = 125
-        ' 
-        ' ColId
-        ' 
-        ColId.HeaderText = "Id"
-        ColId.MinimumWidth = 6
-        ColId.Name = "ColId"
-        ColId.ReadOnly = True
-        ColId.Visible = False
-        ColId.Width = 125
-        ' 
         ' Form5
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -4588,11 +4588,11 @@ Partial Class Form5
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents Label35 As Label
-    Friend WithEvents Button12 As Button
+    Friend WithEvents lblTotalHargaPaket As Label
+    Friend WithEvents btnSimpanPaket As Button
     Friend WithEvents Label32 As Label
     Friend WithEvents Label27 As Label
-    Friend WithEvents Button11 As Button
+    Friend WithEvents btnBersihkanPaket As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label26 As Label
     Friend WithEvents tpDetail As TabPage
@@ -4620,12 +4620,12 @@ Partial Class Form5
     Friend WithEvents Label1 As Label
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents Label41 As Label
-    Friend WithEvents Button33 As Button
+    Friend WithEvents btnBersihkanTambahan As Button
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents Label59 As Label
     Friend WithEvents Panel18 As Panel
     Friend WithEvents Label47 As Label
-    Friend WithEvents Button34 As Button
+    Friend WithEvents btnSimpanTambahan As Button
     Friend WithEvents Label53 As Label
     Friend WithEvents Label58 As Label
     Friend WithEvents Panel19 As Panel
