@@ -220,9 +220,6 @@ Partial Class Form5
         Label53 = New Label()
         Label58 = New Label()
         DataGridView2 = New DataGridView()
-        DataGridViewTextBoxColumn1 = New DataGridViewTextBoxColumn()
-        DataGridViewTextBoxColumn2 = New DataGridViewTextBoxColumn()
-        DataGridViewTextBoxColumn3 = New DataGridViewTextBoxColumn()
         Button33 = New Button()
         Label41 = New Label()
         tpPaket = New TabPage()
@@ -340,9 +337,6 @@ Partial Class Form5
         Label27 = New Label()
         Button11 = New Button()
         DataGridView1 = New DataGridView()
-        colPaket = New DataGridViewTextBoxColumn()
-        colJumlah = New DataGridViewTextBoxColumn()
-        colTotal = New DataGridViewTextBoxColumn()
         Label26 = New Label()
         tpDetail = New TabPage()
         btnSimpan = New Button()
@@ -370,6 +364,13 @@ Partial Class Form5
         tbNamaPemesan = New TextBox()
         Label1 = New Label()
         TabControl1 = New TabControl()
+        DataGridViewTextBoxColumn1 = New DataGridViewTextBoxColumn()
+        DataGridViewTextBoxColumn2 = New DataGridViewTextBoxColumn()
+        DataGridViewTextBoxColumn3 = New DataGridViewTextBoxColumn()
+        colPaket = New DataGridViewTextBoxColumn()
+        colJumlah = New DataGridViewTextBoxColumn()
+        colTotal = New DataGridViewTextBoxColumn()
+        ColId = New DataGridViewTextBoxColumn()
         tpPembayaran.SuspendLayout()
         Panel20.SuspendLayout()
         Panel19.SuspendLayout()
@@ -2678,27 +2679,6 @@ Partial Class Form5
         DataGridView2.Size = New Size(395, 403)
         DataGridView2.TabIndex = 24
         ' 
-        ' DataGridViewTextBoxColumn1
-        ' 
-        DataGridViewTextBoxColumn1.HeaderText = "Paket"
-        DataGridViewTextBoxColumn1.MinimumWidth = 6
-        DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        DataGridViewTextBoxColumn1.Width = 125
-        ' 
-        ' DataGridViewTextBoxColumn2
-        ' 
-        DataGridViewTextBoxColumn2.HeaderText = "Jumlah"
-        DataGridViewTextBoxColumn2.MinimumWidth = 6
-        DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        DataGridViewTextBoxColumn2.Width = 125
-        ' 
-        ' DataGridViewTextBoxColumn3
-        ' 
-        DataGridViewTextBoxColumn3.HeaderText = "Total"
-        DataGridViewTextBoxColumn3.MinimumWidth = 6
-        DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        DataGridViewTextBoxColumn3.Width = 125
-        ' 
         ' Button33
         ' 
         Button33.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
@@ -3929,7 +3909,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(19288, 30)
+        Label10.Size = New Size(20230, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -4030,34 +4010,13 @@ Partial Class Form5
         ' 
         DataGridView1.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {colPaket, colJumlah, colTotal})
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {colPaket, colJumlah, colTotal, ColId})
         DataGridView1.Location = New Point(0, 77)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RightToLeft = RightToLeft.No
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.Size = New Size(395, 400)
         DataGridView1.TabIndex = 21
-        ' 
-        ' colPaket
-        ' 
-        colPaket.HeaderText = "Paket"
-        colPaket.MinimumWidth = 6
-        colPaket.Name = "colPaket"
-        colPaket.Width = 125
-        ' 
-        ' colJumlah
-        ' 
-        colJumlah.HeaderText = "Jumlah"
-        colJumlah.MinimumWidth = 6
-        colJumlah.Name = "colJumlah"
-        colJumlah.Width = 125
-        ' 
-        ' colTotal
-        ' 
-        colTotal.HeaderText = "Total"
-        colTotal.MinimumWidth = 6
-        colTotal.Name = "colTotal"
-        colTotal.Width = 125
         ' 
         ' Label26
         ' 
@@ -4354,6 +4313,57 @@ Partial Class Form5
         TabControl1.Size = New Size(1209, 669)
         TabControl1.TabIndex = 0
         ' 
+        ' DataGridViewTextBoxColumn1
+        ' 
+        DataGridViewTextBoxColumn1.HeaderText = "Paket"
+        DataGridViewTextBoxColumn1.MinimumWidth = 6
+        DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        DataGridViewTextBoxColumn1.Width = 125
+        ' 
+        ' DataGridViewTextBoxColumn2
+        ' 
+        DataGridViewTextBoxColumn2.HeaderText = "Jumlah"
+        DataGridViewTextBoxColumn2.MinimumWidth = 6
+        DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        DataGridViewTextBoxColumn2.Width = 125
+        ' 
+        ' DataGridViewTextBoxColumn3
+        ' 
+        DataGridViewTextBoxColumn3.HeaderText = "Total"
+        DataGridViewTextBoxColumn3.MinimumWidth = 6
+        DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        DataGridViewTextBoxColumn3.Width = 125
+        ' 
+        ' colPaket
+        ' 
+        colPaket.HeaderText = "Paket"
+        colPaket.MinimumWidth = 6
+        colPaket.Name = "colPaket"
+        colPaket.Width = 125
+        ' 
+        ' colJumlah
+        ' 
+        colJumlah.HeaderText = "Jumlah"
+        colJumlah.MinimumWidth = 6
+        colJumlah.Name = "colJumlah"
+        colJumlah.Width = 125
+        ' 
+        ' colTotal
+        ' 
+        colTotal.HeaderText = "Total"
+        colTotal.MinimumWidth = 6
+        colTotal.Name = "colTotal"
+        colTotal.Width = 125
+        ' 
+        ' ColId
+        ' 
+        ColId.HeaderText = "Id"
+        ColId.MinimumWidth = 6
+        ColId.Name = "ColId"
+        ColId.ReadOnly = True
+        ColId.Visible = False
+        ColId.Width = 125
+        ' 
         ' Form5
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -4584,9 +4594,6 @@ Partial Class Form5
     Friend WithEvents Label27 As Label
     Friend WithEvents Button11 As Button
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents colPaket As DataGridViewTextBoxColumn
-    Friend WithEvents colJumlah As DataGridViewTextBoxColumn
-    Friend WithEvents colTotal As DataGridViewTextBoxColumn
     Friend WithEvents Label26 As Label
     Friend WithEvents tpDetail As TabPage
     Friend WithEvents btnBack As Button
@@ -4615,9 +4622,6 @@ Partial Class Form5
     Friend WithEvents Label41 As Label
     Friend WithEvents Button33 As Button
     Friend WithEvents DataGridView2 As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents Label59 As Label
     Friend WithEvents Panel18 As Panel
     Friend WithEvents Label47 As Label
@@ -4827,4 +4831,11 @@ Partial Class Form5
     Friend WithEvents Label144 As Label
     Friend WithEvents lblEdit As Label
     Friend WithEvents btnSimpan As Button
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents colPaket As DataGridViewTextBoxColumn
+    Friend WithEvents colJumlah As DataGridViewTextBoxColumn
+    Friend WithEvents colTotal As DataGridViewTextBoxColumn
+    Friend WithEvents ColId As DataGridViewTextBoxColumn
 End Class

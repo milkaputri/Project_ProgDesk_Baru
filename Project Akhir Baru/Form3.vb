@@ -41,7 +41,7 @@ Public Class Form3
             'myConn.Open()
 
             ' Query untuk mengambil data acara
-            Dim sql As String = "SELECT nama_acara, tanggal_pelaksanaan, nama_pemesan, alamat_pemesan, no_hp_pertama, no_hp_kedua, lokasi FROM acara ORDER BY tanggal_pelaksanaan ASC"
+            Dim sql As String = "SELECT * FROM acara ORDER BY tanggal_pelaksanaan ASC"
             myCommand = New MySqlCommand(sql, myConn)
             myDataReader = myCommand.ExecuteReader()
 
@@ -54,6 +54,7 @@ Public Class Form3
             ' Loop melalui hasil query dan tampilkan data
             While myDataReader.Read()
                 ' Ambil data dari database
+                Dim idAcara As String = myDataReader("id_acara").ToString()
                 Dim namaAcara As String = myDataReader("nama_acara").ToString()
                 Dim tanggalDb As DateTime = Convert.ToDateTime(myDataReader("tanggal_pelaksanaan"))
                 Dim tanggalPelaksanaan As String = tanggalDb.ToString("d MMMM yyyy")
@@ -120,7 +121,7 @@ Public Class Form3
                 lblCountdown.Location = New Point(eventPanel.Width - lblCountdown.Width - 5, 0)
 
                 ' Event handler klik panel
-                AddHandler eventPanel.Click, Sub(sender, e) OpenForm5(namaAcara, namaPemesan, alamat, noHpPertama, noHpKedua, lokasiAcara)
+                AddHandler eventPanel.Click, Sub(sender, e) OpenForm5(idAcara, namaAcara, namaPemesan, alamat, noHpPertama, noHpKedua, lokasiAcara)
 
                 ' Tambahkan kontrol ke panel
                 eventPanel.Controls.Add(lblAcara)
@@ -145,12 +146,12 @@ Public Class Form3
             'myConn.Close()
         End Try
     End Sub
-    Private Sub OpenForm5(namaAcara As String, namaPemesan As String, alamat As String, noHpPertama As String, noHpKedua As String, lokasiAcara As String)
+    Private Sub OpenForm5(idAcara As String, namaAcara As String, namaPemesan As String, alamat As String, noHpPertama As String, noHpKedua As String, lokasiAcara As String)
         Dim form As New Form5()
 
         ' Kirim data ke Form5
         form.tbNamaKegiatan.Text = namaAcara
-        form.originalNamaAcara = namaAcara
+        form.originalIdAcara = idAcara
         form.tbNamaPemesan.Text = namaPemesan
         form.tbAlamat.Text = alamat
         form.tbNoHpPertama.Text = noHpPertama
@@ -167,9 +168,6 @@ Public Class Form3
 
         ' Tampilkan Form5 secara modal agar menunggu selesai
         form.ShowDialog()
-
-        ' Setelah Form5 ditutup, tampilkan kembali Form3 (jika disembunyikan)
-        Me.Show()
     End Sub
 
     Private Sub tbCariAcara_TextChanged(sender As Object, e As EventArgs) Handles tbCariAcara.TextChanged
