@@ -104,6 +104,7 @@ Partial Class Form3
         btnProfile.FlatStyle = FlatStyle.Flat
         btnProfile.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnProfile.ForeColor = Color.White
+        btnProfile.Image = CType(resources.GetObject("btnProfile.Image"), Image)
         btnProfile.Location = New Point(4, 321)
         btnProfile.Name = "btnProfile"
         btnProfile.Size = New Size(277, 51)
