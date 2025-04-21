@@ -751,4 +751,33 @@ Public Class Form5
         Form3.Show()
         Hide()
     End Sub
+    Private Sub llJasmine_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llJasmine.LinkClicked
+        ' Create an instance of Form6
+        Dim detailForm As New Form6()
+
+        ' Show Form6
+        detailForm.Show()
+
+        ' Make pnlDetailJasmine visible and hide other panels
+        detailForm.pnlDetailJasmine.Visible = True
+        detailForm.pnlDetailOrchid.Visible = False
+
+        ' Optional: Bring the panel to front if there are overlapping controls
+        detailForm.pnlDetailJasmine.BringToFront()
+    End Sub
+
+    Private Sub llOrchid_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llOrchid.LinkClicked
+        ' Create an instance of Form6
+        Dim detailForm As New Form6()
+
+        ' Show Form6
+        detailForm.Show()
+
+        ' Make pnlDetailJasmine visible and hide other panels
+        detailForm.pnlDetailJasmine.Visible = False
+        detailForm.pnlDetailOrchid.Visible = True
+
+        ' Optional: Bring the panel to front if there are overlapping controls
+        detailForm.pnlDetailOrchid.BringToFront()
+    End Sub
 End Class

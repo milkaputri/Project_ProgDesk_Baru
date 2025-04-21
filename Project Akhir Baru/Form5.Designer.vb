@@ -319,14 +319,14 @@ Partial Class Form5
         Panel3 = New Panel()
         cbOrchid = New CheckBox()
         Label22 = New Label()
-        LinkLabel1 = New LinkLabel()
+        llOrchid = New LinkLabel()
         Label12 = New Label()
         PictureBox1 = New PictureBox()
         Label13 = New Label()
         Panel5 = New Panel()
         cbJasmine = New CheckBox()
         Label21 = New Label()
-        LinkLabel3 = New LinkLabel()
+        llJasmine = New LinkLabel()
         Label15 = New Label()
         PictureBox3 = New PictureBox()
         Label16 = New Label()
@@ -3769,7 +3769,7 @@ Partial Class Form5
         Panel3.BorderStyle = BorderStyle.FixedSingle
         Panel3.Controls.Add(cbOrchid)
         Panel3.Controls.Add(Label22)
-        Panel3.Controls.Add(LinkLabel1)
+        Panel3.Controls.Add(llOrchid)
         Panel3.Controls.Add(Label12)
         Panel3.Controls.Add(PictureBox1)
         Panel3.Controls.Add(Label13)
@@ -3801,17 +3801,17 @@ Partial Class Form5
         Label22.TabIndex = 8
         Label22.Text = "Rp55.500.000"
         ' 
-        ' LinkLabel1
+        ' llOrchid
         ' 
-        LinkLabel1.AutoSize = True
-        LinkLabel1.Font = New Font("Segoe UI", 11F)
-        LinkLabel1.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        LinkLabel1.Location = New Point(17, 315)
-        LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Size = New Size(61, 25)
-        LinkLabel1.TabIndex = 3
-        LinkLabel1.TabStop = True
-        LinkLabel1.Text = "Detail"
+        llOrchid.AutoSize = True
+        llOrchid.Font = New Font("Segoe UI", 11F)
+        llOrchid.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        llOrchid.Location = New Point(17, 315)
+        llOrchid.Name = "llOrchid"
+        llOrchid.Size = New Size(61, 25)
+        llOrchid.TabIndex = 3
+        llOrchid.TabStop = True
+        llOrchid.Text = "Detail"
         ' 
         ' Label12
         ' 
@@ -3847,7 +3847,7 @@ Partial Class Form5
         Panel5.BorderStyle = BorderStyle.FixedSingle
         Panel5.Controls.Add(cbJasmine)
         Panel5.Controls.Add(Label21)
-        Panel5.Controls.Add(LinkLabel3)
+        Panel5.Controls.Add(llJasmine)
         Panel5.Controls.Add(Label15)
         Panel5.Controls.Add(PictureBox3)
         Panel5.Controls.Add(Label16)
@@ -3879,17 +3879,17 @@ Partial Class Form5
         Label21.TabIndex = 7
         Label21.Text = "Rp34.500.000"
         ' 
-        ' LinkLabel3
+        ' llJasmine
         ' 
-        LinkLabel3.AutoSize = True
-        LinkLabel3.Font = New Font("Segoe UI", 11F)
-        LinkLabel3.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        LinkLabel3.Location = New Point(17, 315)
-        LinkLabel3.Name = "LinkLabel3"
-        LinkLabel3.Size = New Size(61, 25)
-        LinkLabel3.TabIndex = 3
-        LinkLabel3.TabStop = True
-        LinkLabel3.Text = "Detail"
+        llJasmine.AutoSize = True
+        llJasmine.Font = New Font("Segoe UI", 11F)
+        llJasmine.LinkColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        llJasmine.Location = New Point(17, 315)
+        llJasmine.Name = "llJasmine"
+        llJasmine.Size = New Size(61, 25)
+        llJasmine.TabIndex = 3
+        llJasmine.TabStop = True
+        llJasmine.Text = "Detail"
         ' 
         ' Label15
         ' 
@@ -3928,7 +3928,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(17404, 30)
+        Label10.Size = New Size(17875, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -4552,13 +4552,13 @@ Partial Class Form5
     Friend WithEvents Label17 As Label
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Label22 As Label
-    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents llOrchid As LinkLabel
     Friend WithEvents Label12 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label13 As Label
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Label21 As Label
-    Friend WithEvents LinkLabel3 As LinkLabel
+    Friend WithEvents llJasmine As LinkLabel
     Friend WithEvents Label15 As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Label16 As Label
