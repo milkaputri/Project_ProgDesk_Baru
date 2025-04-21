@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports Mysqlx
 
 Public Class Form5
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
@@ -1006,7 +1007,7 @@ Public Class Form5
     Public Sub TampilDataPaket()
         Dim i
         i = 0
-        Dim sql As String = "select * from pesanan join detail_paket on pesanan.id_paket = detail_paket.id_paket where id_acara = " & originalIdAcara
+        Dim sql As String = "select * from pesanan join detail_paket on pesanan.id_paket = detail_paket.id_paket where id_acara = " & originalIdAcara & " AND pesanan.id_paket BETWEEN 1 AND 10"
         myCommand.CommandText = sql
         myDataReader = myCommand.ExecuteReader
         If myDataReader.HasRows Then
@@ -1039,17 +1040,81 @@ Public Class Form5
         End If
     End Sub
 
+    Public Sub TampilDataTambahan()
+        Dim i
+        i = 0
+        Dim sql As String = "select * from pesanan join detail_paket on pesanan.id_paket = detail_paket.id_paket where id_acara = " & originalIdAcara & " AND pesanan.id_paket BETWEEN 11 AND 25"
+        myCommand.CommandText = sql
+        myDataReader = myCommand.ExecuteReader
+        If myDataReader.HasRows Then
+            While myDataReader.Read()
+                Dim harga As Integer = myDataReader("harga_paket")
+                Dim jumlah As Integer = myDataReader("jumlah_paket")
+                DataGridView2.Rows.Add()
+                DataGridView2.Item(0, i).Value = myDataReader("nama_paket")
+                DataGridView2.Item(1, i).Value = myDataReader("jumlah_paket")
+                DataGridView2.Item(2, i).Value = harga * jumlah
+                DataGridView2.Item(3, i).Value = myDataReader("id_paket")
+
+                Select Case myDataReader("nama_paket")
+                    Case "Prasmanan A"
+                        tbPrasA.Text = jumlah.ToString()
+                    Case "Prasmanan B"
+                        tbPrasB.Text = jumlah.ToString()
+                    Case "Prasmanan C"
+                        tbPrasC.Text = jumlah.ToString()
+                End Select
+                i = i + 1
+            End While
+
+            Dim totalPengeluaran As Integer = 0
+            For Each row As DataGridViewRow In DataGridView2.Rows
+                If Not row.IsNewRow AndAlso Not IsDBNull(row.Cells("colTotalTambahan").Value) Then
+                    totalPengeluaran += Convert.ToInt32(row.Cells("colTotalTambahan").Value)
+                End If
+            Next
+
+            lblTotalHargaTambahan.Text = totalPengeluaran.ToString("N0")
+            myDataReader.Close()
+        End If
+        If myDataReader.IsClosed = False Then
+            myDataReader.Close()
+        End If
+    End Sub
+
     Private Sub btnSimpanTambahan_Click(sender As Object, e As EventArgs) Handles btnSimpanTambahan.Click
-        Dim angka As Integer = Convert.ToInt32(lblTotalHargaTambahan.Text.Replace(".", ""))
         For Each row As DataGridViewRow In DataGridView2.Rows
             If Not row.IsNewRow Then
                 Dim id_paket As Integer = Integer.Parse(row.Cells("colIdTambahan").Value.ToString())
+                Dim namaPaket As String = row.Cells("colPaketTambahan").Value.ToString()
                 Dim jumlah_paket As Integer = Integer.Parse(row.Cells("colJumlahTambahan").Value.ToString())
-                Dim sql As String = "INSERT INTO pesanan (id_acara, id_paket, total_pengeluaran, jumlah_paket) VALUES ('" & originalIdAcara & "','" & id_paket & "','" & angka & "','" & jumlah_paket & "')"
-                myCommand.CommandText = sql
-                myCommand.ExecuteNonQuery()
+                Dim totalPerTambahan As Integer = Integer.Parse(row.Cells("colTotalTambahan").Value.ToString())
+                Dim sqlCek As String = "SELECT COUNT(*) FROM pesanan WHERE id_paket = '" & id_paket & "'"
+                myCommand.CommandText = sqlCek
+                Dim count As Integer = Convert.ToInt32(myCommand.ExecuteScalar())
+
+                If count > 0 Then
+                    Dim sql As String = "UPDATE pesanan SET " &
+                           "total_pengeluaran = " & totalPerTambahan & "," &
+                           "jumlah_paket = " & jumlah_paket & " " &
+                           "WHERE id_acara = " & originalIdAcara & " AND id_paket = " & id_paket
+                    myCommand.CommandText = sql
+                    myCommand.ExecuteNonQuery()
+                Else
+                    Dim sql As String = "INSERT INTO pesanan (id_acara, id_paket, total_pengeluaran, jumlah_paket) VALUES ('" & originalIdAcara & "','" & id_paket & "','" & totalPerTambahan & "','" & jumlah_paket & "')"
+                    myCommand.CommandText = sql
+                    myCommand.ExecuteNonQuery()
+                End If
             End If
         Next
         MessageBox.Show("Data berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Private Sub btnBersihkanTambahan_Click(sender As Object, e As EventArgs) Handles btnBersihkanTambahan.Click
+        DataGridView2.Rows.Clear()
+        lblTotalHargaTambahan.Text = "0"
+        tbPrasA.Text = ""
+        tbPrasB.Text = ""
+        tbPrasC.Text = ""
     End Sub
 End Class

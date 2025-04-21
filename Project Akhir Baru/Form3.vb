@@ -6,7 +6,7 @@ Public Class Form3
         LoadEvents()
     End Sub
     Private Sub btnTambahAcara_Click(sender As Object, e As EventArgs) Handles btnTambahAcara.Click
-        Form5.Show()
+        'Form5.Show()
         Me.Hide()
 
         ' Create an instance of Form5
@@ -25,6 +25,11 @@ Public Class Form3
         ' Optional: Bring the panel to front if there are overlapping controls
         detailForm5.lblBaru.BringToFront()
         detailForm5.btnTambah.BringToFront()
+
+        detailForm5.TabControl1.TabPages.Remove(detailForm5.TabControl1.TabPages("tpPaket"))
+        detailForm5.TabControl1.TabPages.Remove(detailForm5.TabControl1.TabPages("tpTambahan"))
+        detailForm5.TabControl1.TabPages.Remove(detailForm5.TabControl1.TabPages("tpPembayaran"))
+        detailForm5.TabControl1.TabPages.Remove(detailForm5.TabControl1.TabPages("tpLaporan"))
     End Sub
 
     Private Sub btnKeluar_Click(sender As Object, e As EventArgs) Handles btnKeluar.Click
@@ -160,6 +165,7 @@ Public Class Form3
         form.tbLokasi.Text = lokasiAcara
 
         form.TampilDataPaket()
+        form.TampilDataTambahan()
 
         ' Atur tampilan Form5 untuk mode edit
         form.lblBaru.Visible = False

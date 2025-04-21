@@ -3940,7 +3940,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(23998, 30)
+        Label10.Size = New Size(24469, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
