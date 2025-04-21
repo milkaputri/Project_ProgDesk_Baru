@@ -345,11 +345,12 @@ Partial Class Form5
         colTotal = New DataGridViewTextBoxColumn()
         Label26 = New Label()
         tpDetail = New TabPage()
+        btnSimpan = New Button()
+        lblEdit = New Label()
         btnBack = New Button()
         Button1 = New Button()
-        btnSimpan = New Button()
-        btnReset = New Button()
-        Label9 = New Label()
+        btnTambah = New Button()
+        lblBaru = New Label()
         Panel2 = New Panel()
         tbLokasi = New TextBox()
         Label8 = New Label()
@@ -3928,7 +3929,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(17875, 30)
+        Label10.Size = New Size(19288, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -4073,11 +4074,12 @@ Partial Class Form5
         ' tpDetail
         ' 
         tpDetail.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        tpDetail.Controls.Add(btnSimpan)
+        tpDetail.Controls.Add(lblEdit)
         tpDetail.Controls.Add(btnBack)
         tpDetail.Controls.Add(Button1)
-        tpDetail.Controls.Add(btnSimpan)
-        tpDetail.Controls.Add(btnReset)
-        tpDetail.Controls.Add(Label9)
+        tpDetail.Controls.Add(btnTambah)
+        tpDetail.Controls.Add(lblBaru)
         tpDetail.Controls.Add(Panel2)
         tpDetail.Controls.Add(Panel1)
         tpDetail.Location = New Point(4, 29)
@@ -4086,6 +4088,30 @@ Partial Class Form5
         tpDetail.Size = New Size(1201, 636)
         tpDetail.TabIndex = 0
         tpDetail.Text = "Detail"
+        ' 
+        ' btnSimpan
+        ' 
+        btnSimpan.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        btnSimpan.FlatStyle = FlatStyle.Flat
+        btnSimpan.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
+        btnSimpan.ForeColor = Color.White
+        btnSimpan.Location = New Point(615, 525)
+        btnSimpan.Name = "btnSimpan"
+        btnSimpan.Size = New Size(94, 32)
+        btnSimpan.TabIndex = 23
+        btnSimpan.Text = "Simpan"
+        btnSimpan.UseVisualStyleBackColor = False
+        ' 
+        ' lblEdit
+        ' 
+        lblEdit.AutoSize = True
+        lblEdit.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblEdit.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblEdit.Location = New Point(500, 20)
+        lblEdit.Name = "lblEdit"
+        lblEdit.Size = New Size(225, 41)
+        lblEdit.TabIndex = 22
+        lblEdit.Text = "Kegiatan Anda"
         ' 
         ' btnBack
         ' 
@@ -4107,49 +4133,36 @@ Partial Class Form5
         Button1.FlatStyle = FlatStyle.Flat
         Button1.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
         Button1.ForeColor = Color.White
-        Button1.Location = New Point(557, 528)
+        Button1.Location = New Point(490, 525)
         Button1.Name = "Button1"
         Button1.Size = New Size(94, 32)
         Button1.TabIndex = 20
         Button1.Text = "Reset"
         Button1.UseVisualStyleBackColor = False
         ' 
-        ' btnSimpan
+        ' btnTambah
         ' 
-        btnSimpan.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnSimpan.FlatStyle = FlatStyle.Flat
-        btnSimpan.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
-        btnSimpan.ForeColor = Color.White
-        btnSimpan.Location = New Point(682, 528)
-        btnSimpan.Name = "btnSimpan"
-        btnSimpan.Size = New Size(94, 32)
-        btnSimpan.TabIndex = 19
-        btnSimpan.Text = "Simpan"
-        btnSimpan.UseVisualStyleBackColor = False
+        btnTambah.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        btnTambah.FlatStyle = FlatStyle.Flat
+        btnTambah.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
+        btnTambah.ForeColor = Color.White
+        btnTambah.Location = New Point(615, 525)
+        btnTambah.Name = "btnTambah"
+        btnTambah.Size = New Size(94, 32)
+        btnTambah.TabIndex = 19
+        btnTambah.Text = "Tambah"
+        btnTambah.UseVisualStyleBackColor = False
         ' 
-        ' btnReset
+        ' lblBaru
         ' 
-        btnReset.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnReset.FlatStyle = FlatStyle.Flat
-        btnReset.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
-        btnReset.ForeColor = Color.White
-        btnReset.Location = New Point(429, 528)
-        btnReset.Name = "btnReset"
-        btnReset.Size = New Size(94, 32)
-        btnReset.TabIndex = 17
-        btnReset.Text = "Edit"
-        btnReset.UseVisualStyleBackColor = False
-        ' 
-        ' Label9
-        ' 
-        Label9.AutoSize = True
-        Label9.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label9.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label9.Location = New Point(518, 20)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(207, 41)
-        Label9.TabIndex = 16
-        Label9.Text = "Edit Kegiatan"
+        lblBaru.AutoSize = True
+        lblBaru.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblBaru.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblBaru.Location = New Point(426, 19)
+        lblBaru.Name = "lblBaru"
+        lblBaru.Size = New Size(335, 41)
+        lblBaru.TabIndex = 16
+        lblBaru.Text = "Tambah Kegiatan Baru"
         ' 
         ' Panel2
         ' 
@@ -4578,9 +4591,9 @@ Partial Class Form5
     Friend WithEvents tpDetail As TabPage
     Friend WithEvents btnBack As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents btnSimpan As Button
+    Friend WithEvents btnTambah As Button
     Friend WithEvents btnReset As Button
-    Friend WithEvents Label9 As Label
+    Friend WithEvents lblBaru As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents tbLokasi As TextBox
     Friend WithEvents Label8 As Label
@@ -4812,4 +4825,6 @@ Partial Class Form5
     Friend WithEvents PictureBox17 As PictureBox
     Friend WithEvents Label143 As Label
     Friend WithEvents Label144 As Label
+    Friend WithEvents lblEdit As Label
+    Friend WithEvents btnSimpan As Button
 End Class

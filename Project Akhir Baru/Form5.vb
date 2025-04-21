@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Form5
-    Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
+    Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
         Dim sql As String = "insert into acara(nama_acara,tanggal_pelaksanaan,waktu,lokasi,nama_pemesan,alamat_pemesan,no_hp_pertama,no_hp_kedua) values ('" & tbNamaKegiatan.Text & "','" & tglPelaksanaan.SelectionStart.ToString("yyyy-MM-dd") & "','" & tbWaktu.Text & "','" & tbLokasi.Text & "','" & tbNamaPemesan.Text & "','" & tbAlamat.Text & "','" & tbNoHpPertama.Text & "','" & tbNoHpKedua.Text & "')"
         myCommand.CommandText = sql
         myCommand.ExecuteNonQuery()
@@ -779,5 +779,79 @@ Public Class Form5
 
         ' Optional: Bring the panel to front if there are overlapping controls
         detailForm.pnlDetailOrchid.BringToFront()
+    End Sub
+
+    Public originalNamaAcara As String
+
+    Private Sub btnSimpan_Click(sender As Object, e As EventArgs) Handles btnSimpan.Click
+        Try
+            ' Validate required fields
+            If String.IsNullOrEmpty(tbNamaKegiatan.Text) Then
+                MessageBox.Show("Nama kegiatan harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return
+            End If
+
+            ' Prepare the SQL update command
+            Dim sql As String = "UPDATE acara SET " &
+                           "nama_acara = @nama_acara, " &
+                           "tanggal_pelaksanaan = @tanggal, " &
+                           "waktu = @waktu, " &
+                           "lokasi = @lokasi, " &
+                           "nama_pemesan = @pemesan, " &
+                           "alamat_pemesan = @alamat, " &
+                           "no_hp_pertama = @hp1, " &
+                           "no_hp_kedua = @hp2 " &
+                           "WHERE nama_acara = @original_nama"
+
+            ' Create and configure the command with parameters to prevent SQL injection
+            myCommand.CommandText = sql
+            myCommand.Parameters.Clear()
+            myCommand.Parameters.AddWithValue("@nama_acara", tbNamaKegiatan.Text)
+            myCommand.Parameters.AddWithValue("@tanggal", tglPelaksanaan.SelectionStart.ToString("yyyy-MM-dd"))
+            myCommand.Parameters.AddWithValue("@waktu", tbWaktu.Text)
+            myCommand.Parameters.AddWithValue("@lokasi", tbLokasi.Text)
+            myCommand.Parameters.AddWithValue("@pemesan", tbNamaPemesan.Text)
+            myCommand.Parameters.AddWithValue("@alamat", tbAlamat.Text)
+            myCommand.Parameters.AddWithValue("@hp1", tbNoHpPertama.Text)
+            myCommand.Parameters.AddWithValue("@hp2", tbNoHpKedua.Text)
+            myCommand.Parameters.AddWithValue("@original_nama", originalNamaAcara) ' Assuming nama_acara is the identifier
+
+            ' Execute the update
+            Dim rowsAffected As Integer = myCommand.ExecuteNonQuery()
+
+            If rowsAffected > 0 Then
+                MessageBox.Show("Data berhasil diperbarui!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                ' Refresh data di Form3
+                Dim form3 As Form3 = Application.OpenForms.OfType(Of Form3).FirstOrDefault()
+                If form3 IsNot Nothing Then
+                    form3.LoadEvents()
+                    form3.Show() ' Tampilkan kembali Form3
+                End If
+
+                Me.Close() ' Tutup Form5
+
+                ' Close the form or reset fields as needed
+                form3.Show()
+            Else
+                MessageBox.Show("Tidak ada data yang diperbarui.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error saat memperbarui data: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            myCommand.Parameters.Clear()
+        End Try
+    End Sub
+
+    Private Sub btnReset_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        tbNamaKegiatan.Text = ""
+        originalNamaAcara = ""
+        tbNamaPemesan.Text = ""
+        tbAlamat.Text = ""
+        tbNoHpPertama.Text = ""
+        tbNoHpKedua.Text = ""
+        tbLokasi.Text = ""
+
     End Sub
 End Class
