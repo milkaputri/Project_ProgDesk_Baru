@@ -345,7 +345,7 @@ Partial Class Form5
         colTotal = New DataGridViewTextBoxColumn()
         Label26 = New Label()
         tpDetail = New TabPage()
-        btnHome = New Button()
+        btnBack = New Button()
         Button1 = New Button()
         btnSimpan = New Button()
         btnReset = New Button()
@@ -3928,7 +3928,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(16933, 30)
+        Label10.Size = New Size(17404, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -4073,7 +4073,7 @@ Partial Class Form5
         ' tpDetail
         ' 
         tpDetail.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        tpDetail.Controls.Add(btnHome)
+        tpDetail.Controls.Add(btnBack)
         tpDetail.Controls.Add(Button1)
         tpDetail.Controls.Add(btnSimpan)
         tpDetail.Controls.Add(btnReset)
@@ -4087,19 +4087,19 @@ Partial Class Form5
         tpDetail.TabIndex = 0
         tpDetail.Text = "Detail"
         ' 
-        ' btnHome
+        ' btnBack
         ' 
-        btnHome.FlatAppearance.BorderSize = 0
-        btnHome.FlatStyle = FlatStyle.Flat
-        btnHome.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnHome.ForeColor = Color.White
-        btnHome.Image = CType(resources.GetObject("btnHome.Image"), Image)
-        btnHome.Location = New Point(36, 19)
-        btnHome.Name = "btnHome"
-        btnHome.Size = New Size(58, 51)
-        btnHome.TabIndex = 21
-        btnHome.TextImageRelation = TextImageRelation.ImageBeforeText
-        btnHome.UseVisualStyleBackColor = True
+        btnBack.FlatAppearance.BorderSize = 0
+        btnBack.FlatStyle = FlatStyle.Flat
+        btnBack.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnBack.ForeColor = Color.White
+        btnBack.Image = My.Resources.Resources.back
+        btnBack.Location = New Point(36, 19)
+        btnBack.Name = "btnBack"
+        btnBack.Size = New Size(58, 51)
+        btnBack.TabIndex = 21
+        btnBack.TextImageRelation = TextImageRelation.ImageBeforeText
+        btnBack.UseVisualStyleBackColor = True
         ' 
         ' Button1
         ' 
@@ -4576,7 +4576,7 @@ Partial Class Form5
     Friend WithEvents colTotal As DataGridViewTextBoxColumn
     Friend WithEvents Label26 As Label
     Friend WithEvents tpDetail As TabPage
-    Friend WithEvents btnHome As Button
+    Friend WithEvents btnBack As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents btnSimpan As Button
     Friend WithEvents btnReset As Button

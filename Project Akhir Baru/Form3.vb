@@ -26,7 +26,7 @@ Public Class Form3
             'myConn.Open()
 
             ' Query untuk mengambil data acara
-            Dim sql As String = "SELECT nama_acara, tanggal_pelaksanaan, nama_pemesan FROM acara ORDER BY tanggal_pelaksanaan ASC"
+            Dim sql As String = "SELECT nama_acara, tanggal_pelaksanaan, nama_pemesan, alamat_pemesan, no_hp_pertama, no_hp_kedua, lokasi FROM acara ORDER BY tanggal_pelaksanaan ASC"
             myCommand = New MySqlCommand(sql, myConn)
             myDataReader = myCommand.ExecuteReader()
 
@@ -42,6 +42,10 @@ Public Class Form3
                 Dim namaAcara As String = myDataReader("nama_acara").ToString()
                 Dim tanggalPelaksanaan As String = Convert.ToDateTime(myDataReader("tanggal_pelaksanaan")).ToString("d MMMM yyyy")
                 Dim namaPemesan As String = myDataReader("nama_pemesan").ToString()
+                Dim alamat As String = myDataReader("alamat_pemesan").ToString()
+                Dim noHpPertama As String = myDataReader("no_hp_pertama").ToString()
+                Dim noHpKedua As String = myDataReader("no_hp_kedua").ToString()
+                Dim lokasiAcara As String = myDataReader("lokasi").ToString()
 
                 ' Hitung H- berdasarkan tanggal pelaksanaan
                 Dim hMinus As Integer = (Convert.ToDateTime(tanggalPelaksanaan) - DateTime.Now).Days
@@ -74,7 +78,7 @@ Public Class Form3
                 lblInfo.Location = New Point(10, 25)
                 lblInfo.AutoSize = False  ' Cegah teks turun ke baris kedua
 
-                AddHandler eventPanel.Click, Sub(sender, e) OpenForm5(namaAcara, tanggalPelaksanaan, namaPemesan, hMinus)
+                AddHandler eventPanel.Click, Sub(sender, e) OpenForm5(namaAcara, namaPemesan, alamat, noHpPertama, noHpKedua, lokasiAcara)
 
                 ' Tambahkan label ke panel
                 eventPanel.Controls.Add(lblAcara)
@@ -95,20 +99,23 @@ Public Class Form3
             'myConn.Close()
         End Try
     End Sub
-    Private Sub OpenForm5(namaAcara As String, tanggal As String, pemesan As String, hMinus As Integer)
+    Private Sub OpenForm5(namaAcara As String, namaPemesan As String, alamat As String, noHpPertama As String, noHpKedua As String, lokasiAcara As String)
         Dim form As New Form5()
 
         ' Kirim data ke Form3 (misalnya lewat Label di Form3)
         form.tbNamaKegiatan.Text = namaAcara
-        'form.lblTanggal.Text = "Tanggal: " & tanggal
-        form.tbNamaPemesan.Text = pemesan
-        'form.lblHMinus.Text = "H - " & hMinus
+        form.tbNamaPemesan.Text = namaPemesan
+        form.tbAlamat.Text = alamat
+        form.tbNoHpPertama.Text = noHpPertama
+        form.tbNoHpKedua.Text = noHpKedua
+        form.tbLokasi.Text = lokasiAcara
+
 
         ' Tampilkan Form3
         form.Show()
 
         ' Sembunyikan Form1 (jika perlu)
-        ' Me.Hide()
+        Me.Hide()
     End Sub
 
     Private Sub tbCariAcara_TextChanged(sender As Object, e As EventArgs) Handles tbCariAcara.TextChanged

@@ -747,8 +747,8 @@ Public Class Form5
 
     End Sub
 
-    Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
-        Form2.Show()
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        Form3.Show()
         Hide()
     End Sub
 End Class

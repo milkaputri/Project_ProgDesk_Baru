@@ -23,3 +23,30 @@ D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug
 D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form3.resources
 D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form4.resources
 D:\Pemrograman Dekstop\Coba Baru\Project Akhir Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form5.resources
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\bin\Debug\net8.0-windows\Project Akhir Baru.exe
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\bin\Debug\net8.0-windows\Project Akhir Baru.deps.json
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\bin\Debug\net8.0-windows\Project Akhir Baru.runtimeconfig.json
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\bin\Debug\net8.0-windows\Project Akhir Baru.dll
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\bin\Debug\net8.0-windows\Project Akhir Baru.pdb
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\bin\Debug\net8.0-windows\MySql.Data.dll
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\bin\Debug\net8.0-windows\MySql.Data.xml
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.vbproj.AssemblyReference.cache
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form1.resources
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form2.resources
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form3.resources
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form4.resources
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form5.resources
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form6.resources
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Resources.resources
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.vbproj.GenerateResource.cache
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.AssemblyInfoInputs.cache
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.AssemblyInfo.vb
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.vbproj.CoreCompileInputs.cache
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.sourcelink.json
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project .5AB32E1B.Up2Date
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.dll
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\refint\Project Akhir Baru.dll
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.pdb
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.genruntimeconfig.cache
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\ref\Project Akhir Baru.dll
