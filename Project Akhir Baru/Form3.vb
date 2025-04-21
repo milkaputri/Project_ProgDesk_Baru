@@ -199,4 +199,9 @@ Public Class Form3
     Private Sub btnTentang_Click(sender As Object, e As EventArgs) Handles btnTentang.Click
 
     End Sub
+
+    Private Sub btnProfile_Click(sender As Object, e As EventArgs) Handles btnProfile.Click
+        Form7.Show()
+        Me.Hide()
+    End Sub
 End Class
