@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("Project Akhir Baru"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82a152254b6c08ee4e5e92a6ce4be284aa052b24"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("Project Akhir Baru"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("Project Akhir Baru"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _

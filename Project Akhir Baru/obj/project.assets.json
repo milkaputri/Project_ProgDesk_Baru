@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Pemrograman Dekstop\\Coba Baru\\Project Akhir Baru\\Project Akhir Baru\\Project Akhir Baru.vbproj",
+      "projectUniqueName": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Project Akhir Baru.vbproj",
       "projectName": "Project Akhir Baru",
-      "projectPath": "D:\\Pemrograman Dekstop\\Coba Baru\\Project Akhir Baru\\Project Akhir Baru\\Project Akhir Baru.vbproj",
+      "projectPath": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Project Akhir Baru.vbproj",
       "packagesPath": "C:\\Users\\M S I\\.nuget\\packages\\",
-      "outputPath": "D:\\Pemrograman Dekstop\\Coba Baru\\Project Akhir Baru\\Project Akhir Baru\\obj\\",
+      "outputPath": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
