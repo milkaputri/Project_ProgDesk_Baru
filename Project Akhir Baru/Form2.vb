@@ -41,5 +41,7 @@ Public Class Form2
         Hide()
     End Sub
 
+    Private Sub btnTentang_Click(sender As Object, e As EventArgs) Handles btnTentang.Click
 
+    End Sub
 End Class

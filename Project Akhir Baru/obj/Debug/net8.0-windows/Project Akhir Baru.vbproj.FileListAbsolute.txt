@@ -77,3 +77,4 @@ D:\Pemrograman Dekstop\FIX\Project_ProgDesk_Baru\Project Akhir Baru\bin\Debug\ne
 D:\Pemrograman Dekstop\FIX\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project .5AB32E1B.Up2Date
 D:\Pemrograman Dekstop\FIX\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project Akhir Baru.genruntimeconfig.cache
 D:\Pemrograman Dekstop\FIX\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\ref\Project Akhir Baru.dll
+D:\Pemrograman Dekstop\FIX\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form7.resources

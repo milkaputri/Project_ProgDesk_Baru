@@ -9,7 +9,22 @@ Public Class Form3
         Form5.Show()
         Me.Hide()
 
+        ' Create an instance of Form5
+        Dim detailForm5 As New Form5()
 
+        ' Show Form5
+        detailForm5.Show()
+
+        ' Make pnlDetailJasmine visible and hide other panels
+        detailForm5.lblBaru.Visible = True
+        detailForm5.lblEdit.Visible = False
+
+        detailForm5.btnTambah.Visible = True
+        detailForm5.btnSimpan.Visible = False
+
+        ' Optional: Bring the panel to front if there are overlapping controls
+        detailForm5.lblBaru.BringToFront()
+        detailForm5.btnTambah.BringToFront()
     End Sub
 
     Private Sub btnKeluar_Click(sender As Object, e As EventArgs) Handles btnKeluar.Click
@@ -20,7 +35,7 @@ Public Class Form3
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadEvents()
     End Sub
-    Private Sub LoadEvents()
+    Public Sub LoadEvents()
         Try
             ' Buka koneksi
             'myConn.Open()
@@ -40,21 +55,19 @@ Public Class Form3
             While myDataReader.Read()
                 ' Ambil data dari database
                 Dim namaAcara As String = myDataReader("nama_acara").ToString()
-                Dim tanggalPelaksanaan As String = Convert.ToDateTime(myDataReader("tanggal_pelaksanaan")).ToString("d MMMM yyyy")
+                Dim tanggalDb As DateTime = Convert.ToDateTime(myDataReader("tanggal_pelaksanaan"))
+                Dim tanggalPelaksanaan As String = tanggalDb.ToString("d MMMM yyyy")
                 Dim namaPemesan As String = myDataReader("nama_pemesan").ToString()
                 Dim alamat As String = myDataReader("alamat_pemesan").ToString()
                 Dim noHpPertama As String = myDataReader("no_hp_pertama").ToString()
                 Dim noHpKedua As String = myDataReader("no_hp_kedua").ToString()
                 Dim lokasiAcara As String = myDataReader("lokasi").ToString()
 
-                ' Hitung H- berdasarkan tanggal pelaksanaan
-                Dim hMinus As Integer = (Convert.ToDateTime(tanggalPelaksanaan) - DateTime.Now).Days
+                ' Hitung H-
+                Dim hMinus As Integer = (tanggalDb.Date - DateTime.Now.Date).Days
+                If hMinus < 0 Then Continue While
 
-                If hMinus < 0 Then
-                    Continue While ' Lewati acara yang sudah lewat
-                End If
-
-                ' Buat Panel untuk menampilkan acara
+                ' Buat Panel
                 Dim eventPanel As New Panel()
                 eventPanel.Width = FlowLayoutPanel1.Width - 20
                 eventPanel.Height = 60
@@ -62,32 +75,65 @@ Public Class Form3
                 eventPanel.Margin = New Padding(5)
                 eventPanel.BorderStyle = BorderStyle.Fixed3D
 
-                ' Buat Label untuk menampilkan informasi acara
+                ' Label Nama Acara
                 Dim lblAcara As New Label()
                 lblAcara.Text = namaAcara
                 lblAcara.Font = New Font("Segoe UI", 10, FontStyle.Bold)
                 lblAcara.AutoSize = True
                 lblAcara.Location = New Point(10, 5)
 
+                ' Label Info Tengah
                 Dim lblInfo As New Label()
-                lblInfo.Text = $"Tanggal Pelaksanaan: {tanggalPelaksanaan}          Pemesan: {namaPemesan}          H - {hMinus}"
+                lblInfo.Text = String.Format("Tanggal : {0,-20}  Pemesan : {1}", tanggalPelaksanaan, namaPemesan)
                 lblInfo.Font = New Font("Segoe UI Semibold", 9)
-                lblInfo.Width = eventPanel.Width - 20  ' Beri ruang cukup untuk teks agar tidak turun ke bawah
-                lblInfo.Height = 20  ' Sesuaikan tinggi agar tetap satu baris
-                lblInfo.TextAlign = ContentAlignment.MiddleLeft  ' Pastikan teks tetap di kiri
+                lblInfo.Width = eventPanel.Width - 150
+                lblInfo.Height = 20
+                lblInfo.TextAlign = ContentAlignment.MiddleLeft
                 lblInfo.Location = New Point(10, 25)
-                lblInfo.AutoSize = False  ' Cegah teks turun ke baris kedua
+                lblInfo.AutoSize = False
 
+
+
+                ' Label Countdown (di kanan)
+                ' Label Countdown (di kanan & memenuhi tinggi panel)
+                Dim lblCountdown As New Label()
+                lblCountdown.Font = New Font("Segoe UI", 10, FontStyle.Bold)
+                lblCountdown.Width = 70
+                lblCountdown.Height = eventPanel.Height
+                lblCountdown.TextAlign = ContentAlignment.MiddleCenter
+                lblCountdown.AutoSize = False
+                lblCountdown.BackColor = Color.Transparent
+
+                ' Atur teks & warna berdasarkan nilai H-
+                If hMinus = 0 Then
+                    lblCountdown.Text = "Hari-H"
+                    lblCountdown.ForeColor = Color.Green
+                ElseIf hMinus <= 7 Then
+                    lblCountdown.Text = "H - " & hMinus
+                    lblCountdown.ForeColor = Color.Red
+                Else
+                    lblCountdown.Text = "H - " & hMinus
+                    lblCountdown.ForeColor = Color.Black
+                End If
+
+                ' Letakkan di kanan
+                lblCountdown.Location = New Point(eventPanel.Width - lblCountdown.Width - 5, 0)
+
+                ' Event handler klik panel
                 AddHandler eventPanel.Click, Sub(sender, e) OpenForm5(namaAcara, namaPemesan, alamat, noHpPertama, noHpKedua, lokasiAcara)
 
-                ' Tambahkan label ke panel
+                ' Tambahkan kontrol ke panel
                 eventPanel.Controls.Add(lblAcara)
                 eventPanel.Controls.Add(lblInfo)
+                eventPanel.Controls.Add(lblCountdown)
 
-                ' Tambahkan panel ke FlowLayoutPanel
+                ' Tambahkan ke FlowLayout
                 FlowLayoutPanel1.Controls.Add(eventPanel)
                 allEventPanels.Add(eventPanel)
+
+                lblInfo.Width = eventPanel.Width - lblCountdown.Width - 20
             End While
+
 
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
@@ -102,20 +148,28 @@ Public Class Form3
     Private Sub OpenForm5(namaAcara As String, namaPemesan As String, alamat As String, noHpPertama As String, noHpKedua As String, lokasiAcara As String)
         Dim form As New Form5()
 
-        ' Kirim data ke Form3 (misalnya lewat Label di Form3)
+        ' Kirim data ke Form5
         form.tbNamaKegiatan.Text = namaAcara
+        form.originalNamaAcara = namaAcara
         form.tbNamaPemesan.Text = namaPemesan
         form.tbAlamat.Text = alamat
         form.tbNoHpPertama.Text = noHpPertama
         form.tbNoHpKedua.Text = noHpKedua
         form.tbLokasi.Text = lokasiAcara
 
+        ' Atur tampilan Form5 untuk mode edit
+        form.lblBaru.Visible = False
+        form.lblEdit.Visible = True
+        form.btnTambah.Visible = False
+        form.btnSimpan.Visible = True
+        form.lblEdit.BringToFront()
+        form.btnSimpan.BringToFront()
 
-        ' Tampilkan Form3
-        form.Show()
+        ' Tampilkan Form5 secara modal agar menunggu selesai
+        form.ShowDialog()
 
-        ' Sembunyikan Form1 (jika perlu)
-        Me.Hide()
+        ' Setelah Form5 ditutup, tampilkan kembali Form3 (jika disembunyikan)
+        Me.Show()
     End Sub
 
     Private Sub tbCariAcara_TextChanged(sender As Object, e As EventArgs) Handles tbCariAcara.TextChanged
@@ -137,5 +191,14 @@ Public Class Form3
                 FlowLayoutPanel1.Controls.Add(panel)
             End If
         Next
+    End Sub
+
+    Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
+        Form2.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnTentang_Click(sender As Object, e As EventArgs) Handles btnTentang.Click
+
     End Sub
 End Class

@@ -26,7 +26,6 @@ Partial Class Form3
         Panel1 = New Panel()
         Panel3 = New Panel()
         btnHome = New Button()
-        btnTentang = New Button()
         btnProfile = New Button()
         btnAgenda = New Button()
         btnKeluar = New Button()
@@ -67,7 +66,6 @@ Partial Class Form3
         Panel1.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Panel1.Controls.Add(Panel3)
         Panel1.Controls.Add(btnHome)
-        Panel1.Controls.Add(btnTentang)
         Panel1.Controls.Add(btnProfile)
         Panel1.Controls.Add(btnAgenda)
         Panel1.Controls.Add(btnKeluar)
@@ -100,28 +98,12 @@ Partial Class Form3
         btnHome.TextImageRelation = TextImageRelation.ImageBeforeText
         btnHome.UseVisualStyleBackColor = True
         ' 
-        ' btnTentang
-        ' 
-        btnTentang.FlatAppearance.BorderSize = 0
-        btnTentang.FlatStyle = FlatStyle.Flat
-        btnTentang.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnTentang.ForeColor = Color.White
-        btnTentang.Image = CType(resources.GetObject("btnTentang.Image"), Image)
-        btnTentang.Location = New Point(7, 413)
-        btnTentang.Name = "btnTentang"
-        btnTentang.Size = New Size(277, 51)
-        btnTentang.TabIndex = 11
-        btnTentang.Text = "   Tentang"
-        btnTentang.TextImageRelation = TextImageRelation.ImageBeforeText
-        btnTentang.UseVisualStyleBackColor = True
-        ' 
         ' btnProfile
         ' 
         btnProfile.FlatAppearance.BorderSize = 0
         btnProfile.FlatStyle = FlatStyle.Flat
         btnProfile.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnProfile.ForeColor = Color.White
-        btnProfile.Image = CType(resources.GetObject("btnProfile.Image"), Image)
         btnProfile.Location = New Point(4, 321)
         btnProfile.Name = "btnProfile"
         btnProfile.Size = New Size(277, 51)
