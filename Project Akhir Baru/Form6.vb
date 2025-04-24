@@ -20,7 +20,7 @@
         ' Langsung pilih tab berdasarkan name-nya
         form5.TabControl1.SelectTab("tpPaket")
 
-        form5.Show()
+        'form5.Show()
         Me.Hide()
     End Sub
 End Class

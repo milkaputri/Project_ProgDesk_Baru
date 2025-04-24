@@ -67,6 +67,7 @@ Public Class Form3
                 Dim waktuDb As String = myDataReader("waktu").ToString()
                 Dim waktuTampil As String = Convert.ToDateTime(waktuDb).ToString("HH:mm")
                 Dim lokasiAcara As String = myDataReader("lokasi").ToString()
+                Dim kategoriAcara As String = myDataReader("kategori_acara").ToString()
 
                 ' Hitung H-
                 Dim hMinus As Integer = (tanggalDb.Date - DateTime.Now.Date).Days
@@ -125,7 +126,7 @@ Public Class Form3
                 lblCountdown.Location = New Point(eventPanel.Width - lblCountdown.Width - 5, 0)
 
                 ' Event handler klik panel
-                AddHandler eventPanel.Click, Sub(sender, e) OpenForm5(idAcara, namaAcara, tanggalDb, namaPemesan, alamat, noHpPertama, noHpKedua, waktuTampil, lokasiAcara)
+                AddHandler eventPanel.Click, Sub(sender, e) OpenForm5(idAcara, namaAcara, tanggalDb, namaPemesan, alamat, noHpPertama, noHpKedua, waktuTampil, lokasiAcara, kategoriAcara)
 
                 ' Tambahkan kontrol ke panel
                 eventPanel.Controls.Add(lblAcara)
@@ -150,7 +151,7 @@ Public Class Form3
             'myConn.Close()
         End Try
     End Sub
-    Private Sub OpenForm5(idAcara As String, namaAcara As String, tanggalDb As Date, namaPemesan As String, alamat As String, noHpPertama As String, noHpKedua As String, waktuTampil As String, lokasiAcara As String)
+    Private Sub OpenForm5(idAcara As String, namaAcara As String, tanggalDb As Date, namaPemesan As String, alamat As String, noHpPertama As String, noHpKedua As String, waktuTampil As String, lokasiAcara As String, kategoriAcara As String)
         Dim form As New Form5()
 
         ' Kirim data ke Form5
@@ -163,6 +164,11 @@ Public Class Form3
         form.tglPelaksanaan.SetDate(tanggalDb)
         form.tbWaktu.Text = waktuTampil
         form.tbLokasi.Text = lokasiAcara
+        form.cbKategori.SelectedItem = kategoriAcara
+
+        If kategoriAcara = "Lain-lain" Then
+            form.TabControl1.TabPages.Remove(form.TabControl1.TabPages("tpPaket"))
+        End If
 
         form.TampilDataPaket()
         form.TampilDataTambahan()
@@ -200,17 +206,41 @@ Public Class Form3
         Next
     End Sub
 
+    Private Sub Login_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+        If e.KeyCode = Keys.Return Then
+            btnCari.PerformClick()
+        End If
+    End Sub
+
     Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
         Form2.Show()
         Me.Hide()
     End Sub
 
-    Private Sub btnTentang_Click(sender As Object, e As EventArgs) Handles btnTentang.Click
-
-    End Sub
 
     Private Sub btnProfile_Click(sender As Object, e As EventArgs) Handles btnProfile.Click
         Form7.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub btnCari_Click(sender As Object, e As EventArgs) Handles btnCari.Click
+        Dim keyword As String = tbCariAcara.Text.ToLower()
+
+        FlowLayoutPanel1.Controls.Clear()
+
+        For Each panel As Panel In allEventPanels
+            ' Gabungkan semua teks yang akan dicari
+            Dim allText As String = ""
+            For Each ctrl As Control In panel.Controls
+                If TypeOf ctrl Is Label Then
+                    allText &= CType(ctrl, Label).Text.ToLower() & " "
+                End If
+            Next
+
+            ' Cek apakah mengandung keyword
+            If allText.Contains(keyword) Then
+                FlowLayoutPanel1.Controls.Add(panel)
+            End If
+        Next
     End Sub
 End Class

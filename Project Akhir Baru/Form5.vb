@@ -5,12 +5,15 @@ Public Class Form5
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
         Dim waktuInput As String = tbWaktu.Text
         Dim waktuValid As DateTime = Convert.ToDateTime(waktuInput)
+        Dim kategoriAcara As String = cbKategori.SelectedItem.ToString()
         If DateTime.TryParse(waktuInput, waktuValid) Then
             Dim waktuUntukDb As String = waktuValid.ToString("HH:mm:ss")
-            Dim sql As String = "insert into acara(nama_acara,tanggal_pelaksanaan,waktu,lokasi,nama_pemesan,alamat_pemesan,no_hp_pertama,no_hp_kedua) values ('" & tbNamaKegiatan.Text & "','" & tglPelaksanaan.SelectionStart.ToString("yyyy-MM-dd") & "','" & waktuUntukDb & "','" & tbLokasi.Text & "','" & tbNamaPemesan.Text & "','" & tbAlamat.Text & "','" & tbNoHpPertama.Text & "','" & tbNoHpKedua.Text & "')"
+            Dim sql As String = "insert into acara(nama_acara,tanggal_pelaksanaan,waktu,lokasi,nama_pemesan,alamat_pemesan,no_hp_pertama,no_hp_kedua, kategori_acara) values ('" & tbNamaKegiatan.Text & "','" & tglPelaksanaan.SelectionStart.ToString("yyyy-MM-dd") & "','" & waktuUntukDb & "','" & tbLokasi.Text & "','" & tbNamaPemesan.Text & "','" & tbAlamat.Text & "','" & tbNoHpPertama.Text & "','" & tbNoHpKedua.Text & "','" & kategoriAcara & "')"
             myCommand.CommandText = sql
             myCommand.ExecuteNonQuery()
             MessageBox.Show("Data berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Me.Hide()
+            Form3.Show()
         Else
             MessageBox.Show("Format waktu tidak valid. Contoh: 14:30 atau 2:30 PM", "Error")
         End If
@@ -28,6 +31,15 @@ Public Class Form5
             UncheckedBox(1)
         End If
     End Sub
+    Private Sub cbOrchid_CheckedChanged(sender As Object, e As EventArgs) Handles cbOrchid.CheckedChanged
+        If cbOrchid.Checked Then
+            SembunyikanCheckboxLain(cbOrchid)
+            TampilPaket(2)
+        Else
+            TampilkanSemuaCheckbox()
+            UncheckedBox(2)
+        End If
+    End Sub
 
     Private Sub cbTulip_CheckedChanged(sender As Object, e As EventArgs) Handles cbTulip.CheckedChanged
         If cbTulip.Checked Then
@@ -39,13 +51,71 @@ Public Class Form5
         End If
     End Sub
 
-    Private Sub cbOrchid_CheckedChanged(sender As Object, e As EventArgs) Handles cbOrchid.CheckedChanged
-        If cbOrchid.Checked Then
-            SembunyikanCheckboxLain(cbOrchid)
-            TampilPaket(2)
+    Private Sub cbCasablanca_CheckedChanged(sender As Object, e As EventArgs) Handles cbCasablanca.CheckedChanged
+        If cbCasablanca.Checked Then
+            SembunyikanCheckboxLain(cbCasablanca)
+            TampilPaket(4)
         Else
             TampilkanSemuaCheckbox()
-            UncheckedBox(2)
+            UncheckedBox(4)
+        End If
+    End Sub
+    Private Sub cbAkad_CheckedChanged(sender As Object, e As EventArgs) Handles cbAkad.CheckedChanged
+        If cbAkad.Checked Then
+            SembunyikanCheckboxLain(cbAkad)
+            TampilPaket(5)
+        Else
+            TampilkanSemuaCheckbox()
+            UncheckedBox(5)
+        End If
+    End Sub
+    Private Sub cbGereja_CheckedChanged(sender As Object, e As EventArgs) Handles cbGereja.CheckedChanged
+        If cbGereja.Checked Then
+            SembunyikanCheckboxLain(cbGereja)
+            TampilPaket(6)
+        Else
+            TampilkanSemuaCheckbox()
+            UncheckedBox(6)
+        End If
+    End Sub
+
+    Private Sub cbKrisan_CheckedChanged(sender As Object, e As EventArgs) Handles cbKrisan.CheckedChanged
+        If cbKrisan.Checked Then
+            SembunyikanCheckboxLain(cbKrisan)
+            TampilPaket(7)
+        Else
+            TampilkanSemuaCheckbox()
+            UncheckedBox(7)
+        End If
+    End Sub
+
+    Private Sub cbGarbera_CheckedChanged(sender As Object, e As EventArgs) Handles cbGarbera.CheckedChanged
+        If cbGarbera.Checked Then
+            SembunyikanCheckboxLain(cbGarbera)
+            TampilPaket(8)
+        Else
+            TampilkanSemuaCheckbox()
+            UncheckedBox(8)
+        End If
+    End Sub
+
+    Private Sub cbHorten_CheckedChanged(sender As Object, e As EventArgs) Handles cbHorten.CheckedChanged
+        If cbHorten.Checked Then
+            SembunyikanCheckboxLain(cbHorten)
+            TampilPaket(9)
+        Else
+            TampilkanSemuaCheckbox()
+            UncheckedBox(9)
+        End If
+    End Sub
+
+    Private Sub cbKalalily_CheckedChanged(sender As Object, e As EventArgs) Handles cbKalalily.CheckedChanged
+        If cbKalalily.Checked Then
+            SembunyikanCheckboxLain(cbKalalily)
+            TampilPaket(10)
+        Else
+            TampilkanSemuaCheckbox()
+            UncheckedBox(10)
         End If
     End Sub
 
@@ -92,6 +162,8 @@ Public Class Form5
             Dim nilai As Integer = Integer.Parse(tbPrasA.Text)
             If nilai = 300 Then
                 tbPrasA.Text = "0"
+                TampilTambahan("Prasmanan A", tbPrasA.Text.ToString(), 34500, 11)
+                UpdateTotalHargaTambahan()
             ElseIf nilai > 300 Then
                 tbPrasA.Text = (nilai - 1).ToString()
                 TampilTambahan("Prasmanan A", tbPrasA.Text.ToString(), 34500, 11)
@@ -108,6 +180,8 @@ Public Class Form5
             Dim nilai As Integer = Integer.Parse(tbPrasA.Text)
             If nilai = 0 Then
                 tbPrasA.Text = "300"
+                TampilTambahan("Prasmanan A", tbPrasA.Text.ToString(), 34500, 11)
+                UpdateTotalHargaTambahan()
             ElseIf nilai >= 300 Then
                 tbPrasA.Text = (nilai + 1).ToString()
                 TampilTambahan("Prasmanan A", tbPrasA.Text.ToString(), 34500, 11)
@@ -828,7 +902,7 @@ Public Class Form5
         ' Optional: Bring the panel to front if there are overlapping controls
         detailForm.pnlDetailJasmine.BringToFront()
 
-        Me.Hide()
+        'Me.Hide()
     End Sub
 
     Private Sub llOrchid_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llOrchid.LinkClicked
@@ -844,7 +918,7 @@ Public Class Form5
 
         ' Optional: Bring the panel to front if there are overlapping controls
         detailForm.pnlDetailOrchid.BringToFront()
-        Me.Hide()
+        'Me.Hide()
     End Sub
 
     Public originalIdAcara As String
@@ -958,6 +1032,7 @@ Public Class Form5
             DataGridView2.Rows.Add(nama_paket, jumlah, jumlah * harga, idTambahan)
         End If
     End Sub
+
     Private Sub UpdateTotalHargaTambahan()
         Dim totalPengeluaran As Integer = 0
         For Each row As DataGridViewRow In DataGridView2.Rows
@@ -981,11 +1056,25 @@ Public Class Form5
         End If
     End Sub
     Private Sub btnBersihkanPaket_Click(sender As Object, e As EventArgs) Handles btnBersihkanPaket.Click
-        DataGridView1.Rows.Clear()
-        lblTotalHargaPaket.Text = "0"
-        cbJasmine.Checked = False
-        cbOrchid.Checked = False
-        cbTulip.Checked = False
+        If DataGridView1.SelectedRows.Count > 0 Then
+            For Each row As DataGridViewRow In DataGridView1.SelectedRows
+                Dim idTerpilih As Integer = row.Cells("ColId").Value
+                If Not row.IsNewRow Then
+                    myDataReader.Close()
+                    Dim sql1 As String = "DELETE FROM pesanan WHERE id_paket = " & idTerpilih & " AND id_acara = " & originalIdAcara
+                    myCommand.CommandText = sql1
+                    myCommand.ExecuteNonQuery()
+                    DataGridView1.Rows.Remove(row)
+                    lblTotalHargaPaket.Text = "0"
+                    MessageBox.Show("Data berhasil dihapus.")
+                    Exit For
+                Else
+                    MessageBox.Show("Data gagal dihapus.")
+                End If
+            Next
+        Else
+            MessageBox.Show("Silakan pilih baris yang ingin dihapus.")
+        End If
     End Sub
     Private Sub btnSimpanPaket_Click(sender As Object, e As EventArgs) Handles btnSimpanPaket.Click
         Dim angka As Integer = Convert.ToInt32(lblTotalHargaPaket.Text.Replace(".", ""))
@@ -1111,10 +1200,39 @@ Public Class Form5
     End Sub
 
     Private Sub btnBersihkanTambahan_Click(sender As Object, e As EventArgs) Handles btnBersihkanTambahan.Click
-        DataGridView2.Rows.Clear()
-        lblTotalHargaTambahan.Text = "0"
-        tbPrasA.Text = ""
-        tbPrasB.Text = ""
-        tbPrasC.Text = ""
+        'DataGridView2.Rows.Clear()
+        'lblTotalHargaTambahan.Text = "0"
+        'tbPrasA.Text = ""
+        'tbPrasB.Text = ""
+        'tbPrasC.Text = ""
+        If DataGridView2.SelectedRows.Count > 0 Then
+            For Each row As DataGridViewRow In DataGridView2.SelectedRows
+                Dim idTerpilih As Integer = row.Cells("ColIdTambahan").Value
+                If Not row.IsNewRow Then
+                    myDataReader.Close()
+                    Dim sql1 As String = "DELETE FROM pesanan WHERE id_paket = " & idTerpilih & " AND id_acara = " & originalIdAcara
+                    myCommand.CommandText = sql1
+                    myCommand.ExecuteNonQuery()
+                    DataGridView2.Rows.Remove(row)
+                    'lblTotalHargaPaket.Text = "0"
+                    UpdateTotalHargaTambahan()
+                    MessageBox.Show("Data berhasil dihapus.")
+                    Select Case idTerpilih
+                        Case 11
+                            tbPrasA.Text = ""
+                        Case 12
+                            tbPrasB.Text = ""
+                        Case 13
+                            tbPrasC.Text = ""
+                    End Select
+                    Exit For
+                Else
+                    MessageBox.Show("Data gagal dihapus.")
+                End If
+            Next
+        Else
+            MessageBox.Show("Silakan pilih baris yang ingin dihapus.")
+        End If
     End Sub
+
 End Class

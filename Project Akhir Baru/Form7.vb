@@ -55,6 +55,9 @@ Public Class Form7
             Dim result As Integer = myCommand.ExecuteNonQuery()
             If result > 0 Then
                 MessageBox.Show("Data admin berhasil diperbarui!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Dim form As New Form1()
+                form.Show()
+                Me.Hide()
             Else
                 MessageBox.Show("Tidak ada perubahan data.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
