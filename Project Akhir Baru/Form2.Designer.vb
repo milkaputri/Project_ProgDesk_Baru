@@ -103,7 +103,7 @@ Partial Class Form2
         btnKeluar.Name = "btnKeluar"
         btnKeluar.Size = New Size(284, 51)
         btnKeluar.TabIndex = 5
-        btnKeluar.Text = "   Profile"
+        btnKeluar.Text = "    Keluar"
         btnKeluar.TextImageRelation = TextImageRelation.ImageBeforeText
         btnKeluar.UseVisualStyleBackColor = False
         ' 

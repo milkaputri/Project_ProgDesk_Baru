@@ -33,7 +33,7 @@ Partial Class Form3
         Button4 = New Button()
         btnBrosur1 = New Button()
         tbCariAcara = New TextBox()
-        Button1 = New Button()
+        btnCari = New Button()
         btnTambahAcara = New Button()
         Button2 = New Button()
         Button3 = New Button()
@@ -189,18 +189,18 @@ Partial Class Form3
         tbCariAcara.Size = New Size(718, 34)
         tbCariAcara.TabIndex = 10
         ' 
-        ' Button1
+        ' btnCari
         ' 
-        Button1.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Button1.FlatStyle = FlatStyle.Flat
-        Button1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button1.ForeColor = SystemColors.ButtonHighlight
-        Button1.Location = New Point(739, 56)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(83, 34)
-        Button1.TabIndex = 11
-        Button1.Text = "Cari"
-        Button1.UseVisualStyleBackColor = False
+        btnCari.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        btnCari.FlatStyle = FlatStyle.Flat
+        btnCari.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnCari.ForeColor = SystemColors.ButtonHighlight
+        btnCari.Location = New Point(739, 56)
+        btnCari.Name = "btnCari"
+        btnCari.Size = New Size(83, 34)
+        btnCari.TabIndex = 11
+        btnCari.Text = "Cari"
+        btnCari.UseVisualStyleBackColor = False
         ' 
         ' btnTambahAcara
         ' 
@@ -411,7 +411,7 @@ Partial Class Form3
         ' SplitContainer1.Panel2
         ' 
         SplitContainer1.Panel2.Controls.Add(FlowLayoutPanel1)
-        SplitContainer1.Panel2.Controls.Add(Button1)
+        SplitContainer1.Panel2.Controls.Add(btnCari)
         SplitContainer1.Panel2.Controls.Add(btnTambahAcara)
         SplitContainer1.Size = New Size(1209, 699)
         SplitContainer1.SplitterDistance = 283
@@ -451,6 +451,7 @@ Partial Class Form3
         Controls.Add(btnBrosur1)
         Controls.Add(SplitContainer1)
         Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        KeyPreview = True
         Name = "Form3"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Form3"
@@ -471,7 +472,7 @@ Partial Class Form3
     Friend WithEvents Button4 As Button
     Friend WithEvents btnBrosur1 As Button
     Friend WithEvents tbCariAcara As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnCari As Button
     Friend WithEvents btnTambahAcara As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button

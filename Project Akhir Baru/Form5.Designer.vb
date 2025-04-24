@@ -372,6 +372,7 @@ Partial Class Form5
         tbNamaPemesan = New TextBox()
         Label1 = New Label()
         TabControl1 = New TabControl()
+        cbKategori = New ComboBox()
         tpPembayaran.SuspendLayout()
         Panel20.SuspendLayout()
         Panel19.SuspendLayout()
@@ -3940,7 +3941,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(24469, 30)
+        Label10.Size = New Size(26353, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -4187,6 +4188,7 @@ Partial Class Form5
         ' Panel2
         ' 
         Panel2.BackColor = Color.FromArgb(CByte(209), CByte(235), CByte(203))
+        Panel2.Controls.Add(cbKategori)
         Panel2.Controls.Add(tbLokasi)
         Panel2.Controls.Add(Label8)
         Panel2.Controls.Add(tbWaktu)
@@ -4195,16 +4197,16 @@ Partial Class Form5
         Panel2.Controls.Add(tglPelaksanaan)
         Panel2.Controls.Add(Label6)
         Panel2.Controls.Add(Label7)
-        Panel2.Location = New Point(628, 80)
+        Panel2.Location = New Point(593, 80)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(533, 421)
+        Panel2.Size = New Size(575, 421)
         Panel2.TabIndex = 15
         ' 
         ' tbLokasi
         ' 
         tbLokasi.Location = New Point(247, 362)
         tbLokasi.Name = "tbLokasi"
-        tbLokasi.Size = New Size(262, 27)
+        tbLokasi.Size = New Size(314, 27)
         tbLokasi.TabIndex = 11
         ' 
         ' Label8
@@ -4222,7 +4224,7 @@ Partial Class Form5
         ' 
         tbWaktu.Location = New Point(247, 305)
         tbWaktu.Name = "tbWaktu"
-        tbWaktu.Size = New Size(262, 27)
+        tbWaktu.Size = New Size(314, 27)
         tbWaktu.TabIndex = 9
         ' 
         ' Label3
@@ -4240,7 +4242,7 @@ Partial Class Form5
         ' 
         tbNamaKegiatan.Location = New Point(247, 16)
         tbNamaKegiatan.Name = "tbNamaKegiatan"
-        tbNamaKegiatan.Size = New Size(262, 27)
+        tbNamaKegiatan.Size = New Size(206, 27)
         tbNamaKegiatan.TabIndex = 4
         ' 
         ' tglPelaksanaan
@@ -4373,6 +4375,16 @@ Partial Class Form5
         TabControl1.SelectedIndex = 0
         TabControl1.Size = New Size(1209, 669)
         TabControl1.TabIndex = 0
+        ' 
+        ' cbKategori
+        ' 
+        cbKategori.FormattingEnabled = True
+        cbKategori.Items.AddRange(New Object() {"Pernikahan", "Lain-lain"})
+        cbKategori.Location = New Point(459, 16)
+        cbKategori.Name = "cbKategori"
+        cbKategori.Size = New Size(102, 28)
+        cbKategori.TabIndex = 12
+        cbKategori.Text = "Kategori"
         ' 
         ' Form5
         ' 
@@ -4850,4 +4862,5 @@ Partial Class Form5
     Friend WithEvents colJumlahTambahan As DataGridViewTextBoxColumn
     Friend WithEvents colTotalTambahan As DataGridViewTextBoxColumn
     Friend WithEvents colIdTambahan As DataGridViewTextBoxColumn
+    Friend WithEvents cbKategori As ComboBox
 End Class
