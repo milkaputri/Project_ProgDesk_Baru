@@ -354,6 +354,7 @@ Partial Class Form5
         btnTambah = New Button()
         lblBaru = New Label()
         Panel2 = New Panel()
+        cbKategori = New ComboBox()
         tbLokasi = New TextBox()
         Label8 = New Label()
         tbWaktu = New TextBox()
@@ -372,7 +373,6 @@ Partial Class Form5
         tbNamaPemesan = New TextBox()
         Label1 = New Label()
         TabControl1 = New TabControl()
-        cbKategori = New ComboBox()
         tpPembayaran.SuspendLayout()
         Panel20.SuspendLayout()
         Panel19.SuspendLayout()
@@ -3941,7 +3941,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(26353, 30)
+        Label10.Size = New Size(26824, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -4202,6 +4202,16 @@ Partial Class Form5
         Panel2.Size = New Size(575, 421)
         Panel2.TabIndex = 15
         ' 
+        ' cbKategori
+        ' 
+        cbKategori.FormattingEnabled = True
+        cbKategori.Items.AddRange(New Object() {"Pernikahan", "Lain-lain"})
+        cbKategori.Location = New Point(459, 16)
+        cbKategori.Name = "cbKategori"
+        cbKategori.Size = New Size(102, 28)
+        cbKategori.TabIndex = 12
+        cbKategori.Text = "Kategori"
+        ' 
         ' tbLokasi
         ' 
         tbLokasi.Location = New Point(247, 362)
@@ -4375,16 +4385,6 @@ Partial Class Form5
         TabControl1.SelectedIndex = 0
         TabControl1.Size = New Size(1209, 669)
         TabControl1.TabIndex = 0
-        ' 
-        ' cbKategori
-        ' 
-        cbKategori.FormattingEnabled = True
-        cbKategori.Items.AddRange(New Object() {"Pernikahan", "Lain-lain"})
-        cbKategori.Location = New Point(459, 16)
-        cbKategori.Name = "cbKategori"
-        cbKategori.Size = New Size(102, 28)
-        cbKategori.TabIndex = 12
-        cbKategori.Text = "Kategori"
         ' 
         ' Form5
         ' 

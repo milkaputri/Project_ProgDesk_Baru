@@ -189,6 +189,8 @@ Public Class Form5
             End If
         Else
             tbPrasA.Text = "300"
+            TampilTambahan("Prasmanan A", tbPrasA.Text.ToString(), 34500, 11)
+            UpdateTotalHargaTambahan()
         End If
     End Sub
 
@@ -213,6 +215,8 @@ Public Class Form5
             Dim nilai As Integer = Integer.Parse(tbPrasB.Text)
             If nilai = 300 Then
                 tbPrasB.Text = "0"
+                TampilTambahan("Prasmanan B", tbPrasB.Text.ToString(), 37000, 12)
+                UpdateTotalHargaTambahan()
             ElseIf nilai > 300 Then
                 tbPrasB.Text = (nilai - 1).ToString()
                 TampilTambahan("Prasmanan B", tbPrasB.Text.ToString(), 37000, 12)
@@ -1067,6 +1071,48 @@ Public Class Form5
                     DataGridView1.Rows.Remove(row)
                     lblTotalHargaPaket.Text = "0"
                     MessageBox.Show("Data berhasil dihapus.")
+                    Select Case idTerpilih
+                        Case "1"
+                            cbJasmine.Checked = False
+                            TampilkanSemuaCheckbox()
+                            cbJasmine.Enabled = True
+                        Case "2"
+                            cbOrchid.Checked = False
+                            TampilkanSemuaCheckbox()
+                            cbOrchid.Enabled = True
+                        Case "3"
+                            cbTulip.Checked = False
+                            TampilkanSemuaCheckbox()
+                            cbTulip.Enabled = True
+                        Case "4"
+                            cbCasablanca.Checked = False
+                            TampilkanSemuaCheckbox()
+                            cbCasablanca.Enabled = True
+                        Case "5"
+                            cbAkad.Checked = False
+                            TampilkanSemuaCheckbox()
+                            cbAkad.Enabled = True
+                        Case "6"
+                            cbGereja.Checked = False
+                            TampilkanSemuaCheckbox()
+                            cbGereja.Enabled = True
+                        Case "7"
+                            cbKrisan.Checked = False
+                            TampilkanSemuaCheckbox()
+                            cbKrisan.Enabled = True
+                        Case "8"
+                            cbGarbera.Checked = False
+                            TampilkanSemuaCheckbox()
+                            cbGarbera.Enabled = True
+                        Case "9"
+                            cbHorten.Checked = False
+                            TampilkanSemuaCheckbox()
+                            cbHorten.Enabled = True
+                        Case "10"
+                            cbKalalily.Checked = False
+                            TampilkanSemuaCheckbox()
+                            cbKalalily.Enabled = True
+                    End Select
                     Exit For
                 Else
                     MessageBox.Show("Data gagal dihapus.")
@@ -1091,6 +1137,13 @@ Public Class Form5
         If cbJasmine.Checked Then cbJasmine.Enabled = False
         If cbOrchid.Checked Then cbOrchid.Enabled = False
         If cbTulip.Checked Then cbTulip.Enabled = False
+        If cbCasablanca.Checked Then cbCasablanca.Enabled = False
+        If cbAkad.Checked Then cbAkad.Enabled = False
+        If cbGereja.Checked Then cbGereja.Enabled = False
+        If cbKrisan.Checked Then cbKrisan.Enabled = False
+        If cbGarbera.Checked Then cbGarbera.Enabled = False
+        If cbHorten.Checked Then cbHorten.Enabled = False
+        If cbKalalily.Checked Then cbKalalily.Enabled = False
     End Sub
 
     Public Sub TampilDataPaket()
@@ -1111,19 +1164,48 @@ Public Class Form5
             End While
             myDataReader.Close()
         End If
-        If DataGridView1.Item(3, 0).Value = "1" Then
-            cbJasmine.Checked = True
-            SembunyikanCheckboxLain(cbJasmine)
-            cbJasmine.Enabled = False
-        ElseIf DataGridView1.Item(3, 0).Value = "2" Then
-            cbOrchid.Checked = True
-            SembunyikanCheckboxLain(cbOrchid)
-            cbOrchid.Enabled = False
-        ElseIf DataGridView1.Item(3, 0).Value = "3" Then
-            cbTulip.Checked = True
-            SembunyikanCheckboxLain(cbTulip)
-            cbTulip.Enabled = False
-        End If
+        Select Case DataGridView1.Item(3, 0).Value
+            Case "1"
+                cbJasmine.Checked = True
+                SembunyikanCheckboxLain(cbJasmine)
+                cbJasmine.Enabled = False
+            Case "2"
+                cbOrchid.Checked = True
+                SembunyikanCheckboxLain(cbOrchid)
+                cbOrchid.Enabled = False
+            Case "3"
+                cbTulip.Checked = True
+                SembunyikanCheckboxLain(cbTulip)
+                cbTulip.Enabled = False
+            Case "4"
+                cbCasablanca.Checked = True
+                SembunyikanCheckboxLain(cbCasablanca)
+                cbCasablanca.Enabled = False
+            Case "5"
+                cbAkad.Checked = True
+                SembunyikanCheckboxLain(cbAkad)
+                cbAkad.Enabled = False
+            Case "6"
+                cbGereja.Checked = True
+                SembunyikanCheckboxLain(cbGereja)
+                cbGereja.Enabled = False
+            Case "7"
+                cbKrisan.Checked = True
+                SembunyikanCheckboxLain(cbKrisan)
+                cbKrisan.Enabled = False
+            Case "8"
+                cbGarbera.Checked = True
+                SembunyikanCheckboxLain(cbGarbera)
+                cbGarbera.Enabled = False
+            Case "9"
+                cbHorten.Checked = True
+                SembunyikanCheckboxLain(cbHorten)
+                cbHorten.Enabled = False
+            Case "10"
+                cbKalalily.Checked = True
+                SembunyikanCheckboxLain(cbKalalily)
+                cbKalalily.Enabled = False
+        End Select
         If myDataReader.IsClosed = False Then
             myDataReader.Close()
         End If
