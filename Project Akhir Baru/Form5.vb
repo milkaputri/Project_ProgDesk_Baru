@@ -316,10 +316,24 @@ Public Class Form5
         ' Mengurangkan nilai di tbPaketC
         If IsNumeric(tbStall1.Text) Then
             Dim nilai As Integer = Integer.Parse(tbStall1.Text)
+            Dim teksPilihan As String = ""
+            For Each ctrl As Control In panelStall1.Controls
+                If TypeOf ctrl Is CheckBox Then
+                    Dim cb As CheckBox = CType(ctrl, CheckBox)
+                    If cb.Checked Then
+                        teksPilihan = cb.Text
+                        Exit For
+                    End If
+                End If
+            Next
             If nilai = 250 Then
                 tbStall1.Text = "0"
+                TampilTambahanStall("Stall 1", tbStall1.Text.ToString(), 4500, 14, teksPilihan)
+                UpdateTotalHargaTambahan()
             ElseIf nilai > 250 Then
                 tbStall1.Text = (nilai - 1).ToString()
+                TampilTambahanStall("Stall 1", tbStall1.Text.ToString(), 4500, 14, teksPilihan)
+                UpdateTotalHargaTambahan()
             End If
         Else
             tbStall1.Text = "0"
@@ -328,15 +342,29 @@ Public Class Form5
 
     Private Sub btnPlusStall1_Click(sender As Object, e As EventArgs) Handles btnPlusStall1.Click
         ' Menambahkan nilai di tbPaketB
+        Dim teksPilihan As String = ""
         If IsNumeric(tbStall1.Text) Then
             Dim nilai As Integer = Integer.Parse(tbStall1.Text)
+            For Each ctrl As Control In panelStall1.Controls
+                If TypeOf ctrl Is CheckBox Then
+                    Dim cb As CheckBox = CType(ctrl, CheckBox)
+                    If cb.Checked Then
+                        teksPilihan = cb.Text
+                        Exit For
+                    End If
+                End If
+            Next
             If nilai = 0 Then
                 tbStall1.Text = "250"
             ElseIf nilai >= 250 Then
                 tbStall1.Text = (nilai + 1).ToString()
+                TampilTambahanStall("Stall 1", tbStall1.Text.ToString(), 4500, 14, teksPilihan)
+                UpdateTotalHargaTambahan()
             End If
         Else
             tbStall1.Text = "250"
+            TampilTambahanStall("Stall 1", tbStall1.Text.ToString(), 4500, 14, teksPilihan)
+            UpdateTotalHargaTambahan()
         End If
     End Sub
 
@@ -552,341 +580,341 @@ Public Class Form5
         End If
     End Sub
 
-    '  Syukur 1'
-    Private Sub btnMinSyukur1_Click(sender As Object, e As EventArgs) Handles btnMinSyukur1.Click
-        ' Mengurangkan nilai di tbPaketC
-        If IsNumeric(tbSyukur1.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbSyukur1.Text)
-            If nilai > 0 Then
-                tbSyukur1.Text = (nilai - 1).ToString()
-            End If
-        Else
-            tbSyukur1.Text = "0"
-        End If
-    End Sub
+    ''  Syukur 1'
+    'Private Sub btnMinSyukur1_Click(sender As Object, e As EventArgs) Handles btnMinSyukur1.Click
+    '    ' Mengurangkan nilai di tbPaketC
+    '    If IsNumeric(tbSyukur1.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbSyukur1.Text)
+    '        If nilai > 0 Then
+    '            tbSyukur1.Text = (nilai - 1).ToString()
+    '        End If
+    '    Else
+    '        tbSyukur1.Text = "0"
+    '    End If
+    'End Sub
 
-    Private Sub btnPlusSyukur1_Click(sender As Object, e As EventArgs) Handles btnPlusSyukur1.Click
-        ' Menambahkan nilai di tbSyukur1
-        If IsNumeric(tbSyukur1.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbSyukur1.Text)
-            tbSyukur1.Text = (nilai + 1).ToString()
-        Else
-            tbSyukur1.Text = "1"
-        End If
-    End Sub
+    'Private Sub btnPlusSyukur1_Click(sender As Object, e As EventArgs) Handles btnPlusSyukur1.Click
+    '    ' Menambahkan nilai di tbSyukur1
+    '    If IsNumeric(tbSyukur1.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbSyukur1.Text)
+    '        tbSyukur1.Text = (nilai + 1).ToString()
+    '    Else
+    '        tbSyukur1.Text = "1"
+    '    End If
+    'End Sub
 
-    ' Validasi input hanya angka untuk tbPaketB
-    Private Sub tbSyukur1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSyukur1.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
+    '' Validasi input hanya angka untuk tbPaketB
+    'Private Sub tbSyukur1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSyukur1.KeyPress
+    '    If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
 
-    ' Handle ketika tbPaketA kehilangan fokus
-    Private Sub tbSyukur1_Leave(sender As Object, e As EventArgs) Handles tbSyukur1.Leave
-        If String.IsNullOrWhiteSpace(tbSyukur1.Text) OrElse Not IsNumeric(tbSyukur1.Text) Then
-            tbSyukur1.Text = "0"
-        End If
-    End Sub
-
-
-    '  Syukur 2'
-    Private Sub btnMinSyukur2_Click(sender As Object, e As EventArgs) Handles btnMinSyukur2.Click
-        ' Mengurangkan nilai di tbPaketC
-        If IsNumeric(tbSyukur2.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbSyukur2.Text)
-            If nilai > 0 Then
-                tbSyukur2.Text = (nilai - 1).ToString()
-            End If
-        Else
-            tbSyukur2.Text = "0"
-        End If
-    End Sub
-
-    Private Sub btnPlusSyukur2_Click(sender As Object, e As EventArgs) Handles btnPlusSyukur2.Click
-        ' Menambahkan nilai di tbSyukur1
-        If IsNumeric(tbSyukur2.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbSyukur2.Text)
-            tbSyukur2.Text = (nilai + 1).ToString()
-        Else
-            tbSyukur2.Text = "1"
-        End If
-    End Sub
-
-    ' Validasi input hanya angka untuk tbPaketB
-    Private Sub tbSyukur2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSyukur2.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
-
-    ' Handle ketika tbPaketA kehilangan fokus
-    Private Sub tbSyukur2_Leave(sender As Object, e As EventArgs) Handles tbSyukur2.Leave
-        If String.IsNullOrWhiteSpace(tbSyukur2.Text) OrElse Not IsNumeric(tbSyukur2.Text) Then
-            tbSyukur2.Text = "0"
-        End If
-    End Sub
+    '' Handle ketika tbPaketA kehilangan fokus
+    'Private Sub tbSyukur1_Leave(sender As Object, e As EventArgs) Handles tbSyukur1.Leave
+    '    If String.IsNullOrWhiteSpace(tbSyukur1.Text) OrElse Not IsNumeric(tbSyukur1.Text) Then
+    '        tbSyukur1.Text = "0"
+    '    End If
+    'End Sub
 
 
-    '  Syukur 3'
-    Private Sub btnMinSyukur3_Click(sender As Object, e As EventArgs) Handles btnMinSyukur3.Click
-        ' Mengurangkan nilai di tbPaketC
-        If IsNumeric(tbSyukur3.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbSyukur3.Text)
-            If nilai > 0 Then
-                tbSyukur3.Text = (nilai - 1).ToString()
-            End If
-        Else
-            tbSyukur3.Text = "0"
-        End If
-    End Sub
+    ''  Syukur 2'
+    'Private Sub btnMinSyukur2_Click(sender As Object, e As EventArgs) Handles btnMinSyukur2.Click
+    '    ' Mengurangkan nilai di tbPaketC
+    '    If IsNumeric(tbSyukur2.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbSyukur2.Text)
+    '        If nilai > 0 Then
+    '            tbSyukur2.Text = (nilai - 1).ToString()
+    '        End If
+    '    Else
+    '        tbSyukur2.Text = "0"
+    '    End If
+    'End Sub
 
-    Private Sub btnPlusSyukur3_Click(sender As Object, e As EventArgs) Handles btnPlusSyukur3.Click
-        ' Menambahkan nilai di tbSyukur1
-        If IsNumeric(tbSyukur3.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbSyukur3.Text)
-            tbSyukur3.Text = (nilai + 1).ToString()
-        Else
-            tbSyukur3.Text = "1"
-        End If
-    End Sub
+    'Private Sub btnPlusSyukur2_Click(sender As Object, e As EventArgs) Handles btnPlusSyukur2.Click
+    '    ' Menambahkan nilai di tbSyukur1
+    '    If IsNumeric(tbSyukur2.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbSyukur2.Text)
+    '        tbSyukur2.Text = (nilai + 1).ToString()
+    '    Else
+    '        tbSyukur2.Text = "1"
+    '    End If
+    'End Sub
 
-    ' Validasi input hanya angka untuk tbPaketB
-    Private Sub tbSyukur3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSyukur3.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
+    '' Validasi input hanya angka untuk tbPaketB
+    'Private Sub tbSyukur2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSyukur2.KeyPress
+    '    If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
 
-    ' Handle ketika tbPaketA kehilangan fokus
-    Private Sub tbSyukur3_Leave(sender As Object, e As EventArgs) Handles tbSyukur3.Leave
-        If String.IsNullOrWhiteSpace(tbSyukur3.Text) OrElse Not IsNumeric(tbSyukur3.Text) Then
-            tbSyukur3.Text = "0"
-        End If
-    End Sub
-
-    '  Syukur 4'
-    Private Sub btnMinSyukur4_Click(sender As Object, e As EventArgs) Handles btnMinSyukur4.Click
-        ' Mengurangkan nilai di tbPaketC
-        If IsNumeric(tbSyukur4.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbSyukur4.Text)
-            If nilai > 0 Then
-                tbSyukur4.Text = (nilai - 1).ToString()
-            End If
-        Else
-            tbSyukur4.Text = "0"
-        End If
-    End Sub
-
-    Private Sub btnPlusSyukur4_Click(sender As Object, e As EventArgs) Handles btnPlusSyukur4.Click
-        ' Menambahkan nilai di tbSyukur1
-        If IsNumeric(tbSyukur4.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbSyukur4.Text)
-            tbSyukur4.Text = (nilai + 1).ToString()
-        Else
-            tbSyukur4.Text = "1"
-        End If
-    End Sub
-
-    ' Validasi input hanya angka untuk tbPaketB
-    Private Sub tbSyukur4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSyukur4.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
-
-    ' Handle ketika tbPaketA kehilangan fokus
-    Private Sub tbSyukur4_Leave(sender As Object, e As EventArgs) Handles tbSyukur4.Leave
-        If String.IsNullOrWhiteSpace(tbSyukur4.Text) OrElse Not IsNumeric(tbSyukur4.Text) Then
-            tbSyukur4.Text = "0"
-        End If
-    End Sub
+    '' Handle ketika tbPaketA kehilangan fokus
+    'Private Sub tbSyukur2_Leave(sender As Object, e As EventArgs) Handles tbSyukur2.Leave
+    '    If String.IsNullOrWhiteSpace(tbSyukur2.Text) OrElse Not IsNumeric(tbSyukur2.Text) Then
+    '        tbSyukur2.Text = "0"
+    '    End If
+    'End Sub
 
 
-    '  Dos 1'
-    Private Sub btnMinDos1_Click(sender As Object, e As EventArgs) Handles btnMinDos1.Click
-        ' Mengurangkan nilai di tbPaketC
-        If IsNumeric(tbDos1.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbDos1.Text)
-            If nilai > 0 Then
-                tbDos1.Text = (nilai - 1).ToString()
-            End If
-        Else
-            tbDos1.Text = "0"
-        End If
-    End Sub
+    ''  Syukur 3'
+    'Private Sub btnMinSyukur3_Click(sender As Object, e As EventArgs) Handles btnMinSyukur3.Click
+    '    ' Mengurangkan nilai di tbPaketC
+    '    If IsNumeric(tbSyukur3.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbSyukur3.Text)
+    '        If nilai > 0 Then
+    '            tbSyukur3.Text = (nilai - 1).ToString()
+    '        End If
+    '    Else
+    '        tbSyukur3.Text = "0"
+    '    End If
+    'End Sub
 
-    Private Sub btnPlusDos1_Click(sender As Object, e As EventArgs) Handles btnPlusDos1.Click
-        ' Menambahkan nilai di tbSyukur1
-        If IsNumeric(tbDos1.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbDos1.Text)
-            tbDos1.Text = (nilai + 1).ToString()
-        Else
-            tbDos1.Text = "1"
-        End If
-    End Sub
+    'Private Sub btnPlusSyukur3_Click(sender As Object, e As EventArgs) Handles btnPlusSyukur3.Click
+    '    ' Menambahkan nilai di tbSyukur1
+    '    If IsNumeric(tbSyukur3.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbSyukur3.Text)
+    '        tbSyukur3.Text = (nilai + 1).ToString()
+    '    Else
+    '        tbSyukur3.Text = "1"
+    '    End If
+    'End Sub
 
-    ' Validasi input hanya angka untuk tbPaketB
-    Private Sub tbDos1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbDos1.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
+    '' Validasi input hanya angka untuk tbPaketB
+    'Private Sub tbSyukur3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSyukur3.KeyPress
+    '    If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
 
-    ' Handle ketika tbPaketA kehilangan fokus
-    Private Sub tbDos1_Leave(sender As Object, e As EventArgs) Handles tbDos1.Leave
-        If String.IsNullOrWhiteSpace(tbDos1.Text) OrElse Not IsNumeric(tbDos1.Text) Then
-            tbDos1.Text = "0"
-        End If
-    End Sub
+    '' Handle ketika tbPaketA kehilangan fokus
+    'Private Sub tbSyukur3_Leave(sender As Object, e As EventArgs) Handles tbSyukur3.Leave
+    '    If String.IsNullOrWhiteSpace(tbSyukur3.Text) OrElse Not IsNumeric(tbSyukur3.Text) Then
+    '        tbSyukur3.Text = "0"
+    '    End If
+    'End Sub
 
-    '  Dos 2'
-    Private Sub btnMinDos2_Click(sender As Object, e As EventArgs) Handles btnMinDos2.Click
-        ' Mengurangkan nilai di tbPaketC
-        If IsNumeric(tbDos2.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbDos2.Text)
-            If nilai > 0 Then
-                tbDos2.Text = (nilai - 1).ToString()
-            End If
-        Else
-            tbDos2.Text = "0"
-        End If
-    End Sub
+    ''  Syukur 4'
+    'Private Sub btnMinSyukur4_Click(sender As Object, e As EventArgs) Handles btnMinSyukur4.Click
+    '    ' Mengurangkan nilai di tbPaketC
+    '    If IsNumeric(tbSyukur4.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbSyukur4.Text)
+    '        If nilai > 0 Then
+    '            tbSyukur4.Text = (nilai - 1).ToString()
+    '        End If
+    '    Else
+    '        tbSyukur4.Text = "0"
+    '    End If
+    'End Sub
 
-    Private Sub btnPlusDos2_Click(sender As Object, e As EventArgs) Handles btnPlusDos2.Click
-        ' Menambahkan nilai di tbSyukur1
-        If IsNumeric(tbDos2.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbDos2.Text)
-            tbDos2.Text = (nilai + 1).ToString()
-        Else
-            tbDos2.Text = "1"
-        End If
-    End Sub
+    'Private Sub btnPlusSyukur4_Click(sender As Object, e As EventArgs) Handles btnPlusSyukur4.Click
+    '    ' Menambahkan nilai di tbSyukur1
+    '    If IsNumeric(tbSyukur4.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbSyukur4.Text)
+    '        tbSyukur4.Text = (nilai + 1).ToString()
+    '    Else
+    '        tbSyukur4.Text = "1"
+    '    End If
+    'End Sub
 
-    ' Validasi input hanya angka untuk tbPaketB
-    Private Sub tbDos2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbDos2.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
+    '' Validasi input hanya angka untuk tbPaketB
+    'Private Sub tbSyukur4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSyukur4.KeyPress
+    '    If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
 
-    ' Handle ketika tbPaketA kehilangan fokus
-    Private Sub tbDos2_Leave(sender As Object, e As EventArgs) Handles tbDos2.Leave
-        If String.IsNullOrWhiteSpace(tbDos1.Text) OrElse Not IsNumeric(tbDos2.Text) Then
-            tbDos2.Text = "0"
-        End If
-    End Sub
+    '' Handle ketika tbPaketA kehilangan fokus
+    'Private Sub tbSyukur4_Leave(sender As Object, e As EventArgs) Handles tbSyukur4.Leave
+    '    If String.IsNullOrWhiteSpace(tbSyukur4.Text) OrElse Not IsNumeric(tbSyukur4.Text) Then
+    '        tbSyukur4.Text = "0"
+    '    End If
+    'End Sub
 
-    '  Dos 3'
-    Private Sub btnMinDos3_Click(sender As Object, e As EventArgs) Handles btnMinDos3.Click
-        ' Mengurangkan nilai di tbPaketC
-        If IsNumeric(tbDos3.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbDos3.Text)
-            If nilai > 0 Then
-                tbDos3.Text = (nilai - 1).ToString()
-            End If
-        Else
-            tbDos3.Text = "0"
-        End If
-    End Sub
 
-    Private Sub btnPlusDos3_Click(sender As Object, e As EventArgs) Handles btnPlusDos3.Click
-        ' Menambahkan nilai di tbSyukur1
-        If IsNumeric(tbDos3.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbDos3.Text)
-            tbDos3.Text = (nilai + 1).ToString()
-        Else
-            tbDos3.Text = "1"
-        End If
-    End Sub
+    ''  Dos 1'
+    'Private Sub btnMinDos1_Click(sender As Object, e As EventArgs) Handles btnMinDos1.Click
+    '    ' Mengurangkan nilai di tbPaketC
+    '    If IsNumeric(tbDos1.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbDos1.Text)
+    '        If nilai > 0 Then
+    '            tbDos1.Text = (nilai - 1).ToString()
+    '        End If
+    '    Else
+    '        tbDos1.Text = "0"
+    '    End If
+    'End Sub
 
-    ' Validasi input hanya angka untuk tbPaketB
-    Private Sub tbDos3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbDos3.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
+    'Private Sub btnPlusDos1_Click(sender As Object, e As EventArgs) Handles btnPlusDos1.Click
+    '    ' Menambahkan nilai di tbSyukur1
+    '    If IsNumeric(tbDos1.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbDos1.Text)
+    '        tbDos1.Text = (nilai + 1).ToString()
+    '    Else
+    '        tbDos1.Text = "1"
+    '    End If
+    'End Sub
 
-    ' Handle ketika tbPaketA kehilangan fokus
-    Private Sub tbDos3_Leave(sender As Object, e As EventArgs) Handles tbDos3.Leave
-        If String.IsNullOrWhiteSpace(tbDos3.Text) OrElse Not IsNumeric(tbDos3.Text) Then
-            tbDos3.Text = "0"
-        End If
-    End Sub
+    '' Validasi input hanya angka untuk tbPaketB
+    'Private Sub tbDos1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbDos1.KeyPress
+    '    If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
 
-    '  Snack 1'
-    Private Sub btnMinSnack1_Click(sender As Object, e As EventArgs) Handles btnMinSnack1.Click
-        ' Mengurangkan nilai di tbPaketC
-        If IsNumeric(tbSnack1.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbSnack1.Text)
-            If nilai > 0 Then
-                tbSnack1.Text = (nilai - 1).ToString()
-            End If
-        Else
-            tbSnack1.Text = "0"
-        End If
-    End Sub
+    '' Handle ketika tbPaketA kehilangan fokus
+    'Private Sub tbDos1_Leave(sender As Object, e As EventArgs) Handles tbDos1.Leave
+    '    If String.IsNullOrWhiteSpace(tbDos1.Text) OrElse Not IsNumeric(tbDos1.Text) Then
+    '        tbDos1.Text = "0"
+    '    End If
+    'End Sub
 
-    Private Sub btnPlusSnack1_Click(sender As Object, e As EventArgs) Handles btnPlusSnack1.Click
-        ' Menambahkan nilai di tbSyukur1
-        If IsNumeric(tbSnack1.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbSnack1.Text)
-            tbSnack1.Text = (nilai + 1).ToString()
-        Else
-            tbSnack1.Text = "1"
-        End If
-    End Sub
+    ''  Dos 2'
+    'Private Sub btnMinDos2_Click(sender As Object, e As EventArgs) Handles btnMinDos2.Click
+    '    ' Mengurangkan nilai di tbPaketC
+    '    If IsNumeric(tbDos2.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbDos2.Text)
+    '        If nilai > 0 Then
+    '            tbDos2.Text = (nilai - 1).ToString()
+    '        End If
+    '    Else
+    '        tbDos2.Text = "0"
+    '    End If
+    'End Sub
 
-    ' Validasi input hanya angka untuk tbPaketB
-    Private Sub tbSnack1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSnack1.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
+    'Private Sub btnPlusDos2_Click(sender As Object, e As EventArgs) Handles btnPlusDos2.Click
+    '    ' Menambahkan nilai di tbSyukur1
+    '    If IsNumeric(tbDos2.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbDos2.Text)
+    '        tbDos2.Text = (nilai + 1).ToString()
+    '    Else
+    '        tbDos2.Text = "1"
+    '    End If
+    'End Sub
 
-    ' Handle ketika tbPaketA kehilangan fokus
-    Private Sub tbSnack1_Leave(sender As Object, e As EventArgs) Handles tbSnack1.Leave
-        If String.IsNullOrWhiteSpace(tbSnack1.Text) OrElse Not IsNumeric(tbSnack1.Text) Then
-            tbSnack1.Text = "0"
-        End If
-    End Sub
+    '' Validasi input hanya angka untuk tbPaketB
+    'Private Sub tbDos2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbDos2.KeyPress
+    '    If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
 
-    '  Snack 2'
-    Private Sub btnMinSnack2_Click(sender As Object, e As EventArgs) Handles btnMinSnack2.Click
-        ' Mengurangkan nilai di tbPaketC
-        If IsNumeric(tbSnack2.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbSnack2.Text)
-            If nilai > 0 Then
-                tbSnack2.Text = (nilai - 1).ToString()
-            End If
-        Else
-            tbSnack2.Text = "0"
-        End If
-    End Sub
+    '' Handle ketika tbPaketA kehilangan fokus
+    'Private Sub tbDos2_Leave(sender As Object, e As EventArgs) Handles tbDos2.Leave
+    '    If String.IsNullOrWhiteSpace(tbDos1.Text) OrElse Not IsNumeric(tbDos2.Text) Then
+    '        tbDos2.Text = "0"
+    '    End If
+    'End Sub
 
-    Private Sub btnPlusSnack2_Click(sender As Object, e As EventArgs) Handles btnPlusSnack2.Click
-        ' Menambahkan nilai di tbSyukur1
-        If IsNumeric(tbSnack2.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbSnack2.Text)
-            tbSnack2.Text = (nilai + 1).ToString()
-        Else
-            tbSnack2.Text = "1"
-        End If
-    End Sub
+    ''  Dos 3'
+    'Private Sub btnMinDos3_Click(sender As Object, e As EventArgs) Handles btnMinDos3.Click
+    '    ' Mengurangkan nilai di tbPaketC
+    '    If IsNumeric(tbDos3.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbDos3.Text)
+    '        If nilai > 0 Then
+    '            tbDos3.Text = (nilai - 1).ToString()
+    '        End If
+    '    Else
+    '        tbDos3.Text = "0"
+    '    End If
+    'End Sub
 
-    ' Validasi input hanya angka untuk tbPaketB
-    Private Sub tbSnack2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSnack2.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
+    'Private Sub btnPlusDos3_Click(sender As Object, e As EventArgs) Handles btnPlusDos3.Click
+    '    ' Menambahkan nilai di tbSyukur1
+    '    If IsNumeric(tbDos3.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbDos3.Text)
+    '        tbDos3.Text = (nilai + 1).ToString()
+    '    Else
+    '        tbDos3.Text = "1"
+    '    End If
+    'End Sub
 
-    ' Handle ketika tbPaketA kehilangan fokus
-    Private Sub tbSnack2_Leave(sender As Object, e As EventArgs) Handles tbSnack2.Leave
-        If String.IsNullOrWhiteSpace(tbSnack2.Text) OrElse Not IsNumeric(tbSnack2.Text) Then
-            tbSnack2.Text = "0"
-        End If
-    End Sub
+    '' Validasi input hanya angka untuk tbPaketB
+    'Private Sub tbDos3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbDos3.KeyPress
+    '    If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
+
+    '' Handle ketika tbPaketA kehilangan fokus
+    'Private Sub tbDos3_Leave(sender As Object, e As EventArgs) Handles tbDos3.Leave
+    '    If String.IsNullOrWhiteSpace(tbDos3.Text) OrElse Not IsNumeric(tbDos3.Text) Then
+    '        tbDos3.Text = "0"
+    '    End If
+    'End Sub
+
+    ''  Snack 1'
+    'Private Sub btnMinSnack1_Click(sender As Object, e As EventArgs) Handles btnMinSnack1.Click
+    '    ' Mengurangkan nilai di tbPaketC
+    '    If IsNumeric(tbSnack1.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbSnack1.Text)
+    '        If nilai > 0 Then
+    '            tbSnack1.Text = (nilai - 1).ToString()
+    '        End If
+    '    Else
+    '        tbSnack1.Text = "0"
+    '    End If
+    'End Sub
+
+    'Private Sub btnPlusSnack1_Click(sender As Object, e As EventArgs) Handles btnPlusSnack1.Click
+    '    ' Menambahkan nilai di tbSyukur1
+    '    If IsNumeric(tbSnack1.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbSnack1.Text)
+    '        tbSnack1.Text = (nilai + 1).ToString()
+    '    Else
+    '        tbSnack1.Text = "1"
+    '    End If
+    'End Sub
+
+    '' Validasi input hanya angka untuk tbPaketB
+    'Private Sub tbSnack1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSnack1.KeyPress
+    '    If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
+
+    '' Handle ketika tbPaketA kehilangan fokus
+    'Private Sub tbSnack1_Leave(sender As Object, e As EventArgs) Handles tbSnack1.Leave
+    '    If String.IsNullOrWhiteSpace(tbSnack1.Text) OrElse Not IsNumeric(tbSnack1.Text) Then
+    '        tbSnack1.Text = "0"
+    '    End If
+    'End Sub
+
+    ''  Snack 2'
+    'Private Sub btnMinSnack2_Click(sender As Object, e As EventArgs) Handles btnMinSnack2.Click
+    '    ' Mengurangkan nilai di tbPaketC
+    '    If IsNumeric(tbSnack2.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbSnack2.Text)
+    '        If nilai > 0 Then
+    '            tbSnack2.Text = (nilai - 1).ToString()
+    '        End If
+    '    Else
+    '        tbSnack2.Text = "0"
+    '    End If
+    'End Sub
+
+    'Private Sub btnPlusSnack2_Click(sender As Object, e As EventArgs) Handles btnPlusSnack2.Click
+    '    ' Menambahkan nilai di tbSyukur1
+    '    If IsNumeric(tbSnack2.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbSnack2.Text)
+    '        tbSnack2.Text = (nilai + 1).ToString()
+    '    Else
+    '        tbSnack2.Text = "1"
+    '    End If
+    'End Sub
+
+    '' Validasi input hanya angka untuk tbPaketB
+    'Private Sub tbSnack2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSnack2.KeyPress
+    '    If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
+
+    '' Handle ketika tbPaketA kehilangan fokus
+    'Private Sub tbSnack2_Leave(sender As Object, e As EventArgs) Handles tbSnack2.Leave
+    '    If String.IsNullOrWhiteSpace(tbSnack2.Text) OrElse Not IsNumeric(tbSnack2.Text) Then
+    '        tbSnack2.Text = "0"
+    '    End If
+    'End Sub
 
     Private Sub Form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Form3.Hide()
@@ -1329,7 +1357,544 @@ Public Class Form5
         End If
     End Sub
 
-    Private Sub CheckedListBox2_SelectedIndexChanged(sender As Object, e As EventArgs)
+    Private Sub SembunyikanCheckboxLainStall(cbYangAktif As CheckBox)
+        Dim selectedCheckBox As CheckBox = CType(cbYangAktif, CheckBox)
+        For Each ctrl As Control In panelStall1.Controls
+            If TypeOf ctrl Is CheckBox AndAlso ctrl IsNot selectedCheckBox Then
+                ctrl.Visible = False
+            End If
+        Next
+    End Sub
 
+    Private Sub cbIcePuter_CheckedChanged(sender As Object, e As EventArgs) Handles cbIcePuter.CheckedChanged
+        If cbIcePuter.Checked Then
+            SembunyikanCheckboxLainStall(cbIcePuter)
+            'TampilPaket(10)
+        Else
+            TampilkanSemuaCheckbox()
+            'UncheckedBox(10)
+        End If
+    End Sub
+
+    Private Sub TampilTambahanStall(nama_paket As String, jumlah As Integer, harga As Integer, idTambahan As Integer, cbYangAktif As String)
+        Dim i
+        i = 0
+        Dim sql As String = "SELECT * FROM detail_paket where id_paket = " & idTambahan
+        myCommand.CommandText = sql
+        myDataReader = myCommand.ExecuteReader
+        Dim found As Boolean = False
+        For Each row As DataGridViewRow In DataGridView2.Rows
+            If Not row.IsNewRow AndAlso row.Cells("colPaketTambahan").Value = nama_paket & cbYangAktif Then
+                row.Cells("colJumlahTambahan").Value = jumlah
+                row.Cells("colTotalTambahan").Value = jumlah * harga
+                row.Cells("colIdTambahan").Value = idTambahan
+                found = True
+                If row.Cells("colJumlahTambahan").Value = 0 Then
+                    DataGridView2.Rows.Remove(row)
+                End If
+                Exit For
+            End If
+            myDataReader.Close()
+        Next
+
+        If Not found Then
+            DataGridView2.Rows.Add(nama_paket & cbYangAktif, jumlah, jumlah * harga, idTambahan)
+        End If
+    End Sub
+    ' PAKET SYUKURAN
+    'Code untuk jumlah pembeliah di tab "Tambahan" '
+    ' Syukur 1  '
+    Private Sub btnMinSyukur1_Click(sender As Object, e As EventArgs) Handles btnMinSyukur1.Click
+        ' Mengurangkan nilai di tbSyukur1
+        If IsNumeric(tbSyukur1.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbSyukur1.Text)
+            If nilai = 250 Then
+                tbSyukur1.Text = "0"
+                TampilTambahan("Nasi Dos Syukuran 1", tbSyukur1.Text.ToString(), 35000, 20)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai > 250 Then
+                tbSyukur1.Text = (nilai - 1).ToString()
+                TampilTambahan("Nasi Dos Syukuran 1", tbSyukur1.Text.ToString(), 35000, 20)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbSyukur1.Text = "0"
+        End If
+
+    End Sub
+
+    Private Sub btnPlusSyukur1_Click(sender As Object, e As EventArgs) Handles btnPlusSyukur1.Click
+        ' Menambahkan nilai di tbSyukur2
+        If IsNumeric(tbSyukur1.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbSyukur1.Text)
+            If nilai = 0 Then
+                tbSyukur1.Text = "250"
+                TampilTambahan("Nasi Dos Syukuran 1", tbSyukur1.Text.ToString(), 34500, 20)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai >= 300 Then
+                tbSyukur1.Text = (nilai + 1).ToString()
+                TampilTambahan("Nasi Dos Syukuran 1", tbSyukur1.Text.ToString(), 34500, 20)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbSyukur1.Text = "250"
+            TampilTambahan("Nasi Dos Syukuran 1", tbSyukur1.Text.ToString(), 34500, 20)
+            UpdateTotalHargaTambahan()
+        End If
+    End Sub
+
+    ' Validasi input hanya angka untuk tbPaketA
+    Private Sub tbSyukur1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSyukur1.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    ' Handle ketika tbPaketA kehilangan fokus
+    Private Sub tbSyukur1_Leave(sender As Object, e As EventArgs) Handles tbSyukur1.Leave
+        If String.IsNullOrWhiteSpace(tbSyukur1.Text) OrElse Not IsNumeric(tbSyukur1.Text) Then
+            tbSyukur1.Text = "0"
+        End If
+    End Sub
+
+
+
+    ' Syukur 2  '
+    Private Sub btnMinSyukur2_Click(sender As Object, e As EventArgs) Handles btnMinSyukur2.Click
+        ' Mengurangkan nilai di tbSyukur2
+        If IsNumeric(tbSyukur2.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbSyukur2.Text)
+            If nilai = 250 Then
+                tbSyukur2.Text = "0"
+                TampilTambahan("Nasi Dos Syukuran 2", tbSyukur2.Text.ToString(), 40000, 21)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai > 250 Then
+                tbSyukur2.Text = (nilai - 1).ToString()
+                TampilTambahan("Nasi Dos Syukuran 2", tbSyukur2.Text.ToString(), 40000, 21)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbSyukur2.Text = "0"
+        End If
+
+    End Sub
+
+    Private Sub btnPlusSyukur2_Click(sender As Object, e As EventArgs) Handles btnPlusSyukur2.Click
+        ' Menambahkan nilai di tbSyukur2
+        If IsNumeric(tbSyukur2.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbSyukur2.Text)
+            If nilai = 0 Then
+                tbSyukur2.Text = "250"
+                TampilTambahan("Nasi Dos Syukuran 2", tbSyukur2.Text.ToString(), 40000, 21)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai >= 250 Then
+                tbSyukur2.Text = (nilai + 1).ToString()
+                TampilTambahan("Nasi Dos Syukuran 2", tbSyukur2.Text.ToString(), 40000, 21)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbSyukur2.Text = "250"
+            TampilTambahan("Nasi Dos Syukuran 2", tbSyukur2.Text.ToString(), 40000, 21)
+            UpdateTotalHargaTambahan()
+        End If
+    End Sub
+
+    ' Validasi input hanya angka untuk tbSyukur2
+    Private Sub tbSyukur2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSyukur2.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    ' Handle ketika tbSyukur2 kehilangan fokus
+    Private Sub tbSyukur2_Leave(sender As Object, e As EventArgs) Handles tbSyukur2.Leave
+        If String.IsNullOrWhiteSpace(tbSyukur2.Text) OrElse Not IsNumeric(tbSyukur2.Text) Then
+            tbSyukur2.Text = "0"
+        End If
+    End Sub
+
+
+
+    ' Syukur 3  '
+    Private Sub btnMinSyukur3_Click(sender As Object, e As EventArgs) Handles btnMinSyukur3.Click
+        ' Mengurangkan nilai di tbSyukur3
+        If IsNumeric(tbSyukur3.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbSyukur3.Text)
+            If nilai = 250 Then
+                tbSyukur3.Text = "0"
+                TampilTambahan("Nasi Dos Syukuran 3", tbSyukur3.Text.ToString(), 60000, 22)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai > 250 Then
+                tbSyukur3.Text = (nilai - 1).ToString()
+                TampilTambahan("Nasi Dos Syukuran 3", tbSyukur3.Text.ToString(), 60000, 22)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbSyukur3.Text = "0"
+        End If
+
+    End Sub
+
+    Private Sub btnPlusSyukur3_Click(sender As Object, e As EventArgs) Handles btnPlusSyukur3.Click
+        ' Menambahkan nilai di tbSyukur3
+        If IsNumeric(tbSyukur3.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbSyukur3.Text)
+            If nilai = 0 Then
+                tbSyukur3.Text = "250"
+                TampilTambahan("Nasi Dos Syukuran 3", tbSyukur3.Text.ToString(), 60000, 22)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai >= 250 Then
+                tbSyukur3.Text = (nilai + 1).ToString()
+                TampilTambahan("Nasi Dos Syukuran 3", tbSyukur3.Text.ToString(), 60000, 22)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbSyukur3.Text = "250"
+            TampilTambahan("Nasi Dos Syukuran 3", tbSyukur3.Text.ToString(), 60000, 22)
+            UpdateTotalHargaTambahan()
+        End If
+    End Sub
+
+    ' Validasi input hanya angka untuk tbSyukur3
+    Private Sub tbSyukur3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSyukur3.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    ' Handle ketika tbSyukur3 kehilangan fokus
+    Private Sub tbSyukur3_Leave(sender As Object, e As EventArgs) Handles tbSyukur3.Leave
+        If String.IsNullOrWhiteSpace(tbSyukur3.Text) OrElse Not IsNumeric(tbSyukur3.Text) Then
+            tbSyukur3.Text = "0"
+        End If
+    End Sub
+
+
+    ' Syukur 4  '
+    Private Sub btnMinSyukur4_Click(sender As Object, e As EventArgs) Handles btnMinSyukur4.Click
+        ' Mengurangkan nilai di tbSyukur4
+        If IsNumeric(tbSyukur4.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbSyukur4.Text)
+            If nilai = 250 Then
+                tbSyukur4.Text = "0"
+                TampilTambahan("Nasi Dos Syukuran 4", tbSyukur4.Text.ToString(), 90000, 23)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai > 250 Then
+                tbSyukur4.Text = (nilai - 1).ToString()
+                TampilTambahan("Nasi Dos Syukuran 4", tbSyukur4.Text.ToString(), 90000, 23)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbSyukur4.Text = "0"
+        End If
+
+    End Sub
+
+    Private Sub btnPlusSyukur4_Click(sender As Object, e As EventArgs) Handles btnPlusSyukur4.Click
+        ' Menambahkan nilai di tbSyukur4
+        If IsNumeric(tbSyukur4.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbSyukur4.Text)
+            If nilai = 0 Then
+                tbSyukur4.Text = "250"
+                TampilTambahan("Nasi Dos Syukuran 4", tbSyukur4.Text.ToString(), 90000, 23)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai >= 250 Then
+                tbSyukur4.Text = (nilai + 1).ToString()
+                TampilTambahan("Nasi Dos Syukuran 4", tbSyukur4.Text.ToString(), 90000, 23)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbSyukur4.Text = "250"
+            TampilTambahan("Nasi Dos Syukuran 4", tbSyukur4.Text.ToString(), 90000, 23)
+            UpdateTotalHargaTambahan()
+        End If
+    End Sub
+
+    ' Validasi input hanya angka untuk tbSyukur4
+    Private Sub tbSyukur4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSyukur4.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    ' Handle ketika tbSyukur4 kehilangan fokus
+    Private Sub tbSyukur4_Leave(sender As Object, e As EventArgs) Handles tbSyukur4.Leave
+        If String.IsNullOrWhiteSpace(tbSyukur4.Text) OrElse Not IsNumeric(tbSyukur4.Text) Then
+            tbSyukur4.Text = "0"
+        End If
+    End Sub
+
+
+
+    ' Dos 1  '
+    Private Sub btnMinDos1_Click(sender As Object, e As EventArgs) Handles btnMinDos1.Click
+        ' Mengurangkan nilai di tbDos1
+        If IsNumeric(tbDos1.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbDos1.Text)
+            If nilai = 250 Then
+                tbDos1.Text = "0"
+                TampilTambahan("Nasi Dos 1", tbDos1.Text.ToString(), 22500, 24)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai > 250 Then
+                tbDos1.Text = (nilai - 1).ToString()
+                TampilTambahan("Nasi Dos 1", tbDos1.Text.ToString(), 22500, 24)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbDos1.Text = "0"
+        End If
+
+    End Sub
+
+    Private Sub btnPlusDos1_Click(sender As Object, e As EventArgs) Handles btnPlusDos1.Click
+        ' Menambahkan nilai di tbDos1
+        If IsNumeric(tbDos1.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbDos1.Text)
+            If nilai = 0 Then
+                tbDos1.Text = "250"
+                TampilTambahan("Nasi Dos 1", tbDos1.Text.ToString(), 22500, 24)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai >= 250 Then
+                tbDos1.Text = (nilai + 1).ToString()
+                TampilTambahan("Nasi Dos 1", tbDos1.Text.ToString(), 22500, 24)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbDos1.Text = "250"
+            TampilTambahan("Nasi Dos 1", tbDos1.Text.ToString(), 22500, 24)
+            UpdateTotalHargaTambahan()
+        End If
+    End Sub
+
+    ' Validasi input hanya angka untuk tbDos1
+    Private Sub tbDos1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbDos1.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    ' Handle ketika tbDos1 kehilangan fokus
+    Private Sub tbDos1_Leave(sender As Object, e As EventArgs) Handles tbDos1.Leave
+        If String.IsNullOrWhiteSpace(tbDos1.Text) OrElse Not IsNumeric(tbDos1.Text) Then
+            tbDos1.Text = "0"
+        End If
+    End Sub
+
+
+
+    ' Dos 2  '
+    Private Sub btnMinDos2_Click(sender As Object, e As EventArgs) Handles btnMinDos2.Click
+        ' Mengurangkan nilai di tbDos2
+        If IsNumeric(tbDos2.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbDos2.Text)
+            If nilai = 250 Then
+                tbDos2.Text = "0"
+                TampilTambahan("Nasi Dos 2", tbDos2.Text.ToString(), 26000, 25)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai > 250 Then
+                tbDos2.Text = (nilai - 1).ToString()
+                TampilTambahan("Nasi Dos 2", tbDos2.Text.ToString(), 26000, 25)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbDos2.Text = "0"
+        End If
+
+    End Sub
+
+    Private Sub btnPlusDos2_Click(sender As Object, e As EventArgs) Handles btnPlusDos2.Click
+        ' Menambahkan nilai di tbDos2
+        If IsNumeric(tbDos2.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbDos2.Text)
+            If nilai = 0 Then
+                tbDos2.Text = "250"
+                TampilTambahan("Nasi Dos 2", tbDos2.Text.ToString(), 26000, 25)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai >= 250 Then
+                tbDos2.Text = (nilai + 1).ToString()
+                TampilTambahan("Nasi Dos 2", tbDos2.Text.ToString(), 26000, 25)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbDos2.Text = "250"
+            TampilTambahan("Nasi Dos 2", tbDos2.Text.ToString(), 26000, 25)
+            UpdateTotalHargaTambahan()
+        End If
+    End Sub
+
+    ' Validasi input hanya angka untuk tbDos2
+    Private Sub tbDos2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbDos2.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    ' Handle ketika tbDos2 kehilangan fokus
+    Private Sub tbDos2_Leave(sender As Object, e As EventArgs) Handles tbDos2.Leave
+        If String.IsNullOrWhiteSpace(tbDos2.Text) OrElse Not IsNumeric(tbDos2.Text) Then
+            tbDos2.Text = "0"
+        End If
+    End Sub
+
+
+    ' Dos 3  '
+    Private Sub btnMinDos3_Click(sender As Object, e As EventArgs) Handles btnMinDos3.Click
+        ' Mengurangkan nilai di tbDos3
+        If IsNumeric(tbDos3.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbDos3.Text)
+            If nilai = 250 Then
+                tbDos3.Text = "0"
+                TampilTambahan("Nasi Dos 3", tbDos3.Text.ToString(), 30000, 26)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai > 250 Then
+                tbDos3.Text = (nilai - 1).ToString()
+                TampilTambahan("Nasi Dos 3", tbDos3.Text.ToString(), 30000, 26)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbDos3.Text = "0"
+        End If
+
+    End Sub
+
+    Private Sub btnPlusDos3_Click(sender As Object, e As EventArgs) Handles btnPlusDos3.Click
+        ' Menambahkan nilai di tbDos3
+        If IsNumeric(tbDos3.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbDos3.Text)
+            If nilai = 0 Then
+                tbDos3.Text = "250"
+                TampilTambahan("Nasi Dos 3", tbDos3.Text.ToString(), 30000, 26)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai >= 250 Then
+                tbDos3.Text = (nilai + 1).ToString()
+                TampilTambahan("Nasi Dos 3", tbDos3.Text.ToString(), 30000, 26)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbDos3.Text = "250"
+            TampilTambahan("Nasi Dos 3", tbDos3.Text.ToString(), 30000, 26)
+            UpdateTotalHargaTambahan()
+        End If
+    End Sub
+
+    ' Validasi input hanya angka untuk tbDos3
+    Private Sub tbDos3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbDos3.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    ' Handle ketika tbDos3 kehilangan fokus
+    Private Sub tbDos3_Leave(sender As Object, e As EventArgs) Handles tbDos3.Leave
+        If String.IsNullOrWhiteSpace(tbDos3.Text) OrElse Not IsNumeric(tbDos3.Text) Then
+            tbDos3.Text = "0"
+        End If
+    End Sub
+
+
+
+    ' Snack 1  '
+    Private Sub btnMinSnack1_Click(sender As Object, e As EventArgs) Handles btnMinSnack1.Click
+        ' Mengurangkan nilai di tbSnack1
+        If IsNumeric(tbSnack1.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbSnack1.Text)
+            If nilai = 250 Then
+                tbSnack1.Text = "0"
+                TampilTambahan("Snack Box 1", tbSnack1.Text.ToString(), 12000, 27)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai > 250 Then
+                tbSnack1.Text = (nilai - 1).ToString()
+                TampilTambahan("Snack Box 1", tbSnack1.Text.ToString(), 12000, 27)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbSnack1.Text = "0"
+        End If
+
+    End Sub
+
+    Private Sub btnPlusSnack1_Click(sender As Object, e As EventArgs) Handles btnPlusSnack1.Click
+        ' Menambahkan nilai di tbSnack1
+        If IsNumeric(tbSnack1.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbSnack1.Text)
+            If nilai = 0 Then
+                tbSnack1.Text = "250"
+                TampilTambahan("Snack Box 1", tbSnack1.Text.ToString(), 12000, 27)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai >= 250 Then
+                tbSnack1.Text = (nilai + 1).ToString()
+                TampilTambahan("Snack Box 1", tbSnack1.Text.ToString(), 12000, 27)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbSnack1.Text = "250"
+            TampilTambahan("Snack Box 1", tbSnack1.Text.ToString(), 12000, 27)
+            UpdateTotalHargaTambahan()
+        End If
+    End Sub
+
+    ' Validasi input hanya angka untuk tbSnack1
+    Private Sub tbSnack1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSnack1.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    ' Handle ketika tbSnack1 kehilangan fokus
+    Private Sub tbSnack1_Leave(sender As Object, e As EventArgs) Handles tbSnack1.Leave
+        If String.IsNullOrWhiteSpace(tbSnack1.Text) OrElse Not IsNumeric(tbSnack1.Text) Then
+            tbSnack1.Text = "0"
+        End If
+    End Sub
+
+    Private Sub btnMinSnack2_Click(sender As Object, e As EventArgs) Handles btnMinSnack2.Click
+        ' Mengurangkan nilai di tbSnack2
+        If IsNumeric(tbSnack2.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbSnack2.Text)
+            If nilai = 250 Then
+                tbSnack2.Text = "0"
+                TampilTambahan("Snack Box 2", tbSnack2.Text.ToString(), 15000, 28)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai > 250 Then
+                tbSnack2.Text = (nilai - 1).ToString()
+                TampilTambahan("Snack Box 2", tbSnack2.Text.ToString(), 15000, 28)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbSnack2.Text = "0"
+        End If
+
+    End Sub
+    Private Sub btnPlusSnack2_Click(sender As Object, e As EventArgs) Handles btnPlusSnack2.Click
+        ' Menambahkan nilai di tbSnack2
+        If IsNumeric(tbSnack2.Text) Then
+            Dim nilai As Integer = Integer.Parse(tbSnack2.Text)
+            If nilai = 0 Then
+                tbSnack2.Text = "250"
+                TampilTambahan("Snack Box 2", tbSnack2.Text.ToString(), 15000, 28)
+                UpdateTotalHargaTambahan()
+            ElseIf nilai >= 250 Then
+                tbSnack2.Text = (nilai + 1).ToString()
+                TampilTambahan("Snack Box 2", tbSnack2.Text.ToString(), 15000, 28)
+                UpdateTotalHargaTambahan()
+            End If
+        Else
+            tbSnack2.Text = "250"
+            TampilTambahan("Snack Box 2", tbSnack2.Text.ToString(), 15000, 28)
+            UpdateTotalHargaTambahan()
+        End If
+    End Sub
+    ' Validasi input hanya angka untuk tbSnack2
+    Private Sub tbSnack2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbSnack2.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    'Handle ketika tbSnack2 kehilangan fokus
+    Private Sub tbSnack2_Leave(sender As Object, e As EventArgs) Handles tbSnack2.Leave
+        If String.IsNullOrWhiteSpace(tbSnack2.Text) OrElse Not IsNumeric(tbSnack2.Text) Then
+            tbSnack2.Text = "0"
+        End If
     End Sub
 End Class
