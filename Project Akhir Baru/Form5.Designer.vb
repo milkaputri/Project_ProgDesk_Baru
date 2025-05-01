@@ -66,6 +66,76 @@ Partial Class Form5
         Label61 = New Label()
         tpTambahan = New TabPage()
         SplitContainer2 = New SplitContainer()
+        Panel29 = New Panel()
+        tbDimSum = New TextBox()
+        tbKebab = New TextBox()
+        tbNasiRawon = New TextBox()
+        tbNasiLiwet = New TextBox()
+        cbDimSum = New CheckBox()
+        cbKebab = New CheckBox()
+        cbNasiRawon = New CheckBox()
+        cbNasiLiwetSolo = New CheckBox()
+        Label104 = New Label()
+        Label105 = New Label()
+        Label106 = New Label()
+        Panel27 = New Panel()
+        TextBox1 = New TextBox()
+        tbSaladBuah = New TextBox()
+        tbSiomay = New TextBox()
+        tbBakso = New TextBox()
+        cbSelatSolo = New CheckBox()
+        cbSaladBuah = New CheckBox()
+        cbSiomay = New CheckBox()
+        cbBakso = New CheckBox()
+        Label98 = New Label()
+        Label99 = New Label()
+        Label100 = New Label()
+        Panel28 = New Panel()
+        tbMie = New TextBox()
+        tbSate = New TextBox()
+        tbGado = New TextBox()
+        tbEmpek = New TextBox()
+        cbMieOriental = New CheckBox()
+        cbSateAyam = New CheckBox()
+        cbGado = New CheckBox()
+        cbEmpek = New CheckBox()
+        Label101 = New Label()
+        Label102 = New Label()
+        Label103 = New Label()
+        Panel26 = New Panel()
+        tbPecelPincuk = New TextBox()
+        tbEsDoger = New TextBox()
+        tbWedangRonde = New TextBox()
+        cbPecelPincuk = New CheckBox()
+        cbEsDoger = New CheckBox()
+        cbWedangRonde = New CheckBox()
+        Label95 = New Label()
+        Label96 = New Label()
+        Label97 = New Label()
+        Panel25 = New Panel()
+        tbJusJeruk = New TextBox()
+        tbRujak = New TextBox()
+        tbEsSelasih = New TextBox()
+        tbEsDawet = New TextBox()
+        cbJusJeruk = New CheckBox()
+        cbRujak = New CheckBox()
+        cbEsSelasih = New CheckBox()
+        cbEsDawet = New CheckBox()
+        Label92 = New Label()
+        Label93 = New Label()
+        Label94 = New Label()
+        Panel24 = New Panel()
+        tbBuahIris = New TextBox()
+        tbEsSeruni = New TextBox()
+        tbTeh = New TextBox()
+        tbIcePuter = New TextBox()
+        cbBuahIris = New CheckBox()
+        cbEsSeruni = New CheckBox()
+        cbTeh = New CheckBox()
+        cbIcePuter = New CheckBox()
+        Label89 = New Label()
+        Label90 = New Label()
+        Label91 = New Label()
         Panel38 = New Panel()
         TextBox47 = New TextBox()
         Label134 = New Label()
@@ -141,48 +211,6 @@ Partial Class Form5
         tbSyukur1 = New TextBox()
         btnMinSyukur1 = New Button()
         Label109 = New Label()
-        Panel29 = New Panel()
-        Label104 = New Label()
-        Label105 = New Label()
-        btnPlusStal6 = New Button()
-        tbStall6 = New TextBox()
-        btnMinStall6 = New Button()
-        Label106 = New Label()
-        Panel28 = New Panel()
-        Label101 = New Label()
-        Label102 = New Label()
-        btnPlusStall5 = New Button()
-        tbStall5 = New TextBox()
-        btnMinStall5 = New Button()
-        Label103 = New Label()
-        Panel27 = New Panel()
-        Label98 = New Label()
-        Label99 = New Label()
-        btnPlusStall4 = New Button()
-        tbStall4 = New TextBox()
-        btnMinStall4 = New Button()
-        Label100 = New Label()
-        Panel26 = New Panel()
-        Label95 = New Label()
-        Label96 = New Label()
-        btnPlusStall3 = New Button()
-        tbStall3 = New TextBox()
-        btnMinStall3 = New Button()
-        Label97 = New Label()
-        Panel25 = New Panel()
-        Label92 = New Label()
-        Label93 = New Label()
-        btnPlusStall2 = New Button()
-        tbStall2 = New TextBox()
-        btnMinStall2 = New Button()
-        Label94 = New Label()
-        Panel24 = New Panel()
-        Label89 = New Label()
-        Label90 = New Label()
-        btnPlusStall1 = New Button()
-        tbStall1 = New TextBox()
-        btnMinStall1 = New Button()
-        Label91 = New Label()
         Label88 = New Label()
         Panel23 = New Panel()
         Label137 = New Label()
@@ -367,29 +395,6 @@ Partial Class Form5
         tbNamaPemesan = New TextBox()
         Label1 = New Label()
         TabControl1 = New TabControl()
-        cbIcePuter = New CheckBox()
-        cbTeh = New CheckBox()
-        cbEsSeruni = New CheckBox()
-        cbEsDawet = New CheckBox()
-        cbEsSelasih = New CheckBox()
-        cbRujak = New CheckBox()
-        cbAnekaJuice = New CheckBox()
-        cbWedangRonde = New CheckBox()
-        cbEsDoger = New CheckBox()
-        cbPecelPincuk = New CheckBox()
-        cbBuahIris = New CheckBox()
-        cbBakso = New CheckBox()
-        cbSiomay = New CheckBox()
-        cbSaladBuah = New CheckBox()
-        cbSelatSolo = New CheckBox()
-        cbEmpek = New CheckBox()
-        cbGado = New CheckBox()
-        cbSateAyam = New CheckBox()
-        cbMieOriental = New CheckBox()
-        cbNasiLiwetSolo = New CheckBox()
-        cbNasiRawon = New CheckBox()
-        cbKebab = New CheckBox()
-        cbDimSum = New CheckBox()
         tpPembayaran.SuspendLayout()
         Panel20.SuspendLayout()
         Panel19.SuspendLayout()
@@ -400,6 +405,12 @@ Partial Class Form5
         SplitContainer2.Panel1.SuspendLayout()
         SplitContainer2.Panel2.SuspendLayout()
         SplitContainer2.SuspendLayout()
+        Panel29.SuspendLayout()
+        Panel27.SuspendLayout()
+        Panel28.SuspendLayout()
+        Panel26.SuspendLayout()
+        Panel25.SuspendLayout()
+        Panel24.SuspendLayout()
         Panel38.SuspendLayout()
         Panel37.SuspendLayout()
         Panel36.SuspendLayout()
@@ -409,12 +420,6 @@ Partial Class Form5
         Panel32.SuspendLayout()
         Panel31.SuspendLayout()
         Panel30.SuspendLayout()
-        Panel29.SuspendLayout()
-        Panel28.SuspendLayout()
-        Panel27.SuspendLayout()
-        Panel26.SuspendLayout()
-        Panel25.SuspendLayout()
-        Panel24.SuspendLayout()
         Panel23.SuspendLayout()
         Panel22.SuspendLayout()
         Panel21.SuspendLayout()
@@ -948,6 +953,12 @@ Partial Class Form5
         ' 
         SplitContainer2.Panel1.AutoScroll = True
         SplitContainer2.Panel1.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        SplitContainer2.Panel1.Controls.Add(Panel29)
+        SplitContainer2.Panel1.Controls.Add(Panel27)
+        SplitContainer2.Panel1.Controls.Add(Panel28)
+        SplitContainer2.Panel1.Controls.Add(Panel26)
+        SplitContainer2.Panel1.Controls.Add(Panel25)
+        SplitContainer2.Panel1.Controls.Add(Panel24)
         SplitContainer2.Panel1.Controls.Add(Panel38)
         SplitContainer2.Panel1.Controls.Add(Panel37)
         SplitContainer2.Panel1.Controls.Add(Label130)
@@ -960,12 +971,6 @@ Partial Class Form5
         SplitContainer2.Panel1.Controls.Add(Panel31)
         SplitContainer2.Panel1.Controls.Add(Label110)
         SplitContainer2.Panel1.Controls.Add(Panel30)
-        SplitContainer2.Panel1.Controls.Add(Panel29)
-        SplitContainer2.Panel1.Controls.Add(Panel28)
-        SplitContainer2.Panel1.Controls.Add(Panel27)
-        SplitContainer2.Panel1.Controls.Add(Panel26)
-        SplitContainer2.Panel1.Controls.Add(Panel25)
-        SplitContainer2.Panel1.Controls.Add(Panel24)
         SplitContainer2.Panel1.Controls.Add(Label88)
         SplitContainer2.Panel1.Controls.Add(Panel23)
         SplitContainer2.Panel1.Controls.Add(Panel22)
@@ -983,6 +988,729 @@ Partial Class Form5
         SplitContainer2.SplitterDistance = 800
         SplitContainer2.TabIndex = 0
         ' 
+        ' Panel29
+        ' 
+        Panel29.BorderStyle = BorderStyle.FixedSingle
+        Panel29.Controls.Add(tbDimSum)
+        Panel29.Controls.Add(tbKebab)
+        Panel29.Controls.Add(tbNasiRawon)
+        Panel29.Controls.Add(tbNasiLiwet)
+        Panel29.Controls.Add(cbDimSum)
+        Panel29.Controls.Add(cbKebab)
+        Panel29.Controls.Add(cbNasiRawon)
+        Panel29.Controls.Add(cbNasiLiwetSolo)
+        Panel29.Controls.Add(Label104)
+        Panel29.Controls.Add(Label105)
+        Panel29.Controls.Add(Label106)
+        Panel29.Location = New Point(410, 1113)
+        Panel29.Name = "Panel29"
+        Panel29.Size = New Size(351, 226)
+        Panel29.TabIndex = 49
+        ' 
+        ' tbDimSum
+        ' 
+        tbDimSum.Location = New Point(260, 178)
+        tbDimSum.Name = "tbDimSum"
+        tbDimSum.PlaceholderText = "Qty"
+        tbDimSum.Size = New Size(72, 27)
+        tbDimSum.TabIndex = 29
+        tbDimSum.Visible = False
+        ' 
+        ' tbKebab
+        ' 
+        tbKebab.Location = New Point(258, 145)
+        tbKebab.Name = "tbKebab"
+        tbKebab.PlaceholderText = "Qty"
+        tbKebab.Size = New Size(72, 27)
+        tbKebab.TabIndex = 28
+        tbKebab.Visible = False
+        ' 
+        ' tbNasiRawon
+        ' 
+        tbNasiRawon.Location = New Point(258, 110)
+        tbNasiRawon.Name = "tbNasiRawon"
+        tbNasiRawon.PlaceholderText = "Qty"
+        tbNasiRawon.Size = New Size(72, 27)
+        tbNasiRawon.TabIndex = 27
+        tbNasiRawon.Visible = False
+        ' 
+        ' tbNasiLiwet
+        ' 
+        tbNasiLiwet.Location = New Point(260, 74)
+        tbNasiLiwet.Name = "tbNasiLiwet"
+        tbNasiLiwet.PlaceholderText = "Qty"
+        tbNasiLiwet.Size = New Size(72, 27)
+        tbNasiLiwet.TabIndex = 26
+        tbNasiLiwet.Visible = False
+        ' 
+        ' cbDimSum
+        ' 
+        cbDimSum.AutoSize = True
+        cbDimSum.Location = New Point(22, 181)
+        cbDimSum.Name = "cbDimSum"
+        cbDimSum.Size = New Size(92, 24)
+        cbDimSum.TabIndex = 21
+        cbDimSum.Text = "Dim Sum"
+        cbDimSum.UseVisualStyleBackColor = True
+        ' 
+        ' cbKebab
+        ' 
+        cbKebab.AutoSize = True
+        cbKebab.Location = New Point(22, 148)
+        cbKebab.Name = "cbKebab"
+        cbKebab.Size = New Size(74, 24)
+        cbKebab.TabIndex = 20
+        cbKebab.Text = "Kebab"
+        cbKebab.UseVisualStyleBackColor = True
+        ' 
+        ' cbNasiRawon
+        ' 
+        cbNasiRawon.AutoSize = True
+        cbNasiRawon.Location = New Point(20, 112)
+        cbNasiRawon.Name = "cbNasiRawon"
+        cbNasiRawon.Size = New Size(109, 24)
+        cbNasiRawon.TabIndex = 19
+        cbNasiRawon.Text = "Nasi Rawon"
+        cbNasiRawon.UseVisualStyleBackColor = True
+        ' 
+        ' cbNasiLiwetSolo
+        ' 
+        cbNasiLiwetSolo.AutoSize = True
+        cbNasiLiwetSolo.Location = New Point(20, 77)
+        cbNasiLiwetSolo.Name = "cbNasiLiwetSolo"
+        cbNasiLiwetSolo.Size = New Size(133, 24)
+        cbNasiLiwetSolo.TabIndex = 18
+        cbNasiLiwetSolo.Text = "Nasi Liwet Solo"
+        cbNasiLiwetSolo.UseVisualStyleBackColor = True
+        ' 
+        ' Label104
+        ' 
+        Label104.AutoSize = True
+        Label104.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
+        Label104.Location = New Point(14, 9)
+        Label104.Name = "Label104"
+        Label104.Size = New Size(99, 30)
+        Label104.TabIndex = 8
+        Label104.Text = "Pilihan 6"
+        ' 
+        ' Label105
+        ' 
+        Label105.AutoSize = True
+        Label105.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        Label105.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label105.Location = New Point(20, 47)
+        Label105.Name = "Label105"
+        Label105.Size = New Size(69, 20)
+        Label105.TabIndex = 7
+        Label105.Text = "Rp15.000"
+        ' 
+        ' Label106
+        ' 
+        Label106.AutoSize = True
+        Label106.Location = New Point(10, 81)
+        Label106.Name = "Label106"
+        Label106.Size = New Size(0, 20)
+        Label106.TabIndex = 10
+        ' 
+        ' Panel27
+        ' 
+        Panel27.BorderStyle = BorderStyle.FixedSingle
+        Panel27.Controls.Add(TextBox1)
+        Panel27.Controls.Add(tbSaladBuah)
+        Panel27.Controls.Add(tbSiomay)
+        Panel27.Controls.Add(tbBakso)
+        Panel27.Controls.Add(cbSelatSolo)
+        Panel27.Controls.Add(cbSaladBuah)
+        Panel27.Controls.Add(cbSiomay)
+        Panel27.Controls.Add(cbBakso)
+        Panel27.Controls.Add(Label98)
+        Panel27.Controls.Add(Label99)
+        Panel27.Controls.Add(Label100)
+        Panel27.Location = New Point(410, 837)
+        Panel27.Name = "Panel27"
+        Panel27.Size = New Size(351, 226)
+        Panel27.TabIndex = 48
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(258, 173)
+        TextBox1.Name = "TextBox1"
+        TextBox1.PlaceholderText = "Qty"
+        TextBox1.Size = New Size(72, 27)
+        TextBox1.TabIndex = 24
+        TextBox1.Visible = False
+        ' 
+        ' tbSaladBuah
+        ' 
+        tbSaladBuah.Location = New Point(258, 140)
+        tbSaladBuah.Name = "tbSaladBuah"
+        tbSaladBuah.PlaceholderText = "Qty"
+        tbSaladBuah.Size = New Size(72, 27)
+        tbSaladBuah.TabIndex = 23
+        tbSaladBuah.Visible = False
+        ' 
+        ' tbSiomay
+        ' 
+        tbSiomay.Location = New Point(258, 107)
+        tbSiomay.Name = "tbSiomay"
+        tbSiomay.PlaceholderText = "Qty"
+        tbSiomay.Size = New Size(72, 27)
+        tbSiomay.TabIndex = 22
+        tbSiomay.Visible = False
+        ' 
+        ' tbBakso
+        ' 
+        tbBakso.Location = New Point(258, 74)
+        tbBakso.Name = "tbBakso"
+        tbBakso.PlaceholderText = "Qty"
+        tbBakso.Size = New Size(72, 27)
+        tbBakso.TabIndex = 21
+        tbBakso.Visible = False
+        ' 
+        ' cbSelatSolo
+        ' 
+        cbSelatSolo.AutoSize = True
+        cbSelatSolo.Location = New Point(20, 176)
+        cbSelatSolo.Name = "cbSelatSolo"
+        cbSelatSolo.Size = New Size(98, 24)
+        cbSelatSolo.TabIndex = 19
+        cbSelatSolo.Text = "Selat Solo"
+        cbSelatSolo.UseVisualStyleBackColor = True
+        ' 
+        ' cbSaladBuah
+        ' 
+        cbSaladBuah.AutoSize = True
+        cbSaladBuah.Location = New Point(20, 143)
+        cbSaladBuah.Name = "cbSaladBuah"
+        cbSaladBuah.Size = New Size(105, 24)
+        cbSaladBuah.TabIndex = 18
+        cbSaladBuah.Text = "Salad Buah"
+        cbSaladBuah.UseVisualStyleBackColor = True
+        ' 
+        ' cbSiomay
+        ' 
+        cbSiomay.AutoSize = True
+        cbSiomay.Location = New Point(20, 110)
+        cbSiomay.Name = "cbSiomay"
+        cbSiomay.Size = New Size(80, 24)
+        cbSiomay.TabIndex = 17
+        cbSiomay.Text = "Siomay"
+        cbSiomay.UseVisualStyleBackColor = True
+        ' 
+        ' cbBakso
+        ' 
+        cbBakso.AutoSize = True
+        cbBakso.Location = New Point(20, 77)
+        cbBakso.Name = "cbBakso"
+        cbBakso.Size = New Size(70, 24)
+        cbBakso.TabIndex = 16
+        cbBakso.Text = "Bakso"
+        cbBakso.UseVisualStyleBackColor = True
+        ' 
+        ' Label98
+        ' 
+        Label98.AutoSize = True
+        Label98.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
+        Label98.Location = New Point(14, 9)
+        Label98.Name = "Label98"
+        Label98.Size = New Size(100, 30)
+        Label98.TabIndex = 8
+        Label98.Text = "Pilihan 4"
+        ' 
+        ' Label99
+        ' 
+        Label99.AutoSize = True
+        Label99.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        Label99.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label99.Location = New Point(20, 47)
+        Label99.Name = "Label99"
+        Label99.Size = New Size(67, 20)
+        Label99.TabIndex = 7
+        Label99.Text = "Rp11.000"
+        ' 
+        ' Label100
+        ' 
+        Label100.AutoSize = True
+        Label100.Location = New Point(10, 81)
+        Label100.Name = "Label100"
+        Label100.Size = New Size(0, 20)
+        Label100.TabIndex = 10
+        ' 
+        ' Panel28
+        ' 
+        Panel28.BorderStyle = BorderStyle.FixedSingle
+        Panel28.Controls.Add(tbMie)
+        Panel28.Controls.Add(tbSate)
+        Panel28.Controls.Add(tbGado)
+        Panel28.Controls.Add(tbEmpek)
+        Panel28.Controls.Add(cbMieOriental)
+        Panel28.Controls.Add(cbSateAyam)
+        Panel28.Controls.Add(cbGado)
+        Panel28.Controls.Add(cbEmpek)
+        Panel28.Controls.Add(Label101)
+        Panel28.Controls.Add(Label102)
+        Panel28.Controls.Add(Label103)
+        Panel28.Location = New Point(28, 1113)
+        Panel28.Name = "Panel28"
+        Panel28.Size = New Size(351, 226)
+        Panel28.TabIndex = 47
+        ' 
+        ' tbMie
+        ' 
+        tbMie.Location = New Point(258, 173)
+        tbMie.Name = "tbMie"
+        tbMie.PlaceholderText = "Qty"
+        tbMie.Size = New Size(72, 27)
+        tbMie.TabIndex = 28
+        tbMie.Visible = False
+        ' 
+        ' tbSate
+        ' 
+        tbSate.Location = New Point(258, 140)
+        tbSate.Name = "tbSate"
+        tbSate.PlaceholderText = "Qty"
+        tbSate.Size = New Size(72, 27)
+        tbSate.TabIndex = 27
+        tbSate.Visible = False
+        ' 
+        ' tbGado
+        ' 
+        tbGado.Location = New Point(258, 107)
+        tbGado.Name = "tbGado"
+        tbGado.PlaceholderText = "Qty"
+        tbGado.Size = New Size(72, 27)
+        tbGado.TabIndex = 26
+        tbGado.Visible = False
+        ' 
+        ' tbEmpek
+        ' 
+        tbEmpek.Location = New Point(258, 74)
+        tbEmpek.Name = "tbEmpek"
+        tbEmpek.PlaceholderText = "Qty"
+        tbEmpek.Size = New Size(72, 27)
+        tbEmpek.TabIndex = 25
+        tbEmpek.Visible = False
+        ' 
+        ' cbMieOriental
+        ' 
+        cbMieOriental.AutoSize = True
+        cbMieOriental.Location = New Point(21, 176)
+        cbMieOriental.Name = "cbMieOriental"
+        cbMieOriental.Size = New Size(113, 24)
+        cbMieOriental.TabIndex = 20
+        cbMieOriental.Text = "Mie Oriental"
+        cbMieOriental.UseVisualStyleBackColor = True
+        ' 
+        ' cbSateAyam
+        ' 
+        cbSateAyam.AutoSize = True
+        cbSateAyam.Location = New Point(21, 142)
+        cbSateAyam.Name = "cbSateAyam"
+        cbSateAyam.Size = New Size(175, 24)
+        cbSateAyam.TabIndex = 19
+        cbSateAyam.Text = "Sate Ayam + Lontong"
+        cbSateAyam.UseVisualStyleBackColor = True
+        ' 
+        ' cbGado
+        ' 
+        cbGado.AutoSize = True
+        cbGado.Location = New Point(21, 110)
+        cbGado.Name = "cbGado"
+        cbGado.Size = New Size(117, 24)
+        cbGado.TabIndex = 18
+        cbGado.Text = "Gado - Gado"
+        cbGado.UseVisualStyleBackColor = True
+        ' 
+        ' cbEmpek
+        ' 
+        cbEmpek.AutoSize = True
+        cbEmpek.Location = New Point(21, 77)
+        cbEmpek.Name = "cbEmpek"
+        cbEmpek.Size = New Size(135, 24)
+        cbEmpek.TabIndex = 17
+        cbEmpek.Text = "Empek - Empek"
+        cbEmpek.UseVisualStyleBackColor = True
+        ' 
+        ' Label101
+        ' 
+        Label101.AutoSize = True
+        Label101.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
+        Label101.Location = New Point(14, 9)
+        Label101.Name = "Label101"
+        Label101.Size = New Size(99, 30)
+        Label101.TabIndex = 8
+        Label101.Text = "Pilihan 5"
+        ' 
+        ' Label102
+        ' 
+        Label102.AutoSize = True
+        Label102.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        Label102.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label102.Location = New Point(20, 47)
+        Label102.Name = "Label102"
+        Label102.Size = New Size(69, 20)
+        Label102.TabIndex = 7
+        Label102.Text = "Rp12.000"
+        ' 
+        ' Label103
+        ' 
+        Label103.AutoSize = True
+        Label103.Location = New Point(10, 81)
+        Label103.Name = "Label103"
+        Label103.Size = New Size(0, 20)
+        Label103.TabIndex = 10
+        ' 
+        ' Panel26
+        ' 
+        Panel26.BorderStyle = BorderStyle.FixedSingle
+        Panel26.Controls.Add(tbPecelPincuk)
+        Panel26.Controls.Add(tbEsDoger)
+        Panel26.Controls.Add(tbWedangRonde)
+        Panel26.Controls.Add(cbPecelPincuk)
+        Panel26.Controls.Add(cbEsDoger)
+        Panel26.Controls.Add(cbWedangRonde)
+        Panel26.Controls.Add(Label95)
+        Panel26.Controls.Add(Label96)
+        Panel26.Controls.Add(Label97)
+        Panel26.Location = New Point(28, 837)
+        Panel26.Name = "Panel26"
+        Panel26.Size = New Size(350, 226)
+        Panel26.TabIndex = 46
+        ' 
+        ' tbPecelPincuk
+        ' 
+        tbPecelPincuk.Location = New Point(259, 143)
+        tbPecelPincuk.Name = "tbPecelPincuk"
+        tbPecelPincuk.PlaceholderText = "Qty"
+        tbPecelPincuk.Size = New Size(72, 27)
+        tbPecelPincuk.TabIndex = 24
+        tbPecelPincuk.Visible = False
+        ' 
+        ' tbEsDoger
+        ' 
+        tbEsDoger.Location = New Point(259, 107)
+        tbEsDoger.Name = "tbEsDoger"
+        tbEsDoger.PlaceholderText = "Qty"
+        tbEsDoger.Size = New Size(72, 27)
+        tbEsDoger.TabIndex = 23
+        tbEsDoger.Visible = False
+        ' 
+        ' tbWedangRonde
+        ' 
+        tbWedangRonde.Location = New Point(259, 74)
+        tbWedangRonde.Name = "tbWedangRonde"
+        tbWedangRonde.PlaceholderText = "Qty"
+        tbWedangRonde.Size = New Size(72, 27)
+        tbWedangRonde.TabIndex = 22
+        tbWedangRonde.Visible = False
+        ' 
+        ' cbPecelPincuk
+        ' 
+        cbPecelPincuk.AutoSize = True
+        cbPecelPincuk.Location = New Point(20, 146)
+        cbPecelPincuk.Name = "cbPecelPincuk"
+        cbPecelPincuk.Size = New Size(111, 24)
+        cbPecelPincuk.TabIndex = 16
+        cbPecelPincuk.Text = "Pecel Pincuk"
+        cbPecelPincuk.UseVisualStyleBackColor = True
+        ' 
+        ' cbEsDoger
+        ' 
+        cbEsDoger.AutoSize = True
+        cbEsDoger.Location = New Point(20, 110)
+        cbEsDoger.Name = "cbEsDoger"
+        cbEsDoger.Size = New Size(91, 24)
+        cbEsDoger.TabIndex = 15
+        cbEsDoger.Text = "Es Doger"
+        cbEsDoger.UseVisualStyleBackColor = True
+        ' 
+        ' cbWedangRonde
+        ' 
+        cbWedangRonde.AutoSize = True
+        cbWedangRonde.Location = New Point(20, 77)
+        cbWedangRonde.Name = "cbWedangRonde"
+        cbWedangRonde.Size = New Size(133, 24)
+        cbWedangRonde.TabIndex = 14
+        cbWedangRonde.Text = "Wedang Ronde"
+        cbWedangRonde.UseVisualStyleBackColor = True
+        ' 
+        ' Label95
+        ' 
+        Label95.AutoSize = True
+        Label95.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
+        Label95.Location = New Point(14, 9)
+        Label95.Name = "Label95"
+        Label95.Size = New Size(99, 30)
+        Label95.TabIndex = 8
+        Label95.Text = "Pilihan 3"
+        ' 
+        ' Label96
+        ' 
+        Label96.AutoSize = True
+        Label96.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        Label96.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label96.Location = New Point(20, 47)
+        Label96.Name = "Label96"
+        Label96.Size = New Size(63, 20)
+        Label96.TabIndex = 7
+        Label96.Text = "Rp7.000"
+        ' 
+        ' Label97
+        ' 
+        Label97.AutoSize = True
+        Label97.Location = New Point(10, 81)
+        Label97.Name = "Label97"
+        Label97.Size = New Size(0, 20)
+        Label97.TabIndex = 10
+        ' 
+        ' Panel25
+        ' 
+        Panel25.BorderStyle = BorderStyle.FixedSingle
+        Panel25.Controls.Add(tbJusJeruk)
+        Panel25.Controls.Add(tbRujak)
+        Panel25.Controls.Add(tbEsSelasih)
+        Panel25.Controls.Add(tbEsDawet)
+        Panel25.Controls.Add(cbJusJeruk)
+        Panel25.Controls.Add(cbRujak)
+        Panel25.Controls.Add(cbEsSelasih)
+        Panel25.Controls.Add(cbEsDawet)
+        Panel25.Controls.Add(Label92)
+        Panel25.Controls.Add(Label93)
+        Panel25.Controls.Add(Label94)
+        Panel25.Location = New Point(411, 561)
+        Panel25.Name = "Panel25"
+        Panel25.Size = New Size(351, 226)
+        Panel25.TabIndex = 45
+        ' 
+        ' tbJusJeruk
+        ' 
+        tbJusJeruk.Location = New Point(259, 175)
+        tbJusJeruk.Name = "tbJusJeruk"
+        tbJusJeruk.PlaceholderText = "Qty"
+        tbJusJeruk.Size = New Size(72, 27)
+        tbJusJeruk.TabIndex = 20
+        tbJusJeruk.Visible = False
+        ' 
+        ' tbRujak
+        ' 
+        tbRujak.Location = New Point(259, 140)
+        tbRujak.Name = "tbRujak"
+        tbRujak.PlaceholderText = "Qty"
+        tbRujak.Size = New Size(72, 27)
+        tbRujak.TabIndex = 19
+        tbRujak.Visible = False
+        ' 
+        ' tbEsSelasih
+        ' 
+        tbEsSelasih.Location = New Point(259, 107)
+        tbEsSelasih.Name = "tbEsSelasih"
+        tbEsSelasih.PlaceholderText = "Qty"
+        tbEsSelasih.Size = New Size(72, 27)
+        tbEsSelasih.TabIndex = 18
+        tbEsSelasih.Visible = False
+        ' 
+        ' tbEsDawet
+        ' 
+        tbEsDawet.Location = New Point(259, 74)
+        tbEsDawet.Name = "tbEsDawet"
+        tbEsDawet.PlaceholderText = "Qty"
+        tbEsDawet.Size = New Size(72, 27)
+        tbEsDawet.TabIndex = 17
+        tbEsDawet.Visible = False
+        ' 
+        ' cbJusJeruk
+        ' 
+        cbJusJeruk.AutoSize = True
+        cbJusJeruk.Location = New Point(21, 178)
+        cbJusJeruk.Name = "cbJusJeruk"
+        cbJusJeruk.Size = New Size(87, 24)
+        cbJusJeruk.TabIndex = 16
+        cbJusJeruk.Text = "Jus Jeruk"
+        cbJusJeruk.UseVisualStyleBackColor = True
+        ' 
+        ' cbRujak
+        ' 
+        cbRujak.AutoSize = True
+        cbRujak.Location = New Point(21, 143)
+        cbRujak.Name = "cbRujak"
+        cbRujak.Size = New Size(137, 24)
+        cbRujak.TabIndex = 15
+        cbRujak.Text = "Rujak Ice Cream"
+        cbRujak.UseVisualStyleBackColor = True
+        ' 
+        ' cbEsSelasih
+        ' 
+        cbEsSelasih.AutoSize = True
+        cbEsSelasih.Location = New Point(20, 110)
+        cbEsSelasih.Name = "cbEsSelasih"
+        cbEsSelasih.Size = New Size(95, 24)
+        cbEsSelasih.TabIndex = 14
+        cbEsSelasih.Text = "Es Selasih"
+        cbEsSelasih.UseVisualStyleBackColor = True
+        ' 
+        ' cbEsDawet
+        ' 
+        cbEsDawet.AutoSize = True
+        cbEsDawet.Location = New Point(21, 74)
+        cbEsDawet.Name = "cbEsDawet"
+        cbEsDawet.Size = New Size(92, 24)
+        cbEsDawet.TabIndex = 13
+        cbEsDawet.Text = "Es Dawet"
+        cbEsDawet.UseVisualStyleBackColor = True
+        ' 
+        ' Label92
+        ' 
+        Label92.AutoSize = True
+        Label92.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
+        Label92.Location = New Point(14, 9)
+        Label92.Name = "Label92"
+        Label92.Size = New Size(99, 30)
+        Label92.TabIndex = 8
+        Label92.Text = "Pilihan 2"
+        ' 
+        ' Label93
+        ' 
+        Label93.AutoSize = True
+        Label93.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        Label93.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label93.Location = New Point(20, 47)
+        Label93.Name = "Label93"
+        Label93.Size = New Size(63, 20)
+        Label93.TabIndex = 7
+        Label93.Text = "Rp6.000"
+        ' 
+        ' Label94
+        ' 
+        Label94.AutoSize = True
+        Label94.Location = New Point(10, 81)
+        Label94.Name = "Label94"
+        Label94.Size = New Size(0, 20)
+        Label94.TabIndex = 10
+        ' 
+        ' Panel24
+        ' 
+        Panel24.BorderStyle = BorderStyle.FixedSingle
+        Panel24.Controls.Add(tbBuahIris)
+        Panel24.Controls.Add(tbEsSeruni)
+        Panel24.Controls.Add(tbTeh)
+        Panel24.Controls.Add(tbIcePuter)
+        Panel24.Controls.Add(cbBuahIris)
+        Panel24.Controls.Add(cbEsSeruni)
+        Panel24.Controls.Add(cbTeh)
+        Panel24.Controls.Add(cbIcePuter)
+        Panel24.Controls.Add(Label89)
+        Panel24.Controls.Add(Label90)
+        Panel24.Controls.Add(Label91)
+        Panel24.Location = New Point(28, 561)
+        Panel24.Name = "Panel24"
+        Panel24.Size = New Size(351, 226)
+        Panel24.TabIndex = 44
+        ' 
+        ' tbBuahIris
+        ' 
+        tbBuahIris.Location = New Point(258, 173)
+        tbBuahIris.Name = "tbBuahIris"
+        tbBuahIris.PlaceholderText = "Qty"
+        tbBuahIris.Size = New Size(72, 27)
+        tbBuahIris.TabIndex = 19
+        tbBuahIris.Visible = False
+        ' 
+        ' tbEsSeruni
+        ' 
+        tbEsSeruni.Location = New Point(258, 140)
+        tbEsSeruni.Name = "tbEsSeruni"
+        tbEsSeruni.PlaceholderText = "Qty"
+        tbEsSeruni.Size = New Size(72, 27)
+        tbEsSeruni.TabIndex = 18
+        tbEsSeruni.Visible = False
+        ' 
+        ' tbTeh
+        ' 
+        tbTeh.Location = New Point(258, 107)
+        tbTeh.Name = "tbTeh"
+        tbTeh.PlaceholderText = "Qty"
+        tbTeh.Size = New Size(72, 27)
+        tbTeh.TabIndex = 17
+        tbTeh.Visible = False
+        ' 
+        ' tbIcePuter
+        ' 
+        tbIcePuter.Location = New Point(258, 74)
+        tbIcePuter.Name = "tbIcePuter"
+        tbIcePuter.PlaceholderText = "Qty"
+        tbIcePuter.Size = New Size(72, 27)
+        tbIcePuter.TabIndex = 16
+        tbIcePuter.Visible = False
+        ' 
+        ' cbBuahIris
+        ' 
+        cbBuahIris.AutoSize = True
+        cbBuahIris.Location = New Point(20, 176)
+        cbBuahIris.Name = "cbBuahIris"
+        cbBuahIris.Size = New Size(87, 24)
+        cbBuahIris.TabIndex = 15
+        cbBuahIris.Text = "Buah Iris"
+        cbBuahIris.UseVisualStyleBackColor = True
+        ' 
+        ' cbEsSeruni
+        ' 
+        cbEsSeruni.AutoSize = True
+        cbEsSeruni.Location = New Point(20, 143)
+        cbEsSeruni.Name = "cbEsSeruni"
+        cbEsSeruni.Size = New Size(90, 24)
+        cbEsSeruni.TabIndex = 14
+        cbEsSeruni.Text = "Es Seruni"
+        cbEsSeruni.UseVisualStyleBackColor = True
+        ' 
+        ' cbTeh
+        ' 
+        cbTeh.AutoSize = True
+        cbTeh.Location = New Point(20, 109)
+        cbTeh.Name = "cbTeh"
+        cbTeh.Size = New Size(54, 24)
+        cbTeh.TabIndex = 13
+        cbTeh.Text = "Teh"
+        cbTeh.UseVisualStyleBackColor = True
+        ' 
+        ' cbIcePuter
+        ' 
+        cbIcePuter.AutoSize = True
+        cbIcePuter.Location = New Point(20, 77)
+        cbIcePuter.Name = "cbIcePuter"
+        cbIcePuter.Size = New Size(176, 24)
+        cbIcePuter.TabIndex = 12
+        cbIcePuter.Text = "Ice Puter + Ager-Ager"
+        cbIcePuter.UseVisualStyleBackColor = True
+        ' 
+        ' Label89
+        ' 
+        Label89.AutoSize = True
+        Label89.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
+        Label89.Location = New Point(14, 9)
+        Label89.Name = "Label89"
+        Label89.Size = New Size(96, 30)
+        Label89.TabIndex = 8
+        Label89.Text = "Pilihan 1"
+        ' 
+        ' Label90
+        ' 
+        Label90.AutoSize = True
+        Label90.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        Label90.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label90.Location = New Point(20, 47)
+        Label90.Name = "Label90"
+        Label90.Size = New Size(64, 20)
+        Label90.TabIndex = 7
+        Label90.Text = "Rp4.500"
+        ' 
+        ' Label91
+        ' 
+        Label91.AutoSize = True
+        Label91.Location = New Point(10, 81)
+        Label91.Name = "Label91"
+        Label91.Size = New Size(0, 20)
+        Label91.TabIndex = 10
+        ' 
         ' Panel38
         ' 
         Panel38.BorderStyle = BorderStyle.FixedSingle
@@ -993,7 +1721,7 @@ Partial Class Form5
         Panel38.Controls.Add(tbSnack2)
         Panel38.Controls.Add(btnMinSnack2)
         Panel38.Controls.Add(Label136)
-        Panel38.Location = New Point(289, 2268)
+        Panel38.Location = New Point(289, 2554)
         Panel38.Name = "Panel38"
         Panel38.Size = New Size(224, 251)
         Panel38.TabIndex = 43
@@ -1083,7 +1811,7 @@ Partial Class Form5
         Panel37.Controls.Add(tbSnack1)
         Panel37.Controls.Add(btnMinSnack1)
         Panel37.Controls.Add(Label133)
-        Panel37.Location = New Point(28, 2268)
+        Panel37.Location = New Point(28, 2554)
         Panel37.Name = "Panel37"
         Panel37.Size = New Size(224, 251)
         Panel37.TabIndex = 42
@@ -1168,7 +1896,7 @@ Partial Class Form5
         Label130.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label130.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label130.ForeColor = Color.White
-        Label130.Location = New Point(0, 2192)
+        Label130.Location = New Point(0, 2478)
         Label130.Name = "Label130"
         Label130.Size = New Size(800, 39)
         Label130.TabIndex = 41
@@ -1184,7 +1912,7 @@ Partial Class Form5
         Panel36.Controls.Add(tbDos3)
         Panel36.Controls.Add(btnMinDos3)
         Panel36.Controls.Add(Label129)
-        Panel36.Location = New Point(549, 1834)
+        Panel36.Location = New Point(549, 2093)
         Panel36.Name = "Panel36"
         Panel36.Size = New Size(224, 330)
         Panel36.TabIndex = 40
@@ -1274,7 +2002,7 @@ Partial Class Form5
         Panel35.Controls.Add(tbDos2)
         Panel35.Controls.Add(btnMinDos2)
         Panel35.Controls.Add(Label126)
-        Panel35.Location = New Point(289, 1834)
+        Panel35.Location = New Point(289, 2093)
         Panel35.Name = "Panel35"
         Panel35.Size = New Size(224, 330)
         Panel35.TabIndex = 39
@@ -1364,7 +2092,7 @@ Partial Class Form5
         Panel34.Controls.Add(tbDos1)
         Panel34.Controls.Add(btnMinDos1)
         Panel34.Controls.Add(Label123)
-        Panel34.Location = New Point(28, 1834)
+        Panel34.Location = New Point(28, 2093)
         Panel34.Name = "Panel34"
         Panel34.Size = New Size(224, 330)
         Panel34.TabIndex = 38
@@ -1449,7 +2177,7 @@ Partial Class Form5
         Label120.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label120.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label120.ForeColor = Color.White
-        Label120.Location = New Point(0, 1780)
+        Label120.Location = New Point(0, 2039)
         Label120.Name = "Label120"
         Label120.Size = New Size(800, 39)
         Label120.TabIndex = 37
@@ -1465,7 +2193,7 @@ Partial Class Form5
         Panel33.Controls.Add(tbSyukur4)
         Panel33.Controls.Add(btnMinSyukur4)
         Panel33.Controls.Add(Label119)
-        Panel33.Location = New Point(28, 1566)
+        Panel33.Location = New Point(28, 1810)
         Panel33.Name = "Panel33"
         Panel33.Size = New Size(224, 199)
         Panel33.TabIndex = 36
@@ -1555,7 +2283,7 @@ Partial Class Form5
         Panel32.Controls.Add(tbSyukur3)
         Panel32.Controls.Add(btnMinSyukur3)
         Panel32.Controls.Add(Label116)
-        Panel32.Location = New Point(549, 1187)
+        Panel32.Location = New Point(549, 1432)
         Panel32.Name = "Panel32"
         Panel32.Size = New Size(224, 352)
         Panel32.TabIndex = 35
@@ -1645,7 +2373,7 @@ Partial Class Form5
         Panel31.Controls.Add(tbSyukur2)
         Panel31.Controls.Add(btnMinSyukur2)
         Panel31.Controls.Add(Label113)
-        Panel31.Location = New Point(289, 1187)
+        Panel31.Location = New Point(289, 1432)
         Panel31.Name = "Panel31"
         Panel31.Size = New Size(224, 352)
         Panel31.TabIndex = 34
@@ -1730,7 +2458,7 @@ Partial Class Form5
         Label110.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label110.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label110.ForeColor = Color.White
-        Label110.Location = New Point(0, 1123)
+        Label110.Location = New Point(0, 1368)
         Label110.Name = "Label110"
         Label110.Size = New Size(800, 39)
         Label110.TabIndex = 33
@@ -1746,7 +2474,7 @@ Partial Class Form5
         Panel30.Controls.Add(tbSyukur1)
         Panel30.Controls.Add(btnMinSyukur1)
         Panel30.Controls.Add(Label109)
-        Panel30.Location = New Point(28, 1187)
+        Panel30.Location = New Point(28, 1432)
         Panel30.Name = "Panel30"
         Panel30.Size = New Size(224, 352)
         Panel30.TabIndex = 32
@@ -1825,485 +2553,6 @@ Partial Class Form5
         Label109.Name = "Label109"
         Label109.Size = New Size(0, 20)
         Label109.TabIndex = 10
-        ' 
-        ' Panel29
-        ' 
-        Panel29.BorderStyle = BorderStyle.FixedSingle
-        Panel29.Controls.Add(cbDimSum)
-        Panel29.Controls.Add(cbKebab)
-        Panel29.Controls.Add(cbNasiRawon)
-        Panel29.Controls.Add(cbNasiLiwetSolo)
-        Panel29.Controls.Add(Label104)
-        Panel29.Controls.Add(Label105)
-        Panel29.Controls.Add(btnPlusStal6)
-        Panel29.Controls.Add(tbStall6)
-        Panel29.Controls.Add(btnMinStall6)
-        Panel29.Controls.Add(Label106)
-        Panel29.Location = New Point(549, 845)
-        Panel29.Name = "Panel29"
-        Panel29.Size = New Size(224, 258)
-        Panel29.TabIndex = 31
-        ' 
-        ' Label104
-        ' 
-        Label104.AutoSize = True
-        Label104.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
-        Label104.Location = New Point(14, 9)
-        Label104.Name = "Label104"
-        Label104.Size = New Size(99, 30)
-        Label104.TabIndex = 8
-        Label104.Text = "Pilihan 6"
-        ' 
-        ' Label105
-        ' 
-        Label105.AutoSize = True
-        Label105.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label105.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label105.Location = New Point(20, 47)
-        Label105.Name = "Label105"
-        Label105.Size = New Size(69, 20)
-        Label105.TabIndex = 7
-        Label105.Text = "Rp15.000"
-        ' 
-        ' btnPlusStal6
-        ' 
-        btnPlusStal6.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusStal6.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
-        btnPlusStal6.ForeColor = Color.White
-        btnPlusStal6.Location = New Point(159, 211)
-        btnPlusStal6.Name = "btnPlusStal6"
-        btnPlusStal6.Size = New Size(34, 32)
-        btnPlusStal6.TabIndex = 6
-        btnPlusStal6.Text = "+"
-        btnPlusStal6.UseVisualStyleBackColor = False
-        ' 
-        ' tbStall6
-        ' 
-        tbStall6.Location = New Point(81, 216)
-        tbStall6.Multiline = True
-        tbStall6.Name = "tbStall6"
-        tbStall6.Size = New Size(72, 25)
-        tbStall6.TabIndex = 5
-        tbStall6.TextAlign = HorizontalAlignment.Center
-        ' 
-        ' btnMinStall6
-        ' 
-        btnMinStall6.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinStall6.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
-        btnMinStall6.ForeColor = Color.White
-        btnMinStall6.Location = New Point(39, 212)
-        btnMinStall6.Name = "btnMinStall6"
-        btnMinStall6.Size = New Size(34, 32)
-        btnMinStall6.TabIndex = 4
-        btnMinStall6.Text = "-"
-        btnMinStall6.UseVisualStyleBackColor = False
-        ' 
-        ' Label106
-        ' 
-        Label106.AutoSize = True
-        Label106.Location = New Point(10, 81)
-        Label106.Name = "Label106"
-        Label106.Size = New Size(0, 20)
-        Label106.TabIndex = 10
-        ' 
-        ' Panel28
-        ' 
-        Panel28.BorderStyle = BorderStyle.FixedSingle
-        Panel28.Controls.Add(cbMieOriental)
-        Panel28.Controls.Add(cbSateAyam)
-        Panel28.Controls.Add(cbGado)
-        Panel28.Controls.Add(cbEmpek)
-        Panel28.Controls.Add(Label101)
-        Panel28.Controls.Add(Label102)
-        Panel28.Controls.Add(btnPlusStall5)
-        Panel28.Controls.Add(tbStall5)
-        Panel28.Controls.Add(btnMinStall5)
-        Panel28.Controls.Add(Label103)
-        Panel28.Location = New Point(289, 845)
-        Panel28.Name = "Panel28"
-        Panel28.Size = New Size(224, 258)
-        Panel28.TabIndex = 30
-        ' 
-        ' Label101
-        ' 
-        Label101.AutoSize = True
-        Label101.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
-        Label101.Location = New Point(14, 9)
-        Label101.Name = "Label101"
-        Label101.Size = New Size(99, 30)
-        Label101.TabIndex = 8
-        Label101.Text = "Pilihan 5"
-        ' 
-        ' Label102
-        ' 
-        Label102.AutoSize = True
-        Label102.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label102.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label102.Location = New Point(20, 47)
-        Label102.Name = "Label102"
-        Label102.Size = New Size(69, 20)
-        Label102.TabIndex = 7
-        Label102.Text = "Rp12.000"
-        ' 
-        ' btnPlusStall5
-        ' 
-        btnPlusStall5.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusStall5.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
-        btnPlusStall5.ForeColor = Color.White
-        btnPlusStall5.Location = New Point(155, 210)
-        btnPlusStall5.Name = "btnPlusStall5"
-        btnPlusStall5.Size = New Size(34, 32)
-        btnPlusStall5.TabIndex = 6
-        btnPlusStall5.Text = "+"
-        btnPlusStall5.UseVisualStyleBackColor = False
-        ' 
-        ' tbStall5
-        ' 
-        tbStall5.Location = New Point(77, 215)
-        tbStall5.Multiline = True
-        tbStall5.Name = "tbStall5"
-        tbStall5.Size = New Size(72, 25)
-        tbStall5.TabIndex = 5
-        tbStall5.TextAlign = HorizontalAlignment.Center
-        ' 
-        ' btnMinStall5
-        ' 
-        btnMinStall5.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinStall5.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
-        btnMinStall5.ForeColor = Color.White
-        btnMinStall5.Location = New Point(35, 211)
-        btnMinStall5.Name = "btnMinStall5"
-        btnMinStall5.Size = New Size(34, 32)
-        btnMinStall5.TabIndex = 4
-        btnMinStall5.Text = "-"
-        btnMinStall5.UseVisualStyleBackColor = False
-        ' 
-        ' Label103
-        ' 
-        Label103.AutoSize = True
-        Label103.Location = New Point(10, 81)
-        Label103.Name = "Label103"
-        Label103.Size = New Size(0, 20)
-        Label103.TabIndex = 10
-        ' 
-        ' Panel27
-        ' 
-        Panel27.BorderStyle = BorderStyle.FixedSingle
-        Panel27.Controls.Add(cbSelatSolo)
-        Panel27.Controls.Add(cbSaladBuah)
-        Panel27.Controls.Add(cbSiomay)
-        Panel27.Controls.Add(cbBakso)
-        Panel27.Controls.Add(Label98)
-        Panel27.Controls.Add(Label99)
-        Panel27.Controls.Add(btnPlusStall4)
-        Panel27.Controls.Add(tbStall4)
-        Panel27.Controls.Add(btnMinStall4)
-        Panel27.Controls.Add(Label100)
-        Panel27.Location = New Point(28, 845)
-        Panel27.Name = "Panel27"
-        Panel27.Size = New Size(224, 258)
-        Panel27.TabIndex = 29
-        ' 
-        ' Label98
-        ' 
-        Label98.AutoSize = True
-        Label98.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
-        Label98.Location = New Point(14, 9)
-        Label98.Name = "Label98"
-        Label98.Size = New Size(100, 30)
-        Label98.TabIndex = 8
-        Label98.Text = "Pilihan 4"
-        ' 
-        ' Label99
-        ' 
-        Label99.AutoSize = True
-        Label99.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label99.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label99.Location = New Point(20, 47)
-        Label99.Name = "Label99"
-        Label99.Size = New Size(67, 20)
-        Label99.TabIndex = 7
-        Label99.Text = "Rp11.000"
-        ' 
-        ' btnPlusStall4
-        ' 
-        btnPlusStall4.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusStall4.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
-        btnPlusStall4.ForeColor = Color.White
-        btnPlusStall4.Location = New Point(155, 211)
-        btnPlusStall4.Name = "btnPlusStall4"
-        btnPlusStall4.Size = New Size(34, 32)
-        btnPlusStall4.TabIndex = 6
-        btnPlusStall4.Text = "+"
-        btnPlusStall4.UseVisualStyleBackColor = False
-        ' 
-        ' tbStall4
-        ' 
-        tbStall4.Location = New Point(77, 216)
-        tbStall4.Multiline = True
-        tbStall4.Name = "tbStall4"
-        tbStall4.Size = New Size(72, 25)
-        tbStall4.TabIndex = 5
-        tbStall4.TextAlign = HorizontalAlignment.Center
-        ' 
-        ' btnMinStall4
-        ' 
-        btnMinStall4.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinStall4.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
-        btnMinStall4.ForeColor = Color.White
-        btnMinStall4.Location = New Point(35, 212)
-        btnMinStall4.Name = "btnMinStall4"
-        btnMinStall4.Size = New Size(34, 32)
-        btnMinStall4.TabIndex = 4
-        btnMinStall4.Text = "-"
-        btnMinStall4.UseVisualStyleBackColor = False
-        ' 
-        ' Label100
-        ' 
-        Label100.AutoSize = True
-        Label100.Location = New Point(10, 81)
-        Label100.Name = "Label100"
-        Label100.Size = New Size(0, 20)
-        Label100.TabIndex = 10
-        ' 
-        ' Panel26
-        ' 
-        Panel26.BorderStyle = BorderStyle.FixedSingle
-        Panel26.Controls.Add(cbPecelPincuk)
-        Panel26.Controls.Add(cbEsDoger)
-        Panel26.Controls.Add(cbWedangRonde)
-        Panel26.Controls.Add(Label95)
-        Panel26.Controls.Add(Label96)
-        Panel26.Controls.Add(btnPlusStall3)
-        Panel26.Controls.Add(tbStall3)
-        Panel26.Controls.Add(btnMinStall3)
-        Panel26.Controls.Add(Label97)
-        Panel26.Location = New Point(549, 547)
-        Panel26.Name = "Panel26"
-        Panel26.Size = New Size(224, 259)
-        Panel26.TabIndex = 28
-        ' 
-        ' Label95
-        ' 
-        Label95.AutoSize = True
-        Label95.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
-        Label95.Location = New Point(14, 9)
-        Label95.Name = "Label95"
-        Label95.Size = New Size(99, 30)
-        Label95.TabIndex = 8
-        Label95.Text = "Pilihan 3"
-        ' 
-        ' Label96
-        ' 
-        Label96.AutoSize = True
-        Label96.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label96.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label96.Location = New Point(20, 47)
-        Label96.Name = "Label96"
-        Label96.Size = New Size(63, 20)
-        Label96.TabIndex = 7
-        Label96.Text = "Rp7.000"
-        ' 
-        ' btnPlusStall3
-        ' 
-        btnPlusStall3.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusStall3.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
-        btnPlusStall3.ForeColor = Color.White
-        btnPlusStall3.Location = New Point(159, 188)
-        btnPlusStall3.Name = "btnPlusStall3"
-        btnPlusStall3.Size = New Size(34, 32)
-        btnPlusStall3.TabIndex = 6
-        btnPlusStall3.Text = "+"
-        btnPlusStall3.UseVisualStyleBackColor = False
-        ' 
-        ' tbStall3
-        ' 
-        tbStall3.Location = New Point(81, 193)
-        tbStall3.Multiline = True
-        tbStall3.Name = "tbStall3"
-        tbStall3.Size = New Size(72, 25)
-        tbStall3.TabIndex = 5
-        tbStall3.TextAlign = HorizontalAlignment.Center
-        ' 
-        ' btnMinStall3
-        ' 
-        btnMinStall3.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinStall3.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
-        btnMinStall3.ForeColor = Color.White
-        btnMinStall3.Location = New Point(39, 189)
-        btnMinStall3.Name = "btnMinStall3"
-        btnMinStall3.Size = New Size(34, 32)
-        btnMinStall3.TabIndex = 4
-        btnMinStall3.Text = "-"
-        btnMinStall3.UseVisualStyleBackColor = False
-        ' 
-        ' Label97
-        ' 
-        Label97.AutoSize = True
-        Label97.Location = New Point(10, 81)
-        Label97.Name = "Label97"
-        Label97.Size = New Size(0, 20)
-        Label97.TabIndex = 10
-        ' 
-        ' Panel25
-        ' 
-        Panel25.BorderStyle = BorderStyle.FixedSingle
-        Panel25.Controls.Add(cbAnekaJuice)
-        Panel25.Controls.Add(cbRujak)
-        Panel25.Controls.Add(cbEsSelasih)
-        Panel25.Controls.Add(cbEsDawet)
-        Panel25.Controls.Add(Label92)
-        Panel25.Controls.Add(Label93)
-        Panel25.Controls.Add(btnPlusStall2)
-        Panel25.Controls.Add(tbStall2)
-        Panel25.Controls.Add(btnMinStall2)
-        Panel25.Controls.Add(Label94)
-        Panel25.Location = New Point(289, 547)
-        Panel25.Name = "Panel25"
-        Panel25.Size = New Size(224, 259)
-        Panel25.TabIndex = 27
-        ' 
-        ' Label92
-        ' 
-        Label92.AutoSize = True
-        Label92.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
-        Label92.Location = New Point(14, 9)
-        Label92.Name = "Label92"
-        Label92.Size = New Size(99, 30)
-        Label92.TabIndex = 8
-        Label92.Text = "Pilihan 2"
-        ' 
-        ' Label93
-        ' 
-        Label93.AutoSize = True
-        Label93.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label93.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label93.Location = New Point(20, 47)
-        Label93.Name = "Label93"
-        Label93.Size = New Size(63, 20)
-        Label93.TabIndex = 7
-        Label93.Text = "Rp6.000"
-        ' 
-        ' btnPlusStall2
-        ' 
-        btnPlusStall2.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusStall2.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
-        btnPlusStall2.ForeColor = Color.White
-        btnPlusStall2.Location = New Point(155, 210)
-        btnPlusStall2.Name = "btnPlusStall2"
-        btnPlusStall2.Size = New Size(34, 32)
-        btnPlusStall2.TabIndex = 6
-        btnPlusStall2.Text = "+"
-        btnPlusStall2.UseVisualStyleBackColor = False
-        ' 
-        ' tbStall2
-        ' 
-        tbStall2.Location = New Point(77, 215)
-        tbStall2.Multiline = True
-        tbStall2.Name = "tbStall2"
-        tbStall2.Size = New Size(72, 25)
-        tbStall2.TabIndex = 5
-        tbStall2.TextAlign = HorizontalAlignment.Center
-        ' 
-        ' btnMinStall2
-        ' 
-        btnMinStall2.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinStall2.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
-        btnMinStall2.ForeColor = Color.White
-        btnMinStall2.Location = New Point(35, 211)
-        btnMinStall2.Name = "btnMinStall2"
-        btnMinStall2.Size = New Size(34, 32)
-        btnMinStall2.TabIndex = 4
-        btnMinStall2.Text = "-"
-        btnMinStall2.UseVisualStyleBackColor = False
-        ' 
-        ' Label94
-        ' 
-        Label94.AutoSize = True
-        Label94.Location = New Point(10, 81)
-        Label94.Name = "Label94"
-        Label94.Size = New Size(0, 20)
-        Label94.TabIndex = 10
-        ' 
-        ' Panel24
-        ' 
-        Panel24.BorderStyle = BorderStyle.FixedSingle
-        Panel24.Controls.Add(cbBuahIris)
-        Panel24.Controls.Add(cbEsSeruni)
-        Panel24.Controls.Add(cbTeh)
-        Panel24.Controls.Add(cbIcePuter)
-        Panel24.Controls.Add(Label89)
-        Panel24.Controls.Add(Label90)
-        Panel24.Controls.Add(btnPlusStall1)
-        Panel24.Controls.Add(tbStall1)
-        Panel24.Controls.Add(btnMinStall1)
-        Panel24.Controls.Add(Label91)
-        Panel24.Location = New Point(28, 547)
-        Panel24.Name = "Panel24"
-        Panel24.Size = New Size(224, 259)
-        Panel24.TabIndex = 26
-        ' 
-        ' Label89
-        ' 
-        Label89.AutoSize = True
-        Label89.Font = New Font("Segoe UI Semibold", 13F, FontStyle.Bold)
-        Label89.Location = New Point(14, 9)
-        Label89.Name = "Label89"
-        Label89.Size = New Size(96, 30)
-        Label89.TabIndex = 8
-        Label89.Text = "Pilihan 1"
-        ' 
-        ' Label90
-        ' 
-        Label90.AutoSize = True
-        Label90.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label90.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label90.Location = New Point(20, 47)
-        Label90.Name = "Label90"
-        Label90.Size = New Size(64, 20)
-        Label90.TabIndex = 7
-        Label90.Text = "Rp4.500"
-        ' 
-        ' btnPlusStall1
-        ' 
-        btnPlusStall1.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnPlusStall1.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
-        btnPlusStall1.ForeColor = Color.White
-        btnPlusStall1.Location = New Point(155, 211)
-        btnPlusStall1.Name = "btnPlusStall1"
-        btnPlusStall1.Size = New Size(34, 32)
-        btnPlusStall1.TabIndex = 6
-        btnPlusStall1.Text = "+"
-        btnPlusStall1.UseVisualStyleBackColor = False
-        ' 
-        ' tbStall1
-        ' 
-        tbStall1.Location = New Point(77, 216)
-        tbStall1.Multiline = True
-        tbStall1.Name = "tbStall1"
-        tbStall1.Size = New Size(72, 25)
-        tbStall1.TabIndex = 5
-        tbStall1.TextAlign = HorizontalAlignment.Center
-        ' 
-        ' btnMinStall1
-        ' 
-        btnMinStall1.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnMinStall1.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
-        btnMinStall1.ForeColor = Color.White
-        btnMinStall1.Location = New Point(35, 212)
-        btnMinStall1.Name = "btnMinStall1"
-        btnMinStall1.Size = New Size(34, 32)
-        btnMinStall1.TabIndex = 4
-        btnMinStall1.Text = "-"
-        btnMinStall1.UseVisualStyleBackColor = False
-        ' 
-        ' Label91
-        ' 
-        Label91.AutoSize = True
-        Label91.Location = New Point(10, 81)
-        Label91.Name = "Label91"
-        Label91.Size = New Size(0, 20)
-        Label91.TabIndex = 10
         ' 
         ' Label88
         ' 
@@ -3909,7 +4158,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(27766, 30)
+        Label10.Size = New Size(32476, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -4354,236 +4603,6 @@ Partial Class Form5
         TabControl1.Size = New Size(1209, 669)
         TabControl1.TabIndex = 0
         ' 
-        ' cbIcePuter
-        ' 
-        cbIcePuter.AutoSize = True
-        cbIcePuter.Location = New Point(20, 77)
-        cbIcePuter.Name = "cbIcePuter"
-        cbIcePuter.Size = New Size(176, 24)
-        cbIcePuter.TabIndex = 12
-        cbIcePuter.Text = "Ice Puter + Ager-Ager"
-        cbIcePuter.UseVisualStyleBackColor = True
-        ' 
-        ' cbTeh
-        ' 
-        cbTeh.AutoSize = True
-        cbTeh.Location = New Point(20, 107)
-        cbTeh.Name = "cbTeh"
-        cbTeh.Size = New Size(54, 24)
-        cbTeh.TabIndex = 13
-        cbTeh.Text = "Teh"
-        cbTeh.UseVisualStyleBackColor = True
-        ' 
-        ' cbEsSeruni
-        ' 
-        cbEsSeruni.AutoSize = True
-        cbEsSeruni.Location = New Point(20, 137)
-        cbEsSeruni.Name = "cbEsSeruni"
-        cbEsSeruni.Size = New Size(90, 24)
-        cbEsSeruni.TabIndex = 14
-        cbEsSeruni.Text = "Es Seruni"
-        cbEsSeruni.UseVisualStyleBackColor = True
-        ' 
-        ' cbEsDawet
-        ' 
-        cbEsDawet.AutoSize = True
-        cbEsDawet.Location = New Point(20, 77)
-        cbEsDawet.Name = "cbEsDawet"
-        cbEsDawet.Size = New Size(92, 24)
-        cbEsDawet.TabIndex = 13
-        cbEsDawet.Text = "Es Dawet"
-        cbEsDawet.UseVisualStyleBackColor = True
-        ' 
-        ' cbEsSelasih
-        ' 
-        cbEsSelasih.AutoSize = True
-        cbEsSelasih.Location = New Point(21, 107)
-        cbEsSelasih.Name = "cbEsSelasih"
-        cbEsSelasih.Size = New Size(95, 24)
-        cbEsSelasih.TabIndex = 14
-        cbEsSelasih.Text = "Es Selasih"
-        cbEsSelasih.UseVisualStyleBackColor = True
-        ' 
-        ' cbRujak
-        ' 
-        cbRujak.AutoSize = True
-        cbRujak.Location = New Point(21, 137)
-        cbRujak.Name = "cbRujak"
-        cbRujak.Size = New Size(137, 24)
-        cbRujak.TabIndex = 15
-        cbRujak.Text = "Rujak Ice Cream"
-        cbRujak.UseVisualStyleBackColor = True
-        ' 
-        ' cbAnekaJuice
-        ' 
-        cbAnekaJuice.AutoSize = True
-        cbAnekaJuice.Location = New Point(21, 167)
-        cbAnekaJuice.Name = "cbAnekaJuice"
-        cbAnekaJuice.Size = New Size(108, 24)
-        cbAnekaJuice.TabIndex = 16
-        cbAnekaJuice.Text = "Aneka Juice"
-        cbAnekaJuice.UseVisualStyleBackColor = True
-        ' 
-        ' cbWedangRonde
-        ' 
-        cbWedangRonde.AutoSize = True
-        cbWedangRonde.Location = New Point(20, 77)
-        cbWedangRonde.Name = "cbWedangRonde"
-        cbWedangRonde.Size = New Size(133, 24)
-        cbWedangRonde.TabIndex = 14
-        cbWedangRonde.Text = "Wedang Ronde"
-        cbWedangRonde.UseVisualStyleBackColor = True
-        ' 
-        ' cbEsDoger
-        ' 
-        cbEsDoger.AutoSize = True
-        cbEsDoger.Location = New Point(20, 107)
-        cbEsDoger.Name = "cbEsDoger"
-        cbEsDoger.Size = New Size(91, 24)
-        cbEsDoger.TabIndex = 15
-        cbEsDoger.Text = "Es Doger"
-        cbEsDoger.UseVisualStyleBackColor = True
-        ' 
-        ' cbPecelPincuk
-        ' 
-        cbPecelPincuk.AutoSize = True
-        cbPecelPincuk.Location = New Point(20, 137)
-        cbPecelPincuk.Name = "cbPecelPincuk"
-        cbPecelPincuk.Size = New Size(111, 24)
-        cbPecelPincuk.TabIndex = 16
-        cbPecelPincuk.Text = "Pecel Pincuk"
-        cbPecelPincuk.UseVisualStyleBackColor = True
-        ' 
-        ' cbBuahIris
-        ' 
-        cbBuahIris.AutoSize = True
-        cbBuahIris.Location = New Point(20, 167)
-        cbBuahIris.Name = "cbBuahIris"
-        cbBuahIris.Size = New Size(90, 24)
-        cbBuahIris.TabIndex = 15
-        cbBuahIris.Text = "Es Seruni"
-        cbBuahIris.UseVisualStyleBackColor = True
-        ' 
-        ' cbBakso
-        ' 
-        cbBakso.AutoSize = True
-        cbBakso.Location = New Point(20, 77)
-        cbBakso.Name = "cbBakso"
-        cbBakso.Size = New Size(70, 24)
-        cbBakso.TabIndex = 16
-        cbBakso.Text = "Bakso"
-        cbBakso.UseVisualStyleBackColor = True
-        ' 
-        ' cbSiomay
-        ' 
-        cbSiomay.AutoSize = True
-        cbSiomay.Location = New Point(20, 107)
-        cbSiomay.Name = "cbSiomay"
-        cbSiomay.Size = New Size(80, 24)
-        cbSiomay.TabIndex = 17
-        cbSiomay.Text = "Siomay"
-        cbSiomay.UseVisualStyleBackColor = True
-        ' 
-        ' cbSaladBuah
-        ' 
-        cbSaladBuah.AutoSize = True
-        cbSaladBuah.Location = New Point(20, 137)
-        cbSaladBuah.Name = "cbSaladBuah"
-        cbSaladBuah.Size = New Size(105, 24)
-        cbSaladBuah.TabIndex = 18
-        cbSaladBuah.Text = "Salad Buah"
-        cbSaladBuah.UseVisualStyleBackColor = True
-        ' 
-        ' cbSelatSolo
-        ' 
-        cbSelatSolo.AutoSize = True
-        cbSelatSolo.Location = New Point(20, 167)
-        cbSelatSolo.Name = "cbSelatSolo"
-        cbSelatSolo.Size = New Size(98, 24)
-        cbSelatSolo.TabIndex = 19
-        cbSelatSolo.Text = "Selat Solo"
-        cbSelatSolo.UseVisualStyleBackColor = True
-        ' 
-        ' cbEmpek
-        ' 
-        cbEmpek.AutoSize = True
-        cbEmpek.Location = New Point(21, 77)
-        cbEmpek.Name = "cbEmpek"
-        cbEmpek.Size = New Size(135, 24)
-        cbEmpek.TabIndex = 17
-        cbEmpek.Text = "Empek - Empek"
-        cbEmpek.UseVisualStyleBackColor = True
-        ' 
-        ' cbGado
-        ' 
-        cbGado.AutoSize = True
-        cbGado.Location = New Point(20, 107)
-        cbGado.Name = "cbGado"
-        cbGado.Size = New Size(117, 24)
-        cbGado.TabIndex = 18
-        cbGado.Text = "Gado - Gado"
-        cbGado.UseVisualStyleBackColor = True
-        ' 
-        ' cbSateAyam
-        ' 
-        cbSateAyam.AutoSize = True
-        cbSateAyam.Location = New Point(21, 137)
-        cbSateAyam.Name = "cbSateAyam"
-        cbSateAyam.Size = New Size(175, 24)
-        cbSateAyam.TabIndex = 19
-        cbSateAyam.Text = "Sate Ayam + Lontong"
-        cbSateAyam.UseVisualStyleBackColor = True
-        ' 
-        ' cbMieOriental
-        ' 
-        cbMieOriental.AutoSize = True
-        cbMieOriental.Location = New Point(21, 167)
-        cbMieOriental.Name = "cbMieOriental"
-        cbMieOriental.Size = New Size(113, 24)
-        cbMieOriental.TabIndex = 20
-        cbMieOriental.Text = "Mie Oriental"
-        cbMieOriental.UseVisualStyleBackColor = True
-        ' 
-        ' cbNasiLiwetSolo
-        ' 
-        cbNasiLiwetSolo.AutoSize = True
-        cbNasiLiwetSolo.Location = New Point(20, 77)
-        cbNasiLiwetSolo.Name = "cbNasiLiwetSolo"
-        cbNasiLiwetSolo.Size = New Size(133, 24)
-        cbNasiLiwetSolo.TabIndex = 18
-        cbNasiLiwetSolo.Text = "Nasi Liwet Solo"
-        cbNasiLiwetSolo.UseVisualStyleBackColor = True
-        ' 
-        ' cbNasiRawon
-        ' 
-        cbNasiRawon.AutoSize = True
-        cbNasiRawon.Location = New Point(20, 107)
-        cbNasiRawon.Name = "cbNasiRawon"
-        cbNasiRawon.Size = New Size(109, 24)
-        cbNasiRawon.TabIndex = 19
-        cbNasiRawon.Text = "Nasi Rawon"
-        cbNasiRawon.UseVisualStyleBackColor = True
-        ' 
-        ' cbKebab
-        ' 
-        cbKebab.AutoSize = True
-        cbKebab.Location = New Point(20, 137)
-        cbKebab.Name = "cbKebab"
-        cbKebab.Size = New Size(74, 24)
-        cbKebab.TabIndex = 20
-        cbKebab.Text = "Kebab"
-        cbKebab.UseVisualStyleBackColor = True
-        ' 
-        ' cbDimSum
-        ' 
-        cbDimSum.AutoSize = True
-        cbDimSum.Location = New Point(20, 167)
-        cbDimSum.Name = "cbDimSum"
-        cbDimSum.Size = New Size(92, 24)
-        cbDimSum.TabIndex = 21
-        cbDimSum.Text = "Dim Sum"
-        cbDimSum.UseVisualStyleBackColor = True
-        ' 
         ' Form5
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -4607,6 +4626,18 @@ Partial Class Form5
         SplitContainer2.Panel2.ResumeLayout(False)
         CType(SplitContainer2, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer2.ResumeLayout(False)
+        Panel29.ResumeLayout(False)
+        Panel29.PerformLayout()
+        Panel27.ResumeLayout(False)
+        Panel27.PerformLayout()
+        Panel28.ResumeLayout(False)
+        Panel28.PerformLayout()
+        Panel26.ResumeLayout(False)
+        Panel26.PerformLayout()
+        Panel25.ResumeLayout(False)
+        Panel25.PerformLayout()
+        Panel24.ResumeLayout(False)
+        Panel24.PerformLayout()
         Panel38.ResumeLayout(False)
         Panel38.PerformLayout()
         Panel37.ResumeLayout(False)
@@ -4625,18 +4656,6 @@ Partial Class Form5
         Panel31.PerformLayout()
         Panel30.ResumeLayout(False)
         Panel30.PerformLayout()
-        Panel29.ResumeLayout(False)
-        Panel29.PerformLayout()
-        Panel28.ResumeLayout(False)
-        Panel28.PerformLayout()
-        Panel27.ResumeLayout(False)
-        Panel27.PerformLayout()
-        Panel26.ResumeLayout(False)
-        Panel26.PerformLayout()
-        Panel25.ResumeLayout(False)
-        Panel25.PerformLayout()
-        Panel24.ResumeLayout(False)
-        Panel24.PerformLayout()
         Panel23.ResumeLayout(False)
         Panel23.PerformLayout()
         Panel22.ResumeLayout(False)
@@ -4897,48 +4916,7 @@ Partial Class Form5
     Friend WithEvents tbPrasC As TextBox
     Friend WithEvents btnMinPrasC As Button
     Friend WithEvents Label88 As Label
-    Friend WithEvents Panel24 As Panel
-    Friend WithEvents Label89 As Label
-    Friend WithEvents Label90 As Label
-    Friend WithEvents btnPlusStall1 As Button
-    Friend WithEvents tbStall1 As TextBox
-    Friend WithEvents btnMinStall1 As Button
-    Friend WithEvents Label91 As Label
-    Friend WithEvents Panel26 As Panel
-    Friend WithEvents Label95 As Label
-    Friend WithEvents Label96 As Label
-    Friend WithEvents btnPlusStall3 As Button
-    Friend WithEvents tbStall3 As TextBox
-    Friend WithEvents btnMinStall3 As Button
-    Friend WithEvents Label97 As Label
-    Friend WithEvents Panel25 As Panel
-    Friend WithEvents Label92 As Label
-    Friend WithEvents Label93 As Label
-    Friend WithEvents btnPlusStall2 As Button
-    Friend WithEvents tbStall2 As TextBox
-    Friend WithEvents btnMinStall2 As Button
-    Friend WithEvents Label94 As Label
-    Friend WithEvents Panel27 As Panel
-    Friend WithEvents Label98 As Label
-    Friend WithEvents Label99 As Label
-    Friend WithEvents btnPlusStall4 As Button
-    Friend WithEvents tbStall4 As TextBox
-    Friend WithEvents btnMinStall4 As Button
-    Friend WithEvents Label100 As Label
-    Friend WithEvents Panel29 As Panel
-    Friend WithEvents Label104 As Label
-    Friend WithEvents Label105 As Label
     Friend WithEvents tbPlussStall6 As Button
-    Friend WithEvents tbStall6 As TextBox
-    Friend WithEvents btnMinStall6 As Button
-    Friend WithEvents Label106 As Label
-    Friend WithEvents Panel28 As Panel
-    Friend WithEvents Label101 As Label
-    Friend WithEvents Label102 As Label
-    Friend WithEvents btnPlusStall5 As Button
-    Friend WithEvents tbStall5 As TextBox
-    Friend WithEvents btnMinStall5 As Button
-    Friend WithEvents Label103 As Label
     Friend WithEvents Label110 As Label
     Friend WithEvents Panel30 As Panel
     Friend WithEvents Label107 As Label
@@ -5017,7 +4995,6 @@ Partial Class Form5
     Friend WithEvents tglPelaksanaan As MonthCalendar
     Friend WithEvents btnPlussStall6 As Button
     Friend WithEvents btnPlusStall6 As Button
-    Friend WithEvents btnPlusStal6 As Button
     Friend WithEvents tbSyukur2 As TextBox
     Friend WithEvents cbJasmine As CheckBox
     Friend WithEvents cbTulip As CheckBox
@@ -5055,27 +5032,74 @@ Partial Class Form5
     Friend WithEvents colJumlahTambahan As DataGridViewTextBoxColumn
     Friend WithEvents colTotalTambahan As DataGridViewTextBoxColumn
     Friend WithEvents colIdTambahan As DataGridViewTextBoxColumn
+    Friend WithEvents Panel24 As Panel
+    Friend WithEvents tbBuahIris As TextBox
+    Friend WithEvents tbEsSeruni As TextBox
+    Friend WithEvents tbTeh As TextBox
+    Friend WithEvents tbIcePuter As TextBox
+    Friend WithEvents cbBuahIris As CheckBox
     Friend WithEvents cbEsSeruni As CheckBox
     Friend WithEvents cbTeh As CheckBox
     Friend WithEvents cbIcePuter As CheckBox
-    Friend WithEvents cbPecelPincuk As CheckBox
-    Friend WithEvents cbEsDoger As CheckBox
-    Friend WithEvents cbWedangRonde As CheckBox
-    Friend WithEvents cbAnekaJuice As CheckBox
+    Friend WithEvents Label89 As Label
+    Friend WithEvents Label90 As Label
+    Friend WithEvents Label91 As Label
+    Friend WithEvents Panel25 As Panel
+    Friend WithEvents tbJusJeruk As TextBox
+    Friend WithEvents tbRujak As TextBox
+    Friend WithEvents tbEsSelasih As TextBox
+    Friend WithEvents tbEsDawet As TextBox
+    Friend WithEvents cbJusJeruk As CheckBox
     Friend WithEvents cbRujak As CheckBox
     Friend WithEvents cbEsSelasih As CheckBox
     Friend WithEvents cbEsDawet As CheckBox
-    Friend WithEvents cbBuahIris As CheckBox
+    Friend WithEvents Label92 As Label
+    Friend WithEvents Label93 As Label
+    Friend WithEvents Label94 As Label
+    Friend WithEvents Panel26 As Panel
+    Friend WithEvents tbPecelPincuk As TextBox
+    Friend WithEvents tbEsDoger As TextBox
+    Friend WithEvents tbWedangRonde As TextBox
+    Friend WithEvents cbPecelPincuk As CheckBox
+    Friend WithEvents cbEsDoger As CheckBox
+    Friend WithEvents cbWedangRonde As CheckBox
+    Friend WithEvents Label95 As Label
+    Friend WithEvents Label96 As Label
+    Friend WithEvents Label97 As Label
+    Friend WithEvents Panel28 As Panel
+    Friend WithEvents cbMieOriental As CheckBox
+    Friend WithEvents cbSateAyam As CheckBox
+    Friend WithEvents cbGado As CheckBox
     Friend WithEvents cbEmpek As CheckBox
+    Friend WithEvents Label101 As Label
+    Friend WithEvents Label102 As Label
+    Friend WithEvents Label103 As Label
+    Friend WithEvents Panel27 As Panel
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents tbSaladBuah As TextBox
+    Friend WithEvents tbSiomay As TextBox
+    Friend WithEvents tbBakso As TextBox
     Friend WithEvents cbSelatSolo As CheckBox
     Friend WithEvents cbSaladBuah As CheckBox
     Friend WithEvents cbSiomay As CheckBox
     Friend WithEvents cbBakso As CheckBox
+    Friend WithEvents Label98 As Label
+    Friend WithEvents Label99 As Label
+    Friend WithEvents Label100 As Label
+    Friend WithEvents Panel29 As Panel
+    Friend WithEvents tbDimSum As TextBox
+    Friend WithEvents tbKebab As TextBox
+    Friend WithEvents tbNasiRawon As TextBox
+    Friend WithEvents tbNasiLiwet As TextBox
+    Friend WithEvents cbDimSum As CheckBox
     Friend WithEvents cbKebab As CheckBox
     Friend WithEvents cbNasiRawon As CheckBox
     Friend WithEvents cbNasiLiwetSolo As CheckBox
-    Friend WithEvents cbMieOriental As CheckBox
-    Friend WithEvents cbSateAyam As CheckBox
-    Friend WithEvents cbGado As CheckBox
-    Friend WithEvents cbDimSum As CheckBox
+    Friend WithEvents Label104 As Label
+    Friend WithEvents Label105 As Label
+    Friend WithEvents Label106 As Label
+    Friend WithEvents tbMie As TextBox
+    Friend WithEvents tbSate As TextBox
+    Friend WithEvents tbGado As TextBox
+    Friend WithEvents tbEmpek As TextBox
 End Class
