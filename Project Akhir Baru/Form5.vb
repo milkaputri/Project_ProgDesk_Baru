@@ -172,6 +172,7 @@ Public Class Form5
         Else
             tbPrasA.Text = "0"
         End If
+
     End Sub
 
     Private Sub btnPlusPaketA_Click(sender As Object, e As EventArgs) Handles btnPlusPrasA.Click
@@ -240,6 +241,8 @@ Public Class Form5
             End If
         Else
             tbPrasB.Text = "300"
+            TampilTambahan("Prasmanan B", tbPrasB.Text.ToString(), 37000, 12)
+            UpdateTotalHargaTambahan()
         End If
     End Sub
 
@@ -264,9 +267,12 @@ Public Class Form5
             Dim nilai As Integer = Integer.Parse(tbPrasC.Text)
             If nilai = 300 Then
                 tbPrasC.Text = "0"
+                TampilTambahan("Prasmanan C", tbPrasC.Text.ToString(), 40500, 13)
+                UpdateTotalHargaTambahan()
             ElseIf nilai > 300 Then
                 tbPrasC.Text = (nilai - 1).ToString()
                 TampilTambahan("Prasmanan C", tbPrasC.Text.ToString(), 40500, 13)
+                UpdateTotalHargaTambahan()
             End If
         Else
             tbPrasC.Text = "0"
@@ -282,9 +288,12 @@ Public Class Form5
             ElseIf nilai >= 300 Then
                 tbPrasC.Text = (nilai + 1).ToString()
                 TampilTambahan("Prasmanan C", tbPrasC.Text.ToString(), 40500, 13)
+                UpdateTotalHargaTambahan()
             End If
         Else
             tbPrasC.Text = "300"
+            TampilTambahan("Prasmanan C", tbPrasC.Text.ToString(), 40500, 13)
+            UpdateTotalHargaTambahan()
         End If
     End Sub
 
@@ -1028,6 +1037,9 @@ Public Class Form5
                 row.Cells("colTotalTambahan").Value = jumlah * harga
                 row.Cells("colIdTambahan").Value = idTambahan
                 found = True
+                If row.Cells("colJumlahTambahan").Value = 0 Then
+                    DataGridView2.Rows.Remove(row)
+                End If
                 Exit For
             End If
         Next
@@ -1316,5 +1328,4 @@ Public Class Form5
             MessageBox.Show("Silakan pilih baris yang ingin dihapus.")
         End If
     End Sub
-
 End Class
