@@ -219,11 +219,6 @@ Partial Class Form5
         btnSimpanTambahan = New Button()
         Label53 = New Label()
         Label58 = New Label()
-        DataGridView2 = New DataGridView()
-        colPaketTambahan = New DataGridViewTextBoxColumn()
-        colJumlahTambahan = New DataGridViewTextBoxColumn()
-        colTotalTambahan = New DataGridViewTextBoxColumn()
-        colIdTambahan = New DataGridViewTextBoxColumn()
         btnBersihkanTambahan = New Button()
         Label41 = New Label()
         tpPaket = New TabPage()
@@ -373,6 +368,11 @@ Partial Class Form5
         tbNamaPemesan = New TextBox()
         Label1 = New Label()
         TabControl1 = New TabControl()
+        colIdTambahan = New DataGridViewTextBoxColumn()
+        colTotalTambahan = New DataGridViewTextBoxColumn()
+        colJumlahTambahan = New DataGridViewTextBoxColumn()
+        colPaketTambahan = New DataGridViewTextBoxColumn()
+        DataGridView2 = New DataGridView()
         tpPembayaran.SuspendLayout()
         Panel20.SuspendLayout()
         Panel19.SuspendLayout()
@@ -402,7 +402,6 @@ Partial Class Form5
         Panel22.SuspendLayout()
         Panel21.SuspendLayout()
         Panel18.SuspendLayout()
-        CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         tpPaket.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
@@ -442,6 +441,7 @@ Partial Class Form5
         Panel2.SuspendLayout()
         Panel1.SuspendLayout()
         TabControl1.SuspendLayout()
+        CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' tpLaporan
@@ -2669,48 +2669,6 @@ Partial Class Form5
         Label58.TabIndex = 0
         Label58.Text = "Total"
         ' 
-        ' DataGridView2
-        ' 
-        DataGridView2.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView2.Columns.AddRange(New DataGridViewColumn() {colPaketTambahan, colJumlahTambahan, colTotalTambahan, colIdTambahan})
-        DataGridView2.Location = New Point(0, 77)
-        DataGridView2.Name = "DataGridView2"
-        DataGridView2.RightToLeft = RightToLeft.No
-        DataGridView2.RowHeadersWidth = 51
-        DataGridView2.Size = New Size(395, 403)
-        DataGridView2.TabIndex = 24
-        ' 
-        ' colPaketTambahan
-        ' 
-        colPaketTambahan.HeaderText = "Paket"
-        colPaketTambahan.MinimumWidth = 6
-        colPaketTambahan.Name = "colPaketTambahan"
-        colPaketTambahan.Width = 125
-        ' 
-        ' colJumlahTambahan
-        ' 
-        colJumlahTambahan.HeaderText = "Jumlah"
-        colJumlahTambahan.MinimumWidth = 6
-        colJumlahTambahan.Name = "colJumlahTambahan"
-        colJumlahTambahan.Width = 125
-        ' 
-        ' colTotalTambahan
-        ' 
-        colTotalTambahan.HeaderText = "Total"
-        colTotalTambahan.MinimumWidth = 6
-        colTotalTambahan.Name = "colTotalTambahan"
-        colTotalTambahan.Width = 125
-        ' 
-        ' colIdTambahan
-        ' 
-        colIdTambahan.HeaderText = "Id"
-        colIdTambahan.MinimumWidth = 6
-        colIdTambahan.Name = "colIdTambahan"
-        colIdTambahan.ReadOnly = True
-        colIdTambahan.Visible = False
-        colIdTambahan.Width = 125
-        ' 
         ' btnBersihkanTambahan
         ' 
         btnBersihkanTambahan.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
@@ -3941,7 +3899,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(26824, 30)
+        Label10.Size = New Size(27295, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -4386,6 +4344,48 @@ Partial Class Form5
         TabControl1.Size = New Size(1209, 669)
         TabControl1.TabIndex = 0
         ' 
+        ' colIdTambahan
+        ' 
+        colIdTambahan.HeaderText = "Id"
+        colIdTambahan.MinimumWidth = 6
+        colIdTambahan.Name = "colIdTambahan"
+        colIdTambahan.ReadOnly = True
+        colIdTambahan.Visible = False
+        colIdTambahan.Width = 125
+        ' 
+        ' colTotalTambahan
+        ' 
+        colTotalTambahan.HeaderText = "Total"
+        colTotalTambahan.MinimumWidth = 6
+        colTotalTambahan.Name = "colTotalTambahan"
+        colTotalTambahan.Width = 125
+        ' 
+        ' colJumlahTambahan
+        ' 
+        colJumlahTambahan.HeaderText = "Jumlah"
+        colJumlahTambahan.MinimumWidth = 6
+        colJumlahTambahan.Name = "colJumlahTambahan"
+        colJumlahTambahan.Width = 125
+        ' 
+        ' colPaketTambahan
+        ' 
+        colPaketTambahan.HeaderText = "Paket"
+        colPaketTambahan.MinimumWidth = 6
+        colPaketTambahan.Name = "colPaketTambahan"
+        colPaketTambahan.Width = 125
+        ' 
+        ' DataGridView2
+        ' 
+        DataGridView2.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView2.Columns.AddRange(New DataGridViewColumn() {colPaketTambahan, colJumlahTambahan, colTotalTambahan, colIdTambahan})
+        DataGridView2.Location = New Point(0, 77)
+        DataGridView2.Name = "DataGridView2"
+        DataGridView2.RightToLeft = RightToLeft.No
+        DataGridView2.RowHeadersWidth = 51
+        DataGridView2.Size = New Size(395, 403)
+        DataGridView2.TabIndex = 24
+        ' 
         ' Form5
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -4447,7 +4447,6 @@ Partial Class Form5
         Panel21.PerformLayout()
         Panel18.ResumeLayout(False)
         Panel18.PerformLayout()
-        CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
         tpPaket.ResumeLayout(False)
         SplitContainer1.Panel1.ResumeLayout(False)
         SplitContainer1.Panel2.ResumeLayout(False)
@@ -4505,6 +4504,7 @@ Partial Class Form5
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         TabControl1.ResumeLayout(False)
+        CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
@@ -4643,7 +4643,6 @@ Partial Class Form5
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents Label41 As Label
     Friend WithEvents btnBersihkanTambahan As Button
-    Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents Label59 As Label
     Friend WithEvents Panel18 As Panel
     Friend WithEvents lblTotalHargaTambahan As Label
@@ -4858,9 +4857,10 @@ Partial Class Form5
     Friend WithEvents colTotal As DataGridViewTextBoxColumn
     Friend WithEvents ColId As DataGridViewTextBoxColumn
     Friend WithEvents DateTimePicker5 As DateTimePicker
+    Friend WithEvents cbKategori As ComboBox
+    Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents colPaketTambahan As DataGridViewTextBoxColumn
     Friend WithEvents colJumlahTambahan As DataGridViewTextBoxColumn
     Friend WithEvents colTotalTambahan As DataGridViewTextBoxColumn
     Friend WithEvents colIdTambahan As DataGridViewTextBoxColumn
-    Friend WithEvents cbKategori As ComboBox
 End Class
