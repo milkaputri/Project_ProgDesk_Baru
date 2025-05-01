@@ -142,7 +142,6 @@ Partial Class Form5
         btnMinSyukur1 = New Button()
         Label109 = New Label()
         Panel29 = New Panel()
-        CheckedListBox6 = New CheckedListBox()
         Label104 = New Label()
         Label105 = New Label()
         btnPlusStal6 = New Button()
@@ -150,7 +149,6 @@ Partial Class Form5
         btnMinStall6 = New Button()
         Label106 = New Label()
         Panel28 = New Panel()
-        CheckedListBox5 = New CheckedListBox()
         Label101 = New Label()
         Label102 = New Label()
         btnPlusStall5 = New Button()
@@ -158,7 +156,6 @@ Partial Class Form5
         btnMinStall5 = New Button()
         Label103 = New Label()
         Panel27 = New Panel()
-        CheckedListBox4 = New CheckedListBox()
         Label98 = New Label()
         Label99 = New Label()
         btnPlusStall4 = New Button()
@@ -166,7 +163,6 @@ Partial Class Form5
         btnMinStall4 = New Button()
         Label100 = New Label()
         Panel26 = New Panel()
-        CheckedListBox3 = New CheckedListBox()
         Label95 = New Label()
         Label96 = New Label()
         btnPlusStall3 = New Button()
@@ -174,7 +170,6 @@ Partial Class Form5
         btnMinStall3 = New Button()
         Label97 = New Label()
         Panel25 = New Panel()
-        CheckedListBox2 = New CheckedListBox()
         Label92 = New Label()
         Label93 = New Label()
         btnPlusStall2 = New Button()
@@ -182,7 +177,6 @@ Partial Class Form5
         btnMinStall2 = New Button()
         Label94 = New Label()
         Panel24 = New Panel()
-        CheckedListBox1 = New CheckedListBox()
         Label89 = New Label()
         Label90 = New Label()
         btnPlusStall1 = New Button()
@@ -219,6 +213,11 @@ Partial Class Form5
         btnSimpanTambahan = New Button()
         Label53 = New Label()
         Label58 = New Label()
+        DataGridView2 = New DataGridView()
+        colPaketTambahan = New DataGridViewTextBoxColumn()
+        colJumlahTambahan = New DataGridViewTextBoxColumn()
+        colTotalTambahan = New DataGridViewTextBoxColumn()
+        colIdTambahan = New DataGridViewTextBoxColumn()
         btnBersihkanTambahan = New Button()
         Label41 = New Label()
         tpPaket = New TabPage()
@@ -368,11 +367,29 @@ Partial Class Form5
         tbNamaPemesan = New TextBox()
         Label1 = New Label()
         TabControl1 = New TabControl()
-        colIdTambahan = New DataGridViewTextBoxColumn()
-        colTotalTambahan = New DataGridViewTextBoxColumn()
-        colJumlahTambahan = New DataGridViewTextBoxColumn()
-        colPaketTambahan = New DataGridViewTextBoxColumn()
-        DataGridView2 = New DataGridView()
+        cbIcePuter = New CheckBox()
+        cbTeh = New CheckBox()
+        cbEsSeruni = New CheckBox()
+        cbEsDawet = New CheckBox()
+        cbEsSelasih = New CheckBox()
+        cbRujak = New CheckBox()
+        cbAnekaJuice = New CheckBox()
+        cbWedangRonde = New CheckBox()
+        cbEsDoger = New CheckBox()
+        cbPecelPincuk = New CheckBox()
+        cbBuahIris = New CheckBox()
+        cbBakso = New CheckBox()
+        cbSiomay = New CheckBox()
+        cbSaladBuah = New CheckBox()
+        cbSelatSolo = New CheckBox()
+        cbEmpek = New CheckBox()
+        cbGado = New CheckBox()
+        cbSateAyam = New CheckBox()
+        cbMieOriental = New CheckBox()
+        cbNasiLiwetSolo = New CheckBox()
+        cbNasiRawon = New CheckBox()
+        cbKebab = New CheckBox()
+        cbDimSum = New CheckBox()
         tpPembayaran.SuspendLayout()
         Panel20.SuspendLayout()
         Panel19.SuspendLayout()
@@ -402,6 +419,7 @@ Partial Class Form5
         Panel22.SuspendLayout()
         Panel21.SuspendLayout()
         Panel18.SuspendLayout()
+        CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         tpPaket.SuspendLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
@@ -441,7 +459,6 @@ Partial Class Form5
         Panel2.SuspendLayout()
         Panel1.SuspendLayout()
         TabControl1.SuspendLayout()
-        CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' tpLaporan
@@ -1812,7 +1829,10 @@ Partial Class Form5
         ' Panel29
         ' 
         Panel29.BorderStyle = BorderStyle.FixedSingle
-        Panel29.Controls.Add(CheckedListBox6)
+        Panel29.Controls.Add(cbDimSum)
+        Panel29.Controls.Add(cbKebab)
+        Panel29.Controls.Add(cbNasiRawon)
+        Panel29.Controls.Add(cbNasiLiwetSolo)
         Panel29.Controls.Add(Label104)
         Panel29.Controls.Add(Label105)
         Panel29.Controls.Add(btnPlusStal6)
@@ -1823,17 +1843,6 @@ Partial Class Form5
         Panel29.Name = "Panel29"
         Panel29.Size = New Size(224, 258)
         Panel29.TabIndex = 31
-        ' 
-        ' CheckedListBox6
-        ' 
-        CheckedListBox6.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        CheckedListBox6.BorderStyle = BorderStyle.None
-        CheckedListBox6.FormattingEnabled = True
-        CheckedListBox6.Items.AddRange(New Object() {"Nasi Liwet Solo", "Nasi Rawon", "Kebab", "Dim Sum"})
-        CheckedListBox6.Location = New Point(20, 81)
-        CheckedListBox6.Name = "CheckedListBox6"
-        CheckedListBox6.Size = New Size(191, 88)
-        CheckedListBox6.TabIndex = 11
         ' 
         ' Label104
         ' 
@@ -1861,7 +1870,7 @@ Partial Class Form5
         btnPlusStal6.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         btnPlusStal6.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusStal6.ForeColor = Color.White
-        btnPlusStal6.Location = New Point(159, 193)
+        btnPlusStal6.Location = New Point(159, 211)
         btnPlusStal6.Name = "btnPlusStal6"
         btnPlusStal6.Size = New Size(34, 32)
         btnPlusStal6.TabIndex = 6
@@ -1870,7 +1879,7 @@ Partial Class Form5
         ' 
         ' tbStall6
         ' 
-        tbStall6.Location = New Point(81, 198)
+        tbStall6.Location = New Point(81, 216)
         tbStall6.Multiline = True
         tbStall6.Name = "tbStall6"
         tbStall6.Size = New Size(72, 25)
@@ -1882,7 +1891,7 @@ Partial Class Form5
         btnMinStall6.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         btnMinStall6.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinStall6.ForeColor = Color.White
-        btnMinStall6.Location = New Point(39, 194)
+        btnMinStall6.Location = New Point(39, 212)
         btnMinStall6.Name = "btnMinStall6"
         btnMinStall6.Size = New Size(34, 32)
         btnMinStall6.TabIndex = 4
@@ -1900,7 +1909,10 @@ Partial Class Form5
         ' Panel28
         ' 
         Panel28.BorderStyle = BorderStyle.FixedSingle
-        Panel28.Controls.Add(CheckedListBox5)
+        Panel28.Controls.Add(cbMieOriental)
+        Panel28.Controls.Add(cbSateAyam)
+        Panel28.Controls.Add(cbGado)
+        Panel28.Controls.Add(cbEmpek)
         Panel28.Controls.Add(Label101)
         Panel28.Controls.Add(Label102)
         Panel28.Controls.Add(btnPlusStall5)
@@ -1911,17 +1923,6 @@ Partial Class Form5
         Panel28.Name = "Panel28"
         Panel28.Size = New Size(224, 258)
         Panel28.TabIndex = 30
-        ' 
-        ' CheckedListBox5
-        ' 
-        CheckedListBox5.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        CheckedListBox5.BorderStyle = BorderStyle.None
-        CheckedListBox5.FormattingEnabled = True
-        CheckedListBox5.Items.AddRange(New Object() {"Empek-empek", "Gado-gado", "Sate Ayam + Lontong", "Mie Oriental"})
-        CheckedListBox5.Location = New Point(20, 81)
-        CheckedListBox5.Name = "CheckedListBox5"
-        CheckedListBox5.Size = New Size(191, 88)
-        CheckedListBox5.TabIndex = 11
         ' 
         ' Label101
         ' 
@@ -1949,7 +1950,7 @@ Partial Class Form5
         btnPlusStall5.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         btnPlusStall5.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusStall5.ForeColor = Color.White
-        btnPlusStall5.Location = New Point(155, 193)
+        btnPlusStall5.Location = New Point(155, 210)
         btnPlusStall5.Name = "btnPlusStall5"
         btnPlusStall5.Size = New Size(34, 32)
         btnPlusStall5.TabIndex = 6
@@ -1958,7 +1959,7 @@ Partial Class Form5
         ' 
         ' tbStall5
         ' 
-        tbStall5.Location = New Point(77, 198)
+        tbStall5.Location = New Point(77, 215)
         tbStall5.Multiline = True
         tbStall5.Name = "tbStall5"
         tbStall5.Size = New Size(72, 25)
@@ -1970,7 +1971,7 @@ Partial Class Form5
         btnMinStall5.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         btnMinStall5.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinStall5.ForeColor = Color.White
-        btnMinStall5.Location = New Point(35, 194)
+        btnMinStall5.Location = New Point(35, 211)
         btnMinStall5.Name = "btnMinStall5"
         btnMinStall5.Size = New Size(34, 32)
         btnMinStall5.TabIndex = 4
@@ -1988,7 +1989,10 @@ Partial Class Form5
         ' Panel27
         ' 
         Panel27.BorderStyle = BorderStyle.FixedSingle
-        Panel27.Controls.Add(CheckedListBox4)
+        Panel27.Controls.Add(cbSelatSolo)
+        Panel27.Controls.Add(cbSaladBuah)
+        Panel27.Controls.Add(cbSiomay)
+        Panel27.Controls.Add(cbBakso)
         Panel27.Controls.Add(Label98)
         Panel27.Controls.Add(Label99)
         Panel27.Controls.Add(btnPlusStall4)
@@ -1999,17 +2003,6 @@ Partial Class Form5
         Panel27.Name = "Panel27"
         Panel27.Size = New Size(224, 258)
         Panel27.TabIndex = 29
-        ' 
-        ' CheckedListBox4
-        ' 
-        CheckedListBox4.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        CheckedListBox4.BorderStyle = BorderStyle.None
-        CheckedListBox4.FormattingEnabled = True
-        CheckedListBox4.Items.AddRange(New Object() {"Bakso", "Siomay", "Salad Buah", "Selat Solo"})
-        CheckedListBox4.Location = New Point(20, 81)
-        CheckedListBox4.Name = "CheckedListBox4"
-        CheckedListBox4.Size = New Size(191, 88)
-        CheckedListBox4.TabIndex = 11
         ' 
         ' Label98
         ' 
@@ -2037,7 +2030,7 @@ Partial Class Form5
         btnPlusStall4.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         btnPlusStall4.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusStall4.ForeColor = Color.White
-        btnPlusStall4.Location = New Point(155, 193)
+        btnPlusStall4.Location = New Point(155, 211)
         btnPlusStall4.Name = "btnPlusStall4"
         btnPlusStall4.Size = New Size(34, 32)
         btnPlusStall4.TabIndex = 6
@@ -2046,7 +2039,7 @@ Partial Class Form5
         ' 
         ' tbStall4
         ' 
-        tbStall4.Location = New Point(77, 198)
+        tbStall4.Location = New Point(77, 216)
         tbStall4.Multiline = True
         tbStall4.Name = "tbStall4"
         tbStall4.Size = New Size(72, 25)
@@ -2058,7 +2051,7 @@ Partial Class Form5
         btnMinStall4.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         btnMinStall4.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinStall4.ForeColor = Color.White
-        btnMinStall4.Location = New Point(35, 194)
+        btnMinStall4.Location = New Point(35, 212)
         btnMinStall4.Name = "btnMinStall4"
         btnMinStall4.Size = New Size(34, 32)
         btnMinStall4.TabIndex = 4
@@ -2076,7 +2069,9 @@ Partial Class Form5
         ' Panel26
         ' 
         Panel26.BorderStyle = BorderStyle.FixedSingle
-        Panel26.Controls.Add(CheckedListBox3)
+        Panel26.Controls.Add(cbPecelPincuk)
+        Panel26.Controls.Add(cbEsDoger)
+        Panel26.Controls.Add(cbWedangRonde)
         Panel26.Controls.Add(Label95)
         Panel26.Controls.Add(Label96)
         Panel26.Controls.Add(btnPlusStall3)
@@ -2087,17 +2082,6 @@ Partial Class Form5
         Panel26.Name = "Panel26"
         Panel26.Size = New Size(224, 259)
         Panel26.TabIndex = 28
-        ' 
-        ' CheckedListBox3
-        ' 
-        CheckedListBox3.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        CheckedListBox3.BorderStyle = BorderStyle.None
-        CheckedListBox3.FormattingEnabled = True
-        CheckedListBox3.Items.AddRange(New Object() {"Wedang Ronde", "Es Doger", "Pecel Pincuk"})
-        CheckedListBox3.Location = New Point(20, 81)
-        CheckedListBox3.Name = "CheckedListBox3"
-        CheckedListBox3.Size = New Size(191, 110)
-        CheckedListBox3.TabIndex = 11
         ' 
         ' Label95
         ' 
@@ -2164,7 +2148,10 @@ Partial Class Form5
         ' Panel25
         ' 
         Panel25.BorderStyle = BorderStyle.FixedSingle
-        Panel25.Controls.Add(CheckedListBox2)
+        Panel25.Controls.Add(cbAnekaJuice)
+        Panel25.Controls.Add(cbRujak)
+        Panel25.Controls.Add(cbEsSelasih)
+        Panel25.Controls.Add(cbEsDawet)
         Panel25.Controls.Add(Label92)
         Panel25.Controls.Add(Label93)
         Panel25.Controls.Add(btnPlusStall2)
@@ -2175,17 +2162,6 @@ Partial Class Form5
         Panel25.Name = "Panel25"
         Panel25.Size = New Size(224, 259)
         Panel25.TabIndex = 27
-        ' 
-        ' CheckedListBox2
-        ' 
-        CheckedListBox2.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        CheckedListBox2.BorderStyle = BorderStyle.None
-        CheckedListBox2.FormattingEnabled = True
-        CheckedListBox2.Items.AddRange(New Object() {"Es Dawet", "Es Selasih", "Rujak Ice Cream", "Aneka Juice"})
-        CheckedListBox2.Location = New Point(20, 81)
-        CheckedListBox2.Name = "CheckedListBox2"
-        CheckedListBox2.Size = New Size(191, 88)
-        CheckedListBox2.TabIndex = 11
         ' 
         ' Label92
         ' 
@@ -2213,7 +2189,7 @@ Partial Class Form5
         btnPlusStall2.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         btnPlusStall2.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusStall2.ForeColor = Color.White
-        btnPlusStall2.Location = New Point(155, 191)
+        btnPlusStall2.Location = New Point(155, 210)
         btnPlusStall2.Name = "btnPlusStall2"
         btnPlusStall2.Size = New Size(34, 32)
         btnPlusStall2.TabIndex = 6
@@ -2222,7 +2198,7 @@ Partial Class Form5
         ' 
         ' tbStall2
         ' 
-        tbStall2.Location = New Point(77, 196)
+        tbStall2.Location = New Point(77, 215)
         tbStall2.Multiline = True
         tbStall2.Name = "tbStall2"
         tbStall2.Size = New Size(72, 25)
@@ -2234,7 +2210,7 @@ Partial Class Form5
         btnMinStall2.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         btnMinStall2.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinStall2.ForeColor = Color.White
-        btnMinStall2.Location = New Point(35, 192)
+        btnMinStall2.Location = New Point(35, 211)
         btnMinStall2.Name = "btnMinStall2"
         btnMinStall2.Size = New Size(34, 32)
         btnMinStall2.TabIndex = 4
@@ -2252,7 +2228,10 @@ Partial Class Form5
         ' Panel24
         ' 
         Panel24.BorderStyle = BorderStyle.FixedSingle
-        Panel24.Controls.Add(CheckedListBox1)
+        Panel24.Controls.Add(cbBuahIris)
+        Panel24.Controls.Add(cbEsSeruni)
+        Panel24.Controls.Add(cbTeh)
+        Panel24.Controls.Add(cbIcePuter)
         Panel24.Controls.Add(Label89)
         Panel24.Controls.Add(Label90)
         Panel24.Controls.Add(btnPlusStall1)
@@ -2263,17 +2242,6 @@ Partial Class Form5
         Panel24.Name = "Panel24"
         Panel24.Size = New Size(224, 259)
         Panel24.TabIndex = 26
-        ' 
-        ' CheckedListBox1
-        ' 
-        CheckedListBox1.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        CheckedListBox1.BorderStyle = BorderStyle.None
-        CheckedListBox1.FormattingEnabled = True
-        CheckedListBox1.Items.AddRange(New Object() {"Ice Puter + Ager-ager", "Teh ", "Es Seruni", "Buah Iris"})
-        CheckedListBox1.Location = New Point(20, 81)
-        CheckedListBox1.Name = "CheckedListBox1"
-        CheckedListBox1.Size = New Size(191, 110)
-        CheckedListBox1.TabIndex = 11
         ' 
         ' Label89
         ' 
@@ -2301,7 +2269,7 @@ Partial Class Form5
         btnPlusStall1.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         btnPlusStall1.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnPlusStall1.ForeColor = Color.White
-        btnPlusStall1.Location = New Point(155, 192)
+        btnPlusStall1.Location = New Point(155, 211)
         btnPlusStall1.Name = "btnPlusStall1"
         btnPlusStall1.Size = New Size(34, 32)
         btnPlusStall1.TabIndex = 6
@@ -2310,7 +2278,7 @@ Partial Class Form5
         ' 
         ' tbStall1
         ' 
-        tbStall1.Location = New Point(77, 197)
+        tbStall1.Location = New Point(77, 216)
         tbStall1.Multiline = True
         tbStall1.Name = "tbStall1"
         tbStall1.Size = New Size(72, 25)
@@ -2322,7 +2290,7 @@ Partial Class Form5
         btnMinStall1.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         btnMinStall1.Font = New Font("Segoe UI", 10F, FontStyle.Bold)
         btnMinStall1.ForeColor = Color.White
-        btnMinStall1.Location = New Point(35, 193)
+        btnMinStall1.Location = New Point(35, 212)
         btnMinStall1.Name = "btnMinStall1"
         btnMinStall1.Size = New Size(34, 32)
         btnMinStall1.TabIndex = 4
@@ -2668,6 +2636,48 @@ Partial Class Form5
         Label58.Size = New Size(55, 28)
         Label58.TabIndex = 0
         Label58.Text = "Total"
+        ' 
+        ' DataGridView2
+        ' 
+        DataGridView2.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView2.Columns.AddRange(New DataGridViewColumn() {colPaketTambahan, colJumlahTambahan, colTotalTambahan, colIdTambahan})
+        DataGridView2.Location = New Point(0, 77)
+        DataGridView2.Name = "DataGridView2"
+        DataGridView2.RightToLeft = RightToLeft.No
+        DataGridView2.RowHeadersWidth = 51
+        DataGridView2.Size = New Size(395, 403)
+        DataGridView2.TabIndex = 24
+        ' 
+        ' colPaketTambahan
+        ' 
+        colPaketTambahan.HeaderText = "Paket"
+        colPaketTambahan.MinimumWidth = 6
+        colPaketTambahan.Name = "colPaketTambahan"
+        colPaketTambahan.Width = 125
+        ' 
+        ' colJumlahTambahan
+        ' 
+        colJumlahTambahan.HeaderText = "Jumlah"
+        colJumlahTambahan.MinimumWidth = 6
+        colJumlahTambahan.Name = "colJumlahTambahan"
+        colJumlahTambahan.Width = 125
+        ' 
+        ' colTotalTambahan
+        ' 
+        colTotalTambahan.HeaderText = "Total"
+        colTotalTambahan.MinimumWidth = 6
+        colTotalTambahan.Name = "colTotalTambahan"
+        colTotalTambahan.Width = 125
+        ' 
+        ' colIdTambahan
+        ' 
+        colIdTambahan.HeaderText = "Id"
+        colIdTambahan.MinimumWidth = 6
+        colIdTambahan.Name = "colIdTambahan"
+        colIdTambahan.ReadOnly = True
+        colIdTambahan.Visible = False
+        colIdTambahan.Width = 125
         ' 
         ' btnBersihkanTambahan
         ' 
@@ -3899,7 +3909,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(27295, 30)
+        Label10.Size = New Size(27766, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -4344,47 +4354,235 @@ Partial Class Form5
         TabControl1.Size = New Size(1209, 669)
         TabControl1.TabIndex = 0
         ' 
-        ' colIdTambahan
+        ' cbIcePuter
         ' 
-        colIdTambahan.HeaderText = "Id"
-        colIdTambahan.MinimumWidth = 6
-        colIdTambahan.Name = "colIdTambahan"
-        colIdTambahan.ReadOnly = True
-        colIdTambahan.Visible = False
-        colIdTambahan.Width = 125
+        cbIcePuter.AutoSize = True
+        cbIcePuter.Location = New Point(20, 77)
+        cbIcePuter.Name = "cbIcePuter"
+        cbIcePuter.Size = New Size(176, 24)
+        cbIcePuter.TabIndex = 12
+        cbIcePuter.Text = "Ice Puter + Ager-Ager"
+        cbIcePuter.UseVisualStyleBackColor = True
         ' 
-        ' colTotalTambahan
+        ' cbTeh
         ' 
-        colTotalTambahan.HeaderText = "Total"
-        colTotalTambahan.MinimumWidth = 6
-        colTotalTambahan.Name = "colTotalTambahan"
-        colTotalTambahan.Width = 125
+        cbTeh.AutoSize = True
+        cbTeh.Location = New Point(20, 107)
+        cbTeh.Name = "cbTeh"
+        cbTeh.Size = New Size(54, 24)
+        cbTeh.TabIndex = 13
+        cbTeh.Text = "Teh"
+        cbTeh.UseVisualStyleBackColor = True
         ' 
-        ' colJumlahTambahan
+        ' cbEsSeruni
         ' 
-        colJumlahTambahan.HeaderText = "Jumlah"
-        colJumlahTambahan.MinimumWidth = 6
-        colJumlahTambahan.Name = "colJumlahTambahan"
-        colJumlahTambahan.Width = 125
+        cbEsSeruni.AutoSize = True
+        cbEsSeruni.Location = New Point(20, 137)
+        cbEsSeruni.Name = "cbEsSeruni"
+        cbEsSeruni.Size = New Size(90, 24)
+        cbEsSeruni.TabIndex = 14
+        cbEsSeruni.Text = "Es Seruni"
+        cbEsSeruni.UseVisualStyleBackColor = True
         ' 
-        ' colPaketTambahan
+        ' cbEsDawet
         ' 
-        colPaketTambahan.HeaderText = "Paket"
-        colPaketTambahan.MinimumWidth = 6
-        colPaketTambahan.Name = "colPaketTambahan"
-        colPaketTambahan.Width = 125
+        cbEsDawet.AutoSize = True
+        cbEsDawet.Location = New Point(20, 77)
+        cbEsDawet.Name = "cbEsDawet"
+        cbEsDawet.Size = New Size(92, 24)
+        cbEsDawet.TabIndex = 13
+        cbEsDawet.Text = "Es Dawet"
+        cbEsDawet.UseVisualStyleBackColor = True
         ' 
-        ' DataGridView2
+        ' cbEsSelasih
         ' 
-        DataGridView2.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView2.Columns.AddRange(New DataGridViewColumn() {colPaketTambahan, colJumlahTambahan, colTotalTambahan, colIdTambahan})
-        DataGridView2.Location = New Point(0, 77)
-        DataGridView2.Name = "DataGridView2"
-        DataGridView2.RightToLeft = RightToLeft.No
-        DataGridView2.RowHeadersWidth = 51
-        DataGridView2.Size = New Size(395, 403)
-        DataGridView2.TabIndex = 24
+        cbEsSelasih.AutoSize = True
+        cbEsSelasih.Location = New Point(21, 107)
+        cbEsSelasih.Name = "cbEsSelasih"
+        cbEsSelasih.Size = New Size(95, 24)
+        cbEsSelasih.TabIndex = 14
+        cbEsSelasih.Text = "Es Selasih"
+        cbEsSelasih.UseVisualStyleBackColor = True
+        ' 
+        ' cbRujak
+        ' 
+        cbRujak.AutoSize = True
+        cbRujak.Location = New Point(21, 137)
+        cbRujak.Name = "cbRujak"
+        cbRujak.Size = New Size(137, 24)
+        cbRujak.TabIndex = 15
+        cbRujak.Text = "Rujak Ice Cream"
+        cbRujak.UseVisualStyleBackColor = True
+        ' 
+        ' cbAnekaJuice
+        ' 
+        cbAnekaJuice.AutoSize = True
+        cbAnekaJuice.Location = New Point(21, 167)
+        cbAnekaJuice.Name = "cbAnekaJuice"
+        cbAnekaJuice.Size = New Size(108, 24)
+        cbAnekaJuice.TabIndex = 16
+        cbAnekaJuice.Text = "Aneka Juice"
+        cbAnekaJuice.UseVisualStyleBackColor = True
+        ' 
+        ' cbWedangRonde
+        ' 
+        cbWedangRonde.AutoSize = True
+        cbWedangRonde.Location = New Point(20, 77)
+        cbWedangRonde.Name = "cbWedangRonde"
+        cbWedangRonde.Size = New Size(133, 24)
+        cbWedangRonde.TabIndex = 14
+        cbWedangRonde.Text = "Wedang Ronde"
+        cbWedangRonde.UseVisualStyleBackColor = True
+        ' 
+        ' cbEsDoger
+        ' 
+        cbEsDoger.AutoSize = True
+        cbEsDoger.Location = New Point(20, 107)
+        cbEsDoger.Name = "cbEsDoger"
+        cbEsDoger.Size = New Size(91, 24)
+        cbEsDoger.TabIndex = 15
+        cbEsDoger.Text = "Es Doger"
+        cbEsDoger.UseVisualStyleBackColor = True
+        ' 
+        ' cbPecelPincuk
+        ' 
+        cbPecelPincuk.AutoSize = True
+        cbPecelPincuk.Location = New Point(20, 137)
+        cbPecelPincuk.Name = "cbPecelPincuk"
+        cbPecelPincuk.Size = New Size(111, 24)
+        cbPecelPincuk.TabIndex = 16
+        cbPecelPincuk.Text = "Pecel Pincuk"
+        cbPecelPincuk.UseVisualStyleBackColor = True
+        ' 
+        ' cbBuahIris
+        ' 
+        cbBuahIris.AutoSize = True
+        cbBuahIris.Location = New Point(20, 167)
+        cbBuahIris.Name = "cbBuahIris"
+        cbBuahIris.Size = New Size(90, 24)
+        cbBuahIris.TabIndex = 15
+        cbBuahIris.Text = "Es Seruni"
+        cbBuahIris.UseVisualStyleBackColor = True
+        ' 
+        ' cbBakso
+        ' 
+        cbBakso.AutoSize = True
+        cbBakso.Location = New Point(20, 77)
+        cbBakso.Name = "cbBakso"
+        cbBakso.Size = New Size(70, 24)
+        cbBakso.TabIndex = 16
+        cbBakso.Text = "Bakso"
+        cbBakso.UseVisualStyleBackColor = True
+        ' 
+        ' cbSiomay
+        ' 
+        cbSiomay.AutoSize = True
+        cbSiomay.Location = New Point(20, 107)
+        cbSiomay.Name = "cbSiomay"
+        cbSiomay.Size = New Size(80, 24)
+        cbSiomay.TabIndex = 17
+        cbSiomay.Text = "Siomay"
+        cbSiomay.UseVisualStyleBackColor = True
+        ' 
+        ' cbSaladBuah
+        ' 
+        cbSaladBuah.AutoSize = True
+        cbSaladBuah.Location = New Point(20, 137)
+        cbSaladBuah.Name = "cbSaladBuah"
+        cbSaladBuah.Size = New Size(105, 24)
+        cbSaladBuah.TabIndex = 18
+        cbSaladBuah.Text = "Salad Buah"
+        cbSaladBuah.UseVisualStyleBackColor = True
+        ' 
+        ' cbSelatSolo
+        ' 
+        cbSelatSolo.AutoSize = True
+        cbSelatSolo.Location = New Point(20, 167)
+        cbSelatSolo.Name = "cbSelatSolo"
+        cbSelatSolo.Size = New Size(98, 24)
+        cbSelatSolo.TabIndex = 19
+        cbSelatSolo.Text = "Selat Solo"
+        cbSelatSolo.UseVisualStyleBackColor = True
+        ' 
+        ' cbEmpek
+        ' 
+        cbEmpek.AutoSize = True
+        cbEmpek.Location = New Point(21, 77)
+        cbEmpek.Name = "cbEmpek"
+        cbEmpek.Size = New Size(135, 24)
+        cbEmpek.TabIndex = 17
+        cbEmpek.Text = "Empek - Empek"
+        cbEmpek.UseVisualStyleBackColor = True
+        ' 
+        ' cbGado
+        ' 
+        cbGado.AutoSize = True
+        cbGado.Location = New Point(20, 107)
+        cbGado.Name = "cbGado"
+        cbGado.Size = New Size(117, 24)
+        cbGado.TabIndex = 18
+        cbGado.Text = "Gado - Gado"
+        cbGado.UseVisualStyleBackColor = True
+        ' 
+        ' cbSateAyam
+        ' 
+        cbSateAyam.AutoSize = True
+        cbSateAyam.Location = New Point(21, 137)
+        cbSateAyam.Name = "cbSateAyam"
+        cbSateAyam.Size = New Size(175, 24)
+        cbSateAyam.TabIndex = 19
+        cbSateAyam.Text = "Sate Ayam + Lontong"
+        cbSateAyam.UseVisualStyleBackColor = True
+        ' 
+        ' cbMieOriental
+        ' 
+        cbMieOriental.AutoSize = True
+        cbMieOriental.Location = New Point(21, 167)
+        cbMieOriental.Name = "cbMieOriental"
+        cbMieOriental.Size = New Size(113, 24)
+        cbMieOriental.TabIndex = 20
+        cbMieOriental.Text = "Mie Oriental"
+        cbMieOriental.UseVisualStyleBackColor = True
+        ' 
+        ' cbNasiLiwetSolo
+        ' 
+        cbNasiLiwetSolo.AutoSize = True
+        cbNasiLiwetSolo.Location = New Point(20, 77)
+        cbNasiLiwetSolo.Name = "cbNasiLiwetSolo"
+        cbNasiLiwetSolo.Size = New Size(133, 24)
+        cbNasiLiwetSolo.TabIndex = 18
+        cbNasiLiwetSolo.Text = "Nasi Liwet Solo"
+        cbNasiLiwetSolo.UseVisualStyleBackColor = True
+        ' 
+        ' cbNasiRawon
+        ' 
+        cbNasiRawon.AutoSize = True
+        cbNasiRawon.Location = New Point(20, 107)
+        cbNasiRawon.Name = "cbNasiRawon"
+        cbNasiRawon.Size = New Size(109, 24)
+        cbNasiRawon.TabIndex = 19
+        cbNasiRawon.Text = "Nasi Rawon"
+        cbNasiRawon.UseVisualStyleBackColor = True
+        ' 
+        ' cbKebab
+        ' 
+        cbKebab.AutoSize = True
+        cbKebab.Location = New Point(20, 137)
+        cbKebab.Name = "cbKebab"
+        cbKebab.Size = New Size(74, 24)
+        cbKebab.TabIndex = 20
+        cbKebab.Text = "Kebab"
+        cbKebab.UseVisualStyleBackColor = True
+        ' 
+        ' cbDimSum
+        ' 
+        cbDimSum.AutoSize = True
+        cbDimSum.Location = New Point(20, 167)
+        cbDimSum.Name = "cbDimSum"
+        cbDimSum.Size = New Size(92, 24)
+        cbDimSum.TabIndex = 21
+        cbDimSum.Text = "Dim Sum"
+        cbDimSum.UseVisualStyleBackColor = True
         ' 
         ' Form5
         ' 
@@ -4447,6 +4645,7 @@ Partial Class Form5
         Panel21.PerformLayout()
         Panel18.ResumeLayout(False)
         Panel18.PerformLayout()
+        CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
         tpPaket.ResumeLayout(False)
         SplitContainer1.Panel1.ResumeLayout(False)
         SplitContainer1.Panel2.ResumeLayout(False)
@@ -4504,7 +4703,6 @@ Partial Class Form5
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         TabControl1.ResumeLayout(False)
-        CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
@@ -4707,7 +4905,6 @@ Partial Class Form5
     Friend WithEvents btnMinStall1 As Button
     Friend WithEvents Label91 As Label
     Friend WithEvents Panel26 As Panel
-    Friend WithEvents CheckedListBox3 As CheckedListBox
     Friend WithEvents Label95 As Label
     Friend WithEvents Label96 As Label
     Friend WithEvents btnPlusStall3 As Button
@@ -4715,16 +4912,13 @@ Partial Class Form5
     Friend WithEvents btnMinStall3 As Button
     Friend WithEvents Label97 As Label
     Friend WithEvents Panel25 As Panel
-    Friend WithEvents CheckedListBox2 As CheckedListBox
     Friend WithEvents Label92 As Label
     Friend WithEvents Label93 As Label
     Friend WithEvents btnPlusStall2 As Button
     Friend WithEvents tbStall2 As TextBox
     Friend WithEvents btnMinStall2 As Button
     Friend WithEvents Label94 As Label
-    Friend WithEvents CheckedListBox1 As CheckedListBox
     Friend WithEvents Panel27 As Panel
-    Friend WithEvents CheckedListBox4 As CheckedListBox
     Friend WithEvents Label98 As Label
     Friend WithEvents Label99 As Label
     Friend WithEvents btnPlusStall4 As Button
@@ -4732,7 +4926,6 @@ Partial Class Form5
     Friend WithEvents btnMinStall4 As Button
     Friend WithEvents Label100 As Label
     Friend WithEvents Panel29 As Panel
-    Friend WithEvents CheckedListBox6 As CheckedListBox
     Friend WithEvents Label104 As Label
     Friend WithEvents Label105 As Label
     Friend WithEvents tbPlussStall6 As Button
@@ -4740,7 +4933,6 @@ Partial Class Form5
     Friend WithEvents btnMinStall6 As Button
     Friend WithEvents Label106 As Label
     Friend WithEvents Panel28 As Panel
-    Friend WithEvents CheckedListBox5 As CheckedListBox
     Friend WithEvents Label101 As Label
     Friend WithEvents Label102 As Label
     Friend WithEvents btnPlusStall5 As Button
@@ -4863,4 +5055,27 @@ Partial Class Form5
     Friend WithEvents colJumlahTambahan As DataGridViewTextBoxColumn
     Friend WithEvents colTotalTambahan As DataGridViewTextBoxColumn
     Friend WithEvents colIdTambahan As DataGridViewTextBoxColumn
+    Friend WithEvents cbEsSeruni As CheckBox
+    Friend WithEvents cbTeh As CheckBox
+    Friend WithEvents cbIcePuter As CheckBox
+    Friend WithEvents cbPecelPincuk As CheckBox
+    Friend WithEvents cbEsDoger As CheckBox
+    Friend WithEvents cbWedangRonde As CheckBox
+    Friend WithEvents cbAnekaJuice As CheckBox
+    Friend WithEvents cbRujak As CheckBox
+    Friend WithEvents cbEsSelasih As CheckBox
+    Friend WithEvents cbEsDawet As CheckBox
+    Friend WithEvents cbBuahIris As CheckBox
+    Friend WithEvents cbEmpek As CheckBox
+    Friend WithEvents cbSelatSolo As CheckBox
+    Friend WithEvents cbSaladBuah As CheckBox
+    Friend WithEvents cbSiomay As CheckBox
+    Friend WithEvents cbBakso As CheckBox
+    Friend WithEvents cbKebab As CheckBox
+    Friend WithEvents cbNasiRawon As CheckBox
+    Friend WithEvents cbNasiLiwetSolo As CheckBox
+    Friend WithEvents cbMieOriental As CheckBox
+    Friend WithEvents cbSateAyam As CheckBox
+    Friend WithEvents cbGado As CheckBox
+    Friend WithEvents cbDimSum As CheckBox
 End Class

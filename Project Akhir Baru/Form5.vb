@@ -1328,4 +1328,8 @@ Public Class Form5
             MessageBox.Show("Silakan pilih baris yang ingin dihapus.")
         End If
     End Sub
+
+    Private Sub CheckedListBox2_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
