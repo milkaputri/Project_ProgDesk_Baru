@@ -311,274 +311,274 @@ Public Class Form5
         End If
     End Sub
 
-    ' Stall 1 '
-    Private Sub btnMinStall1_Click(sender As Object, e As EventArgs) Handles btnMinStall1.Click
-        ' Mengurangkan nilai di tbPaketC
-        If IsNumeric(tbStall1.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbStall1.Text)
-            Dim teksPilihan As String = ""
-            For Each ctrl As Control In panelStall1.Controls
-                If TypeOf ctrl Is CheckBox Then
-                    Dim cb As CheckBox = CType(ctrl, CheckBox)
-                    If cb.Checked Then
-                        teksPilihan = cb.Text
-                        Exit For
-                    End If
-                End If
-            Next
-            If nilai = 250 Then
-                tbStall1.Text = "0"
-                TampilTambahanStall("Stall 1", tbStall1.Text.ToString(), 4500, 14, teksPilihan)
-                UpdateTotalHargaTambahan()
-            ElseIf nilai > 250 Then
-                tbStall1.Text = (nilai - 1).ToString()
-                TampilTambahanStall("Stall 1", tbStall1.Text.ToString(), 4500, 14, teksPilihan)
-                UpdateTotalHargaTambahan()
-            End If
-        Else
-            tbStall1.Text = "0"
-        End If
-    End Sub
+    '' Stall 1 '
+    'Private Sub btnMinStall1_Click(sender As Object, e As EventArgs) Handles btnMinStall1.Click
+    '    ' Mengurangkan nilai di tbPaketC
+    '    If IsNumeric(tbStall1.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbStall1.Text)
+    '        Dim teksPilihan As String = ""
+    '        For Each ctrl As Control In panelStall1.Controls
+    '            If TypeOf ctrl Is CheckBox Then
+    '                Dim cb As CheckBox = CType(ctrl, CheckBox)
+    '                If cb.Checked Then
+    '                    teksPilihan = cb.Text
+    '                    Exit For
+    '                End If
+    '            End If
+    '        Next
+    '        If nilai = 250 Then
+    '            tbStall1.Text = "0"
+    '            TampilTambahanStall("Stall 1", tbStall1.Text.ToString(), 4500, 14, teksPilihan)
+    '            UpdateTotalHargaTambahan()
+    '        ElseIf nilai > 250 Then
+    '            tbStall1.Text = (nilai - 1).ToString()
+    '            TampilTambahanStall("Stall 1", tbStall1.Text.ToString(), 4500, 14, teksPilihan)
+    '            UpdateTotalHargaTambahan()
+    '        End If
+    '    Else
+    '        tbStall1.Text = "0"
+    '    End If
+    'End Sub
 
-    Private Sub btnPlusStall1_Click(sender As Object, e As EventArgs) Handles btnPlusStall1.Click
-        ' Menambahkan nilai di tbPaketB
-        Dim teksPilihan As String = ""
-        If IsNumeric(tbStall1.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbStall1.Text)
-            For Each ctrl As Control In panelStall1.Controls
-                If TypeOf ctrl Is CheckBox Then
-                    Dim cb As CheckBox = CType(ctrl, CheckBox)
-                    If cb.Checked Then
-                        teksPilihan = cb.Text
-                        Exit For
-                    End If
-                End If
-            Next
-            If nilai = 0 Then
-                tbStall1.Text = "250"
-            ElseIf nilai >= 250 Then
-                tbStall1.Text = (nilai + 1).ToString()
-                TampilTambahanStall("Stall 1", tbStall1.Text.ToString(), 4500, 14, teksPilihan)
-                UpdateTotalHargaTambahan()
-            End If
-        Else
-            tbStall1.Text = "250"
-            TampilTambahanStall("Stall 1", tbStall1.Text.ToString(), 4500, 14, teksPilihan)
-            UpdateTotalHargaTambahan()
-        End If
-    End Sub
+    'Private Sub btnPlusStall1_Click(sender As Object, e As EventArgs) Handles btnPlusStall1.Click
+    '    ' Menambahkan nilai di tbPaketB
+    '    Dim teksPilihan As String = ""
+    '    If IsNumeric(tbStall1.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbStall1.Text)
+    '        For Each ctrl As Control In panelStall1.Controls
+    '            If TypeOf ctrl Is CheckBox Then
+    '                Dim cb As CheckBox = CType(ctrl, CheckBox)
+    '                If cb.Checked Then
+    '                    teksPilihan = cb.Text
+    '                    Exit For
+    '                End If
+    '            End If
+    '        Next
+    '        If nilai = 0 Then
+    '            tbStall1.Text = "250"
+    '        ElseIf nilai >= 250 Then
+    '            tbStall1.Text = (nilai + 1).ToString()
+    '            TampilTambahanStall("Stall 1", tbStall1.Text.ToString(), 4500, 14, teksPilihan)
+    '            UpdateTotalHargaTambahan()
+    '        End If
+    '    Else
+    '        tbStall1.Text = "250"
+    '        TampilTambahanStall("Stall 1", tbStall1.Text.ToString(), 4500, 14, teksPilihan)
+    '        UpdateTotalHargaTambahan()
+    '    End If
+    'End Sub
 
-    ' Validasi input hanya angka untuk tbPaketB
-    Private Sub tbStall1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbStall1.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
+    '' Validasi input hanya angka untuk tbPaketB
+    'Private Sub tbStall1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbStall1.KeyPress
+    '    If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
 
-    ' Handle ketika tbPaketA kehilangan fokus
-    Private Sub tbStall1_Leave(sender As Object, e As EventArgs) Handles tbStall1.Leave
-        If String.IsNullOrWhiteSpace(tbStall1.Text) OrElse Not IsNumeric(tbStall1.Text) Then
-            tbPrasB.Text = "0"
-        End If
-    End Sub
+    '' Handle ketika tbPaketA kehilangan fokus
+    'Private Sub tbStall1_Leave(sender As Object, e As EventArgs) Handles tbStall1.Leave
+    '    If String.IsNullOrWhiteSpace(tbStall1.Text) OrElse Not IsNumeric(tbStall1.Text) Then
+    '        tbPrasB.Text = "0"
+    '    End If
+    'End Sub
 
-    ' Stall 2 '
-    Private Sub btnMinStall2_Click(sender As Object, e As EventArgs) Handles btnMinStall2.Click
-        ' Mengurangkan nilai di tbPaketC
-        If IsNumeric(tbStall2.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbStall2.Text)
-            If nilai = 250 Then
-                tbStall2.Text = "0"
-            ElseIf nilai > 250 Then
-                tbStall2.Text = (nilai - 1).ToString()
-            End If
-        Else
-            tbStall2.Text = "0"
-        End If
-    End Sub
+    '' Stall 2 '
+    'Private Sub btnMinStall2_Click(sender As Object, e As EventArgs) Handles btnMinStall2.Click
+    '    ' Mengurangkan nilai di tbPaketC
+    '    If IsNumeric(tbStall2.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbStall2.Text)
+    '        If nilai = 250 Then
+    '            tbStall2.Text = "0"
+    '        ElseIf nilai > 250 Then
+    '            tbStall2.Text = (nilai - 1).ToString()
+    '        End If
+    '    Else
+    '        tbStall2.Text = "0"
+    '    End If
+    'End Sub
 
-    Private Sub btnPlusStall2_Click(sender As Object, e As EventArgs) Handles btnPlusStall2.Click
-        ' Menambahkan nilai di tbPaketB
-        If IsNumeric(tbStall2.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbStall2.Text)
-            If nilai = 0 Then
-                tbStall2.Text = "250"
-            ElseIf nilai >= 250 Then
-                tbStall2.Text = (nilai + 1).ToString()
-            End If
-        Else
-            tbStall2.Text = "250"
-        End If
-    End Sub
+    'Private Sub btnPlusStall2_Click(sender As Object, e As EventArgs) Handles btnPlusStall2.Click
+    '    ' Menambahkan nilai di tbPaketB
+    '    If IsNumeric(tbStall2.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbStall2.Text)
+    '        If nilai = 0 Then
+    '            tbStall2.Text = "250"
+    '        ElseIf nilai >= 250 Then
+    '            tbStall2.Text = (nilai + 1).ToString()
+    '        End If
+    '    Else
+    '        tbStall2.Text = "250"
+    '    End If
+    'End Sub
 
-    ' Validasi input hanya angka untuk tbPaketB
-    Private Sub tbStall2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbStall2.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
+    '' Validasi input hanya angka untuk tbPaketB
+    'Private Sub tbStall2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbStall2.KeyPress
+    '    If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
 
-    ' Handle ketika tbPaketA kehilangan fokus
-    Private Sub tbStall2_Leave(sender As Object, e As EventArgs) Handles tbStall2.Leave
-        If String.IsNullOrWhiteSpace(tbStall1.Text) OrElse Not IsNumeric(tbStall2.Text) Then
-            tbStall2.Text = "0"
-        End If
-    End Sub
+    '' Handle ketika tbPaketA kehilangan fokus
+    'Private Sub tbStall2_Leave(sender As Object, e As EventArgs) Handles tbStall2.Leave
+    '    If String.IsNullOrWhiteSpace(tbStall1.Text) OrElse Not IsNumeric(tbStall2.Text) Then
+    '        tbStall2.Text = "0"
+    '    End If
+    'End Sub
 
-    ' Stall 3 '
-    Private Sub btnMinStall3_Click(sender As Object, e As EventArgs) Handles btnMinStall3.Click
-        ' Mengurangkan nilai di tbPaketC
-        If IsNumeric(tbStall3.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbStall3.Text)
-            If nilai = 250 Then
-                tbStall3.Text = "0"
-            ElseIf nilai > 250 Then
-                tbStall3.Text = (nilai - 1).ToString()
-            End If
-        Else
-            tbStall3.Text = "0"
-        End If
-    End Sub
+    '' Stall 3 '
+    'Private Sub btnMinStall3_Click(sender As Object, e As EventArgs) Handles btnMinStall3.Click
+    '    ' Mengurangkan nilai di tbPaketC
+    '    If IsNumeric(tbStall3.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbStall3.Text)
+    '        If nilai = 250 Then
+    '            tbStall3.Text = "0"
+    '        ElseIf nilai > 250 Then
+    '            tbStall3.Text = (nilai - 1).ToString()
+    '        End If
+    '    Else
+    '        tbStall3.Text = "0"
+    '    End If
+    'End Sub
 
-    Private Sub btnPlusStall3_Click(sender As Object, e As EventArgs) Handles btnPlusStall3.Click
-        ' Menambahkan nilai di tbPaketB
-        If IsNumeric(tbStall3.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbStall3.Text)
-            If nilai = 0 Then
-                tbStall3.Text = "250"
-            ElseIf nilai >= 250 Then
-                tbStall3.Text = (nilai + 1).ToString()
-            End If
-        Else
-            tbStall3.Text = "250"
-        End If
-    End Sub
+    'Private Sub btnPlusStall3_Click(sender As Object, e As EventArgs) Handles btnPlusStall3.Click
+    '    ' Menambahkan nilai di tbPaketB
+    '    If IsNumeric(tbStall3.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbStall3.Text)
+    '        If nilai = 0 Then
+    '            tbStall3.Text = "250"
+    '        ElseIf nilai >= 250 Then
+    '            tbStall3.Text = (nilai + 1).ToString()
+    '        End If
+    '    Else
+    '        tbStall3.Text = "250"
+    '    End If
+    'End Sub
 
-    ' Validasi input hanya angka untuk tbPaketB
-    Private Sub tbStall3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbStall3.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
+    '' Validasi input hanya angka untuk tbPaketB
+    'Private Sub tbStall3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbStall3.KeyPress
+    '    If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
 
-    ' Handle ketika tbPaketA kehilangan fokus
-    Private Sub tbStall3_Leave(sender As Object, e As EventArgs) Handles tbStall3.Leave
-        If String.IsNullOrWhiteSpace(tbStall3.Text) OrElse Not IsNumeric(tbStall3.Text) Then
-            tbStall3.Text = "0"
-        End If
-    End Sub
+    '' Handle ketika tbPaketA kehilangan fokus
+    'Private Sub tbStall3_Leave(sender As Object, e As EventArgs) Handles tbStall3.Leave
+    '    If String.IsNullOrWhiteSpace(tbStall3.Text) OrElse Not IsNumeric(tbStall3.Text) Then
+    '        tbStall3.Text = "0"
+    '    End If
+    'End Sub
 
-    ' Stall 4 '
-    Private Sub btnMinStall4_Click(sender As Object, e As EventArgs) Handles btnMinStall4.Click
-        ' Mengurangkan nilai di tbPaketC
-        If IsNumeric(tbStall4.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbStall4.Text)
-            If nilai > 0 Then
-                tbStall4.Text = (nilai - 1).ToString()
-            End If
-        Else
-            tbStall4.Text = "0"
-        End If
-    End Sub
+    '' Stall 4 '
+    'Private Sub btnMinStall4_Click(sender As Object, e As EventArgs) Handles btnMinStall4.Click
+    '    ' Mengurangkan nilai di tbPaketC
+    '    If IsNumeric(tbStall4.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbStall4.Text)
+    '        If nilai > 0 Then
+    '            tbStall4.Text = (nilai - 1).ToString()
+    '        End If
+    '    Else
+    '        tbStall4.Text = "0"
+    '    End If
+    'End Sub
 
-    Private Sub btnPlusStall4_Click(sender As Object, e As EventArgs) Handles btnPlusStall4.Click
-        ' Menambahkan nilai di tbPaketB
-        If IsNumeric(tbStall4.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbStall4.Text)
-            tbStall4.Text = (nilai + 1).ToString()
-        Else
-            tbStall4.Text = "1"
-        End If
-    End Sub
+    'Private Sub btnPlusStall4_Click(sender As Object, e As EventArgs) Handles btnPlusStall4.Click
+    '    ' Menambahkan nilai di tbPaketB
+    '    If IsNumeric(tbStall4.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbStall4.Text)
+    '        tbStall4.Text = (nilai + 1).ToString()
+    '    Else
+    '        tbStall4.Text = "1"
+    '    End If
+    'End Sub
 
-    ' Validasi input hanya angka untuk tbPaketB
-    Private Sub tbStall4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbStall4.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
+    '' Validasi input hanya angka untuk tbPaketB
+    'Private Sub tbStall4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbStall4.KeyPress
+    '    If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
 
-    ' Handle ketika tbPaketA kehilangan fokus
-    Private Sub tbStall4_Leave(sender As Object, e As EventArgs) Handles tbStall4.Leave
-        If String.IsNullOrWhiteSpace(tbStall4.Text) OrElse Not IsNumeric(tbStall4.Text) Then
-            tbStall4.Text = "0"
-        End If
-    End Sub
+    '' Handle ketika tbPaketA kehilangan fokus
+    'Private Sub tbStall4_Leave(sender As Object, e As EventArgs) Handles tbStall4.Leave
+    '    If String.IsNullOrWhiteSpace(tbStall4.Text) OrElse Not IsNumeric(tbStall4.Text) Then
+    '        tbStall4.Text = "0"
+    '    End If
+    'End Sub
 
-    ' Stall 5 '
-    Private Sub btnMinStall5_Click(sender As Object, e As EventArgs) Handles btnMinStall5.Click
-        ' Mengurangkan nilai di tbPaketC
-        If IsNumeric(tbStall5.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbStall5.Text)
-            If nilai > 0 Then
-                tbStall5.Text = (nilai - 1).ToString()
-            End If
-        Else
-            tbStall5.Text = "0"
-        End If
-    End Sub
+    '' Stall 5 '
+    'Private Sub btnMinStall5_Click(sender As Object, e As EventArgs) Handles btnMinStall5.Click
+    '    ' Mengurangkan nilai di tbPaketC
+    '    If IsNumeric(tbStall5.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbStall5.Text)
+    '        If nilai > 0 Then
+    '            tbStall5.Text = (nilai - 1).ToString()
+    '        End If
+    '    Else
+    '        tbStall5.Text = "0"
+    '    End If
+    'End Sub
 
-    Private Sub btnPlusStall5_Click(sender As Object, e As EventArgs) Handles btnPlusStall5.Click
-        ' Menambahkan nilai di tbPaketB
-        If IsNumeric(tbStall5.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbStall5.Text)
-            tbStall5.Text = (nilai + 1).ToString()
-        Else
-            tbStall5.Text = "1"
-        End If
-    End Sub
+    'Private Sub btnPlusStall5_Click(sender As Object, e As EventArgs) Handles btnPlusStall5.Click
+    '    ' Menambahkan nilai di tbPaketB
+    '    If IsNumeric(tbStall5.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbStall5.Text)
+    '        tbStall5.Text = (nilai + 1).ToString()
+    '    Else
+    '        tbStall5.Text = "1"
+    '    End If
+    'End Sub
 
-    ' Validasi input hanya angka untuk tbPaketB
-    Private Sub tbStall5_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbStall5.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
+    '' Validasi input hanya angka untuk tbPaketB
+    'Private Sub tbStall5_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbStall5.KeyPress
+    '    If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
 
-    ' Handle ketika tbPaketA kehilangan fokus
-    Private Sub tbStall5_Leave(sender As Object, e As EventArgs) Handles tbStall5.Leave
-        If String.IsNullOrWhiteSpace(tbStall5.Text) OrElse Not IsNumeric(tbStall5.Text) Then
-            tbStall3.Text = "0"
-        End If
-    End Sub
+    '' Handle ketika tbPaketA kehilangan fokus
+    'Private Sub tbStall5_Leave(sender As Object, e As EventArgs) Handles tbStall5.Leave
+    '    If String.IsNullOrWhiteSpace(tbStall5.Text) OrElse Not IsNumeric(tbStall5.Text) Then
+    '        tbStall3.Text = "0"
+    '    End If
+    'End Sub
 
 
-    ' Stall 6 '
-    Private Sub btnMinStall6_Click(sender As Object, e As EventArgs) Handles btnMinStall6.Click
-        ' Mengurangkan nilai di tbPaketC
-        If IsNumeric(tbStall6.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbStall6.Text)
-            If nilai > 0 Then
-                tbStall6.Text = (nilai - 1).ToString()
-            End If
-        Else
-            tbStall6.Text = "0"
-        End If
-    End Sub
+    '' Stall 6 '
+    'Private Sub btnMinStall6_Click(sender As Object, e As EventArgs) Handles btnMinStall6.Click
+    '    ' Mengurangkan nilai di tbPaketC
+    '    If IsNumeric(tbStall6.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbStall6.Text)
+    '        If nilai > 0 Then
+    '            tbStall6.Text = (nilai - 1).ToString()
+    '        End If
+    '    Else
+    '        tbStall6.Text = "0"
+    '    End If
+    'End Sub
 
-    Private Sub btnPlusStall6_Click(sender As Object, e As EventArgs) Handles btnPlusStall6.Click
-        ' Menambahkan nilai di tbPaketB
-        If IsNumeric(tbStall6.Text) Then
-            Dim nilai As Integer = Integer.Parse(tbStall6.Text)
-            tbStall6.Text = (nilai + 1).ToString()
-        Else
-            tbStall6.Text = "1"
-        End If
-    End Sub
+    'Private Sub btnPlusStall6_Click(sender As Object, e As EventArgs) Handles btnPlusStall6.Click
+    '    ' Menambahkan nilai di tbPaketB
+    '    If IsNumeric(tbStall6.Text) Then
+    '        Dim nilai As Integer = Integer.Parse(tbStall6.Text)
+    '        tbStall6.Text = (nilai + 1).ToString()
+    '    Else
+    '        tbStall6.Text = "1"
+    '    End If
+    'End Sub
 
-    ' Validasi input hanya angka untuk tbPaketB
-    Private Sub tbStall6_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbStall6.KeyPress
-        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
-            e.Handled = True
-        End If
-    End Sub
+    '' Validasi input hanya angka untuk tbPaketB
+    'Private Sub tbStall6_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbStall6.KeyPress
+    '    If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+    '        e.Handled = True
+    '    End If
+    'End Sub
 
-    ' Handle ketika tbPaketA kehilangan fokus
-    Private Sub tbStall6_Leave(sender As Object, e As EventArgs) Handles tbStall3.Leave
-        If String.IsNullOrWhiteSpace(tbStall3.Text) OrElse Not IsNumeric(tbStall3.Text) Then
-            tbStall3.Text = "0"
-        End If
-    End Sub
+    '' Handle ketika tbPaketA kehilangan fokus
+    'Private Sub tbStall6_Leave(sender As Object, e As EventArgs) Handles tbStall3.Leave
+    '    If String.IsNullOrWhiteSpace(tbStall3.Text) OrElse Not IsNumeric(tbStall3.Text) Then
+    '        tbStall3.Text = "0"
+    '    End If
+    'End Sub
 
     ''  Syukur 1'
     'Private Sub btnMinSyukur1_Click(sender As Object, e As EventArgs) Handles btnMinSyukur1.Click
@@ -1366,16 +1366,6 @@ Public Class Form5
         Next
     End Sub
 
-    Private Sub cbIcePuter_CheckedChanged(sender As Object, e As EventArgs) Handles cbIcePuter.CheckedChanged
-        If cbIcePuter.Checked Then
-            SembunyikanCheckboxLainStall(cbIcePuter)
-            'TampilPaket(10)
-        Else
-            TampilkanSemuaCheckbox()
-            'UncheckedBox(10)
-        End If
-    End Sub
-
     Private Sub TampilTambahanStall(nama_paket As String, jumlah As Integer, harga As Integer, idTambahan As Integer, cbYangAktif As String)
         Dim i
         i = 0
@@ -1895,6 +1885,339 @@ Public Class Form5
     Private Sub tbSnack2_Leave(sender As Object, e As EventArgs) Handles tbSnack2.Leave
         If String.IsNullOrWhiteSpace(tbSnack2.Text) OrElse Not IsNumeric(tbSnack2.Text) Then
             tbSnack2.Text = "0"
+        End If
+    End Sub
+
+
+    Private Sub HapusItemDariGrid(namaItem As String)
+        For Each row As DataGridViewRow In DataGridView2.Rows
+            If Not row.IsNewRow AndAlso row.Cells(0).Value IsNot Nothing Then
+                If row.Cells(0).Value.ToString() = namaItem Then
+                    DataGridView2.Rows.Remove(row)
+                    Exit For
+                End If
+            End If
+        Next
+    End Sub
+
+
+    ' Template Handler untuk item tambahan
+    Private Sub HandleCheckbox(cb As CheckBox, tb As TextBox, namaItem As String, harga As Integer, id As Integer)
+        If cb.Checked Then
+            tb.Text = "250"
+            TampilTambahan(namaItem, tb.Text, harga, id)
+            UpdateTotalHargaTambahan()
+        Else
+            HapusItemDariGrid(namaItem)
+            tb.Text = ""
+            UpdateTotalHargaTambahan()
+        End If
+    End Sub
+
+    Private Sub HandleTextboxChanged(cb As CheckBox, tb As TextBox, namaItem As String, harga As Integer, id As Integer)
+        If cb.Checked AndAlso IsNumeric(tb.Text) Then
+            Dim jumlah As Integer = CInt(tb.Text)
+            If jumlah >= 250 Then
+                TampilTambahan(namaItem, jumlah.ToString(), harga, id)
+                UpdateTotalHargaTambahan()
+            End If
+        End If
+    End Sub
+
+    Private Sub HandleTextboxKeyDown(tb As TextBox, e As KeyEventArgs, namaItem As String, harga As Integer, id As Integer)
+        If e.KeyCode = Keys.Enter Then
+            If IsNumeric(tb.Text) Then
+                Dim nilai As Integer = CInt(tb.Text)
+                If nilai < 250 Then
+                    MsgBox("Jumlah minimal adalah 250!", MsgBoxStyle.Exclamation, "Peringatan")
+                    tb.Text = "250"
+                    tb.Focus()
+                    tb.SelectAll()
+                Else
+                    TampilTambahan(namaItem, tb.Text, harga, id)
+                    UpdateTotalHargaTambahan()
+                End If
+            Else
+                MsgBox("Harap masukkan angka yang valid.", MsgBoxStyle.Critical, "Kesalahan")
+                tb.Text = "250"
+                tb.Focus()
+                tb.SelectAll()
+            End If
+        End If
+    End Sub
+
+    ' === Teh ===
+    Private Sub cbTeh_CheckedChanged(sender As Object, e As EventArgs) Handles cbTeh.CheckedChanged
+        HandleCheckbox(cbTeh, tbTeh, "Teh", 4500, 26)
+    End Sub
+    Private Sub tbTeh_TextChanged(sender As Object, e As EventArgs) Handles tbTeh.TextChanged
+        HandleTextboxChanged(cbTeh, tbTeh, "Teh", 4500, 26)
+    End Sub
+    Private Sub tbTeh_KeyDown(sender As Object, e As KeyEventArgs) Handles tbTeh.KeyDown
+        HandleTextboxKeyDown(tbTeh, e, "Teh", 4500, 26)
+    End Sub
+
+    ' === Ice Puter + Agar-agar ===
+    Private Sub cbIcePuter_CheckedChanged(sender As Object, e As EventArgs) Handles cbIcePuter.CheckedChanged
+        HandleCheckbox(cbIcePuter, tbIcePuter, "Ice Puter + Agar-agar", 4500, 30)
+    End Sub
+    Private Sub tbIcePuter_TextChanged(sender As Object, e As EventArgs) Handles tbIcePuter.TextChanged
+        HandleTextboxChanged(cbIcePuter, tbIcePuter, "Ice Puter + Agar-agar", 4500, 30)
+    End Sub
+    Private Sub tbIcePuter_KeyDown(sender As Object, e As KeyEventArgs) Handles tbIcePuter.KeyDown
+        HandleTextboxKeyDown(tbIcePuter, e, "Ice Puter + Agar-agar", 4500, 30)
+    End Sub
+
+    ' === Es Seruni ===
+    Private Sub cbEsSeruni_CheckedChanged(sender As Object, e As EventArgs) Handles cbEsSeruni.CheckedChanged
+        HandleCheckbox(cbEsSeruni, tbEsSeruni, "Es Seruni", 4500, 27)
+    End Sub
+    Private Sub tbEsSeruni_TextChanged(sender As Object, e As EventArgs) Handles tbEsSeruni.TextChanged
+        HandleTextboxChanged(cbEsSeruni, tbEsSeruni, "Es Seruni", 4500, 27)
+    End Sub
+    Private Sub tbEsSeruni_KeyDown(sender As Object, e As KeyEventArgs) Handles tbEsSeruni.KeyDown
+        HandleTextboxKeyDown(tbEsSeruni, e, "Es Seruni", 4500, 27)
+    End Sub
+
+    ' === Buah Iris ===
+    Private Sub cbBuahIris_CheckedChanged(sender As Object, e As EventArgs) Handles cbBuahIris.CheckedChanged
+        HandleCheckbox(cbBuahIris, tbBuahIris, "Buah Iris", 4500, 22)
+    End Sub
+    Private Sub tbBuahIris_TextChanged(sender As Object, e As EventArgs) Handles tbBuahIris.TextChanged
+        HandleTextboxChanged(cbBuahIris, tbBuahIris, "Buah Iris", 4500, 22)
+    End Sub
+    Private Sub tbBuahIris_KeyDown(sender As Object, e As KeyEventArgs) Handles tbBuahIris.KeyDown
+        HandleTextboxKeyDown(tbBuahIris, e, "Buah Iris", 4500, 22)
+    End Sub
+
+    ' === Es Dawet ===
+    Private Sub cbEsDawet_CheckedChanged(sender As Object, e As EventArgs) Handles cbEsDawet.CheckedChanged
+        HandleCheckbox(cbEsDawet, tbEsDawet, "Es Dawet", 6000, 29)
+    End Sub
+    Private Sub tbEsDawet_TextChanged(sender As Object, e As EventArgs) Handles tbEsDawet.TextChanged
+        HandleTextboxChanged(cbEsDawet, tbEsDawet, "Es Dawet", 6000, 29)
+    End Sub
+    Private Sub tbEsDawet_KeyDown(sender As Object, e As KeyEventArgs) Handles tbEsDawet.KeyDown
+        HandleTextboxKeyDown(tbEsDawet, e, "Es Dawet", 6000, 29)
+    End Sub
+
+    ' === Es Selasih ===
+    Private Sub cbEsSelasih_CheckedChanged(sender As Object, e As EventArgs) Handles cbEsSelasih.CheckedChanged
+        HandleCheckbox(cbEsSelasih, tbEsSelasih, "Es Selasih", 6000, 28)
+    End Sub
+    Private Sub tbEsSelasih_TextChanged(sender As Object, e As EventArgs) Handles tbEsSelasih.TextChanged
+        HandleTextboxChanged(cbEsSelasih, tbEsSelasih, "Es Selasih", 6000, 28)
+    End Sub
+    Private Sub tbEsSelasih_KeyDown(sender As Object, e As KeyEventArgs) Handles tbEsSelasih.KeyDown
+        HandleTextboxKeyDown(tbEsSelasih, e, "Es Selasih", 6000, 28)
+    End Sub
+
+    ' === Rujak Ice Cream ===
+    Private Sub cbRujak_CheckedChanged(sender As Object, e As EventArgs) Handles cbRujak.CheckedChanged
+        HandleCheckbox(cbRujak, tbRujak, "Rujak Ice Cream", 6000, 31)
+    End Sub
+    Private Sub tbRujak_TextChanged(sender As Object, e As EventArgs) Handles tbRujak.TextChanged
+        HandleTextboxChanged(cbRujak, tbRujak, "Rujak Ice Cream", 6000, 31)
+    End Sub
+    Private Sub tbRujak_KeyDown(sender As Object, e As KeyEventArgs) Handles tbRujak.KeyDown
+        HandleTextboxKeyDown(tbRujak, e, "Rujak Ice Cream", 6000, 31)
+    End Sub
+
+    ' === Jus Jeruk ===
+    Private Sub cbJusJeruk_CheckedChanged(sender As Object, e As EventArgs) Handles cbJusJeruk.CheckedChanged
+        HandleCheckbox(cbJusJeruk, tbJusJeruk, "Jus Jeruk", 6000, 32)
+    End Sub
+    Private Sub tbJusJeruk_TextChanged(sender As Object, e As EventArgs) Handles tbJusJeruk.TextChanged
+        HandleTextboxChanged(cbJusJeruk, tbJusJeruk, "Jus Jeruk", 6000, 32)
+    End Sub
+    Private Sub tbJusJeruk_KeyDown(sender As Object, e As KeyEventArgs) Handles tbJusJeruk.KeyDown
+        HandleTextboxKeyDown(tbJusJeruk, e, "Jus Jeruk", 6000, 32)
+    End Sub
+
+    ' === Wedang Ronde ===
+    Private Sub cbWedangRonde_CheckedChanged(sender As Object, e As EventArgs) Handles cbWedangRonde.CheckedChanged
+        HandleCheckbox(cbWedangRonde, tbWedangRonde, "Wedang Ronde", 7000, 33)
+    End Sub
+    Private Sub tbWedangRonde_TextChanged(sender As Object, e As EventArgs) Handles tbWedangRonde.TextChanged
+        HandleTextboxChanged(cbWedangRonde, tbWedangRonde, "Wedang Ronde", 7000, 33)
+    End Sub
+    Private Sub tbWedangRonde_KeyDown(sender As Object, e As KeyEventArgs) Handles tbWedangRonde.KeyDown
+        HandleTextboxKeyDown(tbWedangRonde, e, "Wedang Ronde", 7000, 33)
+    End Sub
+
+    ' === Es Doger ===
+    Private Sub cbEsDoger_CheckedChanged(sender As Object, e As EventArgs) Handles cbEsDoger.CheckedChanged
+        HandleCheckbox(cbEsDoger, tbEsDoger, "Es Doger", 7000, 34)
+    End Sub
+    Private Sub tbEsDoger_TextChanged(sender As Object, e As EventArgs) Handles tbEsDoger.TextChanged
+        HandleTextboxChanged(cbEsDoger, tbEsDoger, "Es Doger", 7000, 34)
+    End Sub
+    Private Sub tbEsDoger_KeyDown(sender As Object, e As KeyEventArgs) Handles tbEsDoger.KeyDown
+        HandleTextboxKeyDown(tbEsDoger, e, "Es Doger", 7000, 34)
+    End Sub
+
+    ' === Pecel Pincuk ===
+    Private Sub cbPecelPincuk_CheckedChanged(sender As Object, e As EventArgs) Handles cbPecelPincuk.CheckedChanged
+        HandleCheckbox(cbPecelPincuk, tbPecelPincuk, "Pecel Pincuk", 7000, 35)
+    End Sub
+    Private Sub tbPecelPincuk_TextChanged(sender As Object, e As EventArgs) Handles tbPecelPincuk.TextChanged
+        HandleTextboxChanged(cbPecelPincuk, tbPecelPincuk, "Pecel Pincuk", 7000, 35)
+    End Sub
+    Private Sub tbPecelPincuk_KeyDown(sender As Object, e As KeyEventArgs) Handles tbPecelPincuk.KeyDown
+        HandleTextboxKeyDown(tbPecelPincuk, e, "Pecel Pincuk", 7000, 35)
+    End Sub
+
+    ' === Bakso ===
+    Private Sub cbBakso_CheckedChanged(sender As Object, e As EventArgs) Handles cbBakso.CheckedChanged
+        HandleCheckbox(cbBakso, tbBakso, "Bakso", 11000, 12)
+    End Sub
+    Private Sub tbBakso_TextChanged(sender As Object, e As EventArgs) Handles tbBakso.TextChanged
+        HandleTextboxChanged(cbBakso, tbBakso, "Bakso", 11000, 12)
+    End Sub
+    Private Sub tbBakso_KeyDown(sender As Object, e As KeyEventArgs) Handles tbBakso.KeyDown
+        HandleTextboxKeyDown(tbBakso, e, "Bakso", 11000, 12)
+    End Sub
+
+    ' === Siomay ===
+    Private Sub cbSiomay_CheckedChanged(sender As Object, e As EventArgs) Handles cbSiomay.CheckedChanged
+        HandleCheckbox(cbSiomay, tbSiomay, "Siomay", 11000, 13)
+    End Sub
+    Private Sub tbSiomay_TextChanged(sender As Object, e As EventArgs) Handles tbSiomay.TextChanged
+        HandleTextboxChanged(cbSiomay, tbSiomay, "Siomay", 11000, 13)
+    End Sub
+    Private Sub tbSiomay_KeyDown(sender As Object, e As KeyEventArgs) Handles tbSiomay.KeyDown
+        HandleTextboxKeyDown(tbSiomay, e, "Siomay", 11000, 13)
+    End Sub
+
+    ' === Salad Buah ===
+    Private Sub cbSaladBuah_CheckedChanged(sender As Object, e As EventArgs) Handles cbSaladBuah.CheckedChanged
+        HandleCheckbox(cbSaladBuah, tbSaladBuah, "Salad Buah", 11000, 19)
+    End Sub
+    Private Sub tbSaladBuah_TextChanged(sender As Object, e As EventArgs) Handles tbSaladBuah.TextChanged
+        HandleTextboxChanged(cbSaladBuah, tbSaladBuah, "Salad Buah", 11000, 19)
+    End Sub
+    Private Sub tbSaladBuah_KeyDown(sender As Object, e As KeyEventArgs) Handles tbSaladBuah.KeyDown
+        HandleTextboxKeyDown(tbSaladBuah, e, "Salad Buah", 11000, 19)
+    End Sub
+
+    ' === Selat Solo ===
+    Private Sub cbSelatSolo_CheckedChanged(sender As Object, e As EventArgs) Handles cbSelatSolo.CheckedChanged
+        HandleCheckbox(cbSelatSolo, tbSelatSolo, "Selat Solo", 11000, 36)
+    End Sub
+    Private Sub tbSelatSolo_TextChanged(sender As Object, e As EventArgs) Handles tbSelatSolo.TextChanged
+        HandleTextboxChanged(cbSelatSolo, tbSelatSolo, "Selat Solo", 11000, 36)
+    End Sub
+    Private Sub tbSelatSolo_KeyDown(sender As Object, e As KeyEventArgs) Handles tbSelatSolo.KeyDown
+        HandleTextboxKeyDown(tbSelatSolo, e, "Selat Solo", 11000, 36)
+    End Sub
+
+    ' === Empek-Empek ===
+    Private Sub cbEmpek_CheckedChanged(sender As Object, e As EventArgs) Handles cbEmpek.CheckedChanged
+        HandleCheckbox(cbEmpek, tbEmpek, "Empek-Empek", 1200, 37)
+    End Sub
+    Private Sub tbEmpek_TextChanged(sender As Object, e As EventArgs) Handles tbEmpek.TextChanged
+        HandleTextboxChanged(cbEmpek, tbEmpek, "Empek-Empek", 1200, 37)
+    End Sub
+    Private Sub tbEmpek_KeyDown(sender As Object, e As KeyEventArgs) Handles tbEmpek.KeyDown
+        HandleTextboxKeyDown(tbEmpek, e, "Empek-Empek", 1200, 37)
+    End Sub
+
+    ' === Gado-gado ===
+    Private Sub cbGado_CheckedChanged(sender As Object, e As EventArgs) Handles cbGado.CheckedChanged
+        HandleCheckbox(cbGado, tbGado, "Gado-gado", 1200, 39)
+    End Sub
+    Private Sub tbGado_TextChanged(sender As Object, e As EventArgs) Handles tbGado.TextChanged
+        HandleTextboxChanged(cbGado, tbGado, "Gado-gado", 1200, 39)
+    End Sub
+    Private Sub tbGado_KeyDown(sender As Object, e As KeyEventArgs) Handles tbGado.KeyDown
+        HandleTextboxKeyDown(tbGado, e, "Gado-gado", 1200, 39)
+    End Sub
+
+    ' === Sate ayam + lontong ===
+    Private Sub cbSateAyam_CheckedChanged(sender As Object, e As EventArgs) Handles cbSateAyam.CheckedChanged
+        HandleCheckbox(cbSateAyam, tbSate, "Sate ayam + lontong", 1200, 39)
+    End Sub
+    Private Sub tbSate_KeyDown(sender As Object, e As KeyEventArgs) Handles tbSate.KeyDown
+        HandleTextboxKeyDown(tbSate, e, "Sate ayam + lontong", 1200, 39)
+    End Sub
+    Private Sub tbSate_TextChanged(sender As Object, e As EventArgs) Handles tbSate.TextChanged
+        HandleTextboxChanged(cbSateAyam, tbSate, "Sate ayam + lontong", 1200, 39)
+    End Sub
+
+    ' === Mie Oriental ===
+    Private Sub cbMieOriental_CheckedChanged(sender As Object, e As EventArgs) Handles cbMieOriental.CheckedChanged
+        HandleCheckbox(cbMieOriental, tbMie, "Mie Oriental", 1200, 14)
+    End Sub
+    Private Sub tbMie_TextChanged(sender As Object, e As EventArgs) Handles tbMie.TextChanged
+        HandleTextboxChanged(cbMieOriental, tbMie, "Mie Oriental", 1200, 14)
+    End Sub
+    Private Sub tbMie_KeyDown(sender As Object, e As KeyEventArgs) Handles tbMie.KeyDown
+        HandleTextboxKeyDown(tbMie, e, "Mie Oriental", 1200, 14)
+    End Sub
+
+    ' === Nasi Liwet Solo ===
+    Private Sub cbNasiLiwetSolo_CheckedChanged(sender As Object, e As EventArgs) Handles cbNasiLiwetSolo.CheckedChanged
+        HandleCheckbox(cbNasiLiwetSolo, tbNasiLiwet, "Nasi Liwet Solo", 15000, 40)
+    End Sub
+    Private Sub tbNasiLiwet_TextChanged(sender As Object, e As EventArgs) Handles tbNasiLiwet.TextChanged
+        HandleTextboxChanged(cbNasiLiwetSolo, tbNasiLiwet, "Nasi Liwet Solo", 15000, 40)
+    End Sub
+    Private Sub tbNasiLiwet_KeyDown(sender As Object, e As KeyEventArgs) Handles tbNasiLiwet.KeyDown
+        HandleTextboxKeyDown(tbNasiLiwet, e, "Nasi Liwet Solo", 15000, 40)
+    End Sub
+
+    ' === Nasi Rawon ===
+    Private Sub cbNasiRawon_CheckedChanged(sender As Object, e As EventArgs) Handles cbNasiRawon.CheckedChanged
+        HandleCheckbox(cbNasiRawon, tbNasiRawon, "Nasi Rawon", 15000, 41)
+    End Sub
+    Private Sub tbNasiRawon_TextChanged(sender As Object, e As EventArgs) Handles tbNasiRawon.TextChanged
+        HandleTextboxChanged(cbNasiRawon, tbNasiRawon, "Nasi Rawon", 15000, 41)
+    End Sub
+    Private Sub tbNasiRawon_KeyDown(sender As Object, e As KeyEventArgs) Handles tbNasiRawon.KeyDown
+        HandleTextboxKeyDown(tbNasiRawon, e, "Nasi Rawon", 15000, 41)
+    End Sub
+
+    ' === Kebab ===
+    Private Sub cbKebab_CheckedChanged(sender As Object, e As EventArgs) Handles cbKebab.CheckedChanged
+        HandleCheckbox(cbKebab, tbKebab, "Kebab", 15000, 42)
+    End Sub
+    Private Sub tbKebab_TextChanged(sender As Object, e As EventArgs) Handles tbKebab.TextChanged
+        HandleTextboxChanged(cbKebab, tbKebab, "Kebab", 15000, 42)
+    End Sub
+    Private Sub tbKebab_KeyDown(sender As Object, e As KeyEventArgs) Handles tbKebab.KeyDown
+        HandleTextboxKeyDown(tbKebab, e, "Kebab", 15000, 42)
+    End Sub
+
+    ' === Dim Sum ===
+    Private Sub cbDimSum_CheckedChanged(sender As Object, e As EventArgs) Handles cbDimSum.CheckedChanged
+        HandleCheckbox(cbDimSum, tbDimSum, "Dim Sum", 15000, 43)
+    End Sub
+    Private Sub tbDimSum_TextChanged(sender As Object, e As EventArgs) Handles tbDimSum.TextChanged
+        HandleTextboxChanged(cbDimSum, tbDimSum, "Dim Sum", 15000, 43)
+    End Sub
+    Private Sub tbDimSum_KeyDown(sender As Object, e As KeyEventArgs) Handles tbDimSum.KeyDown
+        HandleTextboxKeyDown(tbDimSum, e, "Dim Sum", 15000, 43)
+    End Sub
+
+    Private Sub tbPrasC_TextChanged(sender As Object, e As EventArgs) Handles tbPrasC.TextChanged
+
+    End Sub
+
+    Private Sub btnUploadBuktiBayar_Click(sender As Object, e As EventArgs) Handles btnUploadBuktiBayar.Click
+        Dim openFileDialog As New OpenFileDialog()
+        openFileDialog.Title = "Pilih Bukti Pembayaran"
+        openFileDialog.Filter = "File Gambar|*.jpg;*.jpeg;*.png;*.bmp"
+
+        If openFileDialog.ShowDialog() = DialogResult.OK Then
+            ' Menampilkan gambar ke PictureBox jika ada
+            'PictureBoxBukti.Image = Image.FromFile(openFileDialog.FileName)
+            'PictureBoxBukti.SizeMode = PictureBoxSizeMode.StretchImage
+
+            ' Jika kamu mau simpan pathnya ke variable
+            Dim pathGambar As String = openFileDialog.FileName
+            ' Kamu bisa simpan ke database, atau copy ke folder tertentu, dll
+
+            MessageBox.Show("Bukti pembayaran berhasil diupload!", "Upload Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 End Class

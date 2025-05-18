@@ -26,11 +26,13 @@ Partial Class Form5
         BackgroundWorker1 = New ComponentModel.BackgroundWorker()
         tpLaporan = New TabPage()
         tpPembayaran = New TabPage()
+        btnInvoice = New Button()
         Label78 = New Label()
         Button35 = New Button()
         Button36 = New Button()
         Button37 = New Button()
         Panel20 = New Panel()
+        btnUploadBuktiBayar = New Button()
         Label142 = New Label()
         Label141 = New Label()
         Label140 = New Label()
@@ -50,6 +52,7 @@ Partial Class Form5
         Label75 = New Label()
         Label77 = New Label()
         Panel19 = New Panel()
+        Label9 = New Label()
         Label143 = New Label()
         Label144 = New Label()
         PictureBox5 = New PictureBox()
@@ -79,7 +82,7 @@ Partial Class Form5
         Label105 = New Label()
         Label106 = New Label()
         Panel27 = New Panel()
-        TextBox1 = New TextBox()
+        tbSelatSolo = New TextBox()
         tbSaladBuah = New TextBox()
         tbSiomay = New TextBox()
         tbBakso = New TextBox()
@@ -124,7 +127,7 @@ Partial Class Form5
         Label92 = New Label()
         Label93 = New Label()
         Label94 = New Label()
-        Panel24 = New Panel()
+        panelStall1 = New Panel()
         tbBuahIris = New TextBox()
         tbEsSeruni = New TextBox()
         tbTeh = New TextBox()
@@ -410,7 +413,7 @@ Partial Class Form5
         Panel28.SuspendLayout()
         Panel26.SuspendLayout()
         Panel25.SuspendLayout()
-        Panel24.SuspendLayout()
+        panelStall1.SuspendLayout()
         Panel38.SuspendLayout()
         Panel37.SuspendLayout()
         Panel36.SuspendLayout()
@@ -478,6 +481,7 @@ Partial Class Form5
         ' tpPembayaran
         ' 
         tpPembayaran.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        tpPembayaran.Controls.Add(btnInvoice)
         tpPembayaran.Controls.Add(Label78)
         tpPembayaran.Controls.Add(Button35)
         tpPembayaran.Controls.Add(Button36)
@@ -490,12 +494,25 @@ Partial Class Form5
         tpPembayaran.TabIndex = 4
         tpPembayaran.Text = "Pembayaran"
         ' 
+        ' btnInvoice
+        ' 
+        btnInvoice.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        btnInvoice.FlatStyle = FlatStyle.Flat
+        btnInvoice.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
+        btnInvoice.ForeColor = Color.White
+        btnInvoice.Location = New Point(676, 585)
+        btnInvoice.Name = "btnInvoice"
+        btnInvoice.Size = New Size(132, 32)
+        btnInvoice.TabIndex = 25
+        btnInvoice.Text = "Cetak Invoice"
+        btnInvoice.UseVisualStyleBackColor = False
+        ' 
         ' Label78
         ' 
         Label78.AutoSize = True
         Label78.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label78.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label78.Location = New Point(395, 18)
+        Label78.Location = New Point(417, 21)
         Label78.Name = "Label78"
         Label78.Size = New Size(303, 41)
         Label78.TabIndex = 24
@@ -507,7 +524,7 @@ Partial Class Form5
         Button35.FlatStyle = FlatStyle.Flat
         Button35.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
         Button35.ForeColor = Color.White
-        Button35.Location = New Point(511, 583)
+        Button35.Location = New Point(450, 585)
         Button35.Name = "Button35"
         Button35.Size = New Size(94, 32)
         Button35.TabIndex = 23
@@ -520,7 +537,7 @@ Partial Class Form5
         Button36.FlatStyle = FlatStyle.Flat
         Button36.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
         Button36.ForeColor = Color.White
-        Button36.Location = New Point(636, 583)
+        Button36.Location = New Point(563, 585)
         Button36.Name = "Button36"
         Button36.Size = New Size(94, 32)
         Button36.TabIndex = 22
@@ -533,7 +550,7 @@ Partial Class Form5
         Button37.FlatStyle = FlatStyle.Flat
         Button37.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
         Button37.ForeColor = Color.White
-        Button37.Location = New Point(383, 583)
+        Button37.Location = New Point(337, 585)
         Button37.Name = "Button37"
         Button37.Size = New Size(94, 32)
         Button37.TabIndex = 21
@@ -543,6 +560,7 @@ Partial Class Form5
         ' Panel20
         ' 
         Panel20.BackColor = Color.FromArgb(CByte(209), CByte(235), CByte(203))
+        Panel20.Controls.Add(btnUploadBuktiBayar)
         Panel20.Controls.Add(Label142)
         Panel20.Controls.Add(Label141)
         Panel20.Controls.Add(Label140)
@@ -565,6 +583,15 @@ Partial Class Form5
         Panel20.Name = "Panel20"
         Panel20.Size = New Size(515, 485)
         Panel20.TabIndex = 17
+        ' 
+        ' btnUploadBuktiBayar
+        ' 
+        btnUploadBuktiBayar.Location = New Point(354, 393)
+        btnUploadBuktiBayar.Name = "btnUploadBuktiBayar"
+        btnUploadBuktiBayar.Size = New Size(146, 32)
+        btnUploadBuktiBayar.TabIndex = 29
+        btnUploadBuktiBayar.Text = "Upload Bukti Bayar"
+        btnUploadBuktiBayar.UseVisualStyleBackColor = True
         ' 
         ' Label142
         ' 
@@ -604,9 +631,9 @@ Partial Class Form5
         ' 
         ' DateTimePicker4
         ' 
-        DateTimePicker4.Location = New Point(230, 99)
+        DateTimePicker4.Location = New Point(230, 103)
         DateTimePicker4.Name = "DateTimePicker4"
-        DateTimePicker4.Size = New Size(250, 27)
+        DateTimePicker4.Size = New Size(270, 27)
         DateTimePicker4.TabIndex = 25
         ' 
         ' Label139
@@ -638,7 +665,7 @@ Partial Class Form5
         Label76.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         Label76.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
         Label76.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label76.Location = New Point(168, 457)
+        Label76.Location = New Point(143, 451)
         Label76.Name = "Label76"
         Label76.Size = New Size(161, 23)
         Label76.TabIndex = 22
@@ -650,7 +677,7 @@ Partial Class Form5
         Label73.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         Label73.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
         Label73.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label73.Location = New Point(168, 427)
+        Label73.Location = New Point(143, 421)
         Label73.Name = "Label73"
         Label73.Size = New Size(110, 23)
         Label73.TabIndex = 21
@@ -661,7 +688,7 @@ Partial Class Form5
         Label72.AutoSize = True
         Label72.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
         Label72.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label72.Location = New Point(59, 457)
+        Label72.Location = New Point(34, 451)
         Label72.Name = "Label72"
         Label72.Size = New Size(85, 23)
         Label72.TabIndex = 20
@@ -672,7 +699,7 @@ Partial Class Form5
         Label71.AutoSize = True
         Label71.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
         Label71.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label71.Location = New Point(59, 427)
+        Label71.Location = New Point(34, 421)
         Label71.Name = "Label71"
         Label71.Size = New Size(44, 23)
         Label71.TabIndex = 19
@@ -694,31 +721,31 @@ Partial Class Form5
         Label69.AutoSize = True
         Label69.Font = New Font("Segoe UI", 14F, FontStyle.Bold)
         Label69.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label69.Location = New Point(157, 10)
+        Label69.Location = New Point(90, 14)
         Label69.Name = "Label69"
-        Label69.Size = New Size(235, 32)
+        Label69.Size = New Size(337, 32)
         Label69.TabIndex = 17
-        Label69.Text = "Waktu Pembayaran"
+        Label69.Text = "Termin Pembayaran Tagihan"
         ' 
         ' DateTimePicker3
         ' 
         DateTimePicker3.Location = New Point(230, 177)
         DateTimePicker3.Name = "DateTimePicker3"
-        DateTimePicker3.Size = New Size(250, 27)
+        DateTimePicker3.Size = New Size(270, 27)
         DateTimePicker3.TabIndex = 17
         ' 
         ' DateTimePicker2
         ' 
         DateTimePicker2.Location = New Point(230, 264)
         DateTimePicker2.Name = "DateTimePicker2"
-        DateTimePicker2.Size = New Size(250, 27)
+        DateTimePicker2.Size = New Size(270, 27)
         DateTimePicker2.TabIndex = 16
         ' 
         ' DateTimePicker1
         ' 
         DateTimePicker1.Location = New Point(230, 342)
         DateTimePicker1.Name = "DateTimePicker1"
-        DateTimePicker1.Size = New Size(250, 27)
+        DateTimePicker1.Size = New Size(270, 27)
         DateTimePicker1.TabIndex = 15
         ' 
         ' Label74
@@ -757,6 +784,7 @@ Partial Class Form5
         ' Panel19
         ' 
         Panel19.BackColor = Color.FromArgb(CByte(209), CByte(235), CByte(203))
+        Panel19.Controls.Add(Label9)
         Panel19.Controls.Add(Label143)
         Panel19.Controls.Add(Label144)
         Panel19.Controls.Add(PictureBox5)
@@ -776,13 +804,24 @@ Partial Class Form5
         Panel19.Size = New Size(600, 485)
         Panel19.TabIndex = 8
         ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Font = New Font("Segoe UI", 14F, FontStyle.Bold)
+        Label9.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label9.Location = New Point(143, 14)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(355, 32)
+        Label9.TabIndex = 21
+        Label9.Text = "Realisasi Pembayaran Tagihan"
+        ' 
         ' Label143
         ' 
         Label143.AutoSize = True
         Label143.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         Label143.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         Label143.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label143.Location = New Point(246, 99)
+        Label143.Location = New Point(250, 132)
         Label143.Name = "Label143"
         Label143.Size = New Size(56, 31)
         Label143.TabIndex = 20
@@ -793,7 +832,7 @@ Partial Class Form5
         Label144.AutoSize = True
         Label144.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label144.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label144.Location = New Point(24, 105)
+        Label144.Location = New Point(28, 138)
         Label144.Name = "Label144"
         Label144.Size = New Size(179, 25)
         Label144.TabIndex = 19
@@ -802,7 +841,7 @@ Partial Class Form5
         ' PictureBox5
         ' 
         PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
-        PictureBox5.Location = New Point(549, 338)
+        PictureBox5.Location = New Point(553, 371)
         PictureBox5.Name = "PictureBox5"
         PictureBox5.Size = New Size(39, 41)
         PictureBox5.TabIndex = 18
@@ -811,7 +850,7 @@ Partial Class Form5
         ' PictureBox17
         ' 
         PictureBox17.Image = CType(resources.GetObject("PictureBox17.Image"), Image)
-        PictureBox17.Location = New Point(24, 338)
+        PictureBox17.Location = New Point(28, 371)
         PictureBox17.Name = "PictureBox17"
         PictureBox17.Size = New Size(510, 41)
         PictureBox17.SizeMode = PictureBoxSizeMode.StretchImage
@@ -824,7 +863,7 @@ Partial Class Form5
         Label68.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         Label68.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         Label68.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label68.Location = New Point(246, 413)
+        Label68.Location = New Point(250, 446)
         Label68.Name = "Label68"
         Label68.Size = New Size(56, 31)
         Label68.TabIndex = 14
@@ -836,7 +875,7 @@ Partial Class Form5
         Label67.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         Label67.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         Label67.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label67.Location = New Point(246, 273)
+        Label67.Location = New Point(250, 306)
         Label67.Name = "Label67"
         Label67.Size = New Size(56, 31)
         Label67.TabIndex = 13
@@ -848,7 +887,7 @@ Partial Class Form5
         Label66.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         Label66.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         Label66.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label66.Location = New Point(246, 214)
+        Label66.Location = New Point(250, 247)
         Label66.Name = "Label66"
         Label66.Size = New Size(56, 31)
         Label66.TabIndex = 12
@@ -860,7 +899,7 @@ Partial Class Form5
         Label65.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         Label65.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         Label65.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label65.Location = New Point(246, 154)
+        Label65.Location = New Point(250, 187)
         Label65.Name = "Label65"
         Label65.Size = New Size(56, 31)
         Label65.TabIndex = 11
@@ -872,7 +911,7 @@ Partial Class Form5
         Label64.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         Label64.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         Label64.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label64.Location = New Point(246, 37)
+        Label64.Location = New Point(250, 70)
         Label64.Name = "Label64"
         Label64.Size = New Size(56, 31)
         Label64.TabIndex = 10
@@ -883,40 +922,40 @@ Partial Class Form5
         Label63.AutoSize = True
         Label63.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label63.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label63.Location = New Point(24, 279)
+        Label63.Location = New Point(28, 312)
         Label63.Name = "Label63"
-        Label63.Size = New Size(201, 25)
+        Label63.Size = New Size(206, 25)
         Label63.TabIndex = 9
-        Label63.Text = "Pembayaran I (100%)"
+        Label63.Text = "Pembayaran 3 (100%)"
         ' 
         ' Label62
         ' 
         Label62.AutoSize = True
         Label62.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label62.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label62.Location = New Point(24, 220)
+        Label62.Location = New Point(28, 253)
         Label62.Name = "Label62"
-        Label62.Size = New Size(190, 25)
+        Label62.Size = New Size(195, 25)
         Label62.TabIndex = 8
-        Label62.Text = "Pembayaran I (80%)"
+        Label62.Text = "Pembayaran 2 (80%)"
         ' 
         ' lblFormAcara
         ' 
         lblFormAcara.AutoSize = True
         lblFormAcara.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         lblFormAcara.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblFormAcara.Location = New Point(24, 43)
+        lblFormAcara.Location = New Point(28, 76)
         lblFormAcara.Name = "lblFormAcara"
-        lblFormAcara.Size = New Size(170, 25)
+        lblFormAcara.Size = New Size(129, 25)
         lblFormAcara.TabIndex = 0
-        lblFormAcara.Text = "Total Pembayaran"
+        lblFormAcara.Text = "Total Tagihan"
         ' 
         ' Label60
         ' 
         Label60.AutoSize = True
         Label60.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label60.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label60.Location = New Point(24, 160)
+        Label60.Location = New Point(28, 193)
         Label60.Name = "Label60"
         Label60.Size = New Size(190, 25)
         Label60.TabIndex = 1
@@ -927,11 +966,11 @@ Partial Class Form5
         Label61.AutoSize = True
         Label61.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label61.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label61.Location = New Point(24, 419)
+        Label61.Location = New Point(28, 452)
         Label61.Name = "Label61"
-        Label61.Size = New Size(161, 25)
+        Label61.Size = New Size(120, 25)
         Label61.TabIndex = 2
-        Label61.Text = "Sisa Pembayaran"
+        Label61.Text = "Sisa Tagihan"
         ' 
         ' tpTambahan
         ' 
@@ -958,7 +997,7 @@ Partial Class Form5
         SplitContainer2.Panel1.Controls.Add(Panel28)
         SplitContainer2.Panel1.Controls.Add(Panel26)
         SplitContainer2.Panel1.Controls.Add(Panel25)
-        SplitContainer2.Panel1.Controls.Add(Panel24)
+        SplitContainer2.Panel1.Controls.Add(panelStall1)
         SplitContainer2.Panel1.Controls.Add(Panel38)
         SplitContainer2.Panel1.Controls.Add(Panel37)
         SplitContainer2.Panel1.Controls.Add(Label130)
@@ -1014,7 +1053,6 @@ Partial Class Form5
         tbDimSum.PlaceholderText = "Qty"
         tbDimSum.Size = New Size(72, 27)
         tbDimSum.TabIndex = 29
-        tbDimSum.Visible = False
         ' 
         ' tbKebab
         ' 
@@ -1023,7 +1061,6 @@ Partial Class Form5
         tbKebab.PlaceholderText = "Qty"
         tbKebab.Size = New Size(72, 27)
         tbKebab.TabIndex = 28
-        tbKebab.Visible = False
         ' 
         ' tbNasiRawon
         ' 
@@ -1032,7 +1069,6 @@ Partial Class Form5
         tbNasiRawon.PlaceholderText = "Qty"
         tbNasiRawon.Size = New Size(72, 27)
         tbNasiRawon.TabIndex = 27
-        tbNasiRawon.Visible = False
         ' 
         ' tbNasiLiwet
         ' 
@@ -1041,7 +1077,6 @@ Partial Class Form5
         tbNasiLiwet.PlaceholderText = "Qty"
         tbNasiLiwet.Size = New Size(72, 27)
         tbNasiLiwet.TabIndex = 26
-        tbNasiLiwet.Visible = False
         ' 
         ' cbDimSum
         ' 
@@ -1115,7 +1150,7 @@ Partial Class Form5
         ' Panel27
         ' 
         Panel27.BorderStyle = BorderStyle.FixedSingle
-        Panel27.Controls.Add(TextBox1)
+        Panel27.Controls.Add(tbSelatSolo)
         Panel27.Controls.Add(tbSaladBuah)
         Panel27.Controls.Add(tbSiomay)
         Panel27.Controls.Add(tbBakso)
@@ -1131,14 +1166,13 @@ Partial Class Form5
         Panel27.Size = New Size(351, 226)
         Panel27.TabIndex = 48
         ' 
-        ' TextBox1
+        ' tbSelatSolo
         ' 
-        TextBox1.Location = New Point(258, 173)
-        TextBox1.Name = "TextBox1"
-        TextBox1.PlaceholderText = "Qty"
-        TextBox1.Size = New Size(72, 27)
-        TextBox1.TabIndex = 24
-        TextBox1.Visible = False
+        tbSelatSolo.Location = New Point(258, 173)
+        tbSelatSolo.Name = "tbSelatSolo"
+        tbSelatSolo.PlaceholderText = "Qty"
+        tbSelatSolo.Size = New Size(72, 27)
+        tbSelatSolo.TabIndex = 24
         ' 
         ' tbSaladBuah
         ' 
@@ -1147,7 +1181,6 @@ Partial Class Form5
         tbSaladBuah.PlaceholderText = "Qty"
         tbSaladBuah.Size = New Size(72, 27)
         tbSaladBuah.TabIndex = 23
-        tbSaladBuah.Visible = False
         ' 
         ' tbSiomay
         ' 
@@ -1156,7 +1189,6 @@ Partial Class Form5
         tbSiomay.PlaceholderText = "Qty"
         tbSiomay.Size = New Size(72, 27)
         tbSiomay.TabIndex = 22
-        tbSiomay.Visible = False
         ' 
         ' tbBakso
         ' 
@@ -1165,7 +1197,6 @@ Partial Class Form5
         tbBakso.PlaceholderText = "Qty"
         tbBakso.Size = New Size(72, 27)
         tbBakso.TabIndex = 21
-        tbBakso.Visible = False
         ' 
         ' cbSelatSolo
         ' 
@@ -1262,7 +1293,6 @@ Partial Class Form5
         tbMie.PlaceholderText = "Qty"
         tbMie.Size = New Size(72, 27)
         tbMie.TabIndex = 28
-        tbMie.Visible = False
         ' 
         ' tbSate
         ' 
@@ -1271,7 +1301,6 @@ Partial Class Form5
         tbSate.PlaceholderText = "Qty"
         tbSate.Size = New Size(72, 27)
         tbSate.TabIndex = 27
-        tbSate.Visible = False
         ' 
         ' tbGado
         ' 
@@ -1280,7 +1309,6 @@ Partial Class Form5
         tbGado.PlaceholderText = "Qty"
         tbGado.Size = New Size(72, 27)
         tbGado.TabIndex = 26
-        tbGado.Visible = False
         ' 
         ' tbEmpek
         ' 
@@ -1289,7 +1317,6 @@ Partial Class Form5
         tbEmpek.PlaceholderText = "Qty"
         tbEmpek.Size = New Size(72, 27)
         tbEmpek.TabIndex = 25
-        tbEmpek.Visible = False
         ' 
         ' cbMieOriental
         ' 
@@ -1379,35 +1406,32 @@ Partial Class Form5
         ' 
         ' tbPecelPincuk
         ' 
-        tbPecelPincuk.Location = New Point(259, 143)
+        tbPecelPincuk.Location = New Point(260, 150)
         tbPecelPincuk.Name = "tbPecelPincuk"
         tbPecelPincuk.PlaceholderText = "Qty"
         tbPecelPincuk.Size = New Size(72, 27)
         tbPecelPincuk.TabIndex = 24
-        tbPecelPincuk.Visible = False
         ' 
         ' tbEsDoger
         ' 
-        tbEsDoger.Location = New Point(259, 107)
+        tbEsDoger.Location = New Point(260, 114)
         tbEsDoger.Name = "tbEsDoger"
         tbEsDoger.PlaceholderText = "Qty"
         tbEsDoger.Size = New Size(72, 27)
         tbEsDoger.TabIndex = 23
-        tbEsDoger.Visible = False
         ' 
         ' tbWedangRonde
         ' 
-        tbWedangRonde.Location = New Point(259, 74)
+        tbWedangRonde.Location = New Point(260, 81)
         tbWedangRonde.Name = "tbWedangRonde"
         tbWedangRonde.PlaceholderText = "Qty"
         tbWedangRonde.Size = New Size(72, 27)
         tbWedangRonde.TabIndex = 22
-        tbWedangRonde.Visible = False
         ' 
         ' cbPecelPincuk
         ' 
         cbPecelPincuk.AutoSize = True
-        cbPecelPincuk.Location = New Point(20, 146)
+        cbPecelPincuk.Location = New Point(21, 153)
         cbPecelPincuk.Name = "cbPecelPincuk"
         cbPecelPincuk.Size = New Size(111, 24)
         cbPecelPincuk.TabIndex = 16
@@ -1417,7 +1441,7 @@ Partial Class Form5
         ' cbEsDoger
         ' 
         cbEsDoger.AutoSize = True
-        cbEsDoger.Location = New Point(20, 110)
+        cbEsDoger.Location = New Point(21, 117)
         cbEsDoger.Name = "cbEsDoger"
         cbEsDoger.Size = New Size(91, 24)
         cbEsDoger.TabIndex = 15
@@ -1427,7 +1451,7 @@ Partial Class Form5
         ' cbWedangRonde
         ' 
         cbWedangRonde.AutoSize = True
-        cbWedangRonde.Location = New Point(20, 77)
+        cbWedangRonde.Location = New Point(21, 84)
         cbWedangRonde.Name = "cbWedangRonde"
         cbWedangRonde.Size = New Size(133, 24)
         cbWedangRonde.TabIndex = 14
@@ -1458,7 +1482,7 @@ Partial Class Form5
         ' Label97
         ' 
         Label97.AutoSize = True
-        Label97.Location = New Point(10, 81)
+        Label97.Location = New Point(11, 88)
         Label97.Name = "Label97"
         Label97.Size = New Size(0, 20)
         Label97.TabIndex = 10
@@ -1489,7 +1513,7 @@ Partial Class Form5
         tbJusJeruk.PlaceholderText = "Qty"
         tbJusJeruk.Size = New Size(72, 27)
         tbJusJeruk.TabIndex = 20
-        tbJusJeruk.Visible = False
+        tbJusJeruk.UseWaitCursor = True
         ' 
         ' tbRujak
         ' 
@@ -1498,7 +1522,7 @@ Partial Class Form5
         tbRujak.PlaceholderText = "Qty"
         tbRujak.Size = New Size(72, 27)
         tbRujak.TabIndex = 19
-        tbRujak.Visible = False
+        tbRujak.UseWaitCursor = True
         ' 
         ' tbEsSelasih
         ' 
@@ -1507,7 +1531,7 @@ Partial Class Form5
         tbEsSelasih.PlaceholderText = "Qty"
         tbEsSelasih.Size = New Size(72, 27)
         tbEsSelasih.TabIndex = 18
-        tbEsSelasih.Visible = False
+        tbEsSelasih.UseWaitCursor = True
         ' 
         ' tbEsDawet
         ' 
@@ -1516,7 +1540,7 @@ Partial Class Form5
         tbEsDawet.PlaceholderText = "Qty"
         tbEsDawet.Size = New Size(72, 27)
         tbEsDawet.TabIndex = 17
-        tbEsDawet.Visible = False
+        tbEsDawet.UseWaitCursor = True
         ' 
         ' cbJusJeruk
         ' 
@@ -1587,24 +1611,24 @@ Partial Class Form5
         Label94.Size = New Size(0, 20)
         Label94.TabIndex = 10
         ' 
-        ' Panel24
+        ' panelStall1
         ' 
-        Panel24.BorderStyle = BorderStyle.FixedSingle
-        Panel24.Controls.Add(tbBuahIris)
-        Panel24.Controls.Add(tbEsSeruni)
-        Panel24.Controls.Add(tbTeh)
-        Panel24.Controls.Add(tbIcePuter)
-        Panel24.Controls.Add(cbBuahIris)
-        Panel24.Controls.Add(cbEsSeruni)
-        Panel24.Controls.Add(cbTeh)
-        Panel24.Controls.Add(cbIcePuter)
-        Panel24.Controls.Add(Label89)
-        Panel24.Controls.Add(Label90)
-        Panel24.Controls.Add(Label91)
-        Panel24.Location = New Point(28, 561)
-        Panel24.Name = "Panel24"
-        Panel24.Size = New Size(351, 226)
-        Panel24.TabIndex = 44
+        panelStall1.BorderStyle = BorderStyle.FixedSingle
+        panelStall1.Controls.Add(tbBuahIris)
+        panelStall1.Controls.Add(tbEsSeruni)
+        panelStall1.Controls.Add(tbTeh)
+        panelStall1.Controls.Add(tbIcePuter)
+        panelStall1.Controls.Add(cbBuahIris)
+        panelStall1.Controls.Add(cbEsSeruni)
+        panelStall1.Controls.Add(cbTeh)
+        panelStall1.Controls.Add(cbIcePuter)
+        panelStall1.Controls.Add(Label89)
+        panelStall1.Controls.Add(Label90)
+        panelStall1.Controls.Add(Label91)
+        panelStall1.Location = New Point(28, 561)
+        panelStall1.Name = "panelStall1"
+        panelStall1.Size = New Size(351, 226)
+        panelStall1.TabIndex = 44
         ' 
         ' tbBuahIris
         ' 
@@ -1613,7 +1637,6 @@ Partial Class Form5
         tbBuahIris.PlaceholderText = "Qty"
         tbBuahIris.Size = New Size(72, 27)
         tbBuahIris.TabIndex = 19
-        tbBuahIris.Visible = False
         ' 
         ' tbEsSeruni
         ' 
@@ -1622,7 +1645,6 @@ Partial Class Form5
         tbEsSeruni.PlaceholderText = "Qty"
         tbEsSeruni.Size = New Size(72, 27)
         tbEsSeruni.TabIndex = 18
-        tbEsSeruni.Visible = False
         ' 
         ' tbTeh
         ' 
@@ -1631,7 +1653,6 @@ Partial Class Form5
         tbTeh.PlaceholderText = "Qty"
         tbTeh.Size = New Size(72, 27)
         tbTeh.TabIndex = 17
-        tbTeh.Visible = False
         ' 
         ' tbIcePuter
         ' 
@@ -1640,7 +1661,6 @@ Partial Class Form5
         tbIcePuter.PlaceholderText = "Qty"
         tbIcePuter.Size = New Size(72, 27)
         tbIcePuter.TabIndex = 16
-        tbIcePuter.Visible = False
         ' 
         ' cbBuahIris
         ' 
@@ -4158,7 +4178,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(32476, 30)
+        Label10.Size = New Size(35773, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -4636,8 +4656,8 @@ Partial Class Form5
         Panel26.PerformLayout()
         Panel25.ResumeLayout(False)
         Panel25.PerformLayout()
-        Panel24.ResumeLayout(False)
-        Panel24.PerformLayout()
+        panelStall1.ResumeLayout(False)
+        panelStall1.PerformLayout()
         Panel38.ResumeLayout(False)
         Panel38.PerformLayout()
         Panel37.ResumeLayout(False)
@@ -5032,7 +5052,7 @@ Partial Class Form5
     Friend WithEvents colJumlahTambahan As DataGridViewTextBoxColumn
     Friend WithEvents colTotalTambahan As DataGridViewTextBoxColumn
     Friend WithEvents colIdTambahan As DataGridViewTextBoxColumn
-    Friend WithEvents Panel24 As Panel
+    Friend WithEvents panelStall1 As Panel
     Friend WithEvents tbBuahIris As TextBox
     Friend WithEvents tbEsSeruni As TextBox
     Friend WithEvents tbTeh As TextBox
@@ -5075,7 +5095,7 @@ Partial Class Form5
     Friend WithEvents Label102 As Label
     Friend WithEvents Label103 As Label
     Friend WithEvents Panel27 As Panel
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents tbSelatSolo As TextBox
     Friend WithEvents tbSaladBuah As TextBox
     Friend WithEvents tbSiomay As TextBox
     Friend WithEvents tbBakso As TextBox
@@ -5102,4 +5122,7 @@ Partial Class Form5
     Friend WithEvents tbSate As TextBox
     Friend WithEvents tbGado As TextBox
     Friend WithEvents tbEmpek As TextBox
+    Friend WithEvents btnUploadBuktiBayar As Button
+    Friend WithEvents Label9 As Label
+    Friend WithEvents btnInvoice As Button
 End Class
