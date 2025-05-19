@@ -1799,6 +1799,7 @@ Partial Class Form5
         tbSnack2.Name = "tbSnack2"
         tbSnack2.Size = New Size(72, 25)
         tbSnack2.TabIndex = 5
+        tbSnack2.Text = "0"
         tbSnack2.TextAlign = HorizontalAlignment.Center
         ' 
         ' btnMinSnack2
@@ -1889,6 +1890,7 @@ Partial Class Form5
         tbSnack1.Name = "tbSnack1"
         tbSnack1.Size = New Size(72, 25)
         tbSnack1.TabIndex = 5
+        tbSnack1.Text = "0"
         tbSnack1.TextAlign = HorizontalAlignment.Center
         ' 
         ' btnMinSnack1
@@ -1990,6 +1992,7 @@ Partial Class Form5
         tbDos3.Name = "tbDos3"
         tbDos3.Size = New Size(72, 25)
         tbDos3.TabIndex = 5
+        tbDos3.Text = "0"
         tbDos3.TextAlign = HorizontalAlignment.Center
         ' 
         ' btnMinDos3
@@ -2080,6 +2083,7 @@ Partial Class Form5
         tbDos2.Name = "tbDos2"
         tbDos2.Size = New Size(72, 25)
         tbDos2.TabIndex = 5
+        tbDos2.Text = "0"
         tbDos2.TextAlign = HorizontalAlignment.Center
         ' 
         ' btnMinDos2
@@ -2170,6 +2174,7 @@ Partial Class Form5
         tbDos1.Name = "tbDos1"
         tbDos1.Size = New Size(72, 25)
         tbDos1.TabIndex = 5
+        tbDos1.Text = "0"
         tbDos1.TextAlign = HorizontalAlignment.Center
         ' 
         ' btnMinDos1
@@ -2271,6 +2276,7 @@ Partial Class Form5
         tbSyukur4.Name = "tbSyukur4"
         tbSyukur4.Size = New Size(72, 25)
         tbSyukur4.TabIndex = 5
+        tbSyukur4.Text = "0"
         tbSyukur4.TextAlign = HorizontalAlignment.Center
         ' 
         ' btnMinSyukur4
@@ -2361,6 +2367,7 @@ Partial Class Form5
         tbSyukur3.Name = "tbSyukur3"
         tbSyukur3.Size = New Size(72, 25)
         tbSyukur3.TabIndex = 5
+        tbSyukur3.Text = "0"
         tbSyukur3.TextAlign = HorizontalAlignment.Center
         ' 
         ' btnMinSyukur3
@@ -2451,6 +2458,7 @@ Partial Class Form5
         tbSyukur2.Name = "tbSyukur2"
         tbSyukur2.Size = New Size(72, 25)
         tbSyukur2.TabIndex = 5
+        tbSyukur2.Text = "0"
         tbSyukur2.TextAlign = HorizontalAlignment.Center
         ' 
         ' btnMinSyukur2
@@ -2552,6 +2560,7 @@ Partial Class Form5
         tbSyukur1.Name = "tbSyukur1"
         tbSyukur1.Size = New Size(72, 25)
         tbSyukur1.TabIndex = 5
+        tbSyukur1.Text = "0"
         tbSyukur1.TextAlign = HorizontalAlignment.Center
         ' 
         ' btnMinSyukur1
@@ -2649,6 +2658,7 @@ Partial Class Form5
         tbPrasC.Name = "tbPrasC"
         tbPrasC.Size = New Size(72, 25)
         tbPrasC.TabIndex = 5
+        tbPrasC.Text = "0"
         tbPrasC.TextAlign = HorizontalAlignment.Center
         ' 
         ' btnMinPrasC
@@ -2725,6 +2735,7 @@ Partial Class Form5
         tbPrasB.Name = "tbPrasB"
         tbPrasB.Size = New Size(72, 25)
         tbPrasB.TabIndex = 5
+        tbPrasB.Text = "0"
         tbPrasB.TextAlign = HorizontalAlignment.Center
         ' 
         ' btnMinPrasB
@@ -2802,6 +2813,7 @@ Partial Class Form5
         tbPrasA.Name = "tbPrasA"
         tbPrasA.Size = New Size(72, 25)
         tbPrasA.TabIndex = 5
+        tbPrasA.Text = "0"
         tbPrasA.TextAlign = HorizontalAlignment.Center
         ' 
         ' btnMinPrasA
@@ -4178,7 +4190,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(35773, 30)
+        Label10.Size = New Size(36715, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
