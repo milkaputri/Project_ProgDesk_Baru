@@ -1252,9 +1252,10 @@ Public Class Form5
     End Sub
 
     Public Sub TampilDataTambahan()
+        'Dim sudahAda As Boolean = False
         Dim i
         i = 0
-        Dim sql As String = "select * from pesanan join detail_paket on pesanan.id_paket = detail_paket.id_paket where id_acara = " & originalIdAcara & " AND pesanan.id_paket BETWEEN 11 AND 25"
+        Dim sql As String = "select * from pesanan join detail_paket on pesanan.id_paket = detail_paket.id_paket where id_acara = " & originalIdAcara & " AND pesanan.id_paket BETWEEN 11 AND 51"
         myCommand.CommandText = sql
         myDataReader = myCommand.ExecuteReader
         If myDataReader.HasRows Then
@@ -1274,12 +1275,19 @@ Public Class Form5
                         tbPrasB.Text = jumlah.ToString()
                     Case "Prasmanan C"
                         tbPrasC.Text = jumlah.ToString()
+                    Case "Stall 1 - Ice Puter + Agar-agar"
+                        tbIcePuter.Text = jumlah.ToString()
+                        'cbIcePuter.Checked = True
                 End Select
                 i = i + 1
             End While
 
             Dim totalPengeluaran As Integer = 0
             For Each row As DataGridViewRow In DataGridView2.Rows
+                'If Not row.IsNewRow AndAlso row.Cells(0).Value = myDataReader("nama_paket") Then
+                '    sudahAda = True
+                '    Exit For
+                'End If
                 If Not row.IsNewRow AndAlso Not IsDBNull(row.Cells("colTotalTambahan").Value) Then
                     totalPengeluaran += Convert.ToInt32(row.Cells("colTotalTambahan").Value)
                 End If
@@ -1366,31 +1374,54 @@ Public Class Form5
         Next
     End Sub
 
-    Private Sub TampilTambahanStall(nama_paket As String, jumlah As Integer, harga As Integer, idTambahan As Integer, cbYangAktif As String)
-        Dim i
-        i = 0
-        Dim sql As String = "SELECT * FROM detail_paket where id_paket = " & idTambahan
-        myCommand.CommandText = sql
-        myDataReader = myCommand.ExecuteReader
-        Dim found As Boolean = False
-        For Each row As DataGridViewRow In DataGridView2.Rows
-            If Not row.IsNewRow AndAlso row.Cells("colPaketTambahan").Value = nama_paket & cbYangAktif Then
-                row.Cells("colJumlahTambahan").Value = jumlah
-                row.Cells("colTotalTambahan").Value = jumlah * harga
-                row.Cells("colIdTambahan").Value = idTambahan
-                found = True
-                If row.Cells("colJumlahTambahan").Value = 0 Then
-                    DataGridView2.Rows.Remove(row)
-                End If
-                Exit For
-            End If
-            myDataReader.Close()
-        Next
+    'Private Sub TampilTambahanStall(nama_paket As String, jumlah As Integer, harga As Integer, idTambahan As Integer)
+    '    Dim i
+    '    i = 0
+    '    Dim sql As String = "SELECT * FROM detail_paket where id_paket = " & idTambahan
+    '    myCommand.CommandText = sql
+    '    myDataReader = myCommand.ExecuteReader
+    '    Dim found As Boolean = False
+    '    For Each row As DataGridViewRow In DataGridView2.Rows
+    '        If Not row.IsNewRow AndAlso row.Cells("colPaketTambahan").Value = nama_paket Then
+    '            'row.Cells("colJumlahTambahan").Value = jumlah
+    '            'row.Cells("colTotalTambahan").Value = jumlah * harga
+    '            'row.Cells("colIdTambahan").Value = idTambahan
+    '            found = True
+    '            If row.Cells("colJumlahTambahan").Value = 0 Then
+    '                DataGridView2.Rows.Remove(row)
+    '            End If
+    '            Exit For
+    '        End If
+    '        myDataReader.Close()
+    '    Next
 
-        If Not found Then
-            DataGridView2.Rows.Add(nama_paket & cbYangAktif, jumlah, jumlah * harga, idTambahan)
-        End If
-    End Sub
+    '    If Not found Then
+    '        DataGridView2.Rows.Add(nama_paket, jumlah, jumlah * harga, idTambahan)
+    '    End If
+    'End Sub
+
+    'Private Sub TampilTambahanStall(nama_paket As String, jumlah As Integer, harga As Integer, idTambahan As Integer)
+    '    Dim found As Boolean = False
+    '    For Each row As DataGridViewRow In DataGridView2.Rows
+    '        If Not row.IsNewRow AndAlso row.Cells("colPaketTambahan").Value = nama_paket Then
+    '            'row.Cells("colJumlahTambahan").Value = jumlah
+    '            'row.Cells("colTotalTambahan").Value = jumlah * harga
+    '            'row.Cells("colIdTambahan").Value = idTambahan
+    '            found = True
+    '            If row.Cells("colJumlahTambahan").Value = 0 Then
+    '                DataGridView2.Rows.Remove(row)
+    '            End If
+    '            Exit For
+    '        End If
+    '    Next
+
+    '    If Not found Then
+    '        DataGridView2.Rows.Add(nama_paket, jumlah, jumlah * harga, idTambahan)
+    '    End If
+    'End Sub
+
+
+
     ' PAKET SYUKURAN
     'Code untuk jumlah pembeliah di tab "Tambahan" '
     ' Syukur 1  '
@@ -1948,24 +1979,42 @@ Public Class Form5
 
     ' === Teh ===
     Private Sub cbTeh_CheckedChanged(sender As Object, e As EventArgs) Handles cbTeh.CheckedChanged
-        HandleCheckbox(cbTeh, tbTeh, "Teh", 4500, 26)
+        'HandleCheckbox(cbTeh, tbTeh, "Teh", 4500, 26)
+        If cbTeh.Checked Then
+            tbTeh.Text = "250"
+            TampilTambahan("Teh", tbTeh.Text.ToString(), 4500, 30)
+            UpdateTotalHargaTambahan()
+        Else
+            HapusItemDariGrid("Teh")
+            tbTeh.Text = ""
+            UpdateTotalHargaTambahan()
+        End If
     End Sub
     Private Sub tbTeh_TextChanged(sender As Object, e As EventArgs) Handles tbTeh.TextChanged
-        HandleTextboxChanged(cbTeh, tbTeh, "Teh", 4500, 26)
+        HandleTextboxChanged(cbTeh, tbTeh, "Teh", 4500, 30)
     End Sub
     Private Sub tbTeh_KeyDown(sender As Object, e As KeyEventArgs) Handles tbTeh.KeyDown
-        HandleTextboxKeyDown(tbTeh, e, "Teh", 4500, 26)
+        HandleTextboxKeyDown(tbTeh, e, "Teh", 4500, 30)
     End Sub
 
     ' === Ice Puter + Agar-agar ===
     Private Sub cbIcePuter_CheckedChanged(sender As Object, e As EventArgs) Handles cbIcePuter.CheckedChanged
-        HandleCheckbox(cbIcePuter, tbIcePuter, "Ice Puter + Agar-agar", 4500, 30)
+        'HandleCheckbox(cbIcePuter, tbIcePuter, "Ice Puter + Agar-agar", 4500, 30)
+        If cbIcePuter.Checked Then
+            tbIcePuter.Text = "250"
+            TampilTambahan("Stall 1 - Ice Puter + Agar-agar", tbIcePuter.Text.ToString(), 4500, 29)
+            UpdateTotalHargaTambahan()
+        Else
+            HapusItemDariGrid("Stall 1 - Ice Puter + Agar-agar")
+            tbIcePuter.Text = ""
+            UpdateTotalHargaTambahan()
+        End If
     End Sub
     Private Sub tbIcePuter_TextChanged(sender As Object, e As EventArgs) Handles tbIcePuter.TextChanged
-        HandleTextboxChanged(cbIcePuter, tbIcePuter, "Ice Puter + Agar-agar", 4500, 30)
+        HandleTextboxChanged(cbIcePuter, tbIcePuter, "Ice Puter + Agar-agar", 4500, 29)
     End Sub
     Private Sub tbIcePuter_KeyDown(sender As Object, e As KeyEventArgs) Handles tbIcePuter.KeyDown
-        HandleTextboxKeyDown(tbIcePuter, e, "Ice Puter + Agar-agar", 4500, 30)
+        HandleTextboxKeyDown(tbIcePuter, e, "Ice Puter + Agar-agar", 4500, 29)
     End Sub
 
     ' === Es Seruni ===

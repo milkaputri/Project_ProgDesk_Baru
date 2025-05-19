@@ -80,3 +80,4 @@ D:\Pemrograman Dekstop\FIX\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\ne
 D:\Pemrograman Dekstop\FIX\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form7.resources
 C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form7.resources
 D:\Pemrograman Dekstop\FIX\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form8.resources
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form8.resources
