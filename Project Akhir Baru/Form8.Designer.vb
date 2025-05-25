@@ -28,20 +28,20 @@ Partial Class Form8
         Panel1 = New Panel()
         btnHome = New Button()
         Label1 = New Label()
-        lblNamaPaket = New Label()
-        Label59 = New Label()
-        Label12 = New Label()
-        Panel2 = New Panel()
-        DataGridView1 = New DataGridView()
-        DataGridView2 = New DataGridView()
+        DataGridViewPaket = New DataGridView()
         DataGridViewTextBoxColumn4 = New DataGridViewTextBoxColumn()
         DataGridViewTextBoxColumn5 = New DataGridViewTextBoxColumn()
         DataGridViewTextBoxColumn6 = New DataGridViewTextBoxColumn()
         DataGridViewTextBoxColumn7 = New DataGridViewTextBoxColumn()
+        lblNamaPaket = New Label()
+        Label59 = New Label()
+        Panel2 = New Panel()
+        DataGridViewTambahan = New DataGridView()
         DataGridViewTextBoxColumn1 = New DataGridViewTextBoxColumn()
         colIsiPaket = New DataGridViewTextBoxColumn()
         DataGridViewTextBoxColumn2 = New DataGridViewTextBoxColumn()
         DataGridViewTextBoxColumn3 = New DataGridViewTextBoxColumn()
+        Label12 = New Label()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
         SplitContainer1.Panel2.SuspendLayout()
@@ -51,9 +51,9 @@ Partial Class Form8
         SplitContainer2.Panel2.SuspendLayout()
         SplitContainer2.SuspendLayout()
         Panel1.SuspendLayout()
+        CType(DataGridViewPaket, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DataGridViewTambahan, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' SplitContainer1
@@ -90,7 +90,7 @@ Partial Class Form8
         ' SplitContainer2.Panel2
         ' 
         SplitContainer2.Panel2.AutoScroll = True
-        SplitContainer2.Panel2.Controls.Add(DataGridView2)
+        SplitContainer2.Panel2.Controls.Add(DataGridViewPaket)
         SplitContainer2.Panel2.Controls.Add(lblNamaPaket)
         SplitContainer2.Panel2.Controls.Add(Label59)
         SplitContainer2.Size = New Size(1209, 360)
@@ -112,7 +112,7 @@ Partial Class Form8
         ' 
         btnHome.FlatAppearance.BorderSize = 0
         btnHome.FlatStyle = FlatStyle.Flat
-        btnHome.Font = New Font("Segoe UI Semibold", 12.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnHome.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnHome.ForeColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         btnHome.Image = CType(resources.GetObject("btnHome.Image"), Image)
         btnHome.Location = New Point(1161, 1)
@@ -133,81 +133,23 @@ Partial Class Form8
         Label1.TabIndex = 3
         Label1.Text = "Detail"
         ' 
-        ' lblNamaPaket
+        ' DataGridViewPaket
         ' 
-        lblNamaPaket.AutoSize = True
-        lblNamaPaket.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblNamaPaket.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        lblNamaPaket.ForeColor = Color.White
-        lblNamaPaket.Location = New Point(149, 1)
-        lblNamaPaket.Name = "lblNamaPaket"
-        lblNamaPaket.Size = New Size(155, 31)
-        lblNamaPaket.TabIndex = 22
-        lblNamaPaket.Text = "[nama paket]"
-        ' 
-        ' Label59
-        ' 
-        Label59.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label59.BorderStyle = BorderStyle.Fixed3D
-        Label59.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label59.ForeColor = Color.White
-        Label59.Location = New Point(0, 0)
-        Label59.Name = "Label59"
-        Label59.Size = New Size(1188, 39)
-        Label59.TabIndex = 21
-        Label59.Text = "  Detail Paket"
-        ' 
-        ' Label12
-        ' 
-        Label12.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label12.BorderStyle = BorderStyle.Fixed3D
-        Label12.Dock = DockStyle.Top
-        Label12.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label12.ForeColor = Color.White
-        Label12.Location = New Point(0, 0)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(1188, 39)
-        Label12.TabIndex = 25
-        Label12.Text = "  Detail Tambahan"
-        ' 
-        ' Panel2
-        ' 
-        Panel2.BorderStyle = BorderStyle.Fixed3D
-        Panel2.Controls.Add(DataGridView1)
-        Panel2.Location = New Point(14, 42)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(1162, 412)
-        Panel2.TabIndex = 26
-        ' 
-        ' DataGridView1
-        ' 
-        DataGridView1.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        DataGridView1.BorderStyle = BorderStyle.None
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {DataGridViewTextBoxColumn1, colIsiPaket, DataGridViewTextBoxColumn2, DataGridViewTextBoxColumn3})
-        DataGridView1.Location = New Point(14, 15)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RightToLeft = RightToLeft.No
-        DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(1146, 372)
-        DataGridView1.TabIndex = 25
-        ' 
-        ' DataGridView2
-        ' 
-        DataGridView2.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        DataGridView2.BorderStyle = BorderStyle.None
-        DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView2.Columns.AddRange(New DataGridViewColumn() {DataGridViewTextBoxColumn4, DataGridViewTextBoxColumn5, DataGridViewTextBoxColumn6, DataGridViewTextBoxColumn7})
-        DataGridView2.Location = New Point(14, 42)
-        DataGridView2.Name = "DataGridView2"
-        DataGridView2.RightToLeft = RightToLeft.No
-        DataGridView2.RowHeadersWidth = 51
-        DataGridView2.Size = New Size(1174, 372)
-        DataGridView2.TabIndex = 26
+        DataGridViewPaket.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        DataGridViewPaket.BorderStyle = BorderStyle.None
+        DataGridViewPaket.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewPaket.Columns.AddRange(New DataGridViewColumn() {DataGridViewTextBoxColumn4, DataGridViewTextBoxColumn5, DataGridViewTextBoxColumn6, DataGridViewTextBoxColumn7})
+        DataGridViewPaket.Dock = DockStyle.Top
+        DataGridViewPaket.Location = New Point(0, 39)
+        DataGridViewPaket.Name = "DataGridViewPaket"
+        DataGridViewPaket.RightToLeft = RightToLeft.No
+        DataGridViewPaket.RowHeadersWidth = 51
+        DataGridViewPaket.Size = New Size(1188, 372)
+        DataGridViewPaket.TabIndex = 26
         ' 
         ' DataGridViewTextBoxColumn4
         ' 
-        DataGridViewTextBoxColumn4.FillWeight = 50.0F
+        DataGridViewTextBoxColumn4.FillWeight = 50F
         DataGridViewTextBoxColumn4.HeaderText = "Item"
         DataGridViewTextBoxColumn4.MinimumWidth = 6
         DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
@@ -225,6 +167,7 @@ Partial Class Form8
         DataGridViewTextBoxColumn6.HeaderText = "Qty"
         DataGridViewTextBoxColumn6.MinimumWidth = 6
         DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        DataGridViewTextBoxColumn6.Width = 125
         ' 
         ' DataGridViewTextBoxColumn7
         ' 
@@ -235,9 +178,57 @@ Partial Class Form8
         DataGridViewTextBoxColumn7.Visible = False
         DataGridViewTextBoxColumn7.Width = 125
         ' 
+        ' lblNamaPaket
+        ' 
+        lblNamaPaket.AutoSize = True
+        lblNamaPaket.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblNamaPaket.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
+        lblNamaPaket.ForeColor = Color.White
+        lblNamaPaket.Location = New Point(149, 1)
+        lblNamaPaket.Name = "lblNamaPaket"
+        lblNamaPaket.Size = New Size(155, 31)
+        lblNamaPaket.TabIndex = 22
+        lblNamaPaket.Text = "[nama paket]"
+        ' 
+        ' Label59
+        ' 
+        Label59.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label59.BorderStyle = BorderStyle.Fixed3D
+        Label59.Dock = DockStyle.Top
+        Label59.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label59.ForeColor = Color.White
+        Label59.Location = New Point(0, 0)
+        Label59.Name = "Label59"
+        Label59.Size = New Size(1188, 39)
+        Label59.TabIndex = 21
+        Label59.Text = "  Detail Paket"
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BorderStyle = BorderStyle.Fixed3D
+        Panel2.Controls.Add(DataGridViewTambahan)
+        Panel2.Location = New Point(0, 42)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(1188, 412)
+        Panel2.TabIndex = 26
+        ' 
+        ' DataGridViewTambahan
+        ' 
+        DataGridViewTambahan.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        DataGridViewTambahan.BorderStyle = BorderStyle.None
+        DataGridViewTambahan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewTambahan.Columns.AddRange(New DataGridViewColumn() {DataGridViewTextBoxColumn1, colIsiPaket, DataGridViewTextBoxColumn2, DataGridViewTextBoxColumn3})
+        DataGridViewTambahan.Dock = DockStyle.Top
+        DataGridViewTambahan.Location = New Point(0, 0)
+        DataGridViewTambahan.Name = "DataGridViewTambahan"
+        DataGridViewTambahan.RightToLeft = RightToLeft.No
+        DataGridViewTambahan.RowHeadersWidth = 51
+        DataGridViewTambahan.Size = New Size(1184, 372)
+        DataGridViewTambahan.TabIndex = 25
+        ' 
         ' DataGridViewTextBoxColumn1
         ' 
-        DataGridViewTextBoxColumn1.FillWeight = 50.0F
+        DataGridViewTextBoxColumn1.FillWeight = 50F
         DataGridViewTextBoxColumn1.HeaderText = "Paket"
         DataGridViewTextBoxColumn1.MinimumWidth = 6
         DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
@@ -255,6 +246,7 @@ Partial Class Form8
         DataGridViewTextBoxColumn2.HeaderText = "Qty"
         DataGridViewTextBoxColumn2.MinimumWidth = 6
         DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        DataGridViewTextBoxColumn2.Width = 125
         ' 
         ' DataGridViewTextBoxColumn3
         ' 
@@ -265,9 +257,22 @@ Partial Class Form8
         DataGridViewTextBoxColumn3.Visible = False
         DataGridViewTextBoxColumn3.Width = 125
         ' 
+        ' Label12
+        ' 
+        Label12.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label12.BorderStyle = BorderStyle.Fixed3D
+        Label12.Dock = DockStyle.Top
+        Label12.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label12.ForeColor = Color.White
+        Label12.Location = New Point(0, 0)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(1188, 39)
+        Label12.TabIndex = 25
+        Label12.Text = "  Detail Tambahan"
+        ' 
         ' Form8
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
         BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
@@ -286,9 +291,9 @@ Partial Class Form8
         SplitContainer2.ResumeLayout(False)
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
+        CType(DataGridViewPaket, ComponentModel.ISupportInitialize).EndInit()
         Panel2.ResumeLayout(False)
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
-        CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
+        CType(DataGridViewTambahan, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -303,9 +308,9 @@ Partial Class Form8
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button2 As Button
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridViewTambahan As DataGridView
     Friend WithEvents Label12 As Label
-    Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents DataGridViewPaket As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
