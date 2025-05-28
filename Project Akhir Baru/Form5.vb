@@ -314,7 +314,8 @@ Public Class Form5
 
     Private Sub Form5_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Form3.Hide()
-
+        SetWarnaKontrolPembayaran(False, False)
+        totalTagihan()
     End Sub
 
     Private Sub Panel19_Paint(sender As Object, e As PaintEventArgs) Handles Panel19.Paint
@@ -555,9 +556,10 @@ Public Class Form5
         Else
             MessageBox.Show("Silakan pilih baris yang ingin dihapus.")
         End If
+        totalTagihan()
     End Sub
     Private Sub btnSimpanPaket_Click(sender As Object, e As EventArgs) Handles btnSimpanPaket.Click
-        Dim angka As Integer = Convert.ToInt32(lblTotalHargaPaket.Text.Replace(".", ""))
+        Dim angka As Integer = Convert.ToInt32(lblTotalHargaPaket.Text.Replace(",", ""))
         For Each row As DataGridViewRow In DataGridView1.Rows
             If Not row.IsNewRow Then
                 Dim id_paket As Integer = Integer.Parse(row.Cells("colId").Value.ToString())
@@ -578,6 +580,7 @@ Public Class Form5
         If cbGarbera.Checked Then cbGarbera.Enabled = False
         If cbHorten.Checked Then cbHorten.Enabled = False
         If cbKalalily.Checked Then cbKalalily.Enabled = False
+        totalTagihan()
     End Sub
 
     Public Sub TampilDataPaket()
@@ -802,6 +805,7 @@ Public Class Form5
             End If
         Next
         MessageBox.Show("Data berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        totalTagihan()
     End Sub
 
     Private Sub btnBersihkanTambahan_Click(sender As Object, e As EventArgs) Handles btnBersihkanTambahan.Click
@@ -824,11 +828,11 @@ Public Class Form5
                     MessageBox.Show("Data berhasil dihapus.")
                     Select Case idTerpilih
                         Case 11
-                            tbPrasA.Text = ""
+                            tbPrasA.Text = "0"
                         Case 12
-                            tbPrasB.Text = ""
+                            tbPrasB.Text = "0"
                         Case 13
-                            tbPrasC.Text = ""
+                            tbPrasC.Text = "0"
                     End Select
                     Exit For
                 Else
@@ -838,6 +842,7 @@ Public Class Form5
         Else
             MessageBox.Show("Silakan pilih baris yang ingin dihapus.")
         End If
+        totalTagihan()
     End Sub
 
     Private Sub SembunyikanCheckboxLainStall(cbYangAktif As CheckBox)
@@ -1919,5 +1924,250 @@ Public Class Form5
         Dim formPesanan As New Form8()
         formPesanan.originalIdAcara = originalIdAcara
         formPesanan.Show()
+    End Sub
+
+
+    Private Function ParseCurrency(text As String) As Decimal
+        ' Remove "Rp" prefix if exists before parsing
+        Dim cleanText = text.Replace("Rp", "").Replace(",", "").Trim()
+        Dim angka As Decimal
+        Decimal.TryParse(cleanText, angka)
+        Return angka
+    End Function
+
+    Private Sub cbPilihBayar_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPilihBayar.SelectedIndexChanged
+        If cbPilihBayar.SelectedItem Is Nothing Then Exit Sub
+
+        ' Hitung ulang total tagihan
+        totalTagihan()
+
+        Dim pilihan As String = cbPilihBayar.SelectedItem.ToString().ToLower()
+        Dim total As Decimal = ParseCurrency(LblRpTagihan.Text)
+
+        If pilihan = "lunas" Then
+            lblTerminRpLunas.Text = "Rp " & total.ToString("N0")
+            lblTerminRpCicil1.Text = "Rp 0"
+            lblTerminRpCicil2.Text = "Rp 0"
+            lblTerminRpCicil3.Text = "Rp 0"
+
+            ' Aktifkan kontrol Lunas, nonaktifkan Cicilan
+            SetWarnaKontrolPembayaran(True, False)
+
+        ElseIf pilihan = "cicilan" Then
+            lblTerminRpLunas.Text = "Rp 0"
+            lblTerminRpCicil1.Text = "Rp " & (total * 0.1D).ToString("N0")
+            lblTerminRpCicil2.Text = "Rp " & (total * 0.8D).ToString("N0")
+            lblTerminRpCicil3.Text = "Rp " & (total * 0.1D).ToString("N0")
+
+            ' Aktifkan kontrol Cicilan, nonaktifkan Lunas
+            SetWarnaKontrolPembayaran(False, True)
+        Else
+            lblTerminRpLunas.Text = "Rp 0"
+            lblTerminRpCicil1.Text = "Rp 0"
+            lblTerminRpCicil2.Text = "Rp 0"
+            lblTerminRpCicil3.Text = "Rp 0"
+
+            ' Nonaktifkan semua kontrol
+            SetWarnaKontrolPembayaran(False, False)
+        End If
+
+        UpdateSisaTagihan()
+    End Sub
+
+    Private Sub SetWarnaKontrolPembayaran(lunasAktif As Boolean, cicilAktif As Boolean)
+        Dim warnaAktif As Color = Color.FromArgb(13, 64, 41) ' Warna teks aktif
+        Dim warnaNonAktif As Color = Color.Gray
+        Dim backAktif As Color = Color.FromArgb(250, 200, 8) ' Warna background aktif
+        Dim backNonAktif As Color = Color.LightGray
+
+        ' ===== Bagian Pembayaran Lunas =====
+        lblLunas.ForeColor = If(lunasAktif, warnaAktif, warnaNonAktif)
+        lblLunas2.ForeColor = If(lunasAktif, warnaAktif, warnaNonAktif)
+        lblRpLunas.ForeColor = If(lunasAktif, warnaAktif, warnaNonAktif)
+        lblRpLunas.BackColor = If(lunasAktif, backAktif, backNonAktif)
+
+        lblTerminRpLunas.ForeColor = If(lunasAktif, warnaAktif, warnaNonAktif)
+        lblTerminRpLunas.BackColor = If(lunasAktif, backAktif, backNonAktif)
+
+        dateLunas.Enabled = lunasAktif
+        dateLunas.CalendarForeColor = If(lunasAktif, warnaAktif, warnaNonAktif)
+        dateLunas.CalendarMonthBackground = If(lunasAktif, SystemColors.Window, backNonAktif)
+        dateLunas.BackColor = If(lunasAktif, SystemColors.Window, backNonAktif)
+        dateLunas.ForeColor = If(lunasAktif, warnaAktif, warnaNonAktif)
+
+        ' ===== Termin/Cicilan =====
+        ' Termin 1
+        lblTermin1.ForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+        lblTerminRpCicil1.ForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+        lblTerminRpCicil1.BackColor = If(cicilAktif, backAktif, backNonAktif)
+
+        lblRealisasiTermin1.ForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+        lblRpCicil1.ForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+        lblRpCicil1.BackColor = If(cicilAktif, backAktif, backNonAktif)
+
+        dateTermin1.Enabled = cicilAktif
+        dateTermin1.CalendarForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+        dateTermin1.CalendarMonthBackground = If(cicilAktif, SystemColors.Window, backNonAktif)
+        dateTermin1.BackColor = If(cicilAktif, SystemColors.Window, backNonAktif)
+        dateTermin1.ForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+
+        ' Termin 2
+        lblTermin2.ForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+        lblTerminRpCicil2.ForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+        lblTerminRpCicil2.BackColor = If(cicilAktif, backAktif, backNonAktif)
+
+        lblRealisasiTermin2.ForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+        lblRpCicil2.ForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+        lblRpCicil2.BackColor = If(cicilAktif, backAktif, backNonAktif)
+
+        dateTermin2.Enabled = cicilAktif
+        dateTermin2.CalendarForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+        dateTermin2.CalendarMonthBackground = If(cicilAktif, SystemColors.Window, backNonAktif)
+        dateTermin2.BackColor = If(cicilAktif, SystemColors.Window, backNonAktif)
+        dateTermin2.ForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+
+        ' Termin 3
+        lblTermin3.ForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+        lblTerminRpCicil3.ForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+        lblTerminRpCicil3.BackColor = If(cicilAktif, backAktif, backNonAktif)
+
+        lblRealisasiTermin3.ForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+        lblRpCicil3.ForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+        lblRpCicil3.BackColor = If(cicilAktif, backAktif, backNonAktif)
+
+        dateTermin3.Enabled = cicilAktif
+        dateTermin3.CalendarForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+        dateTermin3.CalendarMonthBackground = If(cicilAktif, SystemColors.Window, backNonAktif)
+        dateTermin3.BackColor = If(cicilAktif, SystemColors.Window, backNonAktif)
+        dateTermin3.ForeColor = If(cicilAktif, warnaAktif, warnaNonAktif)
+    End Sub
+
+    Private Sub UpdateSisaTagihan()
+        Dim totalTagihan As Decimal = ParseCurrency(LblRpTagihan.Text)
+        Dim bayarLunas As Decimal = ParseCurrency(lblRpLunas.Text)
+        Dim bayar1 As Decimal = ParseCurrency(lblRpCicil1.Text)
+        Dim bayar2 As Decimal = ParseCurrency(lblRpCicil2.Text)
+        Dim bayar3 As Decimal = ParseCurrency(lblRpCicil3.Text)
+
+        Dim totalBayar As Decimal = bayarLunas + bayar1 + bayar2 + bayar3
+        Dim sisaTagihan As Decimal = totalTagihan - totalBayar
+        If sisaTagihan < 0 Then sisaTagihan = 0
+
+        lblRpSisa.Text = "Rp " & sisaTagihan.ToString("N0")
+    End Sub
+
+    Private Sub lblRpPembayaran_TextChanged(sender As Object, e As EventArgs) _
+Handles lblRpLunas.TextChanged, lblRpCicil1.TextChanged, lblRpCicil2.TextChanged, lblRpCicil3.TextChanged
+        UpdateSisaTagihan()
+    End Sub
+
+    Private Sub totalTagihan()
+        Dim sql As String = "SELECT * FROM pesanan WHERE id_acara = " & originalIdAcara
+        myCommand.CommandText = sql
+        myDataReader = myCommand.ExecuteReader
+
+        If myDataReader.HasRows Then
+            Dim hasil As Integer = 0
+            While myDataReader.Read()
+                hasil += Convert.ToInt32(myDataReader("total_pengeluaran"))
+            End While
+            LblRpTagihan.Text = "Rp " & hasil.ToString("N0")
+        End If
+
+        If Not myDataReader.IsClosed Then
+            myDataReader.Close()
+        End If
+    End Sub
+
+    Private Sub lblLunas_Click(sender As Object, e As EventArgs) Handles lblLunas.Click
+
+    End Sub
+
+    Private Sub lblTerminRpLunas_Click(sender As Object, e As EventArgs) Handles lblTerminRpLunas.Click
+
+    End Sub
+
+    Private Sub dateLunas_ValueChanged(sender As Object, e As EventArgs) Handles dateLunas.ValueChanged
+
+    End Sub
+
+    Private Sub lblTermin1_Click(sender As Object, e As EventArgs) Handles lblTermin1.Click
+
+    End Sub
+
+    Private Sub lblTerminRpCicil1_Click(sender As Object, e As EventArgs) Handles lblTerminRpCicil1.Click
+
+    End Sub
+
+    Private Sub dateTermin1_ValueChanged(sender As Object, e As EventArgs) Handles dateTermin1.ValueChanged
+
+    End Sub
+
+    Private Sub lblTermin2_Click(sender As Object, e As EventArgs) Handles lblTermin2.Click
+
+    End Sub
+
+    Private Sub lblTerminRpCicil2_Click(sender As Object, e As EventArgs) Handles lblTerminRpCicil2.Click
+
+    End Sub
+
+    Private Sub dateTermin2_ValueChanged(sender As Object, e As EventArgs) Handles dateTermin2.ValueChanged
+
+    End Sub
+
+    Private Sub lblTermin3_Click(sender As Object, e As EventArgs) Handles lblTermin3.Click
+
+    End Sub
+
+    Private Sub lblTerminRpCicil3_Click(sender As Object, e As EventArgs) Handles lblTerminRpCicil3.Click
+
+    End Sub
+
+    Private Sub dateTermin3_ValueChanged(sender As Object, e As EventArgs) Handles dateTermin3.ValueChanged
+
+    End Sub
+
+    Private Sub lblTotalTagihan_Click(sender As Object, e As EventArgs) Handles lblTotalTagihan.Click
+
+    End Sub
+
+    Private Sub LblRpTagihan_Click(sender As Object, e As EventArgs) Handles LblRpTagihan.Click
+
+    End Sub
+
+    Private Sub lblLunas2_Click(sender As Object, e As EventArgs) Handles lblLunas2.Click
+
+    End Sub
+
+    Private Sub lblRpLunas_Click(sender As Object, e As EventArgs) Handles lblRpLunas.Click
+
+    End Sub
+
+    Private Sub lblRealisasiTermin1_Click(sender As Object, e As EventArgs) Handles lblRealisasiTermin1.Click
+
+    End Sub
+
+    Private Sub lblRpCicil1_Click(sender As Object, e As EventArgs) Handles lblRpCicil1.Click
+
+    End Sub
+
+    Private Sub lblRealisasiTermin2_Click(sender As Object, e As EventArgs) Handles lblRealisasiTermin2.Click
+
+    End Sub
+
+    Private Sub lblRpCicil2_Click(sender As Object, e As EventArgs) Handles lblRpCicil2.Click
+
+    End Sub
+
+    Private Sub lblRealisasiTermin3_Click(sender As Object, e As EventArgs) Handles lblRealisasiTermin3.Click
+
+    End Sub
+
+    Private Sub lblRpCicil3_Click(sender As Object, e As EventArgs) Handles lblRpCicil3.Click
+
+    End Sub
+
+    Private Sub lblTotalHargaTambahan_Click(sender As Object, e As EventArgs) Handles lblTotalHargaTambahan.Click
+
     End Sub
 End Class
