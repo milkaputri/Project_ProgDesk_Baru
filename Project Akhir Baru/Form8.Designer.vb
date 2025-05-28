@@ -28,6 +28,8 @@ Partial Class Form8
         Panel1 = New Panel()
         btnHome = New Button()
         Label1 = New Label()
+        lblTotalHarga = New Label()
+        lblHargaTotalPaket = New Label()
         DataGridViewPaket = New DataGridView()
         DataGridViewTextBoxColumn4 = New DataGridViewTextBoxColumn()
         DataGridViewTextBoxColumn5 = New DataGridViewTextBoxColumn()
@@ -35,12 +37,17 @@ Partial Class Form8
         DataGridViewTextBoxColumn7 = New DataGridViewTextBoxColumn()
         lblNamaPaket = New Label()
         Label59 = New Label()
+        lblTotalTambahan = New Label()
         Panel2 = New Panel()
+        lblTotalSemua = New Label()
+        lblTotalHargaSemua = New Label()
         DataGridViewTambahan = New DataGridView()
-        DataGridViewTextBoxColumn1 = New DataGridViewTextBoxColumn()
+        colNamaPaket = New DataGridViewTextBoxColumn()
         colIsiPaket = New DataGridViewTextBoxColumn()
-        DataGridViewTextBoxColumn2 = New DataGridViewTextBoxColumn()
+        colQty = New DataGridViewTextBoxColumn()
+        colTotalTambahan = New DataGridViewTextBoxColumn()
         DataGridViewTextBoxColumn3 = New DataGridViewTextBoxColumn()
+        lblTotalHargaTambahan = New Label()
         Label12 = New Label()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).BeginInit()
         SplitContainer1.Panel1.SuspendLayout()
@@ -70,7 +77,9 @@ Partial Class Form8
         ' SplitContainer1.Panel2
         ' 
         SplitContainer1.Panel2.AutoScroll = True
+        SplitContainer1.Panel2.Controls.Add(lblTotalTambahan)
         SplitContainer1.Panel2.Controls.Add(Panel2)
+        SplitContainer1.Panel2.Controls.Add(lblTotalHargaTambahan)
         SplitContainer1.Panel2.Controls.Add(Label12)
         SplitContainer1.Size = New Size(1209, 669)
         SplitContainer1.SplitterDistance = 360
@@ -90,6 +99,8 @@ Partial Class Form8
         ' SplitContainer2.Panel2
         ' 
         SplitContainer2.Panel2.AutoScroll = True
+        SplitContainer2.Panel2.Controls.Add(lblTotalHarga)
+        SplitContainer2.Panel2.Controls.Add(lblHargaTotalPaket)
         SplitContainer2.Panel2.Controls.Add(DataGridViewPaket)
         SplitContainer2.Panel2.Controls.Add(lblNamaPaket)
         SplitContainer2.Panel2.Controls.Add(Label59)
@@ -133,6 +144,30 @@ Partial Class Form8
         Label1.TabIndex = 3
         Label1.Text = "Detail"
         ' 
+        ' lblTotalHarga
+        ' 
+        lblTotalHarga.AutoSize = True
+        lblTotalHarga.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTotalHarga.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
+        lblTotalHarga.ForeColor = Color.White
+        lblTotalHarga.Location = New Point(976, 3)
+        lblTotalHarga.Name = "lblTotalHarga"
+        lblTotalHarga.Size = New Size(79, 31)
+        lblTotalHarga.TabIndex = 28
+        lblTotalHarga.Text = "Total :"
+        ' 
+        ' lblHargaTotalPaket
+        ' 
+        lblHargaTotalPaket.AutoSize = True
+        lblHargaTotalPaket.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblHargaTotalPaket.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
+        lblHargaTotalPaket.ForeColor = Color.White
+        lblHargaTotalPaket.Location = New Point(1050, 3)
+        lblHargaTotalPaket.Name = "lblHargaTotalPaket"
+        lblHargaTotalPaket.Size = New Size(91, 31)
+        lblHargaTotalPaket.TabIndex = 27
+        lblHargaTotalPaket.Text = "[harga]"
+        ' 
         ' DataGridViewPaket
         ' 
         DataGridViewPaket.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
@@ -144,7 +179,7 @@ Partial Class Form8
         DataGridViewPaket.Name = "DataGridViewPaket"
         DataGridViewPaket.RightToLeft = RightToLeft.No
         DataGridViewPaket.RowHeadersWidth = 51
-        DataGridViewPaket.Size = New Size(1188, 372)
+        DataGridViewPaket.Size = New Size(1209, 274)
         DataGridViewPaket.TabIndex = 26
         ' 
         ' DataGridViewTextBoxColumn4
@@ -160,7 +195,7 @@ Partial Class Form8
         DataGridViewTextBoxColumn5.HeaderText = "Isi Item"
         DataGridViewTextBoxColumn5.MinimumWidth = 6
         DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        DataGridViewTextBoxColumn5.Width = 820
+        DataGridViewTextBoxColumn5.Width = 810
         ' 
         ' DataGridViewTextBoxColumn6
         ' 
@@ -184,7 +219,7 @@ Partial Class Form8
         lblNamaPaket.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         lblNamaPaket.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         lblNamaPaket.ForeColor = Color.White
-        lblNamaPaket.Location = New Point(149, 1)
+        lblNamaPaket.Location = New Point(84, 1)
         lblNamaPaket.Name = "lblNamaPaket"
         lblNamaPaket.Size = New Size(155, 31)
         lblNamaPaket.TabIndex = 22
@@ -199,54 +234,99 @@ Partial Class Form8
         Label59.ForeColor = Color.White
         Label59.Location = New Point(0, 0)
         Label59.Name = "Label59"
-        Label59.Size = New Size(1188, 39)
+        Label59.Size = New Size(1209, 39)
         Label59.TabIndex = 21
-        Label59.Text = "  Detail Paket"
+        Label59.Text = "  Detail"
+        ' 
+        ' lblTotalTambahan
+        ' 
+        lblTotalTambahan.AutoSize = True
+        lblTotalTambahan.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTotalTambahan.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
+        lblTotalTambahan.ForeColor = Color.White
+        lblTotalTambahan.Location = New Point(976, 3)
+        lblTotalTambahan.Name = "lblTotalTambahan"
+        lblTotalTambahan.Size = New Size(79, 31)
+        lblTotalTambahan.TabIndex = 30
+        lblTotalTambahan.Text = "Total :"
         ' 
         ' Panel2
         ' 
         Panel2.BorderStyle = BorderStyle.Fixed3D
+        Panel2.Controls.Add(lblTotalSemua)
+        Panel2.Controls.Add(lblTotalHargaSemua)
         Panel2.Controls.Add(DataGridViewTambahan)
         Panel2.Location = New Point(0, 42)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(1188, 412)
+        Panel2.Size = New Size(1209, 263)
         Panel2.TabIndex = 26
+        ' 
+        ' lblTotalSemua
+        ' 
+        lblTotalSemua.AutoSize = True
+        lblTotalSemua.BackColor = Color.Transparent
+        lblTotalSemua.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
+        lblTotalSemua.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTotalSemua.Location = New Point(974, 221)
+        lblTotalSemua.Name = "lblTotalSemua"
+        lblTotalSemua.Size = New Size(79, 31)
+        lblTotalSemua.TabIndex = 30
+        lblTotalSemua.Text = "Total :"
+        ' 
+        ' lblTotalHargaSemua
+        ' 
+        lblTotalHargaSemua.AutoSize = True
+        lblTotalHargaSemua.BackColor = Color.Transparent
+        lblTotalHargaSemua.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
+        lblTotalHargaSemua.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTotalHargaSemua.Location = New Point(1050, 219)
+        lblTotalHargaSemua.Name = "lblTotalHargaSemua"
+        lblTotalHargaSemua.Size = New Size(91, 31)
+        lblTotalHargaSemua.TabIndex = 29
+        lblTotalHargaSemua.Text = "[harga]"
         ' 
         ' DataGridViewTambahan
         ' 
         DataGridViewTambahan.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
         DataGridViewTambahan.BorderStyle = BorderStyle.None
         DataGridViewTambahan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewTambahan.Columns.AddRange(New DataGridViewColumn() {DataGridViewTextBoxColumn1, colIsiPaket, DataGridViewTextBoxColumn2, DataGridViewTextBoxColumn3})
+        DataGridViewTambahan.Columns.AddRange(New DataGridViewColumn() {colNamaPaket, colIsiPaket, colQty, colTotalTambahan, DataGridViewTextBoxColumn3})
         DataGridViewTambahan.Dock = DockStyle.Top
         DataGridViewTambahan.Location = New Point(0, 0)
         DataGridViewTambahan.Name = "DataGridViewTambahan"
         DataGridViewTambahan.RightToLeft = RightToLeft.No
         DataGridViewTambahan.RowHeadersWidth = 51
-        DataGridViewTambahan.Size = New Size(1184, 372)
+        DataGridViewTambahan.Size = New Size(1205, 213)
         DataGridViewTambahan.TabIndex = 25
         ' 
-        ' DataGridViewTextBoxColumn1
+        ' colNamaPaket
         ' 
-        DataGridViewTextBoxColumn1.FillWeight = 50F
-        DataGridViewTextBoxColumn1.HeaderText = "Paket"
-        DataGridViewTextBoxColumn1.MinimumWidth = 6
-        DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        DataGridViewTextBoxColumn1.Width = 200
+        colNamaPaket.FillWeight = 50F
+        colNamaPaket.HeaderText = "Paket"
+        colNamaPaket.MinimumWidth = 6
+        colNamaPaket.Name = "colNamaPaket"
+        colNamaPaket.Width = 200
         ' 
         ' colIsiPaket
         ' 
         colIsiPaket.HeaderText = "Isi Paket"
         colIsiPaket.MinimumWidth = 6
         colIsiPaket.Name = "colIsiPaket"
-        colIsiPaket.Width = 820
+        colIsiPaket.Width = 685
         ' 
-        ' DataGridViewTextBoxColumn2
+        ' colQty
         ' 
-        DataGridViewTextBoxColumn2.HeaderText = "Qty"
-        DataGridViewTextBoxColumn2.MinimumWidth = 6
-        DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        DataGridViewTextBoxColumn2.Width = 125
+        colQty.HeaderText = "Qty"
+        colQty.MinimumWidth = 6
+        colQty.Name = "colQty"
+        colQty.Width = 125
+        ' 
+        ' colTotalTambahan
+        ' 
+        colTotalTambahan.HeaderText = "Total"
+        colTotalTambahan.MinimumWidth = 6
+        colTotalTambahan.Name = "colTotalTambahan"
+        colTotalTambahan.Width = 125
         ' 
         ' DataGridViewTextBoxColumn3
         ' 
@@ -257,6 +337,18 @@ Partial Class Form8
         DataGridViewTextBoxColumn3.Visible = False
         DataGridViewTextBoxColumn3.Width = 125
         ' 
+        ' lblTotalHargaTambahan
+        ' 
+        lblTotalHargaTambahan.AutoSize = True
+        lblTotalHargaTambahan.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTotalHargaTambahan.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
+        lblTotalHargaTambahan.ForeColor = Color.White
+        lblTotalHargaTambahan.Location = New Point(1050, 3)
+        lblTotalHargaTambahan.Name = "lblTotalHargaTambahan"
+        lblTotalHargaTambahan.Size = New Size(91, 31)
+        lblTotalHargaTambahan.TabIndex = 29
+        lblTotalHargaTambahan.Text = "[harga]"
+        ' 
         ' Label12
         ' 
         Label12.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
@@ -266,7 +358,7 @@ Partial Class Form8
         Label12.ForeColor = Color.White
         Label12.Location = New Point(0, 0)
         Label12.Name = "Label12"
-        Label12.Size = New Size(1188, 39)
+        Label12.Size = New Size(1209, 39)
         Label12.TabIndex = 25
         Label12.Text = "  Detail Tambahan"
         ' 
@@ -279,9 +371,11 @@ Partial Class Form8
         ClientSize = New Size(1209, 669)
         Controls.Add(SplitContainer1)
         Name = "Form8"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Form8"
         SplitContainer1.Panel1.ResumeLayout(False)
         SplitContainer1.Panel2.ResumeLayout(False)
+        SplitContainer1.Panel2.PerformLayout()
         CType(SplitContainer1, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer1.ResumeLayout(False)
         SplitContainer2.Panel1.ResumeLayout(False)
@@ -293,6 +387,7 @@ Partial Class Form8
         Panel1.PerformLayout()
         CType(DataGridViewPaket, ComponentModel.ISupportInitialize).EndInit()
         Panel2.ResumeLayout(False)
+        Panel2.PerformLayout()
         CType(DataGridViewTambahan, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
@@ -315,8 +410,15 @@ Partial Class Form8
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents lblTotalHarga As Label
+    Friend WithEvents lblHargaTotalPaket As Label
+    Friend WithEvents lblTotalTambahan As Label
+    Friend WithEvents lblTotalHargaTambahan As Label
+    Friend WithEvents colNamaPaket As DataGridViewTextBoxColumn
     Friend WithEvents colIsiPaket As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents colQty As DataGridViewTextBoxColumn
+    Friend WithEvents colTotalTambahan As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents lblTotalHargaSemua As Label
+    Friend WithEvents lblTotalSemua As Label
 End Class
