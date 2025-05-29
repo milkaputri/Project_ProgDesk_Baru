@@ -29,13 +29,16 @@ Partial Class Form5
         cbPilihBayar = New ComboBox()
         btnInvoice = New Button()
         Label78 = New Label()
-        Button36 = New Button()
+        btnSimpanPembayaran = New Button()
         Panel20 = New Panel()
+        lblTanggalTermin3 = New Label()
+        lblTanggalTermin2 = New Label()
+        lblTanggalTermin1 = New Label()
+        lblTanggalLunas = New Label()
         btnUploadBuktiBayar = New Button()
         lblTerminRpCicil3 = New Label()
         lblTerminRpCicil2 = New Label()
         lblTerminRpCicil1 = New Label()
-        dateLunas = New DateTimePicker()
         lblTerminRpLunas = New Label()
         lblLunas = New Label()
         Label76 = New Label()
@@ -44,23 +47,25 @@ Partial Class Form5
         Label71 = New Label()
         Label70 = New Label()
         Label69 = New Label()
-        dateTermin1 = New DateTimePicker()
-        dateTermin2 = New DateTimePicker()
-        dateTermin3 = New DateTimePicker()
         lblTermin3 = New Label()
         lblTermin2 = New Label()
         lblTermin1 = New Label()
         Panel19 = New Panel()
-        Label68 = New Label()
+        lblPinaltyBayar = New Label()
+        lblPinaltiPembayaran = New Label()
+        dateCicil3 = New DateTimePicker()
+        dateCicil2 = New DateTimePicker()
+        dateRealLunas = New DateTimePicker()
+        dateCicil1 = New DateTimePicker()
+        tbBayarCicil3 = New TextBox()
+        tbBayarCicil2 = New TextBox()
+        tbBayarCicil1 = New TextBox()
         Label9 = New Label()
         lblRpLunas = New Label()
         lblLunas2 = New Label()
         PictureBox5 = New PictureBox()
         PictureBox17 = New PictureBox()
         lblRpSisa = New Label()
-        lblRpCicil3 = New Label()
-        lblRpCicil2 = New Label()
-        lblRpCicil1 = New Label()
         LblRpTagihan = New Label()
         lblRealisasiTermin3 = New Label()
         lblRealisasiTermin2 = New Label()
@@ -480,11 +485,12 @@ Partial Class Form5
         ' 
         ' tpPembayaran
         ' 
+        tpPembayaran.AutoScroll = True
         tpPembayaran.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
         tpPembayaran.Controls.Add(cbPilihBayar)
         tpPembayaran.Controls.Add(btnInvoice)
         tpPembayaran.Controls.Add(Label78)
-        tpPembayaran.Controls.Add(Button36)
+        tpPembayaran.Controls.Add(btnSimpanPembayaran)
         tpPembayaran.Controls.Add(Panel20)
         tpPembayaran.Controls.Add(Panel19)
         tpPembayaran.Location = New Point(4, 29)
@@ -501,7 +507,7 @@ Partial Class Form5
         cbPilihBayar.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         cbPilihBayar.FormattingEnabled = True
         cbPilihBayar.Items.AddRange(New Object() {"Lunas", "Cicilan"})
-        cbPilihBayar.Location = New Point(29, 31)
+        cbPilihBayar.Location = New Point(115, 40)
         cbPilihBayar.Name = "cbPilihBayar"
         cbPilihBayar.Size = New Size(202, 28)
         cbPilihBayar.TabIndex = 26
@@ -513,7 +519,7 @@ Partial Class Form5
         btnInvoice.FlatStyle = FlatStyle.Flat
         btnInvoice.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
         btnInvoice.ForeColor = Color.White
-        btnInvoice.Location = New Point(563, 585)
+        btnInvoice.Location = New Point(612, 1094)
         btnInvoice.Name = "btnInvoice"
         btnInvoice.Size = New Size(132, 32)
         btnInvoice.TabIndex = 25
@@ -525,33 +531,36 @@ Partial Class Form5
         Label78.AutoSize = True
         Label78.Font = New Font("Segoe UI", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label78.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label78.Location = New Point(417, 21)
+        Label78.Location = New Point(457, 40)
         Label78.Name = "Label78"
         Label78.Size = New Size(303, 41)
         Label78.TabIndex = 24
         Label78.Text = "Rincian Pembayaran"
         ' 
-        ' Button36
+        ' btnSimpanPembayaran
         ' 
-        Button36.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Button36.FlatStyle = FlatStyle.Flat
-        Button36.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
-        Button36.ForeColor = Color.White
-        Button36.Location = New Point(450, 585)
-        Button36.Name = "Button36"
-        Button36.Size = New Size(94, 32)
-        Button36.TabIndex = 22
-        Button36.Text = "Simpan"
-        Button36.UseVisualStyleBackColor = False
+        btnSimpanPembayaran.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        btnSimpanPembayaran.FlatStyle = FlatStyle.Flat
+        btnSimpanPembayaran.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
+        btnSimpanPembayaran.ForeColor = Color.White
+        btnSimpanPembayaran.Location = New Point(512, 1094)
+        btnSimpanPembayaran.Name = "btnSimpanPembayaran"
+        btnSimpanPembayaran.Size = New Size(94, 32)
+        btnSimpanPembayaran.TabIndex = 22
+        btnSimpanPembayaran.Text = "Simpan"
+        btnSimpanPembayaran.UseVisualStyleBackColor = False
         ' 
         ' Panel20
         ' 
         Panel20.BackColor = Color.FromArgb(CByte(209), CByte(235), CByte(203))
+        Panel20.Controls.Add(lblTanggalTermin3)
+        Panel20.Controls.Add(lblTanggalTermin2)
+        Panel20.Controls.Add(lblTanggalTermin1)
+        Panel20.Controls.Add(lblTanggalLunas)
         Panel20.Controls.Add(btnUploadBuktiBayar)
         Panel20.Controls.Add(lblTerminRpCicil3)
         Panel20.Controls.Add(lblTerminRpCicil2)
         Panel20.Controls.Add(lblTerminRpCicil1)
-        Panel20.Controls.Add(dateLunas)
         Panel20.Controls.Add(lblTerminRpLunas)
         Panel20.Controls.Add(lblLunas)
         Panel20.Controls.Add(Label76)
@@ -560,78 +569,108 @@ Partial Class Form5
         Panel20.Controls.Add(Label71)
         Panel20.Controls.Add(Label70)
         Panel20.Controls.Add(Label69)
-        Panel20.Controls.Add(dateTermin1)
-        Panel20.Controls.Add(dateTermin2)
-        Panel20.Controls.Add(dateTermin3)
         Panel20.Controls.Add(lblTermin3)
         Panel20.Controls.Add(lblTermin2)
         Panel20.Controls.Add(lblTermin1)
-        Panel20.Location = New Point(29, 76)
+        Panel20.Location = New Point(173, 103)
         Panel20.Name = "Panel20"
-        Panel20.Size = New Size(515, 485)
+        Panel20.Size = New Size(851, 485)
         Panel20.TabIndex = 17
+        ' 
+        ' lblTanggalTermin3
+        ' 
+        lblTanggalTermin3.BackColor = Color.FromArgb(CByte(209), CByte(235), CByte(203))
+        lblTanggalTermin3.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTanggalTermin3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTanggalTermin3.Location = New Point(243, 326)
+        lblTanggalTermin3.Name = "lblTanggalTermin3"
+        lblTanggalTermin3.Size = New Size(560, 23)
+        lblTanggalTermin3.TabIndex = 33
+        lblTanggalTermin3.Text = "tanggal pembayaran cicilan 2"
+        ' 
+        ' lblTanggalTermin2
+        ' 
+        lblTanggalTermin2.BackColor = Color.FromArgb(CByte(209), CByte(235), CByte(203))
+        lblTanggalTermin2.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTanggalTermin2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTanggalTermin2.Location = New Point(243, 249)
+        lblTanggalTermin2.Name = "lblTanggalTermin2"
+        lblTanggalTermin2.Size = New Size(560, 23)
+        lblTanggalTermin2.TabIndex = 32
+        lblTanggalTermin2.Text = "tanggal pembayaran cicilan 2"
+        ' 
+        ' lblTanggalTermin1
+        ' 
+        lblTanggalTermin1.BackColor = Color.FromArgb(CByte(209), CByte(235), CByte(203))
+        lblTanggalTermin1.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTanggalTermin1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTanggalTermin1.Location = New Point(243, 163)
+        lblTanggalTermin1.Name = "lblTanggalTermin1"
+        lblTanggalTermin1.Size = New Size(560, 23)
+        lblTanggalTermin1.TabIndex = 31
+        lblTanggalTermin1.Text = "tanggal pembayaran cicilan 1"
+        ' 
+        ' lblTanggalLunas
+        ' 
+        lblTanggalLunas.BackColor = Color.FromArgb(CByte(209), CByte(235), CByte(203))
+        lblTanggalLunas.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lblTanggalLunas.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTanggalLunas.Location = New Point(243, 89)
+        lblTanggalLunas.Name = "lblTanggalLunas"
+        lblTanggalLunas.Size = New Size(536, 23)
+        lblTanggalLunas.TabIndex = 30
+        lblTanggalLunas.Text = "tanggal pembayaran lunas"
         ' 
         ' btnUploadBuktiBayar
         ' 
-        btnUploadBuktiBayar.Location = New Point(354, 393)
+        btnUploadBuktiBayar.Location = New Point(648, 378)
         btnUploadBuktiBayar.Name = "btnUploadBuktiBayar"
-        btnUploadBuktiBayar.Size = New Size(146, 32)
+        btnUploadBuktiBayar.Size = New Size(155, 32)
         btnUploadBuktiBayar.TabIndex = 29
         btnUploadBuktiBayar.Text = "Upload Bukti Bayar"
         btnUploadBuktiBayar.UseVisualStyleBackColor = True
         ' 
         ' lblTerminRpCicil3
         ' 
-        lblTerminRpCicil3.AutoSize = True
         lblTerminRpCicil3.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         lblTerminRpCicil3.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         lblTerminRpCicil3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblTerminRpCicil3.Location = New Point(230, 306)
+        lblTerminRpCicil3.Location = New Point(243, 295)
         lblTerminRpCicil3.Name = "lblTerminRpCicil3"
-        lblTerminRpCicil3.Size = New Size(27, 31)
+        lblTerminRpCicil3.Size = New Size(560, 31)
         lblTerminRpCicil3.TabIndex = 28
         lblTerminRpCicil3.Text = "0"
         ' 
         ' lblTerminRpCicil2
         ' 
-        lblTerminRpCicil2.AutoSize = True
         lblTerminRpCicil2.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         lblTerminRpCicil2.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         lblTerminRpCicil2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblTerminRpCicil2.Location = New Point(230, 229)
+        lblTerminRpCicil2.Location = New Point(243, 218)
         lblTerminRpCicil2.Name = "lblTerminRpCicil2"
-        lblTerminRpCicil2.Size = New Size(27, 31)
+        lblTerminRpCicil2.Size = New Size(560, 31)
         lblTerminRpCicil2.TabIndex = 27
         lblTerminRpCicil2.Text = "0"
         ' 
         ' lblTerminRpCicil1
         ' 
-        lblTerminRpCicil1.AutoSize = True
         lblTerminRpCicil1.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         lblTerminRpCicil1.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         lblTerminRpCicil1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblTerminRpCicil1.Location = New Point(230, 143)
+        lblTerminRpCicil1.Location = New Point(243, 132)
         lblTerminRpCicil1.Name = "lblTerminRpCicil1"
-        lblTerminRpCicil1.Size = New Size(27, 31)
+        lblTerminRpCicil1.Size = New Size(560, 31)
         lblTerminRpCicil1.TabIndex = 26
         lblTerminRpCicil1.Text = "0"
         ' 
-        ' dateLunas
-        ' 
-        dateLunas.Location = New Point(230, 103)
-        dateLunas.Name = "dateLunas"
-        dateLunas.Size = New Size(270, 27)
-        dateLunas.TabIndex = 25
-        ' 
         ' lblTerminRpLunas
         ' 
-        lblTerminRpLunas.AutoSize = True
         lblTerminRpLunas.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         lblTerminRpLunas.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         lblTerminRpLunas.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblTerminRpLunas.Location = New Point(230, 69)
+        lblTerminRpLunas.Location = New Point(243, 58)
         lblTerminRpLunas.Name = "lblTerminRpLunas"
-        lblTerminRpLunas.Size = New Size(27, 31)
+        lblTerminRpLunas.Size = New Size(560, 31)
         lblTerminRpLunas.TabIndex = 24
         lblTerminRpLunas.Text = "0"
         ' 
@@ -640,7 +679,7 @@ Partial Class Form5
         lblLunas.AutoSize = True
         lblLunas.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
         lblLunas.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblLunas.Location = New Point(23, 70)
+        lblLunas.Location = New Point(37, 64)
         lblLunas.Name = "lblLunas"
         lblLunas.Size = New Size(179, 25)
         lblLunas.TabIndex = 23
@@ -652,7 +691,7 @@ Partial Class Form5
         Label76.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         Label76.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
         Label76.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label76.Location = New Point(143, 451)
+        Label76.Location = New Point(157, 445)
         Label76.Name = "Label76"
         Label76.Size = New Size(161, 23)
         Label76.TabIndex = 22
@@ -664,7 +703,7 @@ Partial Class Form5
         Label73.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         Label73.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
         Label73.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label73.Location = New Point(143, 421)
+        Label73.Location = New Point(157, 415)
         Label73.Name = "Label73"
         Label73.Size = New Size(110, 23)
         Label73.TabIndex = 21
@@ -675,7 +714,7 @@ Partial Class Form5
         Label72.AutoSize = True
         Label72.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
         Label72.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label72.Location = New Point(34, 451)
+        Label72.Location = New Point(48, 445)
         Label72.Name = "Label72"
         Label72.Size = New Size(85, 23)
         Label72.TabIndex = 20
@@ -686,7 +725,7 @@ Partial Class Form5
         Label71.AutoSize = True
         Label71.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
         Label71.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label71.Location = New Point(34, 421)
+        Label71.Location = New Point(48, 415)
         Label71.Name = "Label71"
         Label71.Size = New Size(44, 23)
         Label71.TabIndex = 19
@@ -697,7 +736,7 @@ Partial Class Form5
         Label70.AutoSize = True
         Label70.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
         Label70.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label70.Location = New Point(23, 393)
+        Label70.Location = New Point(37, 387)
         Label70.Name = "Label70"
         Label70.Size = New Size(302, 23)
         Label70.TabIndex = 18
@@ -708,39 +747,18 @@ Partial Class Form5
         Label69.AutoSize = True
         Label69.Font = New Font("Segoe UI", 14.0F, FontStyle.Bold)
         Label69.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label69.Location = New Point(90, 14)
+        Label69.Location = New Point(266, 14)
         Label69.Name = "Label69"
         Label69.Size = New Size(337, 32)
         Label69.TabIndex = 17
         Label69.Text = "Termin Pembayaran Tagihan"
-        ' 
-        ' dateTermin1
-        ' 
-        dateTermin1.Location = New Point(230, 177)
-        dateTermin1.Name = "dateTermin1"
-        dateTermin1.Size = New Size(270, 27)
-        dateTermin1.TabIndex = 17
-        ' 
-        ' dateTermin2
-        ' 
-        dateTermin2.Location = New Point(230, 264)
-        dateTermin2.Name = "dateTermin2"
-        dateTermin2.Size = New Size(270, 27)
-        dateTermin2.TabIndex = 16
-        ' 
-        ' dateTermin3
-        ' 
-        dateTermin3.Location = New Point(230, 342)
-        dateTermin3.Name = "dateTermin3"
-        dateTermin3.Size = New Size(270, 27)
-        dateTermin3.TabIndex = 15
         ' 
         ' lblTermin3
         ' 
         lblTermin3.AutoSize = True
         lblTermin3.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
         lblTermin3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblTermin3.Location = New Point(23, 308)
+        lblTermin3.Location = New Point(37, 302)
         lblTermin3.Name = "lblTermin3"
         lblTermin3.Size = New Size(206, 25)
         lblTermin3.TabIndex = 9
@@ -751,7 +769,7 @@ Partial Class Form5
         lblTermin2.AutoSize = True
         lblTermin2.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
         lblTermin2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblTermin2.Location = New Point(23, 229)
+        lblTermin2.Location = New Point(37, 223)
         lblTermin2.Name = "lblTermin2"
         lblTermin2.Size = New Size(195, 25)
         lblTermin2.TabIndex = 8
@@ -762,7 +780,7 @@ Partial Class Form5
         lblTermin1.AutoSize = True
         lblTermin1.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
         lblTermin1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblTermin1.Location = New Point(23, 143)
+        lblTermin1.Location = New Point(37, 137)
         lblTermin1.Name = "lblTermin1"
         lblTermin1.Size = New Size(190, 25)
         lblTermin1.TabIndex = 1
@@ -771,45 +789,124 @@ Partial Class Form5
         ' Panel19
         ' 
         Panel19.BackColor = Color.FromArgb(CByte(209), CByte(235), CByte(203))
-        Panel19.Controls.Add(Label68)
+        Panel19.Controls.Add(lblPinaltyBayar)
+        Panel19.Controls.Add(lblPinaltiPembayaran)
+        Panel19.Controls.Add(dateCicil3)
+        Panel19.Controls.Add(dateCicil2)
+        Panel19.Controls.Add(dateRealLunas)
+        Panel19.Controls.Add(dateCicil1)
+        Panel19.Controls.Add(tbBayarCicil3)
+        Panel19.Controls.Add(tbBayarCicil2)
+        Panel19.Controls.Add(tbBayarCicil1)
         Panel19.Controls.Add(Label9)
         Panel19.Controls.Add(lblRpLunas)
         Panel19.Controls.Add(lblLunas2)
         Panel19.Controls.Add(PictureBox5)
         Panel19.Controls.Add(PictureBox17)
         Panel19.Controls.Add(lblRpSisa)
-        Panel19.Controls.Add(lblRpCicil3)
-        Panel19.Controls.Add(lblRpCicil2)
-        Panel19.Controls.Add(lblRpCicil1)
         Panel19.Controls.Add(LblRpTagihan)
         Panel19.Controls.Add(lblRealisasiTermin3)
         Panel19.Controls.Add(lblRealisasiTermin2)
         Panel19.Controls.Add(lblTotalTagihan)
         Panel19.Controls.Add(lblRealisasiTermin1)
         Panel19.Controls.Add(Label61)
-        Panel19.Location = New Point(563, 76)
+        Panel19.Location = New Point(173, 594)
         Panel19.Name = "Panel19"
-        Panel19.Size = New Size(600, 485)
+        Panel19.Size = New Size(851, 485)
         Panel19.TabIndex = 8
         ' 
-        ' Label68
+        ' lblPinaltyBayar
         ' 
-        Label68.AutoSize = True
-        Label68.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Label68.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        Label68.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label68.Location = New Point(250, 446)
-        Label68.Name = "Label68"
-        Label68.Size = New Size(43, 31)
-        Label68.TabIndex = 31
-        Label68.Text = "Rp"
+        lblPinaltyBayar.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        lblPinaltyBayar.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
+        lblPinaltyBayar.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblPinaltyBayar.Location = New Point(253, 365)
+        lblPinaltyBayar.Name = "lblPinaltyBayar"
+        lblPinaltyBayar.Size = New Size(300, 31)
+        lblPinaltyBayar.TabIndex = 41
+        lblPinaltyBayar.Text = "0"
+        ' 
+        ' lblPinaltiPembayaran
+        ' 
+        lblPinaltiPembayaran.AutoSize = True
+        lblPinaltiPembayaran.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        lblPinaltiPembayaran.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblPinaltiPembayaran.Location = New Point(53, 365)
+        lblPinaltiPembayaran.Name = "lblPinaltiPembayaran"
+        lblPinaltiPembayaran.Size = New Size(188, 25)
+        lblPinaltiPembayaran.TabIndex = 40
+        lblPinaltiPembayaran.Text = "Pinalty Pembayaran"
+        ' 
+        ' dateCicil3
+        ' 
+        dateCicil3.Location = New Point(565, 312)
+        dateCicil3.Name = "dateCicil3"
+        dateCicil3.Size = New Size(238, 27)
+        dateCicil3.TabIndex = 39
+        ' 
+        ' dateCicil2
+        ' 
+        dateCicil2.Location = New Point(565, 253)
+        dateCicil2.Name = "dateCicil2"
+        dateCicil2.Size = New Size(238, 27)
+        dateCicil2.TabIndex = 38
+        ' 
+        ' dateRealLunas
+        ' 
+        dateRealLunas.Location = New Point(565, 132)
+        dateRealLunas.Name = "dateRealLunas"
+        dateRealLunas.Size = New Size(238, 27)
+        dateRealLunas.TabIndex = 37
+        ' 
+        ' dateCicil1
+        ' 
+        dateCicil1.Location = New Point(565, 193)
+        dateCicil1.Name = "dateCicil1"
+        dateCicil1.Size = New Size(238, 27)
+        dateCicil1.TabIndex = 36
+        ' 
+        ' tbBayarCicil3
+        ' 
+        tbBayarCicil3.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        tbBayarCicil3.BorderStyle = BorderStyle.None
+        tbBayarCicil3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        tbBayarCicil3.Location = New Point(253, 314)
+        tbBayarCicil3.Multiline = True
+        tbBayarCicil3.Name = "tbBayarCicil3"
+        tbBayarCicil3.PlaceholderText = "(Rpx.xxx.xxx)"
+        tbBayarCicil3.Size = New Size(300, 27)
+        tbBayarCicil3.TabIndex = 35
+        ' 
+        ' tbBayarCicil2
+        ' 
+        tbBayarCicil2.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        tbBayarCicil2.BorderStyle = BorderStyle.None
+        tbBayarCicil2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        tbBayarCicil2.Location = New Point(253, 254)
+        tbBayarCicil2.Multiline = True
+        tbBayarCicil2.Name = "tbBayarCicil2"
+        tbBayarCicil2.PlaceholderText = "(Rpx.xxx.xxx)"
+        tbBayarCicil2.Size = New Size(300, 27)
+        tbBayarCicil2.TabIndex = 34
+        ' 
+        ' tbBayarCicil1
+        ' 
+        tbBayarCicil1.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        tbBayarCicil1.BorderStyle = BorderStyle.None
+        tbBayarCicil1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        tbBayarCicil1.Location = New Point(253, 192)
+        tbBayarCicil1.Multiline = True
+        tbBayarCicil1.Name = "tbBayarCicil1"
+        tbBayarCicil1.PlaceholderText = "(Rpx.xxx.xxx)"
+        tbBayarCicil1.Size = New Size(300, 27)
+        tbBayarCicil1.TabIndex = 33
         ' 
         ' Label9
         ' 
         Label9.AutoSize = True
         Label9.Font = New Font("Segoe UI", 14.0F, FontStyle.Bold)
         Label9.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label9.Location = New Point(135, 14)
+        Label9.Location = New Point(274, 21)
         Label9.Name = "Label9"
         Label9.Size = New Size(355, 32)
         Label9.TabIndex = 21
@@ -818,13 +915,12 @@ Partial Class Form5
         ' 
         ' lblRpLunas
         ' 
-        lblRpLunas.AutoSize = True
         lblRpLunas.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         lblRpLunas.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         lblRpLunas.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblRpLunas.Location = New Point(250, 132)
+        lblRpLunas.Location = New Point(253, 133)
         lblRpLunas.Name = "lblRpLunas"
-        lblRpLunas.Size = New Size(27, 31)
+        lblRpLunas.Size = New Size(300, 31)
         lblRpLunas.TabIndex = 20
         lblRpLunas.Text = "0"
         ' 
@@ -833,7 +929,7 @@ Partial Class Form5
         lblLunas2.AutoSize = True
         lblLunas2.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
         lblLunas2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblLunas2.Location = New Point(28, 138)
+        lblLunas2.Location = New Point(53, 139)
         lblLunas2.Name = "lblLunas2"
         lblLunas2.Size = New Size(179, 25)
         lblLunas2.TabIndex = 19
@@ -842,7 +938,7 @@ Partial Class Form5
         ' PictureBox5
         ' 
         PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
-        PictureBox5.Location = New Point(553, 371)
+        PictureBox5.Location = New Point(764, 398)
         PictureBox5.Name = "PictureBox5"
         PictureBox5.Size = New Size(39, 41)
         PictureBox5.TabIndex = 18
@@ -851,70 +947,32 @@ Partial Class Form5
         ' PictureBox17
         ' 
         PictureBox17.Image = CType(resources.GetObject("PictureBox17.Image"), Image)
-        PictureBox17.Location = New Point(28, 371)
+        PictureBox17.Location = New Point(53, 398)
         PictureBox17.Name = "PictureBox17"
-        PictureBox17.Size = New Size(510, 41)
+        PictureBox17.Size = New Size(705, 41)
         PictureBox17.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox17.TabIndex = 17
         PictureBox17.TabStop = False
         ' 
         ' lblRpSisa
         ' 
-        lblRpSisa.AutoSize = True
         lblRpSisa.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         lblRpSisa.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         lblRpSisa.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblRpSisa.Location = New Point(287, 446)
+        lblRpSisa.Location = New Point(253, 446)
         lblRpSisa.Name = "lblRpSisa"
-        lblRpSisa.Size = New Size(27, 31)
+        lblRpSisa.Size = New Size(300, 31)
         lblRpSisa.TabIndex = 14
         lblRpSisa.Text = "0"
         ' 
-        ' lblRpCicil3
-        ' 
-        lblRpCicil3.AutoSize = True
-        lblRpCicil3.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        lblRpCicil3.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        lblRpCicil3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblRpCicil3.Location = New Point(250, 312)
-        lblRpCicil3.Name = "lblRpCicil3"
-        lblRpCicil3.Size = New Size(27, 31)
-        lblRpCicil3.TabIndex = 13
-        lblRpCicil3.Text = "0"
-        ' 
-        ' lblRpCicil2
-        ' 
-        lblRpCicil2.AutoSize = True
-        lblRpCicil2.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        lblRpCicil2.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        lblRpCicil2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblRpCicil2.Location = New Point(250, 248)
-        lblRpCicil2.Name = "lblRpCicil2"
-        lblRpCicil2.Size = New Size(27, 31)
-        lblRpCicil2.TabIndex = 12
-        lblRpCicil2.Text = "0"
-        ' 
-        ' lblRpCicil1
-        ' 
-        lblRpCicil1.AutoSize = True
-        lblRpCicil1.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        lblRpCicil1.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
-        lblRpCicil1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblRpCicil1.Location = New Point(250, 187)
-        lblRpCicil1.Name = "lblRpCicil1"
-        lblRpCicil1.Size = New Size(27, 31)
-        lblRpCicil1.TabIndex = 11
-        lblRpCicil1.Text = "0"
-        ' 
         ' LblRpTagihan
         ' 
-        LblRpTagihan.AutoSize = True
         LblRpTagihan.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
         LblRpTagihan.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         LblRpTagihan.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        LblRpTagihan.Location = New Point(250, 69)
+        LblRpTagihan.Location = New Point(253, 70)
         LblRpTagihan.Name = "LblRpTagihan"
-        LblRpTagihan.Size = New Size(27, 31)
+        LblRpTagihan.Size = New Size(300, 31)
         LblRpTagihan.TabIndex = 10
         LblRpTagihan.Text = "0"
         ' 
@@ -923,29 +981,29 @@ Partial Class Form5
         lblRealisasiTermin3.AutoSize = True
         lblRealisasiTermin3.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
         lblRealisasiTermin3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblRealisasiTermin3.Location = New Point(28, 312)
+        lblRealisasiTermin3.Location = New Point(53, 313)
         lblRealisasiTermin3.Name = "lblRealisasiTermin3"
-        lblRealisasiTermin3.Size = New Size(206, 25)
+        lblRealisasiTermin3.Size = New Size(143, 25)
         lblRealisasiTermin3.TabIndex = 9
-        lblRealisasiTermin3.Text = "Pembayaran 3 (100%)"
+        lblRealisasiTermin3.Text = "Pembayaran 3 "
         ' 
         ' lblRealisasiTermin2
         ' 
         lblRealisasiTermin2.AutoSize = True
         lblRealisasiTermin2.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
         lblRealisasiTermin2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblRealisasiTermin2.Location = New Point(28, 253)
+        lblRealisasiTermin2.Location = New Point(53, 254)
         lblRealisasiTermin2.Name = "lblRealisasiTermin2"
-        lblRealisasiTermin2.Size = New Size(195, 25)
+        lblRealisasiTermin2.Size = New Size(138, 25)
         lblRealisasiTermin2.TabIndex = 8
-        lblRealisasiTermin2.Text = "Pembayaran 2 (80%)"
+        lblRealisasiTermin2.Text = "Pembayaran 2"
         ' 
         ' lblTotalTagihan
         ' 
         lblTotalTagihan.AutoSize = True
         lblTotalTagihan.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
         lblTotalTagihan.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblTotalTagihan.Location = New Point(28, 76)
+        lblTotalTagihan.Location = New Point(53, 77)
         lblTotalTagihan.Name = "lblTotalTagihan"
         lblTotalTagihan.Size = New Size(129, 25)
         lblTotalTagihan.TabIndex = 0
@@ -956,18 +1014,18 @@ Partial Class Form5
         lblRealisasiTermin1.AutoSize = True
         lblRealisasiTermin1.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
         lblRealisasiTermin1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblRealisasiTermin1.Location = New Point(28, 193)
+        lblRealisasiTermin1.Location = New Point(53, 194)
         lblRealisasiTermin1.Name = "lblRealisasiTermin1"
-        lblRealisasiTermin1.Size = New Size(190, 25)
+        lblRealisasiTermin1.Size = New Size(133, 25)
         lblRealisasiTermin1.TabIndex = 1
-        lblRealisasiTermin1.Text = "Pembayaran I (10%)"
+        lblRealisasiTermin1.Text = "Pembayaran I"
         ' 
         ' Label61
         ' 
         Label61.AutoSize = True
         Label61.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
         Label61.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label61.Location = New Point(28, 452)
+        Label61.Location = New Point(53, 452)
         Label61.Name = "Label61"
         Label61.Size = New Size(120, 25)
         Label61.TabIndex = 2
@@ -4191,7 +4249,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(41896, 30)
+        Label10.Size = New Size(46606, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -4906,9 +4964,6 @@ Partial Class Form5
     Friend WithEvents lblRealisasiTermin3 As Label
     Friend WithEvents lblRealisasiTermin2 As Label
     Friend WithEvents lblRpSisa As Label
-    Friend WithEvents lblRpCicil3 As Label
-    Friend WithEvents lblRpCicil2 As Label
-    Friend WithEvents lblRpCicil1 As Label
     Friend WithEvents LblRpTagihan As Label
     Friend WithEvents Panel20 As Panel
     Friend WithEvents dateTermin1 As DateTimePicker
@@ -4917,7 +4972,7 @@ Partial Class Form5
     Friend WithEvents lblTermin3 As Label
     Friend WithEvents lblTermin2 As Label
     Friend WithEvents lblTermin1 As Label
-    Friend WithEvents Button36 As Button
+    Friend WithEvents btnSimpanPembayaran As Button
     Friend WithEvents Label69 As Label
     Friend WithEvents Label72 As Label
     Friend WithEvents Label71 As Label
@@ -5048,7 +5103,6 @@ Partial Class Form5
     Friend WithEvents lblLunas As Label
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox17 As PictureBox
-    Friend WithEvents lblRpLunas As Label
     Friend WithEvents lblLunas2 As Label
     Friend WithEvents lblEdit As Label
     Friend WithEvents btnSimpan As Button
@@ -5137,5 +5191,18 @@ Partial Class Form5
     Friend WithEvents Label9 As Label
     Friend WithEvents btnInvoice As Button
     Friend WithEvents cbPilihBayar As ComboBox
-    Friend WithEvents Label68 As Label
+    Friend WithEvents lblTanggalLunas As Label
+    Friend WithEvents lblTanggalTermin3 As Label
+    Friend WithEvents lblTanggalTermin2 As Label
+    Friend WithEvents lblTanggalTermin1 As Label
+    Friend WithEvents tbBayarCicil3 As TextBox
+    Friend WithEvents tbBayarCicil2 As TextBox
+    Friend WithEvents tbBayarCicil1 As TextBox
+    Friend WithEvents lblRpLunas As Label
+    Friend WithEvents dateCicil1 As DateTimePicker
+    Friend WithEvents dateCicil3 As DateTimePicker
+    Friend WithEvents dateCicil2 As DateTimePicker
+    Friend WithEvents dateRealLunas As DateTimePicker
+    Friend WithEvents lblPinaltyBayar As Label
+    Friend WithEvents lblPinaltiPembayaran As Label
 End Class
