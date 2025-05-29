@@ -316,10 +316,7 @@ Public Class Form5
         Form3.Hide()
         SetWarnaKontrolPembayaran(False, False)
         totalTagihan()
-    End Sub
-
-    Private Sub Panel19_Paint(sender As Object, e As PaintEventArgs) Handles Panel19.Paint
-
+        Pembayaran()
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
@@ -447,6 +444,7 @@ Public Class Form5
                 lblTotalHargaPaket.Text = totalPaket.ToString("N0")
                 i = i + 1
             End While
+            myDataReader.Close()
         End If
         If myDataReader.IsClosed = False Then
             myDataReader.Close()
@@ -1973,6 +1971,25 @@ Public Class Form5
         Dim total As Decimal = ParseCurrency(LblRpTagihan.Text)
         SetNilaiPembayaran(pilihan, total)
 
+        If myDataReader.IsClosed = False Then
+            myDataReader.Close()
+        End If
+
+        If pilihan = "Lunas" Then
+            Dim sql As String = "SELECT * FROM acara where id_acara = " & originalIdAcara
+            myCommand.CommandText = sql
+            myDataReader = myCommand.ExecuteReader
+            If myDataReader.HasRows Then
+                While myDataReader.Read()
+                    Dim tglAcara As Date = myDataReader("tanggal_pelaksanaan")
+                    Dim tglDL As Date = tglAcara.AddDays(-30)
+                    lblTanggalLunas.Text = tglDL.ToString("dd-MM-yyyy")
+                End While
+                myDataReader.Close()
+            End If
+            'lblTanggalLunas.Text = 
+        End If
+
 
         'If pilihan = "lunas" Then
         '    lblTerminRpLunas.Text = "Rp " & total.ToString("N0")
@@ -2001,7 +2018,7 @@ Public Class Form5
         '    SetWarnaKontrolPembayaran(False, False)
         'End If
 
-        'UpdateSisaTagihan()
+        UpdateSisaTagihan()
     End Sub
 
     Private Sub SetWarnaKontrolPembayaran(lunasAktif As Boolean, cicilAktif As Boolean)
@@ -2077,6 +2094,9 @@ Public Class Form5
     End Sub
 
     Private Sub totalTagihan(Optional updateNilaiPembayaran As Boolean = True)
+        'If myDataReader IsNot Nothing AndAlso Not myDataReader.IsClosed Then
+        '    myDataReader.Close()
+        'End If
         Dim sql As String = "SELECT * FROM pesanan WHERE id_acara = " & originalIdAcara
         myCommand.CommandText = sql
         myDataReader = myCommand.ExecuteReader
@@ -2087,12 +2107,12 @@ Public Class Form5
                 hasil += Convert.ToInt32(myDataReader("total_pengeluaran"))
             End While
             LblRpTagihan.Text = "Rp " & hasil.ToString("N0")
-
             ' Jika diinginkan, perbarui nilai pembayaran
             If updateNilaiPembayaran AndAlso cbPilihBayar.SelectedItem IsNot Nothing Then
                 Dim pilihan As String = cbPilihBayar.SelectedItem.ToString()
                 SetNilaiPembayaran(pilihan, hasil)
             End If
+            myDataReader.Close()
         End If
 
         If Not myDataReader.IsClosed Then
@@ -2100,16 +2120,78 @@ Public Class Form5
         End If
     End Sub
 
-    Private Sub btnSimpanPembayaran_Click(sender As Object, e As EventArgs)
+    Public Sub Pembayaran()
+        Dim sql As String = "select * from pembayaran join acara on pembayaran.id_acara = acara.id_acara where pembayaran.id_acara = " & originalIdAcara
+        myCommand.CommandText = sql
+        myCommand.ExecuteReader()
+        If myDataReader.HasRows Then
+            While myDataReader.Read()
+                Dim tglAcara As Date = myDataReader("tanggal_pelaksanaan")
+                Dim tglDL As Date = tglAcara.AddDays(-30)
+                If myDataReader("tipe_pembayaran") = "Lunas" Then
+                    Dim pilihan As String = myDataReader("tipe_pembayaran").ToString()
+                    cbPilihBayar.SelectedItem = pilihan
+                    lblTerminRpLunas.Text = "Rp" & myDataReader("total_pembayaran").ToString("N0")
+                    lblTanggalLunas.Text = tglDL.ToString("dd-MM-yyyy")
+                    lblRpLunas.Text = "Rp" & myDataReader("total_pembayaran").ToString("N0")
+                    dateRealLunas.Value = Convert.ToDateTime(myDataReader("tgl_real_lunas"))
+                    lblRpSisa.Text = "Rp" & myDataReader("sisa_tagihan").ToString("N0")
+                End If
+            End While
+            myDataReader.Close()
+        End If
+        If Not myDataReader.IsClosed Then
+            myDataReader.Close()
+        End If
+    End Sub
+
+    Private Sub btnSimpanPembayaran_Click_1(sender As Object, e As EventArgs) Handles btnSimpanPembayaran.Click
         Dim tipeBayar As String = cbPilihBayar.SelectedItem.ToString()
+        Dim tglTerminLunas As Date = lblTanggalLunas.Text
+        Dim tglRealLunas As Date = dateRealLunas.Value.Date
+        Dim tglCicil1 As Date = dateCicil1.Value.Date
+        Dim tglCicil2 As Date = dateCicil2.Value.Date
+        Dim tglCicil3 As Date = dateCicil3.Value.Date
         Dim sqlCek As String = "select count(*) from pembayaran where id_acara='" & originalIdAcara & "'"
         myCommand.CommandText = sqlCek
         Dim count As Integer = Convert.ToInt32(myCommand.ExecuteScalar())
         If count > 0 Then
             If tipeBayar = "Cicilan" Then
-                Dim sql As String = "update pembayaran set " & ""
+                Dim sql As String = "update pembayaran set " &
+                    "nominal_real_cicil1 = " & ParseCurrency(tbBayarCicil1.Text) & "," &
+                    "nominal_real_cicil2 = " & ParseCurrency(tbBayarCicil2.Text) & "," &
+                    "nominal_real_cicil3 = " & ParseCurrency(tbBayarCicil3.Text) & "," &
+                    "tgl_real_cicil1 = '" & tglCicil1.ToString("yyyy-MM-dd") & "'," &
+                    "tgl_real_cicil2 = '" & tglCicil2.ToString("yyyy-MM-dd") & "'," &
+                    "tgl_real_cicil3 = '" & tglCicil3.ToString("yyyy-MM-dd") & "' " &
+                    "WHERE id_acara = " & originalIdAcara
+                myCommand.CommandText = sql
+                myCommand.ExecuteNonQuery()
+            Else
+                Dim sql As String = "update pembayaran set " &
+                   "tgl_real_lunas = '" & tglRealLunas.ToString("yyyy-MM-dd") & "' " &
+                   "WHERE id_acara = " & originalIdAcara
+                myCommand.CommandText = sql
+                myCommand.ExecuteNonQuery()
+            End If
+        Else
+            If tipeBayar = "Lunas" Then
+                Dim sql As String = "INSERT INTO pembayaran (id_acara, total_pembayaran, tanggal_pembayaran_lunas, tipe_pembayaran, sisa_tagihan, tgl_real_lunas) VALUES 
+        '                            ('" & originalIdAcara & "','" & ParseCurrency(LblRpTagihan.Text) & "','" & tglTerminLunas.ToString("yyyy-MM-dd") & "','" & tipeBayar & "','" & "0" & "','" & tglRealLunas.ToString("yyyy-MM-dd") & "')"
+                myCommand.CommandText = sql
+                myCommand.ExecuteNonQuery()
+            Else
+
             End If
         End If
+        'If tipeBayar = "Lunas" Then
+        '    Dim sql As String = "INSERT INTO pembayaran (id_acara, total_pembayaran, tanggal_pembayaran_lunas, tipe_pembayaran, sisa_tagihan, tgl_real_lunas) VALUES 
+        '                            ('" & originalIdAcara & "','" & ParseCurrency(LblRpTagihan.Text) & "','" & tglTerminLunas.ToString("yyyy-MM-dd") & "','" & tipeBayar & "','" & "0" & "','" & tglRealLunas.ToString("yyyy-MM-dd") & "')"
+        '    myCommand.CommandText = sql
+        '    myCommand.ExecuteNonQuery()
+        'Else
 
+        'End If
+        MessageBox.Show("Data berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class
