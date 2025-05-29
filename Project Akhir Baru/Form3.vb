@@ -3,7 +3,7 @@
 Public Class Form3
     Private allEventPanels As New List(Of Panel)()
     Private Sub Form3_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        LoadEvents()
+        LoadEvents("belum")
     End Sub
     Private Sub btnTambahAcara_Click(sender As Object, e As EventArgs) Handles btnTambahAcara.Click
         'Form5.Show()
@@ -39,8 +39,15 @@ Public Class Form3
 
     Private Sub Form3_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadEvents()
+        If cbWaktuKegiatan.Items.Count = 0 Then
+            cbWaktuKegiatan.Items.Add("Belum dimulai")
+            cbWaktuKegiatan.Items.Add("Sudah selesai")
+        End If
+
+        cbWaktuKegiatan.SelectedIndex = 0
+
     End Sub
-    Public Sub LoadEvents()
+    Public Sub LoadEvents(Optional statusWaktu As String = "belum")
         Try
             ' Query untuk mengambil data acara
             Dim sql As String = "SELECT * FROM acara ORDER BY tanggal_pelaksanaan ASC"
@@ -50,8 +57,6 @@ Public Class Form3
             ' Bersihkan Panel sebelum menambahkan data
             FlowLayoutPanel1.Controls.Clear()
             allEventPanels.Clear()
-
-
 
             ' Loop melalui hasil query dan tampilkan data
             While myDataReader.Read()
@@ -69,9 +74,15 @@ Public Class Form3
                 Dim lokasiAcara As String = myDataReader("lokasi").ToString()
                 Dim kategoriAcara As String = myDataReader("kategori_acara").ToString()
 
-                ' Hitung H-
+                ' Hitung selisih hari
                 Dim hMinus As Integer = (tanggalDb.Date - DateTime.Now.Date).Days
-                If hMinus < 0 Then Continue While
+
+                ' Filter berdasarkan status
+                If statusWaktu = "belum" AndAlso hMinus < 0 Then
+                    Continue While ' Lewati acara lampau jika status ingin "belum"
+                ElseIf statusWaktu = "selesai" AndAlso hMinus >= 0 Then
+                    Continue While ' Lewati acara mendatang jika status ingin "selesai"
+                End If
 
                 ' Buat Panel
                 Dim eventPanel As New Panel()
@@ -98,10 +109,7 @@ Public Class Form3
                 lblInfo.Location = New Point(10, 25)
                 lblInfo.AutoSize = False
 
-
-
-                ' Label Countdown (di kanan)
-                ' Label Countdown (di kanan & memenuhi tinggi panel)
+                ' Label Countdown
                 Dim lblCountdown As New Label()
                 lblCountdown.Font = New Font("Segoe UI", 10, FontStyle.Bold)
                 lblCountdown.Width = 70
@@ -110,10 +118,12 @@ Public Class Form3
                 lblCountdown.AutoSize = False
                 lblCountdown.BackColor = Color.Transparent
 
-                ' Atur teks & warna berdasarkan nilai H-
                 If hMinus = 0 Then
                     lblCountdown.Text = "Hari-H"
                     lblCountdown.ForeColor = Color.Green
+                ElseIf hMinus < 0 Then
+                    lblCountdown.Text = "Selesai"
+                    lblCountdown.ForeColor = Color.Gray
                 ElseIf hMinus <= 7 Then
                     lblCountdown.Text = "H - " & hMinus
                     lblCountdown.ForeColor = Color.Red
@@ -122,36 +132,33 @@ Public Class Form3
                     lblCountdown.ForeColor = Color.Black
                 End If
 
-                ' Letakkan di kanan
                 lblCountdown.Location = New Point(eventPanel.Width - lblCountdown.Width - 5, 0)
 
-                ' Event handler klik panel
-                AddHandler eventPanel.Click, Sub(sender, e) OpenForm5(idAcara, namaAcara, tanggalDb, namaPemesan, alamat, noHpPertama, noHpKedua, waktuTampil, lokasiAcara, kategoriAcara)
+                ' Event handler klik
+                Dim isReadOnly = (statusWaktu = "selesai")
+                AddHandler eventPanel.Click, Sub(sender, e) OpenForm5(idAcara, namaAcara, tanggalDb, namaPemesan, alamat, noHpPertama, noHpKedua, waktuTampil, lokasiAcara, kategoriAcara, isReadOnly)
 
-                ' Tambahkan kontrol ke panel
+
                 eventPanel.Controls.Add(lblAcara)
                 eventPanel.Controls.Add(lblInfo)
                 eventPanel.Controls.Add(lblCountdown)
 
-                ' Tambahkan ke FlowLayout
                 FlowLayoutPanel1.Controls.Add(eventPanel)
                 allEventPanels.Add(eventPanel)
 
                 lblInfo.Width = eventPanel.Width - lblCountdown.Width - 20
             End While
 
-
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         Finally
-            ' Tutup koneksi
             If myDataReader IsNot Nothing AndAlso Not myDataReader.IsClosed Then
                 myDataReader.Close()
             End If
-            'myConn.Close()
         End Try
     End Sub
-    Private Sub OpenForm5(idAcara As String, namaAcara As String, tanggalDb As Date, namaPemesan As String, alamat As String, noHpPertama As String, noHpKedua As String, waktuTampil As String, lokasiAcara As String, kategoriAcara As String)
+
+    Private Sub OpenForm5(idAcara As String, namaAcara As String, tanggalDb As Date, namaPemesan As String, alamat As String, noHpPertama As String, noHpKedua As String, waktuTampil As String, lokasiAcara As String, kategoriAcara As String, Optional readonlyMode As Boolean = False)
         Dim form As New Form5()
 
         ' Kirim data ke Form5
@@ -168,6 +175,22 @@ Public Class Form3
 
         If kategoriAcara = "Lain-lain" Then
             form.TabControl1.TabPages.Remove(form.TabControl1.TabPages("tpPaket"))
+        End If
+
+        If readonlyMode Then
+            ' Nonaktifkan semua kontrol input
+            For Each ctrl As Control In form.Controls
+                DisableControlsRecursive(ctrl)
+            Next
+
+            ' Sembunyikan tombol simpan, tambah
+            form.btnTambah.Visible = False
+            form.btnSimpan.Visible = False
+
+            ' Tampilkan pesan bahwa ini hanya tampilan data
+            form.lblEdit.Text = "Detail Acara (Sudah Selesai)"
+            form.lblEdit.Visible = True
+            form.lblEdit.ForeColor = Color.Gray
         End If
 
         form.TampilDataPaket()
@@ -206,11 +229,11 @@ Public Class Form3
         Next
     End Sub
 
-    Private Sub Login_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
-        If e.KeyCode = Keys.Return Then
-            btnCari.PerformClick()
-        End If
-    End Sub
+    'Private Sub Login_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+    '    If e.KeyCode = Keys.Return Then
+    '        btnCari.PerformClick()
+    '    End If
+    'End Sub
 
     Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
         Form2.Show()
@@ -223,17 +246,17 @@ Public Class Form3
         Me.Hide()
     End Sub
 
-    Private Sub btnCari_Click(sender As Object, e As EventArgs) Handles btnCari.Click
-        Dim keyword As String = tbCariAcara.Text.ToLower()
+    Private Sub btnCari_Click(sender As Object, e As EventArgs)
+        Dim keyword = tbCariAcara.Text.ToLower
 
         FlowLayoutPanel1.Controls.Clear()
 
-        For Each panel As Panel In allEventPanels
+        For Each panel In allEventPanels
             ' Gabungkan semua teks yang akan dicari
-            Dim allText As String = ""
+            Dim allText = ""
             For Each ctrl As Control In panel.Controls
                 If TypeOf ctrl Is Label Then
-                    allText &= CType(ctrl, Label).Text.ToLower() & " "
+                    allText &= CType(ctrl, Label).Text.ToLower & " "
                 End If
             Next
 
@@ -243,4 +266,64 @@ Public Class Form3
             End If
         Next
     End Sub
+
+    Private Sub cbWaktuKegiatan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbWaktuKegiatan.SelectedIndexChanged
+        If cbWaktuKegiatan.SelectedItem.ToString().ToLower().Contains("selesai") Then
+            LoadEvents("selesai")
+        Else
+            LoadEvents("belum")
+        End If
+    End Sub
+
+    Private Sub DisableControlsRecursive(ctrl As Control)
+        If TypeOf ctrl Is TextBox Then
+            CType(ctrl, TextBox).ReadOnly = True
+
+        ElseIf TypeOf ctrl Is ComboBox Then
+            CType(ctrl, ComboBox).Enabled = False
+
+        ElseIf TypeOf ctrl Is DateTimePicker Then
+            CType(ctrl, DateTimePicker).Enabled = False
+
+        ElseIf TypeOf ctrl Is Button Then
+            ' Biarkan btnBack tetap aktif
+            If ctrl.Name <> "btnBack" Then
+                ctrl.Enabled = False
+
+                ' Jika warna asli hijau tua RGB(13,64,41), ubah ke abu-abu
+                Dim originalColor As Color = CType(ctrl, Button).BackColor
+                If originalColor = Color.FromArgb(13, 64, 41) Then
+                    CType(ctrl, Button).BackColor = Color.Gray
+                End If
+            End If
+
+        ElseIf TypeOf ctrl Is Label Then
+            ' Jika label punya warna hijau tua, biarkan saja
+            If CType(ctrl, Label).BackColor = Color.FromArgb(13, 64, 41) Then
+                ' Tidak lakukan apa-apa
+            Else
+                ctrl.Enabled = False
+            End If
+
+        ElseIf TypeOf ctrl Is TabControl OrElse TypeOf ctrl Is TabPage Then
+            ctrl.Enabled = True ' Biarkan tab tetap bisa diakses
+
+        ElseIf TypeOf ctrl Is DataGridView Then
+            CType(ctrl, DataGridView).ReadOnly = True
+            CType(ctrl, DataGridView).Enabled = False
+
+        Else
+            ctrl.Enabled = False
+        End If
+
+        ' Rekursif ke semua anak kontrol
+        For Each child As Control In ctrl.Controls
+            DisableControlsRecursive(child)
+        Next
+    End Sub
+
+
+
+
+
 End Class
