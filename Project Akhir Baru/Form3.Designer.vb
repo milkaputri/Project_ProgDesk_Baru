@@ -33,7 +33,6 @@ Partial Class Form3
         Button4 = New Button()
         btnBrosur1 = New Button()
         tbCariAcara = New TextBox()
-        btnCari = New Button()
         btnTambahAcara = New Button()
         Button2 = New Button()
         Button3 = New Button()
@@ -52,6 +51,7 @@ Partial Class Form3
         Label1 = New Label()
         Panel2 = New Panel()
         SplitContainer1 = New SplitContainer()
+        cbWaktuKegiatan = New ComboBox()
         FlowLayoutPanel1 = New FlowLayoutPanel()
         Panel1.SuspendLayout()
         CType(pbUtama, ComponentModel.ISupportInitialize).BeginInit()
@@ -70,7 +70,8 @@ Partial Class Form3
         Panel1.Controls.Add(btnAgenda)
         Panel1.Controls.Add(btnKeluar)
         Panel1.Controls.Add(pbUtama)
-        Panel1.Location = New Point(-1, 0)
+        Panel1.Dock = DockStyle.Left
+        Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(284, 699)
         Panel1.TabIndex = 5
@@ -186,21 +187,8 @@ Partial Class Form3
         tbCariAcara.Multiline = True
         tbCariAcara.Name = "tbCariAcara"
         tbCariAcara.PlaceholderText = "Masukan Kegiatan"
-        tbCariAcara.Size = New Size(718, 34)
+        tbCariAcara.Size = New Size(647, 34)
         tbCariAcara.TabIndex = 10
-        ' 
-        ' btnCari
-        ' 
-        btnCari.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnCari.FlatStyle = FlatStyle.Flat
-        btnCari.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnCari.ForeColor = SystemColors.ButtonHighlight
-        btnCari.Location = New Point(739, 56)
-        btnCari.Name = "btnCari"
-        btnCari.Size = New Size(83, 34)
-        btnCari.TabIndex = 11
-        btnCari.Text = "Cari"
-        btnCari.UseVisualStyleBackColor = False
         ' 
         ' btnTambahAcara
         ' 
@@ -410,15 +398,29 @@ Partial Class Form3
         ' 
         ' SplitContainer1.Panel2
         ' 
+        SplitContainer1.Panel2.Controls.Add(cbWaktuKegiatan)
         SplitContainer1.Panel2.Controls.Add(FlowLayoutPanel1)
-        SplitContainer1.Panel2.Controls.Add(btnCari)
         SplitContainer1.Panel2.Controls.Add(btnTambahAcara)
         SplitContainer1.Size = New Size(1209, 699)
         SplitContainer1.SplitterDistance = 283
         SplitContainer1.TabIndex = 56
         ' 
+        ' cbWaktuKegiatan
+        ' 
+        cbWaktuKegiatan.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        cbWaktuKegiatan.FlatStyle = FlatStyle.Flat
+        cbWaktuKegiatan.ForeColor = SystemColors.Window
+        cbWaktuKegiatan.FormattingEnabled = True
+        cbWaktuKegiatan.Items.AddRange(New Object() {"Belum Dimulai", "Sudah Selesai"})
+        cbWaktuKegiatan.Location = New Point(671, 60)
+        cbWaktuKegiatan.Name = "cbWaktuKegiatan"
+        cbWaktuKegiatan.Size = New Size(151, 28)
+        cbWaktuKegiatan.TabIndex = 29
+        cbWaktuKegiatan.Text = "Waktu Kegiatan"
+        ' 
         ' FlowLayoutPanel1
         ' 
+        FlowLayoutPanel1.AutoScroll = True
         FlowLayoutPanel1.Location = New Point(15, 109)
         FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         FlowLayoutPanel1.Size = New Size(895, 587)
@@ -472,7 +474,6 @@ Partial Class Form3
     Friend WithEvents Button4 As Button
     Friend WithEvents btnBrosur1 As Button
     Friend WithEvents tbCariAcara As TextBox
-    Friend WithEvents btnCari As Button
     Friend WithEvents btnTambahAcara As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
@@ -497,4 +498,5 @@ Partial Class Form3
     Friend WithEvents Panel2 As Panel
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents cbWaktuKegiatan As ComboBox
 End Class
