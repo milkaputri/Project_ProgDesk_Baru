@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6ECFC91A-31C7-4969-9927-92B21C4D3073}|Project Akhir Baru\\Project Akhir Baru.vbproj|d:\\pemrograman dekstop\\fix\\project_progdesk_baru\\project akhir baru\\form3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{6ECFC91A-31C7-4969-9927-92B21C4D3073}|Project Akhir Baru\\Project Akhir Baru.vbproj|solutionrelative:project akhir baru\\form3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{6ECFC91A-31C7-4969-9927-92B21C4D3073}|Project Akhir Baru\\Project Akhir Baru.vbproj|d:\\pemrograman dekstop\\fix\\project_progdesk_baru\\project akhir baru\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{6ECFC91A-31C7-4969-9927-92B21C4D3073}|Project Akhir Baru\\Project Akhir Baru.vbproj|solutionrelative:project akhir baru\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6ECFC91A-31C7-4969-9927-92B21C4D3073}|Project Akhir Baru\\Project Akhir Baru.vbproj|d:\\pemrograman dekstop\\fix\\project_progdesk_baru\\project akhir baru\\form3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
@@ -15,8 +15,8 @@
       "RelativeMoniker": "D:0:0:{6ECFC91A-31C7-4969-9927-92B21C4D3073}|Project Akhir Baru\\Project Akhir Baru.vbproj|solutionrelative:project akhir baru\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6ECFC91A-31C7-4969-9927-92B21C4D3073}|Project Akhir Baru\\Project Akhir Baru.vbproj|d:\\pemrograman dekstop\\fix\\project_progdesk_baru\\project akhir baru\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{6ECFC91A-31C7-4969-9927-92B21C4D3073}|Project Akhir Baru\\Project Akhir Baru.vbproj|solutionrelative:project akhir baru\\form2.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{6ECFC91A-31C7-4969-9927-92B21C4D3073}|Project Akhir Baru\\Project Akhir Baru.vbproj|d:\\pemrograman dekstop\\fix\\project_progdesk_baru\\project akhir baru\\form3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{6ECFC91A-31C7-4969-9927-92B21C4D3073}|Project Akhir Baru\\Project Akhir Baru.vbproj|solutionrelative:project akhir baru\\form3.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6ECFC91A-31C7-4969-9927-92B21C4D3073}|Project Akhir Baru\\Project Akhir Baru.vbproj|d:\\pemrograman dekstop\\fix\\project_progdesk_baru\\project akhir baru\\form5.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
@@ -30,8 +30,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 757,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form3.vb [Design]",
+              "DocumentMoniker": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Form3.vb",
+              "RelativeDocumentMoniker": "Project Akhir Baru\\Form3.vb",
+              "ToolTip": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Form3.vb [Design]",
+              "RelativeToolTip": "Project Akhir Baru\\Form3.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-21T07:56:06.87Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form3.vb",
+              "DocumentMoniker": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Form3.vb",
+              "RelativeDocumentMoniker": "Project Akhir Baru\\Form3.vb",
+              "ToolTip": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Form3.vb",
+              "RelativeToolTip": "Project Akhir Baru\\Form3.vb",
+              "ViewState": "AgIAACgBAAAAAAAAAAAAwC8BAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-04-21T04:29:33.52Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -50,34 +77,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form3.vb [Design]",
-              "DocumentMoniker": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Form3.vb",
-              "RelativeDocumentMoniker": "Project Akhir Baru\\Form3.vb",
-              "ToolTip": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Form3.vb [Design]",
-              "RelativeToolTip": "Project Akhir Baru\\Form3.vb [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-04-21T07:56:06.87Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form3.vb",
-              "DocumentMoniker": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Form3.vb",
-              "RelativeDocumentMoniker": "Project Akhir Baru\\Form3.vb",
-              "ToolTip": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Form3.vb",
-              "RelativeToolTip": "Project Akhir Baru\\Form3.vb",
-              "ViewState": "AgIAACgBAAAAAAAAAAAAwDoBAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-04-21T04:29:33.52Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Form2.vb [Design]",
               "DocumentMoniker": "D:\\Pemrograman Dekstop\\FIX\\Project_ProgDesk_Baru\\Project Akhir Baru\\Form2.vb",
               "RelativeDocumentMoniker": "Project Akhir Baru\\Form2.vb",

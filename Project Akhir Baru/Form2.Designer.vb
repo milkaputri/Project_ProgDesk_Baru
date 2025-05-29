@@ -176,7 +176,7 @@ Partial Class Form2
         btnBrosur2.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnBrosur2.ForeColor = Color.White
         btnBrosur2.Image = CType(resources.GetObject("btnBrosur2.Image"), Image)
-        btnBrosur2.Location = New Point(723, 138)
+        btnBrosur2.Location = New Point(767, 138)
         btnBrosur2.Name = "btnBrosur2"
         btnBrosur2.Size = New Size(354, 463)
         btnBrosur2.TabIndex = 4
@@ -209,7 +209,7 @@ Partial Class Form2
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
         BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        ClientSize = New Size(1209, 699)
+        ClientSize = New Size(1188, 678)
         Controls.Add(btnTampilkanGrafik)
         Controls.Add(PictureBox1)
         Controls.Add(btnBrosur2)
@@ -219,7 +219,7 @@ Partial Class Form2
         Controls.Add(Panel1)
         Font = New Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, CByte(0))
         ForeColor = SystemColors.ControlLightLight
-        FormBorderStyle = FormBorderStyle.None
+        FormBorderStyle = FormBorderStyle.FixedSingle
         Name = "Form2"
         StartPosition = FormStartPosition.CenterScreen
         Text = "Form2"
