@@ -35,7 +35,6 @@ Partial Class Form5
         lblTanggalTermin2 = New Label()
         lblTanggalTermin1 = New Label()
         lblTanggalLunas = New Label()
-        btnUploadBuktiBayar = New Button()
         lblTerminRpCicil3 = New Label()
         lblTerminRpCicil2 = New Label()
         lblTerminRpCicil1 = New Label()
@@ -557,7 +556,6 @@ Partial Class Form5
         Panel20.Controls.Add(lblTanggalTermin2)
         Panel20.Controls.Add(lblTanggalTermin1)
         Panel20.Controls.Add(lblTanggalLunas)
-        Panel20.Controls.Add(btnUploadBuktiBayar)
         Panel20.Controls.Add(lblTerminRpCicil3)
         Panel20.Controls.Add(lblTerminRpCicil2)
         Panel20.Controls.Add(lblTerminRpCicil1)
@@ -620,15 +618,6 @@ Partial Class Form5
         lblTanggalLunas.Size = New Size(536, 23)
         lblTanggalLunas.TabIndex = 30
         lblTanggalLunas.Text = "tanggal pembayaran lunas"
-        ' 
-        ' btnUploadBuktiBayar
-        ' 
-        btnUploadBuktiBayar.Location = New Point(648, 378)
-        btnUploadBuktiBayar.Name = "btnUploadBuktiBayar"
-        btnUploadBuktiBayar.Size = New Size(155, 32)
-        btnUploadBuktiBayar.TabIndex = 29
-        btnUploadBuktiBayar.Text = "Upload Bukti Bayar"
-        btnUploadBuktiBayar.UseVisualStyleBackColor = True
         ' 
         ' lblTerminRpCicil3
         ' 
@@ -760,9 +749,9 @@ Partial Class Form5
         lblTermin3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         lblTermin3.Location = New Point(37, 302)
         lblTermin3.Name = "lblTermin3"
-        lblTermin3.Size = New Size(206, 25)
+        lblTermin3.Size = New Size(195, 25)
         lblTermin3.TabIndex = 9
-        lblTermin3.Text = "Pembayaran 3 (100%)"
+        lblTermin3.Text = "Pembayaran 3 (10%)"
         ' 
         ' lblTermin2
         ' 
@@ -4249,7 +4238,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(47077, 30)
+        Label10.Size = New Size(48961, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -5187,7 +5176,6 @@ Partial Class Form5
     Friend WithEvents tbSate As TextBox
     Friend WithEvents tbGado As TextBox
     Friend WithEvents tbEmpek As TextBox
-    Friend WithEvents btnUploadBuktiBayar As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents btnInvoice As Button
     Friend WithEvents cbPilihBayar As ComboBox
