@@ -1,39 +1,125 @@
 ﻿Imports iTextSharp.text
 Imports iTextSharp.text.pdf
 Imports System.IO
+Imports SysDraw = System.Drawing
 
 Public Class Form10
     Private Sub btnCetak_Click(sender As Object, e As EventArgs) Handles btnCetak.Click
-        Try
-            ' Tentukan lokasi dan nama file PDF
-            Dim savePath As String = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Cetak Invoice.pdf")
+        ' Simpan ukuran asli panel
+        Dim originalSize As Size = pnlCetak.Size
 
-            ' Membuat dokumen baru
-            Dim doc As New Document(PageSize.A4, 40, 40, 40, 40)
-            Dim writer As PdfWriter = PdfWriter.GetInstance(doc, New FileStream(savePath, FileMode.Create))
-            doc.Open()
+        ' Hitung tinggi konten sebenarnya
+        Dim contentHeight As Integer = pnlCetak.DisplayRectangle.Height
 
-            ' Menambahkan judul
-            Dim titleFont As New Font(Font.FontFamily.HELVETICA, 18, Font.Bold)
-            Dim paragraph As New Paragraph("Invoice Pembayaran", titleFont)
-            paragraph.Alignment = Element.ALIGN_CENTER
-            doc.Add(paragraph)
+        ' Nonaktifkan AutoScroll dan ubah ukuran panel agar seluruh konten terlihat
+        pnlCetak.AutoScroll = False
+        pnlCetak.Height = contentHeight
 
-            doc.Add(New Paragraph(" ")) ' Spasi
+        ' Gambar panel ke bitmap
+        ' Gambar panel ke bitmap
+        Dim bmp As New Bitmap(pnlCetak.Width, contentHeight)
+        pnlCetak.DrawToBitmap(bmp, New SysDraw.Rectangle(0, 0, pnlCetak.Width, contentHeight))
 
-            ' Isi Contoh Invoice
-            doc.Add(New Paragraph("Nama Pemesan: John Doe"))
-            doc.Add(New Paragraph("Tanggal       : " & DateTime.Now.ToString("dd-MM-yyyy")))
-            doc.Add(New Paragraph("Jumlah Tagihan: Rp 1.500.000"))
-            doc.Add(New Paragraph("Status        : Lunas"))
 
-            doc.Close()
-            writer.Close()
+        ' Simpan PDF
+        Dim saveFileDialog As New SaveFileDialog()
+        saveFileDialog.Filter = "PDF Files|*.pdf"
+        saveFileDialog.Title = "Simpan PDF"
+        saveFileDialog.FileName = "CetakPanel.pdf"
 
-            MessageBox.Show("Invoice berhasil dicetak ke Desktop sebagai 'Cetak Invoice.pdf'", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        If saveFileDialog.ShowDialog() = DialogResult.OK Then
+            Dim pdfDoc As New Document(PageSize.A4, 10, 10, 10, 10)
+            Dim writer As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(saveFileDialog.FileName, FileMode.Create))
+            pdfDoc.Open()
 
-        Catch ex As Exception
-            MessageBox.Show("Gagal mencetak invoice: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+            Dim pageWidth As Integer = CInt(pdfDoc.PageSize.Width)
+            Dim pageHeight As Integer = CInt(pdfDoc.PageSize.Height)
+
+            Dim yOffset As Integer = 0
+            While yOffset < bmp.Height
+                Dim sliceHeight As Integer = Math.Min(pageHeight, bmp.Height - yOffset)
+                Dim bmpSlice As New Bitmap(bmp.Width, sliceHeight)
+
+                Using g As Graphics = Graphics.FromImage(bmpSlice)
+                    'g.DrawImage(
+                    '    bmp,
+                    '    New System.Drawing.Rectangle(0, 0, bmp.Width, sliceHeight),
+                    '    New System.Drawing.Rectangle(0, yOffset, bmp.Width, sliceHeight),
+                    '    GraphicsUnit.Pixel
+                    ')
+
+                    g.DrawImage(
+                        bmp,
+                        New SysDraw.Rectangle(0, 0, bmp.Width, sliceHeight),
+                        New SysDraw.Rectangle(0, yOffset, bmp.Width, sliceHeight),
+                        GraphicsUnit.Pixel
+                    )
+                End Using
+
+                Using ms As New MemoryStream()
+                    bmpSlice.Save(ms, Imaging.ImageFormat.Png)
+                    Dim img As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(ms.ToArray())
+                    img.ScaleToFit(pageWidth - 20, pageHeight - 20)
+                    img.Alignment = Element.ALIGN_CENTER
+                    pdfDoc.Add(img)
+                    If yOffset + sliceHeight < bmp.Height Then
+                        pdfDoc.NewPage()
+                    End If
+                End Using
+
+                yOffset += sliceHeight
+            End While
+
+            pdfDoc.Close()
+            MessageBox.Show("PDF berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+
+        ' Kembalikan ukuran dan scroll ke semula
+        pnlCetak.Size = originalSize
+        pnlCetak.AutoScroll = True
     End Sub
+
+    Private Sub Form10_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Public Sub TampilkanCetakan(ByVal jenis As String)
+        ' Sembunyikan semua label terlebih dahulu
+        lblLunas.Visible = False
+        lblBayarLunas.Visible = False
+        lblTglLunas.Visible = False
+
+        lblCicilan1.Visible = False
+        lblCicil1.Visible = False
+        lblTglCicil1.Visible = False
+
+        lblCicilan2.Visible = False
+        lblCicil2.Visible = False
+        lblTglCicil2.Visible = False
+
+        lblCicilan3.Visible = False
+        lblCicil3.Visible = False
+        lblTglCicil3.Visible = False
+
+        ' Tampilkan sesuai tombol
+        Select Case jenis
+            Case "LUNAS"
+                lblLunas.Visible = True
+                lblBayarLunas.Visible = True
+                lblTglLunas.Visible = True
+            Case "CICIL1"
+                lblCicilan1.Visible = True
+                lblCicil1.Visible = True
+                lblTglCicil1.Visible = True
+            Case "CICIL2"
+                lblCicilan2.Visible = True
+                lblCicil2.Visible = True
+                lblTglCicil2.Visible = True
+            Case "CICIL3"
+                lblCicilan3.Visible = True
+                lblCicil3.Visible = True
+                lblTglCicil3.Visible = True
+        End Select
+    End Sub
+
 End Class
