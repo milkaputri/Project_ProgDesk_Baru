@@ -151,7 +151,7 @@ Public Class Form3
 
                 ' Event handler klik tombol laporan
                 AddHandler btnLaporan.Click, Sub(senderBtn, eBtn)
-                                                 BukaForm9(idAcara)
+                                                 BukaForm9(idAcara, namaAcara, tanggalDb, namaPemesan, alamat, noHpPertama, noHpKedua, waktuTampil, lokasiAcara)
                                              End Sub
 
                 eventPanel.Controls.Add(btnLaporan)
@@ -181,30 +181,46 @@ Public Class Form3
         End Try
     End Sub
 
-    Private Sub BukaForm9(idAcara As String)
-        If myDataReader IsNot Nothing AndAlso Not myDataReader.IsClosed Then
-            myDataReader.Close()
-        End If
+    Private Sub BukaForm9(idAcara As String, namaAcara As String, tanggalDb As Date, namaPemesan As String, alamat As String, noHpPertama As String, noHpKedua As String, waktuTampil As String, lokasiAcara As String)
+        'If myDataReader IsNot Nothing AndAlso Not myDataReader.IsClosed Then
+        '    myDataReader.Close()
+        'End If
 
-        Dim sql As String = "SELECT * FROM acara WHERE id_acara = @id"
-        myCommand = New MySqlCommand(sql, myConn)
-        myCommand.Parameters.AddWithValue("@id", idAcara)
-        myDataReader = myCommand.ExecuteReader()
+        'Dim sql As String = "SELECT * FROM acara WHERE id_acara = @id"
+        'myCommand = New MySqlCommand(sql, myConn)
+        'myCommand.Parameters.AddWithValue("@id", idAcara)
+        'myDataReader = myCommand.ExecuteReader()
 
-        If myDataReader.Read() Then
-            Dim form As New Form9()
-            form.lblNamaAcara.Text = myDataReader("nama_acara").ToString()
-            form.lblTanggal.Text = Convert.ToDateTime(myDataReader("tanggal_pelaksanaan")).ToString("yyyy-MM-dd")
-            form.lblWaktu.Text = myDataReader("waktu").ToString()
-            form.lblLokasi.Text = myDataReader("lokasi").ToString()
-            ' Anda bisa menambahkan lainnya jika tersedia di data
+        'If myDataReader.Read() Then
+        '    Dim form As New Form9()
+        '    form.lblNama.Text =
+        '    form.lblNamaAcara.Text = myDataReader("nama_acara").ToString()
+        '    form.lblTanggal.Text = Convert.ToDateTime(myDataReader("tanggal_pelaksanaan")).ToString("yyyy-MM-dd")
+        '    form.lblWaktu.Text = myDataReader("waktu").ToString()
+        '    form.lblLokasi.Text = myDataReader("lokasi").ToString()
 
-            myDataReader.Close()
-            form.ShowDialog()
-        Else
-            myDataReader.Close()
-            MessageBox.Show("Data acara tidak ditemukan.")
-        End If
+        '    myDataReader.Close()
+        '    form.ShowDialog()
+        'Else
+        '    myDataReader.Close()
+        '    MessageBox.Show("Data acara tidak ditemukan.")
+        'End If
+        Dim form As New Form9()
+        form.lblNama.Text = namaPemesan
+        form.lblAlamat.Text = alamat
+        form.lblNoHp1.Text = noHpPertama
+        form.lblNoHp2.Text = noHpKedua
+        form.lblNamaAcara.Text = namaAcara
+        form.lblTanggal.Text = tanggalDb.ToString("dd-MM-yyyy")
+        form.lblWaktu.Text = waktuTampil
+        form.lblLokasi.Text = lokasiAcara
+        form.originalIdAcara = idAcara
+        form.TampilDataPaket()
+        form.TampilDataTambahan()
+        form.TampilPembayaran()
+
+        myDataReader.Close()
+        form.ShowDialog()
     End Sub
 
     Private Sub OpenForm5(idAcara As String, namaAcara As String, tanggalDb As Date, namaPemesan As String, alamat As String, noHpPertama As String, noHpKedua As String, waktuTampil As String, lokasiAcara As String, kategoriAcara As String, Optional readonlyMode As Boolean = False)
@@ -221,7 +237,6 @@ Public Class Form3
         form.tbWaktu.Text = waktuTampil
         form.tbLokasi.Text = lokasiAcara
         form.cbKategori.SelectedItem = kategoriAcara
-
         form.tanggalAcara = tanggalDb
 
 

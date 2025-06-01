@@ -6,36 +6,55 @@ Imports SysDraw = System.Drawing
 
 Public Class Form9
     Public originalIdAcara As String
-    Private Sub LoadDataDariDatabase(ByVal id As Integer)
-        Dim connStr As String = "server=localhost;user id=root;password=;database=project_akhir;"
-        Dim query As String = "SELECT * FROM acara WHERE id_acara = @id"
+    'Private Sub TampilData()
+    '    Dim sql As String = "select * from acara where id_acara = " & originalIdAcara
+    '    myCommand.CommandText = sql
+    '    myDataReader = myCommand.ExecuteReader
+    '    If myDataReader.HasRows Then
+    '        While myDataReader.Read()
+    '            lblNamaPemesan.Text = myDataReader("nama_pemesan").ToString()
+    '            lblAlamat.Text = myDataReader("alamat_pemesan").ToString()
+    '            lblNoHp1.Text = myDataReader("no_hp_pertama").ToString()
+    '            lblNoHp2.Text = myDataReader("no_hp_kedua").ToString()
+    '            lblNamaAcara.Text = myDataReader("nama_acara").ToString()
+    '            lblTanggal.Text = myDataReader("tanggal_pelaksanaan").ToString("dd-MM-yyyy")
+    '            lblWaktu.Text = myDataReader("waktu").ToString()
+    '            lblLokasi.Text = myDataReader("lokasi").ToString()
+    '        End While
+    '        myDataReader.Close()
+    '    End If
+    'End Sub
 
-        Using conn As New MySqlConnection(connStr)
-            Try
-                conn.Open()
-                Using cmd As New MySqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@id", id)
+    'Private Sub LoadDataDariDatabase(ByVal id As Integer)
+    '    Dim connStr As String = "server=localhost;user id=root;password=;database=project_akhir;"
+    '    Dim query As String = "SELECT * FROM acara WHERE id_acara = @id"
 
-                    Using reader As MySqlDataReader = cmd.ExecuteReader()
-                        If reader.Read() Then
-                            lblNama.Text = reader("nama_acara").ToString()
-                            lblAlamat.Text = reader("alamat_pemesan").ToString()
-                            lblNoHp1.Text = reader("no_hp_pertama").ToString()
-                            lblNoHp2.Text = reader("no_hp_kedua").ToString()
-                            lblTanggal.Text = Convert.ToDateTime(reader("tanggal_pelaksanaan")).ToString("dd-MM-yyyy")
-                            lblWaktu.Text = reader("waktu").ToString()
-                            lblLokasi.Text = reader("lokasi").ToString()
-                        Else
-                            MessageBox.Show("Data tidak ditemukan.")
-                        End If
-                    End Using
-                End Using
+    '    Using conn As New MySqlConnection(connStr)
+    '        Try
+    '            conn.Open()
+    '            Using cmd As New MySqlCommand(query, conn)
+    '                cmd.Parameters.AddWithValue("@id", id)
 
-            Catch ex As Exception
-                MessageBox.Show("Error saat mengambil data: " & ex.Message)
-            End Try
-        End Using
-    End Sub
+    '                Using reader As MySqlDataReader = cmd.ExecuteReader()
+    '                    If reader.Read() Then
+    '                        lblNama.Text = reader("nama_acara").ToString()
+    '                        lblAlamat.Text = reader("alamat_pemesan").ToString()
+    '                        lblNoHp1.Text = reader("no_hp_pertama").ToString()
+    '                        lblNoHp2.Text = reader("no_hp_kedua").ToString()
+    '                        lblTanggal.Text = Convert.ToDateTime(reader("tanggal_pelaksanaan")).ToString("dd-MM-yyyy")
+    '                        lblWaktu.Text = reader("waktu").ToString()
+    '                        lblLokasi.Text = reader("lokasi").ToString()
+    '                    Else
+    '                        MessageBox.Show("Data tidak ditemukan.")
+    '                    End If
+    '                End Using
+    '            End Using
+
+    '        Catch ex As Exception
+    '            MessageBox.Show("Error saat mengambil data: " & ex.Message)
+    '        End Try
+    '    End Using
+    'End Sub
     Public Sub TampilDataPaket()
         Dim i
         i = 0
@@ -90,6 +109,29 @@ Public Class Form9
             myDataReader.Close()
         End If
         If myDataReader.IsClosed = False Then
+            myDataReader.Close()
+        End If
+    End Sub
+
+    Public Sub TampilPembayaran()
+        Dim sql As String = "select * from pembayaran where id_acara = " & originalIdAcara
+        myCommand.CommandText = sql
+        myDataReader = myCommand.ExecuteReader
+        If myDataReader.HasRows Then
+            While myDataReader.Read()
+                Dim total As Integer = myDataReader("total_pembayaran")
+                LblRpTagihan.Text = "Rp " & total.ToString("N0")
+                dateRealLunas.Enabled = False
+                If myDataReader("tipe_pembayaran") = "Lunas" Then
+                    Dim dateRlLunas As Date = myDataReader("tgl_real_lunas")
+                    lblRpLunas.Text = "Rp " & total.ToString("N0")
+                    dateRealLunas.Value = Convert.ToDateTime(dateRlLunas)
+                Else
+                    Dim tglRealCicil3 As Date = myDataReader("tgl_real_cicil3")
+                    lblRpLunas.Text = "Rp " & total.ToString("N0")
+                    dateRealLunas.Value = Convert.ToDateTime(tglRealCicil3)
+                End If
+            End While
             myDataReader.Close()
         End If
     End Sub
@@ -170,12 +212,12 @@ Public Class Form9
     End Sub
 
     Private Sub Form9_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LoadDataDariDatabase(1)
-        TampilDataPaket()
-        TampilDataTambahan()
-        Dim total_paket As Integer = lblHargaTotalPaket.Text
-        Dim total_tambahan As Integer = lblTotalHargaTambahan.Text
-        Dim hasil = total_paket + total_tambahan
+        'LoadDataDariDatabase(1)
+        'TampilDataPaket()
+        'TampilDataTambahan()
+        'Dim total_paket As Integer = lblHargaTotalPaket.Text
+        'Dim total_tambahan As Integer = lblTotalHargaTambahan.Text
+        'Dim hasil = total_paket + total_tambahan
     End Sub
 
     Private Sub DataGridViewPaket_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewPaket.CellContentClick

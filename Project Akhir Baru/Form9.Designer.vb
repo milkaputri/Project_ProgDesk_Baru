@@ -586,7 +586,7 @@ Partial Class Form9
         ' lblPinaltiPembayaran
         ' 
         lblPinaltiPembayaran.AutoSize = True
-        lblPinaltiPembayaran.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        lblPinaltiPembayaran.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         lblPinaltiPembayaran.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         lblPinaltiPembayaran.Location = New Point(18, 158)
         lblPinaltiPembayaran.Name = "lblPinaltiPembayaran"
@@ -627,7 +627,7 @@ Partial Class Form9
         ' Label61
         ' 
         Label61.AutoSize = True
-        Label61.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label61.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label61.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label61.Location = New Point(18, 245)
         Label61.Name = "Label61"
@@ -656,7 +656,7 @@ Partial Class Form9
         ' lblLunas2
         ' 
         lblLunas2.AutoSize = True
-        lblLunas2.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        lblLunas2.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         lblLunas2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         lblLunas2.Location = New Point(18, 98)
         lblLunas2.Name = "lblLunas2"
@@ -678,7 +678,7 @@ Partial Class Form9
         ' lblTotalTagihan
         ' 
         lblTotalTagihan.AutoSize = True
-        lblTotalTagihan.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        lblTotalTagihan.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         lblTotalTagihan.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         lblTotalTagihan.Location = New Point(18, 36)
         lblTotalTagihan.Name = "lblTotalTagihan"
@@ -700,7 +700,7 @@ Partial Class Form9
         ' Label27
         ' 
         Label27.AutoSize = True
-        Label27.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label27.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label27.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label27.Location = New Point(18, 315)
         Label27.Name = "Label27"
@@ -741,7 +741,7 @@ Partial Class Form9
         ' Label29
         ' 
         Label29.AutoSize = True
-        Label29.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label29.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label29.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label29.Location = New Point(18, 402)
         Label29.Name = "Label29"
@@ -827,7 +827,7 @@ Partial Class Form9
         ' Label36
         ' 
         Label36.AutoSize = True
-        Label36.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label36.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label36.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label36.Location = New Point(18, 98)
         Label36.Name = "Label36"
@@ -849,7 +849,7 @@ Partial Class Form9
         ' Label38
         ' 
         Label38.AutoSize = True
-        Label38.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label38.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label38.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label38.Location = New Point(18, 266)
         Label38.Name = "Label38"
@@ -860,7 +860,7 @@ Partial Class Form9
         ' Label39
         ' 
         Label39.AutoSize = True
-        Label39.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label39.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label39.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label39.Location = New Point(18, 207)
         Label39.Name = "Label39"
@@ -871,7 +871,7 @@ Partial Class Form9
         ' Label40
         ' 
         Label40.AutoSize = True
-        Label40.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label40.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label40.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label40.Location = New Point(18, 36)
         Label40.Name = "Label40"
@@ -882,7 +882,7 @@ Partial Class Form9
         ' Label41
         ' 
         Label41.AutoSize = True
-        Label41.Font = New Font("Segoe UI", 11.0F, FontStyle.Bold)
+        Label41.Font = New Font("Segoe UI", 11F, FontStyle.Bold)
         Label41.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         Label41.Location = New Point(18, 153)
         Label41.Name = "Label41"
@@ -935,7 +935,7 @@ Partial Class Form9
         ' 
         ' colNamaPaket
         ' 
-        colNamaPaket.FillWeight = 50.0F
+        colNamaPaket.FillWeight = 50F
         colNamaPaket.HeaderText = "Paket"
         colNamaPaket.MinimumWidth = 6
         colNamaPaket.Name = "colNamaPaket"
@@ -996,7 +996,7 @@ Partial Class Form9
         ' 
         ' DataGridViewTextBoxColumn4
         ' 
-        DataGridViewTextBoxColumn4.FillWeight = 50.0F
+        DataGridViewTextBoxColumn4.FillWeight = 50F
         DataGridViewTextBoxColumn4.HeaderText = "Item"
         DataGridViewTextBoxColumn4.MinimumWidth = 6
         DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
@@ -1110,7 +1110,7 @@ Partial Class Form9
         ' 
         ' Form9
         ' 
-        AutoScaleDimensions = New SizeF(8.0F, 20.0F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1230, 923)
         Controls.Add(panelCetak)
