@@ -30,6 +30,10 @@ Partial Class Form5
         Label78 = New Label()
         btnSimpanPembayaran = New Button()
         Panel20 = New Panel()
+        btnCetak3 = New Button()
+        btnCetak2 = New Button()
+        btnCetak1 = New Button()
+        btnCetakLunas = New Button()
         lblTanggalTermin3 = New Label()
         lblTanggalTermin2 = New Label()
         lblTanggalTermin1 = New Label()
@@ -543,6 +547,10 @@ Partial Class Form5
         ' Panel20
         ' 
         Panel20.BackColor = Color.FromArgb(CByte(209), CByte(235), CByte(203))
+        Panel20.Controls.Add(btnCetak3)
+        Panel20.Controls.Add(btnCetak2)
+        Panel20.Controls.Add(btnCetak1)
+        Panel20.Controls.Add(btnCetakLunas)
         Panel20.Controls.Add(lblTanggalTermin3)
         Panel20.Controls.Add(lblTanggalTermin2)
         Panel20.Controls.Add(lblTanggalTermin1)
@@ -565,6 +573,54 @@ Partial Class Form5
         Panel20.Name = "Panel20"
         Panel20.Size = New Size(851, 485)
         Panel20.TabIndex = 17
+        ' 
+        ' btnCetak3
+        ' 
+        btnCetak3.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        btnCetak3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnCetak3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        btnCetak3.Location = New Point(764, 295)
+        btnCetak3.Name = "btnCetak3"
+        btnCetak3.Size = New Size(84, 29)
+        btnCetak3.TabIndex = 37
+        btnCetak3.Text = "Cetak"
+        btnCetak3.UseVisualStyleBackColor = False
+        ' 
+        ' btnCetak2
+        ' 
+        btnCetak2.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        btnCetak2.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnCetak2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        btnCetak2.Location = New Point(764, 223)
+        btnCetak2.Name = "btnCetak2"
+        btnCetak2.Size = New Size(84, 29)
+        btnCetak2.TabIndex = 36
+        btnCetak2.Text = "Cetak"
+        btnCetak2.UseVisualStyleBackColor = False
+        ' 
+        ' btnCetak1
+        ' 
+        btnCetak1.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        btnCetak1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnCetak1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        btnCetak1.Location = New Point(764, 133)
+        btnCetak1.Name = "btnCetak1"
+        btnCetak1.Size = New Size(84, 29)
+        btnCetak1.TabIndex = 35
+        btnCetak1.Text = "Cetak"
+        btnCetak1.UseVisualStyleBackColor = False
+        ' 
+        ' btnCetakLunas
+        ' 
+        btnCetakLunas.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        btnCetakLunas.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnCetakLunas.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        btnCetakLunas.Location = New Point(764, 58)
+        btnCetakLunas.Name = "btnCetakLunas"
+        btnCetakLunas.Size = New Size(84, 29)
+        btnCetakLunas.TabIndex = 34
+        btnCetakLunas.Text = "Cetak"
+        btnCetakLunas.UseVisualStyleBackColor = False
         ' 
         ' lblTanggalTermin3
         ' 
@@ -617,7 +673,7 @@ Partial Class Form5
         lblTerminRpCicil3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         lblTerminRpCicil3.Location = New Point(243, 295)
         lblTerminRpCicil3.Name = "lblTerminRpCicil3"
-        lblTerminRpCicil3.Size = New Size(560, 31)
+        lblTerminRpCicil3.Size = New Size(515, 31)
         lblTerminRpCicil3.TabIndex = 28
         lblTerminRpCicil3.Text = "0"
         ' 
@@ -628,7 +684,7 @@ Partial Class Form5
         lblTerminRpCicil2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         lblTerminRpCicil2.Location = New Point(243, 218)
         lblTerminRpCicil2.Name = "lblTerminRpCicil2"
-        lblTerminRpCicil2.Size = New Size(560, 31)
+        lblTerminRpCicil2.Size = New Size(515, 31)
         lblTerminRpCicil2.TabIndex = 27
         lblTerminRpCicil2.Text = "0"
         ' 
@@ -639,7 +695,7 @@ Partial Class Form5
         lblTerminRpCicil1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         lblTerminRpCicil1.Location = New Point(243, 132)
         lblTerminRpCicil1.Name = "lblTerminRpCicil1"
-        lblTerminRpCicil1.Size = New Size(560, 31)
+        lblTerminRpCicil1.Size = New Size(515, 31)
         lblTerminRpCicil1.TabIndex = 26
         lblTerminRpCicil1.Text = "0"
         ' 
@@ -650,7 +706,7 @@ Partial Class Form5
         lblTerminRpLunas.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         lblTerminRpLunas.Location = New Point(243, 58)
         lblTerminRpLunas.Name = "lblTerminRpLunas"
-        lblTerminRpLunas.Size = New Size(560, 31)
+        lblTerminRpLunas.Size = New Size(515, 31)
         lblTerminRpLunas.TabIndex = 24
         lblTerminRpLunas.Text = "0"
         ' 
@@ -4229,7 +4285,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(52258, 30)
+        Label10.Size = New Size(53200, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -5193,4 +5249,8 @@ Partial Class Form5
     Friend WithEvents lblPinaltyBayar As Label
     Friend WithEvents lblPinaltiPembayaran As Label
     Friend WithEvents tpLaporan As TabPage
+    Friend WithEvents btnCetakLunas As Button
+    Friend WithEvents btnCetak3 As Button
+    Friend WithEvents btnCetak2 As Button
+    Friend WithEvents btnCetak1 As Button
 End Class

@@ -2219,4 +2219,25 @@ Public Class Form5
     Private Sub dateCicil3_ValueChanged(sender As Object, e As EventArgs) Handles dateCicil3.ValueChanged
         updatePinalty()
     End Sub
+
+    Private Sub btnCetakLunas_Click(sender As Object, e As EventArgs) Handles btnCetakLunas.Click
+        Form10.TampilkanCetakan("LUNAS")
+        Form10.Show()
+    End Sub
+
+    Private Sub btnCetak1_Click(sender As Object, e As EventArgs) Handles btnCetak1.Click
+        Form10.TampilkanCetakan("CICIL1")
+        Form10.Show()
+    End Sub
+
+    Private Sub btnCetak2_Click(sender As Object, e As EventArgs) Handles btnCetak2.Click
+        Form10.TampilkanCetakan("CICIL2")
+        Form10.Show()
+    End Sub
+
+    Private Sub btnCetak3_Click(sender As Object, e As EventArgs) Handles btnCetak3.Click
+        Form10.TampilkanCetakan("CICIL3")
+        Form10.Show()
+    End Sub
+
 End Class
