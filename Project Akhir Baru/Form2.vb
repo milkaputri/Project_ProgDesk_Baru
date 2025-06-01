@@ -40,7 +40,9 @@ Public Class Form2
                     jumlahUmum(bulan) = total
                 End If
             End While
+            myDataReader.Close()
         End Using
+        myDataReader.Close()
     End Sub
 
     Private Sub GambarLineChart()
@@ -96,6 +98,7 @@ Public Class Form2
         g.DrawString("Umum", New Font("Arial", 8), Brushes.Black, 615, 58)
 
         PictureBox1.Image = bmp
+        myDataReader.Close()
     End Sub
 
 

@@ -1,6 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Form3
+
     Private allEventPanels As New List(Of Panel)()
     Private Sub Form3_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         LoadEvents("belum")
@@ -134,6 +135,28 @@ Public Class Form3
 
                 lblCountdown.Location = New Point(eventPanel.Width - lblCountdown.Width - 5, 0)
 
+
+                ' Tombol Laporan
+                Dim btnLaporan As New Button()
+                btnLaporan.Text = "Laporan"
+                btnLaporan.Width = 70
+                btnLaporan.Height = 25
+                btnLaporan.Font = New Font("Segoe UI", 8, FontStyle.Regular)
+                ' Menyelaraskan vertikal tombol ke tengah countdown
+                Dim verticalCenter As Integer = lblCountdown.Top + (lblCountdown.Height - btnLaporan.Height) \ 2
+                btnLaporan.Location = New Point(lblCountdown.Left - btnLaporan.Width - 10, verticalCenter)
+
+                btnLaporan.BackColor = Color.FromArgb(13, 64, 41)
+                btnLaporan.ForeColor = Color.White
+
+                ' Event handler klik tombol laporan
+                AddHandler btnLaporan.Click, Sub(senderBtn, eBtn)
+                                                 BukaForm9(idAcara)
+                                             End Sub
+
+                eventPanel.Controls.Add(btnLaporan)
+
+
                 ' Event handler klik
                 Dim isReadOnly = (statusWaktu = "selesai")
                 AddHandler eventPanel.Click, Sub(sender, e) OpenForm5(idAcara, namaAcara, tanggalDb, namaPemesan, alamat, noHpPertama, noHpKedua, waktuTampil, lokasiAcara, kategoriAcara, isReadOnly)
@@ -158,6 +181,32 @@ Public Class Form3
         End Try
     End Sub
 
+    Private Sub BukaForm9(idAcara As String)
+        If myDataReader IsNot Nothing AndAlso Not myDataReader.IsClosed Then
+            myDataReader.Close()
+        End If
+
+        Dim sql As String = "SELECT * FROM acara WHERE id_acara = @id"
+        myCommand = New MySqlCommand(sql, myConn)
+        myCommand.Parameters.AddWithValue("@id", idAcara)
+        myDataReader = myCommand.ExecuteReader()
+
+        If myDataReader.Read() Then
+            Dim form As New Form9()
+            form.lblNamaAcara.Text = myDataReader("nama_acara").ToString()
+            form.lblTanggal.Text = Convert.ToDateTime(myDataReader("tanggal_pelaksanaan")).ToString("yyyy-MM-dd")
+            form.lblWaktu.Text = myDataReader("waktu").ToString()
+            form.lblLokasi.Text = myDataReader("lokasi").ToString()
+            ' Anda bisa menambahkan lainnya jika tersedia di data
+
+            myDataReader.Close()
+            form.ShowDialog()
+        Else
+            myDataReader.Close()
+            MessageBox.Show("Data acara tidak ditemukan.")
+        End If
+    End Sub
+
     Private Sub OpenForm5(idAcara As String, namaAcara As String, tanggalDb As Date, namaPemesan As String, alamat As String, noHpPertama As String, noHpKedua As String, waktuTampil As String, lokasiAcara As String, kategoriAcara As String, Optional readonlyMode As Boolean = False)
         Dim form As New Form5()
 
@@ -172,6 +221,10 @@ Public Class Form3
         form.tbWaktu.Text = waktuTampil
         form.tbLokasi.Text = lokasiAcara
         form.cbKategori.SelectedItem = kategoriAcara
+
+        form.tanggalAcara = tanggalDb
+
+
 
         If kategoriAcara = "Lain-lain" Then
             form.TabControl1.TabPages.Remove(form.TabControl1.TabPages("tpPaket"))
@@ -195,6 +248,9 @@ Public Class Form3
 
         form.TampilDataPaket()
         form.TampilDataTambahan()
+        form.totalTagihan()
+        form.Pembayaran()
+
 
         ' Atur tampilan Form5 untuk mode edit
         form.lblBaru.Visible = False
@@ -206,6 +262,7 @@ Public Class Form3
 
         ' Tampilkan Form5 secara modal agar menunggu selesai
         form.ShowDialog()
+        myDataReader.Close()
     End Sub
 
     Private Sub tbCariAcara_TextChanged(sender As Object, e As EventArgs) Handles tbCariAcara.TextChanged
@@ -227,6 +284,7 @@ Public Class Form3
                 FlowLayoutPanel1.Controls.Add(panel)
             End If
         Next
+        myDataReader.Close()
     End Sub
 
     'Private Sub Login_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
@@ -265,6 +323,7 @@ Public Class Form3
                 FlowLayoutPanel1.Controls.Add(panel)
             End If
         Next
+        myDataReader.Close()
     End Sub
 
     Private Sub cbWaktuKegiatan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbWaktuKegiatan.SelectedIndexChanged

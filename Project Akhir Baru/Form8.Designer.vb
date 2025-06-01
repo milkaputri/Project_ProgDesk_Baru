@@ -25,7 +25,7 @@ Partial Class Form8
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form8))
         SplitContainer1 = New SplitContainer()
         SplitContainer2 = New SplitContainer()
-        Panel1 = New Panel()
+        panelPaket = New Panel()
         btnHome = New Button()
         Label1 = New Label()
         lblTotalHarga = New Label()
@@ -38,7 +38,8 @@ Partial Class Form8
         lblNamaPaket = New Label()
         Label59 = New Label()
         lblTotalTambahan = New Label()
-        Panel2 = New Panel()
+        panelTambahan = New Panel()
+        btnCetakPDF = New Button()
         lblTotalSemua = New Label()
         lblTotalHargaSemua = New Label()
         DataGridViewTambahan = New DataGridView()
@@ -57,9 +58,9 @@ Partial Class Form8
         SplitContainer2.Panel1.SuspendLayout()
         SplitContainer2.Panel2.SuspendLayout()
         SplitContainer2.SuspendLayout()
-        Panel1.SuspendLayout()
+        panelPaket.SuspendLayout()
         CType(DataGridViewPaket, ComponentModel.ISupportInitialize).BeginInit()
-        Panel2.SuspendLayout()
+        panelTambahan.SuspendLayout()
         CType(DataGridViewTambahan, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -78,7 +79,7 @@ Partial Class Form8
         ' 
         SplitContainer1.Panel2.AutoScroll = True
         SplitContainer1.Panel2.Controls.Add(lblTotalTambahan)
-        SplitContainer1.Panel2.Controls.Add(Panel2)
+        SplitContainer1.Panel2.Controls.Add(panelTambahan)
         SplitContainer1.Panel2.Controls.Add(lblTotalHargaTambahan)
         SplitContainer1.Panel2.Controls.Add(Label12)
         SplitContainer1.Size = New Size(1209, 669)
@@ -94,7 +95,7 @@ Partial Class Form8
         ' 
         ' SplitContainer2.Panel1
         ' 
-        SplitContainer2.Panel1.Controls.Add(Panel1)
+        SplitContainer2.Panel1.Controls.Add(panelPaket)
         ' 
         ' SplitContainer2.Panel2
         ' 
@@ -108,16 +109,16 @@ Partial Class Form8
         SplitContainer2.SplitterDistance = 41
         SplitContainer2.TabIndex = 0
         ' 
-        ' Panel1
+        ' panelPaket
         ' 
-        Panel1.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        Panel1.Controls.Add(btnHome)
-        Panel1.Controls.Add(Label1)
-        Panel1.Dock = DockStyle.Top
-        Panel1.Location = New Point(0, 0)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(1209, 45)
-        Panel1.TabIndex = 1
+        panelPaket.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
+        panelPaket.Controls.Add(btnHome)
+        panelPaket.Controls.Add(Label1)
+        panelPaket.Dock = DockStyle.Top
+        panelPaket.Location = New Point(0, 0)
+        panelPaket.Name = "panelPaket"
+        panelPaket.Size = New Size(1209, 45)
+        panelPaket.TabIndex = 1
         ' 
         ' btnHome
         ' 
@@ -250,16 +251,29 @@ Partial Class Form8
         lblTotalTambahan.TabIndex = 30
         lblTotalTambahan.Text = "Total :"
         ' 
-        ' Panel2
+        ' panelTambahan
         ' 
-        Panel2.BorderStyle = BorderStyle.Fixed3D
-        Panel2.Controls.Add(lblTotalSemua)
-        Panel2.Controls.Add(lblTotalHargaSemua)
-        Panel2.Controls.Add(DataGridViewTambahan)
-        Panel2.Location = New Point(0, 42)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(1209, 263)
-        Panel2.TabIndex = 26
+        panelTambahan.BorderStyle = BorderStyle.Fixed3D
+        panelTambahan.Controls.Add(btnCetakPDF)
+        panelTambahan.Controls.Add(lblTotalSemua)
+        panelTambahan.Controls.Add(lblTotalHargaSemua)
+        panelTambahan.Controls.Add(DataGridViewTambahan)
+        panelTambahan.Location = New Point(0, 42)
+        panelTambahan.Name = "panelTambahan"
+        panelTambahan.Size = New Size(1209, 263)
+        panelTambahan.TabIndex = 26
+        ' 
+        ' btnCetakPDF
+        ' 
+        btnCetakPDF.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        btnCetakPDF.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btnCetakPDF.ForeColor = Color.White
+        btnCetakPDF.Location = New Point(825, 226)
+        btnCetakPDF.Name = "btnCetakPDF"
+        btnCetakPDF.Size = New Size(94, 29)
+        btnCetakPDF.TabIndex = 31
+        btnCetakPDF.Text = "Cetak PDF"
+        btnCetakPDF.UseVisualStyleBackColor = False
         ' 
         ' lblTotalSemua
         ' 
@@ -383,26 +397,26 @@ Partial Class Form8
         SplitContainer2.Panel2.PerformLayout()
         CType(SplitContainer2, ComponentModel.ISupportInitialize).EndInit()
         SplitContainer2.ResumeLayout(False)
-        Panel1.ResumeLayout(False)
-        Panel1.PerformLayout()
+        panelPaket.ResumeLayout(False)
+        panelPaket.PerformLayout()
         CType(DataGridViewPaket, ComponentModel.ISupportInitialize).EndInit()
-        Panel2.ResumeLayout(False)
-        Panel2.PerformLayout()
+        panelTambahan.ResumeLayout(False)
+        panelTambahan.PerformLayout()
         CType(DataGridViewTambahan, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents SplitContainer1 As SplitContainer
     Friend WithEvents SplitContainer2 As SplitContainer
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents panelPaket As Panel
     Friend WithEvents btnHome As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label59 As Label
     Friend WithEvents lblNamaPaket As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnCetakPDF As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button2 As Button
-    Friend WithEvents Panel2 As Panel
+    Friend WithEvents panelTambahan As Panel
     Friend WithEvents DataGridViewTambahan As DataGridView
     Friend WithEvents Label12 As Label
     Friend WithEvents DataGridViewPaket As DataGridView
