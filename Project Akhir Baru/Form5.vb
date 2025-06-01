@@ -1997,9 +1997,10 @@ Public Class Form5
         Dim bayar1 As Decimal = ParseCurrency(tbBayarCicil1.Text)
         Dim bayar2 As Decimal = ParseCurrency(tbBayarCicil2.Text)
         Dim bayar3 As Decimal = ParseCurrency(tbBayarCicil3.Text)
+        Dim pinalti As Decimal = ParseCurrency(lblPinaltyBayar.Text)
 
         Dim totalBayar As Decimal = bayarLunas + bayar1 + bayar2 + bayar3
-        Dim sisaTagihan As Decimal = totalTagihan - totalBayar
+        Dim sisaTagihan As Decimal = (totalTagihan + pinalti) - totalBayar
         If sisaTagihan < 0 Then sisaTagihan = 0
 
         lblRpSisa.Text = "Rp " & sisaTagihan.ToString("N0")
@@ -2045,6 +2046,7 @@ Public Class Form5
                 Dim totalPengeluaran As Integer = myDataReader("total_pengeluaran")
                 Dim sisa As Integer = myDataReader("sisa_tagihan")
                 Dim total As Decimal = ParseCurrency(LblRpTagihan.Text)
+                Dim pinalti As Integer = myDataReader("nominal_pinalty")
                 cbPilihBayar.Enabled = False
                 If pilihan = "Lunas" Then
                     Dim terminLunas As Integer = myDataReader("total_pembayaran")
@@ -2054,6 +2056,7 @@ Public Class Form5
                     lblRpLunas.Text = "Rp" & terminLunas.ToString("N0")
                     dateRealLunas.Value = Convert.ToDateTime(dateRlLunas)
                     lblRpSisa.Text = "Rp" & sisa.ToString("N0")
+                    lblPinaltyBayar.Text = "Rp" & pinalti.ToString("N0")
                     SetNilaiPembayaran(pilihan, total)
                 ElseIf pilihan = "Cicilan" Then
                     Dim realCicil1 As Integer = myDataReader("nominal_real_cicil1")
@@ -2069,6 +2072,21 @@ Public Class Form5
                     dateCicil1.Value = Convert.ToDateTime(tglRealCicil1)
                     dateCicil2.Value = Convert.ToDateTime(tglRealCicil2)
                     dateCicil3.Value = Convert.ToDateTime(tglRealCicil3)
+                    lblPinaltyBayar.Text = "Rp" & pinalti.ToString("N0")
+                    If Not realCicil1 = 0 Then
+                        If Not realCicil2 = 0 Then
+                            If Not realCicil3 = 0 Then
+                                dateCicil1.Enabled = False
+                                dateCicil2.Enabled = False
+                                dateCicil3.Enabled = False
+                            Else
+                                dateCicil1.Enabled = False
+                                dateCicil2.Enabled = False
+                            End If
+                        Else
+                            dateCicil1.Enabled = False
+                        End If
+                    End If
                     SetNilaiPembayaran(pilihan, total)
                 End If
             End While
@@ -2096,6 +2114,7 @@ Public Class Form5
                     "tgl_real_cicil1 = '" & tglCicil1.ToString("yyyy-MM-dd") & "'," &
                     "tgl_real_cicil2 = '" & tglCicil2.ToString("yyyy-MM-dd") & "'," &
                     "tgl_real_cicil3 = '" & tglCicil3.ToString("yyyy-MM-dd") & "'," &
+                    "nominal_pinalty = '" & ParseCurrency(lblPinaltyBayar.Text) & "'," &
                     "sisa_tagihan = '" & ParseCurrency(lblRpSisa.Text) & "' " &
                     "WHERE id_acara = " & originalIdAcara
                 myCommand.CommandText = sql
@@ -2113,7 +2132,7 @@ Public Class Form5
             If tipeBayar = "Lunas" Then
                 Dim tglTerminLunas As Date = lblTanggalLunas.Text
                 Dim tglRealLunas As Date = dateRealLunas.Value.Date
-                Dim sql As String = "INSERT INTO pembayaran (id_acara, total_pembayaran, tanggal_pembayaran_lunas, tipe_pembayaran, sisa_tagihan, tgl_real_lunas) VALUES ('" & originalIdAcara & "','" & ParseCurrency(LblRpTagihan.Text) & "','" & tglTerminLunas.ToString("yyyy-MM-dd") & "','" & tipeBayar & "','" & "0" & "','" & tglRealLunas.ToString("yyyy-MM-dd") & "')"
+                Dim sql As String = "INSERT INTO pembayaran (id_acara, total_pembayaran, tanggal_pembayaran_lunas, tipe_pembayaran, sisa_tagihan, nominal_pinalty, tgl_real_lunas) VALUES ('" & originalIdAcara & "','" & ParseCurrency(LblRpTagihan.Text) & "','" & tglTerminLunas.ToString("yyyy-MM-dd") & "','" & tipeBayar & "','" & "0" & ParseCurrency(lblPinaltyBayar.Text) & "','" & tglRealLunas.ToString("yyyy-MM-dd") & "')"
                 myCommand.CommandText = sql
                 myCommand.ExecuteNonQuery()
             ElseIf tipeBayar = "Cicilan" Then
@@ -2123,12 +2142,81 @@ Public Class Form5
                 Dim tglCicil1 As Date = dateCicil1.Value.Date
                 Dim tglCicil2 As Date = dateCicil2.Value.Date
                 Dim tglCicil3 As Date = dateCicil3.Value.Date
-                Dim sql As String = "INSERT INTO pembayaran (id_acara, total_pembayaran, tanggal_pembayaran_pertama, tanggal_pembayaran_kedua, tanggal_pembayaran_ketiga, tipe_pembayaran, sisa_tagihan, nominal_termin_cicil1, nominal_termin_cicil2, nominal_termin_cicil3, nominal_real_cicil1, nominal_real_cicil2, nominal_real_cicil3, tgl_real_cicil1, tgl_real_cicil2, tgl_real_cicil3) VALUES" &
-                                    "('" & originalIdAcara & "','" & ParseCurrency(LblRpTagihan.Text) & "','" & tglTermincicil1.ToString("yyyy-MM-dd") & "','" & tglTermincicil2.ToString("yyyy-MM-dd") & "','" & tglTermincicil3.ToString("yyyy-MM-dd") & "','" & tipeBayar & "','" & ParseCurrency(lblRpSisa.Text) & "','" & ParseCurrency(lblTerminRpCicil1.Text) & "','" & ParseCurrency(lblTerminRpCicil2.Text) & "','" & ParseCurrency(lblTerminRpCicil3.Text) & "','" & ParseCurrency(tbBayarCicil1.Text) & "','" & ParseCurrency(tbBayarCicil2.Text) & "','" & ParseCurrency(tbBayarCicil3.Text) & "','" & tglCicil1.ToString("yyyy-MM-dd") & "','" & tglCicil2.ToString("yyyy-MM-dd") & "','" & tglCicil3.ToString("yyyy-MM-dd") & "')"
+                Dim sql As String = "INSERT INTO pembayaran (id_acara, total_pembayaran, tanggal_pembayaran_pertama, tanggal_pembayaran_kedua, tanggal_pembayaran_ketiga, tipe_pembayaran, sisa_tagihan, nominal_pinalty, nominal_termin_cicil1, nominal_termin_cicil2, nominal_termin_cicil3, nominal_real_cicil1, nominal_real_cicil2, nominal_real_cicil3, tgl_real_cicil1, tgl_real_cicil2, tgl_real_cicil3) VALUES" &
+                                    "('" & originalIdAcara & "','" & ParseCurrency(LblRpTagihan.Text) & "','" & tglTermincicil1.ToString("yyyy-MM-dd") & "','" & tglTermincicil2.ToString("yyyy-MM-dd") & "','" & tglTermincicil3.ToString("yyyy-MM-dd") & "','" & tipeBayar & "','" & ParseCurrency(lblRpSisa.Text) & "','" & ParseCurrency(lblPinaltyBayar.Text) & "','" & ParseCurrency(lblTerminRpCicil1.Text) & "','" & ParseCurrency(lblTerminRpCicil2.Text) & "','" & ParseCurrency(lblTerminRpCicil3.Text) & "','" & ParseCurrency(tbBayarCicil1.Text) & "','" & ParseCurrency(tbBayarCicil2.Text) & "','" & ParseCurrency(tbBayarCicil3.Text) & "','" & tglCicil1.ToString("yyyy-MM-dd") & "','" & tglCicil2.ToString("yyyy-MM-dd") & "','" & tglCicil3.ToString("yyyy-MM-dd") & "')"
                 myCommand.CommandText = sql
                 myCommand.ExecuteNonQuery()
             End If
         End If
         MessageBox.Show("Data berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Private Sub tbBayarCicil2_TextChanged(sender As Object, e As EventArgs) Handles tbBayarCicil2.TextChanged
+        UpdateSisaTagihan()
+    End Sub
+
+    Private Sub tbBayarCicil1_TextChanged(sender As Object, e As EventArgs) Handles tbBayarCicil1.TextChanged
+        UpdateSisaTagihan()
+    End Sub
+
+    Private Sub tbBayarCicil3_TextChanged(sender As Object, e As EventArgs) Handles tbBayarCicil3.TextChanged
+        UpdateSisaTagihan()
+    End Sub
+
+    Public Sub updatePinalty()
+        Dim tglDlLunas As Date = tanggalAcara.AddDays(-30)
+        Dim tglDlTermin1 As Date = tanggalAcara.AddDays(-60)
+        Dim tglDlTermin2 As Date = tanggalAcara.AddDays(-21)
+        Dim tglDlTermin3 As Date = tanggalAcara.AddDays(2)
+        If cbPilihBayar.SelectedItem = "Lunas" Then
+            Dim tglRealLunas As Date = dateRealLunas.Value.Date
+            If tglRealLunas > tglDlLunas Then
+                Dim selisihHari As Integer = (tglRealLunas - tglDlLunas).Days
+                Dim pinalti As Integer = 50000
+                Dim hasil As Integer = selisihHari * pinalti
+                lblPinaltyBayar.Text = "Rp " & hasil.ToString("N0")
+            Else
+                lblPinaltyBayar.Text = "Rp 0"
+            End If
+        Else
+            Dim tglCicil1 As Date = dateCicil1.Value.Date
+            Dim tglCicil2 As Date = dateCicil2.Value.Date
+            Dim tglCicil3 As Date = dateCicil3.Value.Date
+            Dim pinalti As Integer = ParseCurrency(lblPinaltyBayar.Text)
+            Dim hasil As Integer = 0
+            Dim denda As Integer = 50000
+            If tglCicil1 > tglDlTermin1 And ParseCurrency(tbBayarCicil1.Text) = 0 Then
+                Dim selisihHari As Integer = (tglCicil1 - tglDlTermin1).Days
+                hasil = (selisihHari * denda) + pinalti
+                lblPinaltyBayar.Text = "Rp " & hasil.ToString("N0")
+            ElseIf tglCicil2 > tglDlTermin2 And ParseCurrency(tbBayarCicil3.Text) < 0 Then
+                Dim selisihHari As Integer = (tglCicil2 - tglDlTermin2).Days
+                hasil = (selisihHari * denda) + pinalti
+                lblPinaltyBayar.Text = "Rp " & hasil.ToString("N0")
+            ElseIf tglCicil3 > tglDlTermin3 And ParseCurrency(tbBayarCicil2.Text) > 0 Then
+                Dim selisihHari As Integer = (tglCicil3 - tglDlTermin3).Days
+                hasil = (selisihHari * denda) + pinalti
+                lblPinaltyBayar.Text = "Rp " & hasil.ToString("N0")
+                'Else
+                '    lblPinaltyBayar.Text = "Rp" & pinalti.ToString("N0")
+            End If
+
+        End If
+    End Sub
+
+    Private Sub dateRealLunas_ValueChanged(sender As Object, e As EventArgs) Handles dateRealLunas.ValueChanged
+        updatePinalty()
+    End Sub
+
+    Private Sub dateCicil1_ValueChanged(sender As Object, e As EventArgs) Handles dateCicil1.ValueChanged
+        updatePinalty()
+    End Sub
+
+    Private Sub dateCicil2_ValueChanged(sender As Object, e As EventArgs) Handles dateCicil2.ValueChanged
+        updatePinalty()
+    End Sub
+
+    Private Sub dateCicil3_ValueChanged(sender As Object, e As EventArgs) Handles dateCicil3.ValueChanged
+        updatePinalty()
     End Sub
 End Class

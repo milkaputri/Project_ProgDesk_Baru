@@ -24,7 +24,6 @@ Partial Class Form5
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form5))
         BackgroundWorker1 = New ComponentModel.BackgroundWorker()
-        tpLaporan = New TabPage()
         tpPembayaran = New TabPage()
         cbPilihBayar = New ComboBox()
         btnInvoice = New Button()
@@ -402,6 +401,7 @@ Partial Class Form5
         tbNamaPemesan = New TextBox()
         Label1 = New Label()
         TabControl1 = New TabControl()
+        tpLaporan = New TabPage()
         tpPembayaran.SuspendLayout()
         Panel20.SuspendLayout()
         Panel19.SuspendLayout()
@@ -472,15 +472,6 @@ Partial Class Form5
         Panel1.SuspendLayout()
         TabControl1.SuspendLayout()
         SuspendLayout()
-        ' 
-        ' tpLaporan
-        ' 
-        tpLaporan.Location = New Point(4, 29)
-        tpLaporan.Name = "tpLaporan"
-        tpLaporan.Size = New Size(1201, 636)
-        tpLaporan.TabIndex = 3
-        tpLaporan.Text = "Laporan"
-        tpLaporan.UseVisualStyleBackColor = True
         ' 
         ' tpPembayaran
         ' 
@@ -4238,7 +4229,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(48961, 30)
+        Label10.Size = New Size(52258, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -4683,6 +4674,15 @@ Partial Class Form5
         TabControl1.Size = New Size(1209, 669)
         TabControl1.TabIndex = 0
         ' 
+        ' tpLaporan
+        ' 
+        tpLaporan.Location = New Point(4, 29)
+        tpLaporan.Name = "tpLaporan"
+        tpLaporan.Size = New Size(1201, 636)
+        tpLaporan.TabIndex = 3
+        tpLaporan.Text = "Laporan"
+        tpLaporan.UseVisualStyleBackColor = True
+        ' 
         ' Form5
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -4805,7 +4805,6 @@ Partial Class Form5
         ResumeLayout(False)
     End Sub
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
-    Friend WithEvents tpLaporan As TabPage
     Friend WithEvents tpPembayaran As TabPage
     Friend WithEvents tpTambahan As TabPage
     Friend WithEvents SplitContainer2 As SplitContainer
@@ -5193,4 +5192,5 @@ Partial Class Form5
     Friend WithEvents dateRealLunas As DateTimePicker
     Friend WithEvents lblPinaltyBayar As Label
     Friend WithEvents lblPinaltiPembayaran As Label
+    Friend WithEvents tpLaporan As TabPage
 End Class
