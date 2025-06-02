@@ -21,6 +21,8 @@ Public Class Form1
             myDataReader.Close()
             pengguna = tbNamaPengguna.Text
             ppassword = tbKataSandi.Text
+            'Dim form As New Form2()
+            'Form.Show()
             Form2.Show()
             Me.Hide()
         Else
@@ -33,6 +35,7 @@ Public Class Form1
 
     Private Sub Login_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Return Then
+            e.SuppressKeyPress = True
             btnMasuk.PerformClick()
         End If
     End Sub
