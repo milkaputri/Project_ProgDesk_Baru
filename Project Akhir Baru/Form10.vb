@@ -4,71 +4,125 @@ Imports System.IO
 Imports SysDraw = System.Drawing
 
 Public Class Form10
+    Public originalId As String
+    'Private Sub btnCetak_Click(sender As Object, e As EventArgs) Handles btnCetak.Click
+    '    ' Simpan ukuran asli panel
+    '    Dim originalSize As Size = pnlCetak.Size
+
+    '    ' Hitung tinggi konten sebenarnya
+    '    Dim contentHeight As Integer = pnlCetak.DisplayRectangle.Height
+
+    '    ' Nonaktifkan AutoScroll dan ubah ukuran panel agar seluruh konten terlihat
+    '    pnlCetak.AutoScroll = False
+    '    pnlCetak.Height = contentHeight
+
+    '    ' Gambar panel ke bitmap
+    '    ' Gambar panel ke bitmap
+    '    Dim bmp As New Bitmap(pnlCetak.Width, contentHeight)
+    '    pnlCetak.DrawToBitmap(bmp, New SysDraw.Rectangle(0, 0, pnlCetak.Width, contentHeight))
+
+
+    '    ' Simpan PDF
+    '    Dim saveFileDialog As New SaveFileDialog()
+    '    saveFileDialog.Filter = "PDF Files|*.pdf"
+    '    saveFileDialog.Title = "Simpan PDF"
+    '    saveFileDialog.FileName = "CetakPanel.pdf"
+
+    '    If saveFileDialog.ShowDialog() = DialogResult.OK Then
+    '        Dim pdfDoc As New Document(PageSize.A4, 10, 10, 10, 10)
+    '        Dim writer As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(saveFileDialog.FileName, FileMode.Create))
+    '        pdfDoc.Open()
+
+    '        Dim pageWidth As Integer = CInt(pdfDoc.PageSize.Width)
+    '        Dim pageHeight As Integer = CInt(pdfDoc.PageSize.Height)
+
+    '        Dim yOffset As Integer = 0
+    '        While yOffset < bmp.Height
+    '            Dim sliceHeight As Integer = Math.Min(pageHeight, bmp.Height - yOffset)
+    '            Dim bmpSlice As New Bitmap(bmp.Width, sliceHeight)
+
+    '            Using g As Graphics = Graphics.FromImage(bmpSlice)
+    '                'g.DrawImage(
+    '                '    bmp,
+    '                '    New System.Drawing.Rectangle(0, 0, bmp.Width, sliceHeight),
+    '                '    New System.Drawing.Rectangle(0, yOffset, bmp.Width, sliceHeight),
+    '                '    GraphicsUnit.Pixel
+    '                ')
+
+    '                g.DrawImage(
+    '                    bmp,
+    '                    New SysDraw.Rectangle(0, 0, bmp.Width, sliceHeight),
+    '                    New SysDraw.Rectangle(0, yOffset, bmp.Width, sliceHeight),
+    '                    GraphicsUnit.Pixel
+    '                )
+    '            End Using
+
+    '            Using ms As New MemoryStream()
+    '                bmpSlice.Save(ms, Imaging.ImageFormat.Png)
+    '                Dim img As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(ms.ToArray())
+    '                img.ScaleToFit(pageWidth - 20, pageHeight - 20)
+    '                img.Alignment = Element.ALIGN_CENTER
+    '                pdfDoc.Add(img)
+    '                If yOffset + sliceHeight < bmp.Height Then
+    '                    pdfDoc.NewPage()
+    '                End If
+    '            End Using
+
+    '            yOffset += sliceHeight
+    '        End While
+
+    '        pdfDoc.Close()
+    '        MessageBox.Show("PDF berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    '    End If
+
+    '    ' Kembalikan ukuran dan scroll ke semula
+    '    pnlCetak.Size = originalSize
+    '    pnlCetak.AutoScroll = True
+    'End Sub
     Private Sub btnCetak_Click(sender As Object, e As EventArgs) Handles btnCetak.Click
         ' Simpan ukuran asli panel
-        Dim originalSize As Size = pnlCetak.Size
+        Dim originalSize = pnlCetak.Size
 
         ' Hitung tinggi konten sebenarnya
-        Dim contentHeight As Integer = pnlCetak.DisplayRectangle.Height
+        Dim contentHeight = pnlCetak.DisplayRectangle.Height
 
         ' Nonaktifkan AutoScroll dan ubah ukuran panel agar seluruh konten terlihat
         pnlCetak.AutoScroll = False
         pnlCetak.Height = contentHeight
 
         ' Gambar panel ke bitmap
-        ' Gambar panel ke bitmap
         Dim bmp As New Bitmap(pnlCetak.Width, contentHeight)
-        pnlCetak.DrawToBitmap(bmp, New SysDraw.Rectangle(0, 0, pnlCetak.Width, contentHeight))
-
+        pnlCetak.DrawToBitmap(bmp, New SysDraw.Rectangle(0, 0, bmp.Width, bmp.Height))
 
         ' Simpan PDF
-        Dim saveFileDialog As New SaveFileDialog()
+        Dim saveFileDialog As New SaveFileDialog
         saveFileDialog.Filter = "PDF Files|*.pdf"
         saveFileDialog.Title = "Simpan PDF"
-        saveFileDialog.FileName = "CetakPanel.pdf"
+        saveFileDialog.FileName = "Invoice Pemesanan.pdf"
 
-        If saveFileDialog.ShowDialog() = DialogResult.OK Then
-            Dim pdfDoc As New Document(PageSize.A4, 10, 10, 10, 10)
-            Dim writer As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(saveFileDialog.FileName, FileMode.Create))
+        If saveFileDialog.ShowDialog = DialogResult.OK Then
+            ' Gunakan halaman landscape
+            Dim pdfDoc As New Document(PageSize.A4.Rotate(), 10, 10, 10, 10)
+            Dim writer = PdfWriter.GetInstance(pdfDoc, New FileStream(saveFileDialog.FileName, FileMode.Create))
             pdfDoc.Open()
 
-            Dim pageWidth As Integer = CInt(pdfDoc.PageSize.Width)
-            Dim pageHeight As Integer = CInt(pdfDoc.PageSize.Height)
+            Using ms As New MemoryStream()
+                bmp.Save(ms, Imaging.ImageFormat.Png)
+                Dim img = iTextSharp.text.Image.GetInstance(ms.ToArray())
 
-            Dim yOffset As Integer = 0
-            While yOffset < bmp.Height
-                Dim sliceHeight As Integer = Math.Min(pageHeight, bmp.Height - yOffset)
-                Dim bmpSlice As New Bitmap(bmp.Width, sliceHeight)
+                ' Hitung skala agar seluruh gambar muat ke 1 halaman
+                Dim pageWidth = pdfDoc.PageSize.Width - 20
+                Dim pageHeight = pdfDoc.PageSize.Height - 20
 
-                Using g As Graphics = Graphics.FromImage(bmpSlice)
-                    'g.DrawImage(
-                    '    bmp,
-                    '    New System.Drawing.Rectangle(0, 0, bmp.Width, sliceHeight),
-                    '    New System.Drawing.Rectangle(0, yOffset, bmp.Width, sliceHeight),
-                    '    GraphicsUnit.Pixel
-                    ')
+                Dim scaleX As Single = pageWidth / img.Width
+                Dim scaleY As Single = pageHeight / img.Height
+                Dim scale As Single = Math.Min(scaleX, scaleY)
 
-                    g.DrawImage(
-                        bmp,
-                        New SysDraw.Rectangle(0, 0, bmp.Width, sliceHeight),
-                        New SysDraw.Rectangle(0, yOffset, bmp.Width, sliceHeight),
-                        GraphicsUnit.Pixel
-                    )
-                End Using
+                img.ScaleAbsolute(img.Width * scale, img.Height * scale)
+                img.Alignment = Element.ALIGN_CENTER
 
-                Using ms As New MemoryStream()
-                    bmpSlice.Save(ms, Imaging.ImageFormat.Png)
-                    Dim img As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(ms.ToArray())
-                    img.ScaleToFit(pageWidth - 20, pageHeight - 20)
-                    img.Alignment = Element.ALIGN_CENTER
-                    pdfDoc.Add(img)
-                    If yOffset + sliceHeight < bmp.Height Then
-                        pdfDoc.NewPage()
-                    End If
-                End Using
-
-                yOffset += sliceHeight
-            End While
+                pdfDoc.Add(img)
+            End Using
 
             pdfDoc.Close()
             MessageBox.Show("PDF berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -146,8 +200,87 @@ Public Class Form10
                 lblInvoice3.Visible = True
                 lblTglInvoice3.Visible = True
                 lblInvoiceCicil3.Visible = True
-
         End Select
+    End Sub
+    Public Sub tampilData()
+        Dim sql As String = "select * from acara where id_acara = " & originalId
+        myCommand.CommandText = sql
+        myDataReader = myCommand.ExecuteReader
+        If myDataReader.HasRows Then
+            While myDataReader.Read()
+                Dim tgl As Date = myDataReader("tanggal_pelaksanaan")
+                lblNama.Text = myDataReader("nama_pemesan").ToString()
+                lblNoHp1.Text = myDataReader("no_hp_pertama").ToString()
+                lblNamaAcara.Text = myDataReader("nama_acara").ToString()
+                lblTanggal.Text = tgl.ToString("dd-MM-yyyy")
+            End While
+            myDataReader.Close()
+        End If
+    End Sub
+    Public Sub invoiceCicil(angka As Integer)
+        Dim sql As String = "select * from pembayaran where id_acara = " & originalId
+        myCommand.CommandText = sql
+        myDataReader = myCommand.ExecuteReader
+        If myDataReader.HasRows Then
+            While myDataReader.Read()
+                Dim total As Integer = myDataReader("total_pembayaran")
+                Dim pinalty As Integer = myDataReader("nominal_pinalty")
+                Dim sisaBayar As Integer = myDataReader("sisa_tagihan")
+                If angka = 1 Then
+                    Dim bayar1 As Integer = myDataReader("nominal_real_cicil1")
+                    Dim tglbayar1 As Date = myDataReader("tgl_real_cicil1")
+                    Dim sisaCicil1 As Integer = total - bayar1
+                    lblTotalTagihan.Text = "Rp " & total.ToString("N0")
+                    lblCicil1.Text = "Rp " & bayar1.ToString("N0")
+                    lblTglCicil1.Text = tglbayar1.ToString("dd-MM-yyyy")
+                    lblSisaTagihan.Text = "Rp " & sisaCicil1.ToString("N0")
+                ElseIf angka = 2 Then
+                    Dim bayar1 As Integer = myDataReader("nominal_real_cicil1")
+                    Dim bayar2 As Integer = myDataReader("nominal_real_cicil2")
+                    Dim tglbayar2 As Date = myDataReader("tgl_real_cicil2")
+                    Dim sisaCicil2 As Integer = (total - bayar1) - bayar2
+                    lblTotalTagihan.Text = "Rp " & (total - bayar1).ToString("N0")
+                    lblCicil2.Text = "Rp " & bayar2.ToString("N0")
+                    lblTglCicil2.Text = tglbayar2.ToString("dd-MM-yyyy")
+                    lblSisaTagihan.Text = "Rp " & sisaCicil2.ToString("N0")
+                ElseIf angka = 3 Then
+                    Dim bayar1 As Integer = myDataReader("nominal_real_cicil1")
+                    Dim bayar2 As Integer = myDataReader("nominal_real_cicil2")
+                    Dim bayar3 As Integer = myDataReader("nominal_real_cicil3")
+                    Dim tglbayar3 As Date = myDataReader("tgl_real_cicil3")
+                    Dim sisaCicil3 As Integer = (total - bayar1 - bayar2) - bayar3
+                    lblTotalTagihan.Text = "Rp " & (total - bayar1 - bayar2).ToString("N0")
+                    lblCicil3.Text = "Rp " & bayar3.ToString("N0")
+                    lblTglCicil3.Text = tglbayar3.ToString("dd-MM-yyyy")
+                    If sisaCicil3 <= 0 Then
+                        lblSisaTagihan.Text = "Rp 0"
+                    End If
+                ElseIf angka = 4 Then
+                    If myDataReader("tipe_pembayaran") = "Cicilan" Then
+                        Dim bayar1 As Integer = myDataReader("nominal_real_cicil1")
+                        Dim bayar2 As Integer = myDataReader("nominal_real_cicil2")
+                        Dim bayar3 As Integer = myDataReader("nominal_real_cicil3")
+                        Dim tglbayar1 As Date = myDataReader("tgl_real_cicil1")
+                        Dim tglbayar2 As Date = myDataReader("tgl_real_cicil2")
+                        Dim tglbayar3 As Date = myDataReader("tgl_real_cicil3")
+                        lblInvoiceTotal1.Text = "Rp " & total.ToString("N0")
+                        lblInvoiceCicil1.Text = "Rp " & bayar1.ToString("N0")
+                        lblInvoiceCicil2.Text = "Rp " & bayar2.ToString("N0")
+                        lblInvoiceCicil3.Text = "Rp " & bayar3.ToString("N0")
+                        lblTglInvoice1.Text = tglbayar1.ToString("dd-MM-yyyy")
+                        lblTglInvoice2.Text = tglbayar2.ToString("dd-MM-yyyy")
+                        lblTglInvoice3.Text = tglbayar3.ToString("dd-MM-yyyy")
+                        lblInvoiceSisa1.Text = "Rp 0"
+                    Else
+                        Dim tglLunas As Date = myDataReader("tgl_real_lunas")
+                        lblTotalTagihan.Text = "Rp " & total.ToString("N0")
+                        lblBayarLunas.Text = "Rp " & total.ToString("N0")
+                        lblTglLunas.Text = tglLunas.ToString("dd-MM-yyyy")
+                    End If
+                End If
+            End While
+            myDataReader.Close()
+        End If
     End Sub
 
     Private Sub pnlCicil1_Paint(sender As Object, e As PaintEventArgs) Handles pnlCicil.Paint
@@ -164,7 +297,9 @@ Public Class Form10
 
     Private Sub btnKembali_Click(sender As Object, e As EventArgs) Handles btnKembali.Click
         Me.Hide()
-        Form5.Show()
-        Form5.TabControl1.SelectedTab = Form5.tpPembayaran
+    End Sub
+
+    Private Sub lblCicil3_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class

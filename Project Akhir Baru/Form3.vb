@@ -30,11 +30,12 @@ Public Class Form3
         detailForm5.TabControl1.TabPages.Remove(detailForm5.TabControl1.TabPages("tpPaket"))
         detailForm5.TabControl1.TabPages.Remove(detailForm5.TabControl1.TabPages("tpTambahan"))
         detailForm5.TabControl1.TabPages.Remove(detailForm5.TabControl1.TabPages("tpPembayaran"))
-        detailForm5.TabControl1.TabPages.Remove(detailForm5.TabControl1.TabPages("tpLaporan"))
     End Sub
 
     Private Sub btnKeluar_Click(sender As Object, e As EventArgs) Handles btnKeluar.Click
         Form1.Show()
+        Form1.tbNamaPengguna.Clear()
+        Form1.tbKataSandi.Clear()
         Hide()
     End Sub
 
@@ -278,12 +279,6 @@ Public Class Form3
         Next
         myDataReader.Close()
     End Sub
-
-    'Private Sub Login_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
-    '    If e.KeyCode = Keys.Return Then
-    '        btnCari.PerformClick()
-    '    End If
-    'End Sub
 
     Private Sub btnHome_Click(sender As Object, e As EventArgs) Handles btnHome.Click
         Form2.Show()

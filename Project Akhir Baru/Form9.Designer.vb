@@ -65,46 +65,31 @@ Partial Class Form9
         DataGridViewTextBoxColumn3 = New DataGridViewTextBoxColumn()
         Label21 = New Label()
         pnlCicilan = New Panel()
-        Label53 = New Label()
-        Label52 = New Label()
-        Label42 = New Label()
-        Label28 = New Label()
-        Label26 = New Label()
-        Label50 = New Label()
-        Label51 = New Label()
-        Label48 = New Label()
-        Label49 = New Label()
+        lblTglCicilan3 = New Label()
+        lblTglCicilan2 = New Label()
+        lblTglCicilan1 = New Label()
+        lblSisaCicilan = New Label()
+        lblPinaltyCicilan = New Label()
+        lblCicilan3 = New Label()
+        lblCicilan2 = New Label()
+        lblCicilan1 = New Label()
         Label33 = New Label()
         Label34 = New Label()
         Label43 = New Label()
         Label44 = New Label()
         Label45 = New Label()
-        Label46 = New Label()
         Label47 = New Label()
         Label27 = New Label()
         PictureBox8 = New PictureBox()
         PictureBox9 = New PictureBox()
         Label29 = New Label()
-        Label35 = New Label()
-        Label36 = New Label()
-        Label37 = New Label()
+        lblTagihanCicilan = New Label()
         Label38 = New Label()
         Label39 = New Label()
         Label40 = New Label()
         Label41 = New Label()
-        lblNama = New Label()
-        lblAlamat = New Label()
-        lblNoHp1 = New Label()
-        lblNoHp2 = New Label()
-        lblTanggal = New Label()
-        lblWaktu = New Label()
-        lblLokasi = New Label()
-        Label30 = New Label()
-        Label25 = New Label()
-        lblNamaAcara = New Label()
-        lblHargaTotalPaket = New Label()
-        Label20 = New Label()
         pnlLunas = New Panel()
+        lblLaporanLunas = New Label()
         Label32 = New Label()
         PictureBox11 = New PictureBox()
         Label31 = New Label()
@@ -119,9 +104,21 @@ Partial Class Form9
         lblLunas2 = New Label()
         LblRpTagihan = New Label()
         lblTotalTagihan = New Label()
+        lblNama = New Label()
+        lblAlamat = New Label()
+        lblNoHp1 = New Label()
+        lblNoHp2 = New Label()
+        lblTanggal = New Label()
+        lblWaktu = New Label()
+        lblLokasi = New Label()
+        Label30 = New Label()
+        Label25 = New Label()
+        lblNamaAcara = New Label()
+        Label20 = New Label()
         PictureBox12 = New PictureBox()
         PictureBox14 = New PictureBox()
         panelCetak = New Panel()
+        lblHargaTotalPaket = New Label()
         btnKembali = New Button()
         btnCetak = New Button()
         PictureBox6 = New PictureBox()
@@ -534,143 +531,129 @@ Partial Class Form9
         ' 
         ' pnlCicilan
         ' 
-        pnlCicilan.Controls.Add(Label53)
-        pnlCicilan.Controls.Add(Label52)
-        pnlCicilan.Controls.Add(Label42)
-        pnlCicilan.Controls.Add(Label28)
-        pnlCicilan.Controls.Add(Label26)
-        pnlCicilan.Controls.Add(Label50)
-        pnlCicilan.Controls.Add(Label51)
-        pnlCicilan.Controls.Add(Label48)
-        pnlCicilan.Controls.Add(Label49)
+        pnlCicilan.Controls.Add(lblTglCicilan3)
+        pnlCicilan.Controls.Add(lblTglCicilan2)
+        pnlCicilan.Controls.Add(lblTglCicilan1)
+        pnlCicilan.Controls.Add(lblSisaCicilan)
+        pnlCicilan.Controls.Add(lblPinaltyCicilan)
+        pnlCicilan.Controls.Add(lblCicilan3)
+        pnlCicilan.Controls.Add(lblCicilan2)
+        pnlCicilan.Controls.Add(lblCicilan1)
         pnlCicilan.Controls.Add(Label33)
         pnlCicilan.Controls.Add(Label34)
         pnlCicilan.Controls.Add(Label43)
         pnlCicilan.Controls.Add(Label44)
         pnlCicilan.Controls.Add(Label45)
-        pnlCicilan.Controls.Add(Label46)
         pnlCicilan.Controls.Add(Label47)
         pnlCicilan.Controls.Add(Label27)
         pnlCicilan.Controls.Add(PictureBox8)
         pnlCicilan.Controls.Add(PictureBox9)
         pnlCicilan.Controls.Add(Label29)
-        pnlCicilan.Controls.Add(Label35)
-        pnlCicilan.Controls.Add(Label36)
-        pnlCicilan.Controls.Add(Label37)
+        pnlCicilan.Controls.Add(lblTagihanCicilan)
         pnlCicilan.Controls.Add(Label38)
         pnlCicilan.Controls.Add(Label39)
         pnlCicilan.Controls.Add(Label40)
         pnlCicilan.Controls.Add(Label41)
-        pnlCicilan.Location = New Point(1092, 262)
+        pnlCicilan.Location = New Point(1097, 264)
         pnlCicilan.Name = "pnlCicilan"
-        pnlCicilan.Size = New Size(451, 259)
+        pnlCicilan.Size = New Size(451, 233)
         pnlCicilan.TabIndex = 62
         ' 
-        ' Label53
+        ' lblTglCicilan3
         ' 
-        Label53.AutoSize = True
-        Label53.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label53.Location = New Point(339, 145)
-        Label53.Name = "Label53"
-        Label53.Size = New Size(97, 20)
-        Label53.TabIndex = 112
-        Label53.Text = "(dd:mm:yyyy)"
+        lblTglCicilan3.AutoSize = True
+        lblTglCicilan3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTglCicilan3.Location = New Point(339, 110)
+        lblTglCicilan3.Name = "lblTglCicilan3"
+        lblTglCicilan3.Size = New Size(97, 20)
+        lblTglCicilan3.TabIndex = 112
+        lblTglCicilan3.Text = "(dd:mm:yyyy)"
         ' 
-        ' Label52
+        ' lblTglCicilan2
         ' 
-        Label52.AutoSize = True
-        Label52.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label52.Location = New Point(339, 111)
-        Label52.Name = "Label52"
-        Label52.Size = New Size(97, 20)
-        Label52.TabIndex = 111
-        Label52.Text = "(dd:mm:yyyy)"
+        lblTglCicilan2.AutoSize = True
+        lblTglCicilan2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTglCicilan2.Location = New Point(339, 76)
+        lblTglCicilan2.Name = "lblTglCicilan2"
+        lblTglCicilan2.Size = New Size(97, 20)
+        lblTglCicilan2.TabIndex = 111
+        lblTglCicilan2.Text = "(dd:mm:yyyy)"
         ' 
-        ' Label42
+        ' lblTglCicilan1
         ' 
-        Label42.AutoSize = True
-        Label42.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label42.Location = New Point(339, 75)
-        Label42.Name = "Label42"
-        Label42.Size = New Size(97, 20)
-        Label42.TabIndex = 110
-        Label42.Text = "(dd:mm:yyyy)"
+        lblTglCicilan1.AutoSize = True
+        lblTglCicilan1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTglCicilan1.Location = New Point(339, 40)
+        lblTglCicilan1.Name = "lblTglCicilan1"
+        lblTglCicilan1.Size = New Size(97, 20)
+        lblTglCicilan1.TabIndex = 110
+        lblTglCicilan1.Text = "(dd:mm:yyyy)"
         ' 
-        ' Label28
+        ' lblSisaCicilan
         ' 
-        Label28.AutoSize = True
-        Label28.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label28.Location = New Point(339, 40)
-        Label28.Name = "Label28"
-        Label28.Size = New Size(97, 20)
-        Label28.TabIndex = 109
-        Label28.Text = "(dd:mm:yyyy)"
+        lblSisaCicilan.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        lblSisaCicilan.Font = New Font("Segoe UI", 9.0F)
+        lblSisaCicilan.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblSisaCicilan.Location = New Point(184, 197)
+        lblSisaCicilan.Name = "lblSisaCicilan"
+        lblSisaCicilan.Size = New Size(218, 26)
+        lblSisaCicilan.TabIndex = 85
+        lblSisaCicilan.Text = "0"
+        lblSisaCicilan.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label26
+        ' lblPinaltyCicilan
         ' 
-        Label26.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        Label26.Font = New Font("Segoe UI", 9.0F)
-        Label26.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label26.Location = New Point(184, 232)
-        Label26.Name = "Label26"
-        Label26.Size = New Size(218, 26)
-        Label26.TabIndex = 85
-        Label26.Text = "0"
-        Label26.TextAlign = ContentAlignment.MiddleLeft
+        lblPinaltyCicilan.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        lblPinaltyCicilan.Font = New Font("Segoe UI", 9.0F)
+        lblPinaltyCicilan.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblPinaltyCicilan.Location = New Point(184, 140)
+        lblPinaltyCicilan.Name = "lblPinaltyCicilan"
+        lblPinaltyCicilan.Size = New Size(159, 26)
+        lblPinaltyCicilan.TabIndex = 84
+        lblPinaltyCicilan.Text = "0"
+        lblPinaltyCicilan.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label50
+        ' lblCicilan3
         ' 
-        Label50.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        Label50.Font = New Font("Segoe UI", 9.0F)
-        Label50.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label50.Location = New Point(184, 175)
-        Label50.Name = "Label50"
-        Label50.Size = New Size(159, 26)
-        Label50.TabIndex = 84
-        Label50.Text = "0"
-        Label50.TextAlign = ContentAlignment.MiddleLeft
+        lblCicilan3.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        lblCicilan3.Font = New Font("Segoe UI", 9.0F)
+        lblCicilan3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblCicilan3.Location = New Point(184, 104)
+        lblCicilan3.Name = "lblCicilan3"
+        lblCicilan3.Size = New Size(159, 26)
+        lblCicilan3.TabIndex = 83
+        lblCicilan3.Text = "0"
+        lblCicilan3.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label51
+        ' lblCicilan2
         ' 
-        Label51.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        Label51.Font = New Font("Segoe UI", 9.0F)
-        Label51.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label51.Location = New Point(184, 139)
-        Label51.Name = "Label51"
-        Label51.Size = New Size(159, 26)
-        Label51.TabIndex = 83
-        Label51.Text = "0"
-        Label51.TextAlign = ContentAlignment.MiddleLeft
+        lblCicilan2.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        lblCicilan2.Font = New Font("Segoe UI", 9.0F)
+        lblCicilan2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblCicilan2.Location = New Point(184, 73)
+        lblCicilan2.Name = "lblCicilan2"
+        lblCicilan2.Size = New Size(159, 26)
+        lblCicilan2.TabIndex = 82
+        lblCicilan2.Text = "0"
+        lblCicilan2.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label48
+        ' lblCicilan1
         ' 
-        Label48.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        Label48.Font = New Font("Segoe UI", 9.0F)
-        Label48.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label48.Location = New Point(184, 108)
-        Label48.Name = "Label48"
-        Label48.Size = New Size(159, 26)
-        Label48.TabIndex = 82
-        Label48.Text = "0"
-        Label48.TextAlign = ContentAlignment.MiddleLeft
-        ' 
-        ' Label49
-        ' 
-        Label49.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        Label49.Font = New Font("Segoe UI", 9.0F)
-        Label49.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label49.Location = New Point(184, 72)
-        Label49.Name = "Label49"
-        Label49.Size = New Size(159, 26)
-        Label49.TabIndex = 81
-        Label49.Text = "0"
-        Label49.TextAlign = ContentAlignment.MiddleLeft
+        lblCicilan1.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        lblCicilan1.Font = New Font("Segoe UI", 9.0F)
+        lblCicilan1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblCicilan1.Location = New Point(184, 37)
+        lblCicilan1.Name = "lblCicilan1"
+        lblCicilan1.Size = New Size(159, 26)
+        lblCicilan1.TabIndex = 81
+        lblCicilan1.Text = "0"
+        lblCicilan1.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label33
         ' 
         Label33.AutoSize = True
         Label33.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label33.Location = New Point(166, 142)
+        Label33.Location = New Point(166, 107)
         Label33.Name = "Label33"
         Label33.Size = New Size(12, 20)
         Label33.TabIndex = 80
@@ -680,7 +663,7 @@ Partial Class Form9
         ' 
         Label34.AutoSize = True
         Label34.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label34.Location = New Point(166, 235)
+        Label34.Location = New Point(166, 200)
         Label34.Name = "Label34"
         Label34.Size = New Size(12, 20)
         Label34.TabIndex = 79
@@ -690,7 +673,7 @@ Partial Class Form9
         ' 
         Label43.AutoSize = True
         Label43.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label43.Location = New Point(166, 174)
+        Label43.Location = New Point(166, 139)
         Label43.Name = "Label43"
         Label43.Size = New Size(12, 20)
         Label43.TabIndex = 77
@@ -700,7 +683,7 @@ Partial Class Form9
         ' 
         Label44.AutoSize = True
         Label44.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label44.Location = New Point(166, 108)
+        Label44.Location = New Point(166, 73)
         Label44.Name = "Label44"
         Label44.Size = New Size(12, 20)
         Label44.TabIndex = 76
@@ -710,21 +693,11 @@ Partial Class Form9
         ' 
         Label45.AutoSize = True
         Label45.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label45.Location = New Point(166, 75)
+        Label45.Location = New Point(166, 40)
         Label45.Name = "Label45"
         Label45.Size = New Size(12, 20)
         Label45.TabIndex = 75
         Label45.Text = ":"
-        ' 
-        ' Label46
-        ' 
-        Label46.AutoSize = True
-        Label46.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label46.Location = New Point(166, 43)
-        Label46.Name = "Label46"
-        Label46.Size = New Size(12, 20)
-        Label46.TabIndex = 74
-        Label46.Text = ":"
         ' 
         ' Label47
         ' 
@@ -741,7 +714,7 @@ Partial Class Form9
         Label27.AutoSize = True
         Label27.Font = New Font("Segoe UI", 9.0F)
         Label27.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label27.Location = New Point(3, 174)
+        Label27.Location = New Point(3, 139)
         Label27.Name = "Label27"
         Label27.Size = New Size(138, 20)
         Label27.TabIndex = 59
@@ -750,7 +723,7 @@ Partial Class Form9
         ' PictureBox8
         ' 
         PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
-        PictureBox8.Location = New Point(379, 194)
+        PictureBox8.Location = New Point(379, 159)
         PictureBox8.Name = "PictureBox8"
         PictureBox8.Size = New Size(39, 39)
         PictureBox8.TabIndex = 58
@@ -759,7 +732,7 @@ Partial Class Form9
         ' PictureBox9
         ' 
         PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
-        PictureBox9.Location = New Point(0, 206)
+        PictureBox9.Location = New Point(0, 171)
         PictureBox9.Name = "PictureBox9"
         PictureBox9.Size = New Size(373, 22)
         PictureBox9.SizeMode = PictureBoxSizeMode.StretchImage
@@ -771,53 +744,30 @@ Partial Class Form9
         Label29.AutoSize = True
         Label29.Font = New Font("Segoe UI", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label29.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label29.Location = New Point(3, 235)
+        Label29.Location = New Point(3, 200)
         Label29.Name = "Label29"
         Label29.Size = New Size(90, 20)
         Label29.TabIndex = 55
         Label29.Text = "Sisa Tagihan"
         ' 
-        ' Label35
+        ' lblTagihanCicilan
         ' 
-        Label35.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        Label35.Font = New Font("Segoe UI", 9.0F)
-        Label35.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label35.Location = New Point(184, 40)
-        Label35.Name = "Label35"
-        Label35.Size = New Size(159, 26)
-        Label35.TabIndex = 46
-        Label35.Text = "0"
-        Label35.TextAlign = ContentAlignment.MiddleLeft
-        ' 
-        ' Label36
-        ' 
-        Label36.AutoSize = True
-        Label36.Font = New Font("Segoe UI", 9.0F)
-        Label36.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label36.Location = New Point(3, 43)
-        Label36.Name = "Label36"
-        Label36.Size = New Size(131, 20)
-        Label36.TabIndex = 45
-        Label36.Text = "Pembayaran Lunas"
-        ' 
-        ' Label37
-        ' 
-        Label37.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        Label37.Font = New Font("Segoe UI", 9.0F)
-        Label37.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label37.Location = New Point(184, 4)
-        Label37.Name = "Label37"
-        Label37.Size = New Size(159, 26)
-        Label37.TabIndex = 44
-        Label37.Text = "0"
-        Label37.TextAlign = ContentAlignment.MiddleLeft
+        lblTagihanCicilan.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        lblTagihanCicilan.Font = New Font("Segoe UI", 9.0F)
+        lblTagihanCicilan.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTagihanCicilan.Location = New Point(184, 4)
+        lblTagihanCicilan.Name = "lblTagihanCicilan"
+        lblTagihanCicilan.Size = New Size(159, 26)
+        lblTagihanCicilan.TabIndex = 44
+        lblTagihanCicilan.Text = "0"
+        lblTagihanCicilan.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label38
         ' 
         Label38.AutoSize = True
         Label38.Font = New Font("Segoe UI", 9.0F)
         Label38.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label38.Location = New Point(3, 142)
+        Label38.Location = New Point(3, 107)
         Label38.Name = "Label38"
         Label38.Size = New Size(106, 20)
         Label38.TabIndex = 43
@@ -828,7 +778,7 @@ Partial Class Form9
         Label39.AutoSize = True
         Label39.Font = New Font("Segoe UI", 9.0F)
         Label39.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label39.Location = New Point(3, 108)
+        Label39.Location = New Point(3, 73)
         Label39.Name = "Label39"
         Label39.Size = New Size(102, 20)
         Label39.TabIndex = 42
@@ -850,134 +800,15 @@ Partial Class Form9
         Label41.AutoSize = True
         Label41.Font = New Font("Segoe UI", 9.0F)
         Label41.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label41.Location = New Point(3, 75)
+        Label41.Location = New Point(3, 40)
         Label41.Name = "Label41"
         Label41.Size = New Size(98, 20)
         Label41.TabIndex = 41
         Label41.Text = "Pembayaran I"
         ' 
-        ' lblNama
-        ' 
-        lblNama.AutoSize = True
-        lblNama.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblNama.Location = New Point(214, 269)
-        lblNama.Name = "lblNama"
-        lblNama.Size = New Size(115, 20)
-        lblNama.TabIndex = 64
-        lblNama.Text = "Nama Pemesan "
-        ' 
-        ' lblAlamat
-        ' 
-        lblAlamat.AutoSize = True
-        lblAlamat.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblAlamat.Location = New Point(214, 305)
-        lblAlamat.Name = "lblAlamat"
-        lblAlamat.Size = New Size(123, 20)
-        lblAlamat.TabIndex = 65
-        lblAlamat.Text = "Alamat Pemesan "
-        ' 
-        ' lblNoHp1
-        ' 
-        lblNoHp1.AutoSize = True
-        lblNoHp1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblNoHp1.Location = New Point(214, 337)
-        lblNoHp1.Name = "lblNoHp1"
-        lblNoHp1.Size = New Size(64, 20)
-        lblNoHp1.TabIndex = 66
-        lblNoHp1.Text = "No HP 1"
-        ' 
-        ' lblNoHp2
-        ' 
-        lblNoHp2.AutoSize = True
-        lblNoHp2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblNoHp2.Location = New Point(214, 370)
-        lblNoHp2.Name = "lblNoHp2"
-        lblNoHp2.Size = New Size(64, 20)
-        lblNoHp2.TabIndex = 67
-        lblNoHp2.Text = "No HP 1"
-        ' 
-        ' lblTanggal
-        ' 
-        lblTanggal.AutoSize = True
-        lblTanggal.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblTanggal.Location = New Point(214, 436)
-        lblTanggal.Name = "lblTanggal"
-        lblTanggal.Size = New Size(145, 20)
-        lblTanggal.TabIndex = 68
-        lblTanggal.Text = "Tanggal Pelaksanaan"
-        ' 
-        ' lblWaktu
-        ' 
-        lblWaktu.AutoSize = True
-        lblWaktu.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblWaktu.Location = New Point(214, 465)
-        lblWaktu.Name = "lblWaktu"
-        lblWaktu.Size = New Size(134, 20)
-        lblWaktu.TabIndex = 69
-        lblWaktu.Text = "Waktu Pelaksanaan"
-        ' 
-        ' lblLokasi
-        ' 
-        lblLokasi.AutoSize = True
-        lblLokasi.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblLokasi.Location = New Point(214, 493)
-        lblLokasi.Name = "lblLokasi"
-        lblLokasi.Size = New Size(50, 20)
-        lblLokasi.TabIndex = 70
-        lblLokasi.Text = "Lokasi"
-        ' 
-        ' Label30
-        ' 
-        Label30.AutoSize = True
-        Label30.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label30.Location = New Point(31, 404)
-        Label30.Name = "Label30"
-        Label30.Size = New Size(91, 20)
-        Label30.TabIndex = 71
-        Label30.Text = "Nama Acara"
-        ' 
-        ' Label25
-        ' 
-        Label25.AutoSize = True
-        Label25.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label25.Location = New Point(196, 404)
-        Label25.Name = "Label25"
-        Label25.Size = New Size(12, 20)
-        Label25.TabIndex = 72
-        Label25.Text = ":"
-        ' 
-        ' lblNamaAcara
-        ' 
-        lblNamaAcara.AutoSize = True
-        lblNamaAcara.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblNamaAcara.Location = New Point(214, 404)
-        lblNamaAcara.Name = "lblNamaAcara"
-        lblNamaAcara.Size = New Size(91, 20)
-        lblNamaAcara.TabIndex = 73
-        lblNamaAcara.Text = "Nama Acara"
-        ' 
-        ' lblHargaTotalPaket
-        ' 
-        lblHargaTotalPaket.AutoSize = True
-        lblHargaTotalPaket.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblHargaTotalPaket.Location = New Point(1100, 587)
-        lblHargaTotalPaket.Name = "lblHargaTotalPaket"
-        lblHargaTotalPaket.Size = New Size(0, 20)
-        lblHargaTotalPaket.TabIndex = 75
-        ' 
-        ' Label20
-        ' 
-        Label20.AutoSize = True
-        Label20.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label20.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label20.Location = New Point(1064, 228)
-        Label20.Name = "Label20"
-        Label20.Size = New Size(145, 31)
-        Label20.TabIndex = 76
-        Label20.Text = "Pembayaran"
-        ' 
         ' pnlLunas
         ' 
+        pnlLunas.Controls.Add(lblLaporanLunas)
         pnlLunas.Controls.Add(Label32)
         pnlLunas.Controls.Add(PictureBox11)
         pnlLunas.Controls.Add(Label31)
@@ -992,10 +823,20 @@ Partial Class Form9
         pnlLunas.Controls.Add(lblLunas2)
         pnlLunas.Controls.Add(LblRpTagihan)
         pnlLunas.Controls.Add(lblTotalTagihan)
-        pnlLunas.Location = New Point(1092, 262)
+        pnlLunas.Location = New Point(1097, 264)
         pnlLunas.Name = "pnlLunas"
         pnlLunas.Size = New Size(451, 194)
         pnlLunas.TabIndex = 64
+        ' 
+        ' lblLaporanLunas
+        ' 
+        lblLaporanLunas.AutoSize = True
+        lblLaporanLunas.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblLaporanLunas.Location = New Point(349, 43)
+        lblLaporanLunas.Name = "lblLaporanLunas"
+        lblLaporanLunas.Size = New Size(97, 20)
+        lblLaporanLunas.TabIndex = 110
+        lblLaporanLunas.Text = "(dd:mm:yyyy)"
         ' 
         ' Label32
         ' 
@@ -1148,6 +989,117 @@ Partial Class Form9
         lblTotalTagihan.TabIndex = 40
         lblTotalTagihan.Text = "Total Tagihan"
         ' 
+        ' lblNama
+        ' 
+        lblNama.AutoSize = True
+        lblNama.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblNama.Location = New Point(214, 269)
+        lblNama.Name = "lblNama"
+        lblNama.Size = New Size(115, 20)
+        lblNama.TabIndex = 64
+        lblNama.Text = "Nama Pemesan "
+        ' 
+        ' lblAlamat
+        ' 
+        lblAlamat.AutoSize = True
+        lblAlamat.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblAlamat.Location = New Point(214, 305)
+        lblAlamat.Name = "lblAlamat"
+        lblAlamat.Size = New Size(123, 20)
+        lblAlamat.TabIndex = 65
+        lblAlamat.Text = "Alamat Pemesan "
+        ' 
+        ' lblNoHp1
+        ' 
+        lblNoHp1.AutoSize = True
+        lblNoHp1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblNoHp1.Location = New Point(214, 337)
+        lblNoHp1.Name = "lblNoHp1"
+        lblNoHp1.Size = New Size(64, 20)
+        lblNoHp1.TabIndex = 66
+        lblNoHp1.Text = "No HP 1"
+        ' 
+        ' lblNoHp2
+        ' 
+        lblNoHp2.AutoSize = True
+        lblNoHp2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblNoHp2.Location = New Point(214, 370)
+        lblNoHp2.Name = "lblNoHp2"
+        lblNoHp2.Size = New Size(64, 20)
+        lblNoHp2.TabIndex = 67
+        lblNoHp2.Text = "No HP 1"
+        ' 
+        ' lblTanggal
+        ' 
+        lblTanggal.AutoSize = True
+        lblTanggal.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTanggal.Location = New Point(214, 436)
+        lblTanggal.Name = "lblTanggal"
+        lblTanggal.Size = New Size(145, 20)
+        lblTanggal.TabIndex = 68
+        lblTanggal.Text = "Tanggal Pelaksanaan"
+        ' 
+        ' lblWaktu
+        ' 
+        lblWaktu.AutoSize = True
+        lblWaktu.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblWaktu.Location = New Point(214, 465)
+        lblWaktu.Name = "lblWaktu"
+        lblWaktu.Size = New Size(134, 20)
+        lblWaktu.TabIndex = 69
+        lblWaktu.Text = "Waktu Pelaksanaan"
+        ' 
+        ' lblLokasi
+        ' 
+        lblLokasi.AutoSize = True
+        lblLokasi.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblLokasi.Location = New Point(214, 493)
+        lblLokasi.Name = "lblLokasi"
+        lblLokasi.Size = New Size(50, 20)
+        lblLokasi.TabIndex = 70
+        lblLokasi.Text = "Lokasi"
+        ' 
+        ' Label30
+        ' 
+        Label30.AutoSize = True
+        Label30.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label30.Location = New Point(31, 404)
+        Label30.Name = "Label30"
+        Label30.Size = New Size(91, 20)
+        Label30.TabIndex = 71
+        Label30.Text = "Nama Acara"
+        ' 
+        ' Label25
+        ' 
+        Label25.AutoSize = True
+        Label25.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label25.Location = New Point(196, 404)
+        Label25.Name = "Label25"
+        Label25.Size = New Size(12, 20)
+        Label25.TabIndex = 72
+        Label25.Text = ":"
+        ' 
+        ' lblNamaAcara
+        ' 
+        lblNamaAcara.AutoSize = True
+        lblNamaAcara.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblNamaAcara.Location = New Point(214, 404)
+        lblNamaAcara.Name = "lblNamaAcara"
+        lblNamaAcara.Size = New Size(91, 20)
+        lblNamaAcara.TabIndex = 73
+        lblNamaAcara.Text = "Nama Acara"
+        ' 
+        ' Label20
+        ' 
+        Label20.AutoSize = True
+        Label20.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label20.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label20.Location = New Point(1064, 228)
+        Label20.Name = "Label20"
+        Label20.Size = New Size(145, 31)
+        Label20.TabIndex = 76
+        Label20.Text = "Pembayaran"
+        ' 
         ' PictureBox12
         ' 
         PictureBox12.Image = CType(resources.GetObject("PictureBox12.Image"), Image)
@@ -1172,15 +1124,15 @@ Partial Class Form9
         ' 
         panelCetak.AutoScroll = True
         panelCetak.BackColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        panelCetak.Controls.Add(lblHargaTotalPaket)
+        panelCetak.Controls.Add(pnlLunas)
         panelCetak.Controls.Add(btnKembali)
         panelCetak.Controls.Add(btnCetak)
         panelCetak.Controls.Add(PictureBox6)
         panelCetak.Controls.Add(Label59)
         panelCetak.Controls.Add(PictureBox14)
         panelCetak.Controls.Add(PictureBox12)
-        panelCetak.Controls.Add(pnlLunas)
         panelCetak.Controls.Add(Label20)
-        panelCetak.Controls.Add(lblHargaTotalPaket)
         panelCetak.Controls.Add(lblNamaAcara)
         panelCetak.Controls.Add(Label25)
         panelCetak.Controls.Add(Label30)
@@ -1191,7 +1143,6 @@ Partial Class Form9
         panelCetak.Controls.Add(lblNoHp1)
         panelCetak.Controls.Add(lblAlamat)
         panelCetak.Controls.Add(lblNama)
-        panelCetak.Controls.Add(pnlCicilan)
         panelCetak.Controls.Add(Label21)
         panelCetak.Controls.Add(DataGridViewTambahan)
         panelCetak.Controls.Add(lblNamaPaket)
@@ -1222,11 +1173,21 @@ Partial Class Form9
         panelCetak.Controls.Add(Label2)
         panelCetak.Controls.Add(Label1)
         panelCetak.Controls.Add(makan)
+        panelCetak.Controls.Add(pnlCicilan)
         panelCetak.Dock = DockStyle.Fill
         panelCetak.Location = New Point(0, 0)
         panelCetak.Name = "panelCetak"
         panelCetak.Size = New Size(1802, 1103)
         panelCetak.TabIndex = 0
+        ' 
+        ' lblHargaTotalPaket
+        ' 
+        lblHargaTotalPaket.AutoSize = True
+        lblHargaTotalPaket.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblHargaTotalPaket.Location = New Point(727, 587)
+        lblHargaTotalPaket.Name = "lblHargaTotalPaket"
+        lblHargaTotalPaket.Size = New Size(0, 20)
+        lblHargaTotalPaket.TabIndex = 83
         ' 
         ' btnKembali
         ' 
@@ -1338,29 +1299,25 @@ Partial Class Form9
     Friend WithEvents DataGridViewTambahan As DataGridView
     Friend WithEvents Label21 As Label
     Friend WithEvents pnlCicilan As Panel
-    Friend WithEvents Label53 As Label
-    Friend WithEvents Label52 As Label
-    Friend WithEvents Label42 As Label
-    Friend WithEvents Label28 As Label
-    Friend WithEvents Label26 As Label
-    Friend WithEvents Label50 As Label
-    Friend WithEvents Label51 As Label
-    Friend WithEvents Label48 As Label
-    Friend WithEvents Label49 As Label
+    Friend WithEvents lblTglCicilan3 As Label
+    Friend WithEvents lblTglCicilan2 As Label
+    Friend WithEvents lblTglCicilan1 As Label
+    Friend WithEvents lblSisaCicilan As Label
+    Friend WithEvents lblPinaltyCicilan As Label
+    Friend WithEvents lblCicilan3 As Label
+    Friend WithEvents lblCicilan2 As Label
+    Friend WithEvents lblCicilan1 As Label
     Friend WithEvents Label33 As Label
     Friend WithEvents Label34 As Label
     Friend WithEvents Label43 As Label
     Friend WithEvents Label44 As Label
     Friend WithEvents Label45 As Label
-    Friend WithEvents Label46 As Label
     Friend WithEvents Label47 As Label
     Friend WithEvents Label27 As Label
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents Label29 As Label
-    Friend WithEvents Label35 As Label
-    Friend WithEvents Label36 As Label
-    Friend WithEvents Label37 As Label
+    Friend WithEvents lblTagihanCicilan As Label
     Friend WithEvents Label38 As Label
     Friend WithEvents Label39 As Label
     Friend WithEvents Label40 As Label
@@ -1375,7 +1332,6 @@ Partial Class Form9
     Friend WithEvents Label30 As Label
     Friend WithEvents Label25 As Label
     Friend WithEvents lblNamaAcara As Label
-    Friend WithEvents lblHargaTotalPaket As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents pnlLunas As Panel
     Friend WithEvents Label32 As Label
@@ -1408,4 +1364,6 @@ Partial Class Form9
     Friend WithEvents colQty As DataGridViewTextBoxColumn
     Friend WithEvents colTotalTambahan As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
+    Friend WithEvents lblLaporanLunas As Label
+    Friend WithEvents lblHargaTotalPaket As Label
 End Class
