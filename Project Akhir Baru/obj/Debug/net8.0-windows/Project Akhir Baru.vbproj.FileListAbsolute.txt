@@ -85,3 +85,7 @@ D:\Pemrograman Dekstop\FIX\Project_ProgDesk_Baru\Project Akhir Baru\bin\Debug\ne
 D:\Pemrograman Dekstop\FIX\Project_ProgDesk_Baru\Project Akhir Baru\bin\Debug\net8.0-windows\itextsharp.dll
 D:\Pemrograman Dekstop\FIX\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form9.resources
 D:\Pemrograman Dekstop\FIX\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form10.resources
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\bin\Debug\net8.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\bin\Debug\net8.0-windows\itextsharp.dll
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form10.resources
+C:\Users\Sharonnn\Documents\Project Akhir ProgDesk\Project_ProgDesk_Baru\Project Akhir Baru\obj\Debug\net8.0-windows\Project_Akhir_Baru.Form9.resources
