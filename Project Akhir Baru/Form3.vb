@@ -182,29 +182,6 @@ Public Class Form3
     End Sub
 
     Private Sub BukaForm9(idAcara As String, namaAcara As String, tanggalDb As Date, namaPemesan As String, alamat As String, noHpPertama As String, noHpKedua As String, waktuTampil As String, lokasiAcara As String)
-        'If myDataReader IsNot Nothing AndAlso Not myDataReader.IsClosed Then
-        '    myDataReader.Close()
-        'End If
-
-        'Dim sql As String = "SELECT * FROM acara WHERE id_acara = @id"
-        'myCommand = New MySqlCommand(sql, myConn)
-        'myCommand.Parameters.AddWithValue("@id", idAcara)
-        'myDataReader = myCommand.ExecuteReader()
-
-        'If myDataReader.Read() Then
-        '    Dim form As New Form9()
-        '    form.lblNama.Text =
-        '    form.lblNamaAcara.Text = myDataReader("nama_acara").ToString()
-        '    form.lblTanggal.Text = Convert.ToDateTime(myDataReader("tanggal_pelaksanaan")).ToString("yyyy-MM-dd")
-        '    form.lblWaktu.Text = myDataReader("waktu").ToString()
-        '    form.lblLokasi.Text = myDataReader("lokasi").ToString()
-
-        '    myDataReader.Close()
-        '    form.ShowDialog()
-        'Else
-        '    myDataReader.Close()
-        '    MessageBox.Show("Data acara tidak ditemukan.")
-        'End If
         Dim form As New Form9()
         form.lblNama.Text = namaPemesan
         form.lblAlamat.Text = alamat
