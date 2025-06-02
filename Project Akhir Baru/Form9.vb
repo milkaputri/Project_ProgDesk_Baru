@@ -105,7 +105,7 @@ Public Class Form9
                 End If
             Next
 
-            lblTotalHargaTambahan.Text = totalPengeluaran.ToString("N0")
+            'lblTotalHargaTambahan.Text = totalPengeluaran.ToString("N0")
             myDataReader.Close()
         End If
         If myDataReader.IsClosed = False Then
@@ -121,27 +121,27 @@ Public Class Form9
             While myDataReader.Read()
                 Dim total As Integer = myDataReader("total_pembayaran")
                 LblRpTagihan.Text = "Rp " & total.ToString("N0")
-                dateRealLunas.Enabled = False
+                'dateRealLunas.Enabled = False
                 If myDataReader("tipe_pembayaran") = "Lunas" Then
                     Dim dateRlLunas As Date = myDataReader("tgl_real_lunas")
                     lblRpLunas.Text = "Rp " & total.ToString("N0")
-                    dateRealLunas.Value = Convert.ToDateTime(dateRlLunas)
+                    'dateRealLunas.Value = Convert.ToDateTime(dateRlLunas)
                 Else
                     Dim tglRealCicil3 As Date = myDataReader("tgl_real_cicil3")
                     lblRpLunas.Text = "Rp " & total.ToString("N0")
-                    dateRealLunas.Value = Convert.ToDateTime(tglRealCicil3)
+                    'dateRealLunas.Value = Convert.ToDateTime(tglRealCicil3)
                 End If
             End While
             myDataReader.Close()
         End If
     End Sub
 
-    Private Sub btnCetak_Click(sender As Object, e As EventArgs) Handles btnCetak.Click
+    Private Sub btnCetak_Click(sender As Object, e As EventArgs)
         ' Simpan ukuran asli panel
-        Dim originalSize As Size = panelCetak.Size
+        Dim originalSize = panelCetak.Size
 
         ' Hitung tinggi konten sebenarnya
-        Dim contentHeight As Integer = panelCetak.DisplayRectangle.Height
+        Dim contentHeight = panelCetak.DisplayRectangle.Height
 
         ' Nonaktifkan AutoScroll dan ubah ukuran panel agar seluruh konten terlihat
         panelCetak.AutoScroll = False
@@ -154,25 +154,25 @@ Public Class Form9
 
 
         ' Simpan PDF
-        Dim saveFileDialog As New SaveFileDialog()
+        Dim saveFileDialog As New SaveFileDialog
         saveFileDialog.Filter = "PDF Files|*.pdf"
         saveFileDialog.Title = "Simpan PDF"
         saveFileDialog.FileName = "CetakPanel.pdf"
 
-        If saveFileDialog.ShowDialog() = DialogResult.OK Then
+        If saveFileDialog.ShowDialog = DialogResult.OK Then
             Dim pdfDoc As New Document(PageSize.A4, 10, 10, 10, 10)
-            Dim writer As PdfWriter = PdfWriter.GetInstance(pdfDoc, New FileStream(saveFileDialog.FileName, FileMode.Create))
+            Dim writer = PdfWriter.GetInstance(pdfDoc, New FileStream(saveFileDialog.FileName, FileMode.Create))
             pdfDoc.Open()
 
-            Dim pageWidth As Integer = CInt(pdfDoc.PageSize.Width)
-            Dim pageHeight As Integer = CInt(pdfDoc.PageSize.Height)
+            Dim pageWidth As Integer = pdfDoc.PageSize.Width
+            Dim pageHeight As Integer = pdfDoc.PageSize.Height
 
-            Dim yOffset As Integer = 0
+            Dim yOffset = 0
             While yOffset < bmp.Height
-                Dim sliceHeight As Integer = Math.Min(pageHeight, bmp.Height - yOffset)
+                Dim sliceHeight = Math.Min(pageHeight, bmp.Height - yOffset)
                 Dim bmpSlice As New Bitmap(bmp.Width, sliceHeight)
 
-                Using g As Graphics = Graphics.FromImage(bmpSlice)
+                Using g = Graphics.FromImage(bmpSlice)
                     'g.DrawImage(
                     '    bmp,
                     '    New System.Drawing.Rectangle(0, 0, bmp.Width, sliceHeight),
@@ -188,9 +188,9 @@ Public Class Form9
                     )
                 End Using
 
-                Using ms As New MemoryStream()
+                Using ms As New MemoryStream
                     bmpSlice.Save(ms, Imaging.ImageFormat.Png)
-                    Dim img As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(ms.ToArray())
+                    Dim img = Image.GetInstance(ms.ToArray)
                     img.ScaleToFit(pageWidth - 20, pageHeight - 20)
                     img.Alignment = Element.ALIGN_CENTER
                     pdfDoc.Add(img)
@@ -221,6 +221,30 @@ Public Class Form9
     End Sub
 
     Private Sub DataGridViewPaket_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewPaket.CellContentClick
+
+    End Sub
+
+    Private Sub panelCetak_Paint(sender As Object, e As PaintEventArgs) Handles panelCetak.Paint
+
+    End Sub
+
+    Private Sub pnlCicilan_Paint(sender As Object, e As PaintEventArgs) Handles pnlCicilan.Paint
+
+    End Sub
+
+    Private Sub DataGridViewTambahan_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewTambahan.CellContentClick
+
+    End Sub
+
+    Private Sub lblTotalHargaTambahan_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
+
+    End Sub
+
+    Private Sub Label128_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class
