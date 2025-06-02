@@ -2220,24 +2220,48 @@ Public Class Form5
         updatePinalty()
     End Sub
 
-    Private Sub btnCetakLunas_Click(sender As Object, e As EventArgs) Handles btnCetakLunas.Click
-        Form10.TampilkanCetakan("LUNAS")
-        Form10.Show()
-    End Sub
+    'Private Sub btnCetakLunas_Click(sender As Object, e As EventArgs) Handles btnCetakLunas.Click
+    '    Form10.TampilkanCetakan("LUNAS")
+    '    Form10.Show()
+    '    Form10.pnlCicil.Visible = True
+    '    Form10.pnlInvoice.Visible = False
+    'End Sub
 
     Private Sub btnCetak1_Click(sender As Object, e As EventArgs) Handles btnCetak1.Click
         Form10.TampilkanCetakan("CICIL1")
         Form10.Show()
+        Form10.pnlCicil.Visible = True
+        Form10.pnlInvoice.Visible = False
     End Sub
+
 
     Private Sub btnCetak2_Click(sender As Object, e As EventArgs) Handles btnCetak2.Click
         Form10.TampilkanCetakan("CICIL2")
         Form10.Show()
+        Form10.pnlCicil.Visible = True
+        Form10.pnlInvoice.Visible = False
     End Sub
+
 
     Private Sub btnCetak3_Click(sender As Object, e As EventArgs) Handles btnCetak3.Click
         Form10.TampilkanCetakan("CICIL3")
         Form10.Show()
+        Form10.pnlCicil.Visible = True
+        Form10.pnlInvoice.Visible = False
+    End Sub
+
+
+    Private Sub btnInvoice_Click(sender As Object, e As EventArgs) Handles btnInvoice.Click
+        If Val(lblRpSisa.Text) <> 0 Then
+            MessageBox.Show("Invoice hanya bisa dicetak jika pembayaran sudah lunas.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            btnInvoice.Enabled = False
+            Exit Sub
+        End If
+
+        Form10.TampilkanCetakan("INVOICE")
+        Form10.Show()
+        Form10.pnlInvoice.Visible = True
+        Form10.pnlCicil.Visible = False
     End Sub
 
 End Class
