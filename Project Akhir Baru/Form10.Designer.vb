@@ -185,7 +185,7 @@ Partial Class Form10
         pnlInvoice.Controls.Add(Label11)
         pnlInvoice.Controls.Add(lblInvoiceCicil2)
         pnlInvoice.Controls.Add(Label4)
-        pnlInvoice.Location = New Point(21, 428)
+        pnlInvoice.Location = New Point(520, 428)
         pnlInvoice.Name = "pnlInvoice"
         pnlInvoice.Size = New Size(493, 228)
         pnlInvoice.TabIndex = 108
