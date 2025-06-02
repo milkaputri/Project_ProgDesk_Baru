@@ -558,10 +558,10 @@ Public Class Form5
         totalTagihan()
     End Sub
     Private Sub btnSimpanPaket_Click(sender As Object, e As EventArgs) Handles btnSimpanPaket.Click
-        Dim angka As Integer = Convert.ToInt32(lblTotalHargaPaket.Text.Replace(",", ""))
+        Dim angka As Integer = ParseCurrency(lblTotalHargaPaket.Text)
         For Each row As DataGridViewRow In DataGridView1.Rows
             If Not row.IsNewRow Then
-                Dim id_paket As Integer = Integer.Parse(row.Cells("colId").Value.ToString())
+                Dim id_paket As Integer = Integer.Parse(row.Cells("ColId").Value.ToString())
                 Dim jumlah_paket As Integer = Integer.Parse(row.Cells("colJumlah").Value.ToString())
                 Dim sql As String = "INSERT INTO pesanan (id_acara, id_paket, total_pengeluaran, jumlah_paket) VALUES ('" & originalIdAcara & "','" & id_paket & "','" & angka & "','" & jumlah_paket & "')"
                 myCommand.CommandText = sql
@@ -1910,6 +1910,7 @@ Public Class Form5
                 lblTanggalTermin3.Text = "tanggal pembayaran cicilan 3"
                 lblRpLunas.Text = "Rp " & total.ToString("N0")
                 lblTanggalLunas.Text = tglDlLunas.ToString("dd-MM-yyyy")
+                dateRealLunas.Enabled = True
                 dateCicil1.Enabled = False
                 dateCicil2.Enabled = False
                 dateCicil3.Enabled = False
@@ -1918,6 +1919,9 @@ Public Class Form5
                 lblTerminRpLunas.Text = "Rp 0"
                 lblTanggalLunas.Text = "tanggal pembayaran lunas"
                 dateRealLunas.Enabled = False
+                dateCicil1.Enabled = True
+                dateCicil2.Enabled = True
+                dateCicil3.Enabled = True
                 SetNilaiCicilan(total)
                 SetWarnaKontrolPembayaran(False, True)
 
@@ -2077,6 +2081,7 @@ Public Class Form5
                     dateCicil2.Value = Convert.ToDateTime(tglRealCicil2)
                     dateCicil3.Value = Convert.ToDateTime(tglRealCicil3)
                     lblPinaltyBayar.Text = "Rp" & pinalti.ToString("N0")
+                    SetNilaiPembayaran(pilihan, total)
                     If Not realCicil1 = 0 Then
                         If Not realCicil2 = 0 Then
                             If Not realCicil3 = 0 Then
@@ -2098,7 +2103,7 @@ Public Class Form5
                             btnCetak1.Enabled = True
                         End If
                     End If
-                    SetNilaiPembayaran(pilihan, total)
+
                 End If
             End While
             myDataReader.Close()
@@ -2131,6 +2136,7 @@ Public Class Form5
                     "WHERE id_acara = " & originalIdAcara
                 myCommand.CommandText = sql
                 myCommand.ExecuteNonQuery()
+                updateCetak()
             ElseIf tipeBayar = "Lunas" Then
                 Dim tglTerminLunas As Date = lblTanggalLunas.Text
                 Dim tglRealLunas As Date = dateRealLunas.Value.Date
@@ -2139,6 +2145,7 @@ Public Class Form5
                    "WHERE id_acara = " & originalIdAcara
                 myCommand.CommandText = sql
                 myCommand.ExecuteNonQuery()
+                updateCetak()
             End If
         Else
             If tipeBayar = "Lunas" Then
@@ -2147,6 +2154,7 @@ Public Class Form5
                 Dim sql As String = "INSERT INTO pembayaran (id_acara, total_pembayaran, tanggal_pembayaran_lunas, tipe_pembayaran, sisa_tagihan, nominal_pinalty, tgl_real_lunas) VALUES ('" & originalIdAcara & "','" & ParseCurrency(LblRpTagihan.Text) & "','" & tglTerminLunas.ToString("yyyy-MM-dd") & "','" & tipeBayar & "','" & "0" & ParseCurrency(lblPinaltyBayar.Text) & "','" & tglRealLunas.ToString("yyyy-MM-dd") & "')"
                 myCommand.CommandText = sql
                 myCommand.ExecuteNonQuery()
+                updateCetak()
             ElseIf tipeBayar = "Cicilan" Then
                 Dim tglTermincicil1 As Date = lblTanggalTermin1.Text
                 Dim tglTermincicil2 As Date = lblTanggalTermin2.Text
@@ -2158,9 +2166,11 @@ Public Class Form5
                                     "('" & originalIdAcara & "','" & ParseCurrency(LblRpTagihan.Text) & "','" & tglTermincicil1.ToString("yyyy-MM-dd") & "','" & tglTermincicil2.ToString("yyyy-MM-dd") & "','" & tglTermincicil3.ToString("yyyy-MM-dd") & "','" & tipeBayar & "','" & ParseCurrency(lblRpSisa.Text) & "','" & ParseCurrency(lblPinaltyBayar.Text) & "','" & ParseCurrency(lblTerminRpCicil1.Text) & "','" & ParseCurrency(lblTerminRpCicil2.Text) & "','" & ParseCurrency(lblTerminRpCicil3.Text) & "','" & ParseCurrency(tbBayarCicil1.Text) & "','" & ParseCurrency(tbBayarCicil2.Text) & "','" & ParseCurrency(tbBayarCicil3.Text) & "','" & tglCicil1.ToString("yyyy-MM-dd") & "','" & tglCicil2.ToString("yyyy-MM-dd") & "','" & tglCicil3.ToString("yyyy-MM-dd") & "')"
                 myCommand.CommandText = sql
                 myCommand.ExecuteNonQuery()
+                updateCetak()
             End If
         End If
         MessageBox.Show("Data berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        updateCetak()
     End Sub
 
     Private Sub tbBayarCicil2_TextChanged(sender As Object, e As EventArgs) Handles tbBayarCicil2.TextChanged
@@ -2197,11 +2207,11 @@ Public Class Form5
             Dim pinalti As Integer = ParseCurrency(lblPinaltyBayar.Text)
             Dim hasil As Integer = 0
             Dim denda As Integer = 50000
-            If tglCicil1 > tglDlTermin1 And ParseCurrency(tbBayarCicil1.Text) = 0 Then
+            If tglCicil1 > tglDlTermin1 And ParseCurrency(tbBayarCicil2.Text) = 0 Then
                 Dim selisihHari As Integer = (tglCicil1 - tglDlTermin1).Days
                 hasil = (selisihHari * denda) + pinalti
                 lblPinaltyBayar.Text = "Rp " & hasil.ToString("N0")
-            ElseIf tglCicil2 > tglDlTermin2 And ParseCurrency(tbBayarCicil3.Text) < 0 Then
+            ElseIf tglCicil2 > tglDlTermin2 And ParseCurrency(tbBayarCicil3.Text) = 0 Then
                 Dim selisihHari As Integer = (tglCicil2 - tglDlTermin2).Days
                 hasil = (selisihHari * denda) + pinalti
                 lblPinaltyBayar.Text = "Rp " & hasil.ToString("N0")
@@ -2209,8 +2219,6 @@ Public Class Form5
                 Dim selisihHari As Integer = (tglCicil3 - tglDlTermin3).Days
                 hasil = (selisihHari * denda) + pinalti
                 lblPinaltyBayar.Text = "Rp " & hasil.ToString("N0")
-                'Else
-                '    lblPinaltyBayar.Text = "Rp" & pinalti.ToString("N0")
             End If
 
         End If
@@ -2231,13 +2239,6 @@ Public Class Form5
     Private Sub dateCicil3_ValueChanged(sender As Object, e As EventArgs) Handles dateCicil3.ValueChanged
         updatePinalty()
     End Sub
-
-    'Private Sub btnCetakLunas_Click(sender As Object, e As EventArgs) Handles btnCetakLunas.Click
-    '    Form10.TampilkanCetakan("LUNAS")
-    '    Form10.Show()
-    '    Form10.pnlCicil.Visible = True
-    '    Form10.pnlInvoice.Visible = False
-    'End Sub
 
     Private Sub btnCetak1_Click(sender As Object, e As EventArgs) Handles btnCetak1.Click
         If ParseCurrency(tbBayarCicil1.Text) = 0 Then
@@ -2286,18 +2287,7 @@ Public Class Form5
         End If
     End Sub
 
-
     Private Sub btnInvoice_Click(sender As Object, e As EventArgs) Handles btnInvoice.Click
-        'If Val(lblRpSisa.Text) <> 0 Then
-        '    MessageBox.Show("Invoice hanya bisa dicetak jika pembayaran sudah lunas.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        '    btnInvoice.Enabled = False
-        '    Exit Sub
-        'End If
-
-        'Form10.TampilkanCetakan("INVOICE")
-        'Form10.Show()
-        'Form10.pnlInvoice.Visible = True
-        'Form10.pnlCicil.Visible = False
         If cbPilihBayar.SelectedItem = "Lunas" Then
             Dim form As New Form10()
             form.TampilkanCetakan("LUNAS")
@@ -2316,6 +2306,16 @@ Public Class Form5
             form.tampilData()
             form.invoiceCicil(4)
             form.Show()
+        End If
+    End Sub
+    Private Sub updateCetak()
+        If ParseCurrency(tbBayarCicil1.Text) > 0 Then
+            btnCetak1.Enabled = True
+        ElseIf ParseCurrency(tbBayarCicil2.Text) > 0 And ParseCurrency(tbBayarCicil1.Text) > 0 Then
+            btnCetak2.Enabled = True
+        Else
+            btnCetak3.Enabled = True
+            btnInvoice.Enabled = True
         End If
     End Sub
 

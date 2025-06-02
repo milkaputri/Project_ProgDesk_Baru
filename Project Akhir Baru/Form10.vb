@@ -238,7 +238,7 @@ Public Class Form10
                     Dim bayar1 As Integer = myDataReader("nominal_real_cicil1")
                     Dim bayar2 As Integer = myDataReader("nominal_real_cicil2")
                     Dim tglbayar2 As Date = myDataReader("tgl_real_cicil2")
-                    Dim sisaCicil2 As Integer = (total - bayar1) - bayar2
+                    Dim sisaCicil2 As Integer = total - bayar1 - bayar2
                     lblTotalTagihan.Text = "Rp " & (total - bayar1).ToString("N0")
                     lblCicil2.Text = "Rp " & bayar2.ToString("N0")
                     lblTglCicil2.Text = tglbayar2.ToString("dd-MM-yyyy")
@@ -248,8 +248,8 @@ Public Class Form10
                     Dim bayar2 As Integer = myDataReader("nominal_real_cicil2")
                     Dim bayar3 As Integer = myDataReader("nominal_real_cicil3")
                     Dim tglbayar3 As Date = myDataReader("tgl_real_cicil3")
-                    Dim sisaCicil3 As Integer = (total - bayar1 - bayar2) - bayar3
-                    lblTotalTagihan.Text = "Rp " & (total - bayar1 - bayar2).ToString("N0")
+                    Dim sisaCicil3 As Integer = total - bayar1 - bayar2 - bayar3
+                    lblTotalTagihan.Text = "Rp " & (total + pinalty - bayar1 - bayar2).ToString("N0")
                     lblCicil3.Text = "Rp " & bayar3.ToString("N0")
                     lblTglCicil3.Text = tglbayar3.ToString("dd-MM-yyyy")
                     If sisaCicil3 <= 0 Then
@@ -263,7 +263,7 @@ Public Class Form10
                         Dim tglbayar1 As Date = myDataReader("tgl_real_cicil1")
                         Dim tglbayar2 As Date = myDataReader("tgl_real_cicil2")
                         Dim tglbayar3 As Date = myDataReader("tgl_real_cicil3")
-                        lblInvoiceTotal1.Text = "Rp " & total.ToString("N0")
+                        lblInvoiceTotal1.Text = "Rp " & (total + pinalty).ToString("N0")
                         lblInvoiceCicil1.Text = "Rp " & bayar1.ToString("N0")
                         lblInvoiceCicil2.Text = "Rp " & bayar2.ToString("N0")
                         lblInvoiceCicil3.Text = "Rp " & bayar3.ToString("N0")
@@ -273,7 +273,7 @@ Public Class Form10
                         lblInvoiceSisa1.Text = "Rp 0"
                     Else
                         Dim tglLunas As Date = myDataReader("tgl_real_lunas")
-                        lblTotalTagihan.Text = "Rp " & total.ToString("N0")
+                        lblTotalTagihan.Text = "Rp " & (total + pinalty).ToString("N0")
                         lblBayarLunas.Text = "Rp " & total.ToString("N0")
                         lblTglLunas.Text = tglLunas.ToString("dd-MM-yyyy")
                     End If

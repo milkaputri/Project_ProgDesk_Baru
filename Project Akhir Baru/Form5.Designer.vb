@@ -372,11 +372,6 @@ Partial Class Form5
         Label32 = New Label()
         Label27 = New Label()
         btnBersihkanPaket = New Button()
-        DataGridView1 = New DataGridView()
-        colPaket = New DataGridViewTextBoxColumn()
-        colJumlah = New DataGridViewTextBoxColumn()
-        colTotal = New DataGridViewTextBoxColumn()
-        ColId = New DataGridViewTextBoxColumn()
         Label26 = New Label()
         tpDetail = New TabPage()
         btnSimpan = New Button()
@@ -405,6 +400,11 @@ Partial Class Form5
         tbNamaPemesan = New TextBox()
         Label1 = New Label()
         TabControl1 = New TabControl()
+        ColId = New DataGridViewTextBoxColumn()
+        colTotal = New DataGridViewTextBoxColumn()
+        colJumlah = New DataGridViewTextBoxColumn()
+        colPaket = New DataGridViewTextBoxColumn()
+        DataGridView1 = New DataGridView()
         tpPembayaran.SuspendLayout()
         Panel20.SuspendLayout()
         Panel19.SuspendLayout()
@@ -469,11 +469,11 @@ Partial Class Form5
         Panel5.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         Panel7.SuspendLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         tpDetail.SuspendLayout()
         Panel2.SuspendLayout()
         Panel1.SuspendLayout()
         TabControl1.SuspendLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' tpPembayaran
@@ -4289,7 +4289,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(56026, 30)
+        Label10.Size = New Size(56497, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -4385,48 +4385,6 @@ Partial Class Form5
         btnBersihkanPaket.TabIndex = 22
         btnBersihkanPaket.Text = "Bersihkan"
         btnBersihkanPaket.UseVisualStyleBackColor = False
-        ' 
-        ' DataGridView1
-        ' 
-        DataGridView1.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {colPaket, colJumlah, colTotal, ColId})
-        DataGridView1.Location = New Point(0, 77)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RightToLeft = RightToLeft.No
-        DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(395, 400)
-        DataGridView1.TabIndex = 21
-        ' 
-        ' colPaket
-        ' 
-        colPaket.HeaderText = "Paket"
-        colPaket.MinimumWidth = 6
-        colPaket.Name = "colPaket"
-        colPaket.Width = 125
-        ' 
-        ' colJumlah
-        ' 
-        colJumlah.HeaderText = "Jumlah"
-        colJumlah.MinimumWidth = 6
-        colJumlah.Name = "colJumlah"
-        colJumlah.Width = 125
-        ' 
-        ' colTotal
-        ' 
-        colTotal.HeaderText = "Total"
-        colTotal.MinimumWidth = 6
-        colTotal.Name = "colTotal"
-        colTotal.Width = 125
-        ' 
-        ' ColId
-        ' 
-        ColId.HeaderText = "Id"
-        ColId.MinimumWidth = 6
-        ColId.Name = "ColId"
-        ColId.ReadOnly = True
-        ColId.Visible = False
-        ColId.Width = 125
         ' 
         ' Label26
         ' 
@@ -4733,6 +4691,48 @@ Partial Class Form5
         TabControl1.Size = New Size(1209, 669)
         TabControl1.TabIndex = 0
         ' 
+        ' ColId
+        ' 
+        ColId.HeaderText = "Id"
+        ColId.MinimumWidth = 6
+        ColId.Name = "ColId"
+        ColId.ReadOnly = True
+        ColId.Visible = False
+        ColId.Width = 125
+        ' 
+        ' colTotal
+        ' 
+        colTotal.HeaderText = "Total"
+        colTotal.MinimumWidth = 6
+        colTotal.Name = "colTotal"
+        colTotal.Width = 125
+        ' 
+        ' colJumlah
+        ' 
+        colJumlah.HeaderText = "Jumlah"
+        colJumlah.MinimumWidth = 6
+        colJumlah.Name = "colJumlah"
+        colJumlah.Width = 125
+        ' 
+        ' colPaket
+        ' 
+        colPaket.HeaderText = "Paket"
+        colPaket.MinimumWidth = 6
+        colPaket.Name = "colPaket"
+        colPaket.Width = 125
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {colPaket, colJumlah, colTotal, ColId})
+        DataGridView1.Location = New Point(0, 77)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.RightToLeft = RightToLeft.No
+        DataGridView1.RowHeadersWidth = 51
+        DataGridView1.Size = New Size(395, 400)
+        DataGridView1.TabIndex = 21
+        ' 
         ' Form5
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -4844,7 +4844,6 @@ Partial Class Form5
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         Panel7.ResumeLayout(False)
         Panel7.PerformLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         tpDetail.ResumeLayout(False)
         tpDetail.PerformLayout()
         Panel2.ResumeLayout(False)
@@ -4852,6 +4851,7 @@ Partial Class Form5
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         TabControl1.ResumeLayout(False)
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
@@ -4961,7 +4961,6 @@ Partial Class Form5
     Friend WithEvents Label32 As Label
     Friend WithEvents Label27 As Label
     Friend WithEvents btnBersihkanPaket As Button
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label26 As Label
     Friend WithEvents tpDetail As TabPage
     Friend WithEvents btnBack As Button
@@ -5144,10 +5143,6 @@ Partial Class Form5
     Friend WithEvents lblLunas2 As Label
     Friend WithEvents lblEdit As Label
     Friend WithEvents btnSimpan As Button
-    Friend WithEvents colPaket As DataGridViewTextBoxColumn
-    Friend WithEvents colJumlah As DataGridViewTextBoxColumn
-    Friend WithEvents colTotal As DataGridViewTextBoxColumn
-    Friend WithEvents ColId As DataGridViewTextBoxColumn
     Friend WithEvents DateTimePicker5 As DateTimePicker
     Friend WithEvents cbKategori As ComboBox
     Friend WithEvents DataGridView2 As DataGridView
@@ -5246,4 +5241,9 @@ Partial Class Form5
     Friend WithEvents btnCetak3 As Button
     Friend WithEvents btnCetak2 As Button
     Friend WithEvents btnCetak1 As Button
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents colPaket As DataGridViewTextBoxColumn
+    Friend WithEvents colJumlah As DataGridViewTextBoxColumn
+    Friend WithEvents colTotal As DataGridViewTextBoxColumn
+    Friend WithEvents ColId As DataGridViewTextBoxColumn
 End Class
