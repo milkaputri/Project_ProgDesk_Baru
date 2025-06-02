@@ -621,6 +621,7 @@ Partial Class Form5
         btnCetakLunas.TabIndex = 34
         btnCetakLunas.Text = "Cetak"
         btnCetakLunas.UseVisualStyleBackColor = False
+        btnCetakLunas.Visible = False
         ' 
         ' lblTanggalTermin3
         ' 
@@ -4285,7 +4286,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(53200, 30)
+        Label10.Size = New Size(54142, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 

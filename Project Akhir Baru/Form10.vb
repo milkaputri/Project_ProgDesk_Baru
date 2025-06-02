@@ -101,6 +101,18 @@ Public Class Form10
         lblCicil3.Visible = False
         lblTglCicil3.Visible = False
 
+        lblInvoice1.Visible = False
+        lblTglInvoice1.Visible = False
+        lblInvoiceCicil1.Visible = False
+
+        lblInvoice2.Visible = False
+        lblTglInvoice2.Visible = False
+        lblInvoiceCicil3.Visible = False
+
+        lblInvoice3.Visible = False
+        lblTglInvoice3.Visible = False
+        lblInvoiceCicil3.Visible = False
+
         ' Tampilkan sesuai tombol
         Select Case jenis
             Case "LUNAS"
@@ -119,7 +131,40 @@ Public Class Form10
                 lblCicilan3.Visible = True
                 lblCicil3.Visible = True
                 lblTglCicil3.Visible = True
+            Case "INVOICE"
+                pnlInvoice.Visible = True
+                pnlCicil.Visible = False
+
+                lblInvoice1.Visible = True
+                lblTglInvoice1.Visible = True
+                lblInvoiceCicil1.Visible = True
+
+                lblInvoice2.Visible = True
+                lblTglInvoice2.Visible = True
+                lblInvoiceCicil3.Visible = True
+
+                lblInvoice3.Visible = True
+                lblTglInvoice3.Visible = True
+                lblInvoiceCicil3.Visible = True
+
         End Select
     End Sub
 
+    Private Sub pnlCicil1_Paint(sender As Object, e As PaintEventArgs) Handles pnlCicil.Paint
+
+    End Sub
+
+    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
+
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub btnKembali_Click(sender As Object, e As EventArgs) Handles btnKembali.Click
+        Me.Hide()
+        Form5.Show()
+        Form5.TabControl1.SelectedTab = Form5.tpPembayaran
+    End Sub
 End Class
