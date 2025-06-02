@@ -2057,6 +2057,10 @@ Public Class Form5
                     dateRealLunas.Value = Convert.ToDateTime(dateRlLunas)
                     lblRpSisa.Text = "Rp" & sisa.ToString("N0")
                     lblPinaltyBayar.Text = "Rp" & pinalti.ToString("N0")
+                    btnInvoice.Enabled = True
+                    btnCetak1.Visible = False
+                    btnCetak2.Visible = False
+                    btnCetak3.Visible = False
                     SetNilaiPembayaran(pilihan, total)
                 ElseIf pilihan = "Cicilan" Then
                     Dim realCicil1 As Integer = myDataReader("nominal_real_cicil1")
@@ -2079,12 +2083,19 @@ Public Class Form5
                                 dateCicil1.Enabled = False
                                 dateCicil2.Enabled = False
                                 dateCicil3.Enabled = False
+                                btnCetak1.Enabled = True
+                                btnCetak2.Enabled = True
+                                btnCetak3.Enabled = True
+                                btnInvoice.Enabled = True
                             Else
                                 dateCicil1.Enabled = False
                                 dateCicil2.Enabled = False
+                                btnCetak1.Enabled = True
+                                btnCetak2.Enabled = True
                             End If
                         Else
                             dateCicil1.Enabled = False
+                            btnCetak1.Enabled = True
                         End If
                     End If
                     SetNilaiPembayaran(pilihan, total)
@@ -2108,6 +2119,7 @@ Public Class Form5
                 Dim tglCicil2 As Date = dateCicil2.Value.Date
                 Dim tglCicil3 As Date = dateCicil3.Value.Date
                 Dim sql As String = "update pembayaran set " &
+                    "total_pembayaran = " & ParseCurrency(LblRpTagihan.Text) & "," &
                     "nominal_real_cicil1 = " & ParseCurrency(tbBayarCicil1.Text) & "," &
                     "nominal_real_cicil2 = " & ParseCurrency(tbBayarCicil2.Text) & "," &
                     "nominal_real_cicil3 = " & ParseCurrency(tbBayarCicil3.Text) & "," &
@@ -2228,40 +2240,83 @@ Public Class Form5
     'End Sub
 
     Private Sub btnCetak1_Click(sender As Object, e As EventArgs) Handles btnCetak1.Click
-        Form10.TampilkanCetakan("CICIL1")
-        Form10.Show()
-        Form10.pnlCicil.Visible = True
-        Form10.pnlInvoice.Visible = False
+        If ParseCurrency(tbBayarCicil1.Text) = 0 Then
+            MessageBox.Show("Anda belum membayar", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Dim form As New Form10()
+            form.TampilkanCetakan("CICIL1")
+            form.originalId = originalIdAcara
+            form.pnlCicil.Visible = True
+            form.pnlInvoice.Visible = False
+            form.tampilData()
+            form.invoiceCicil(1)
+            form.Show()
+        End If
     End Sub
 
 
     Private Sub btnCetak2_Click(sender As Object, e As EventArgs) Handles btnCetak2.Click
-        Form10.TampilkanCetakan("CICIL2")
-        Form10.Show()
-        Form10.pnlCicil.Visible = True
-        Form10.pnlInvoice.Visible = False
+        If ParseCurrency(tbBayarCicil2.Text) = 0 Then
+            MessageBox.Show("Anda belum membayar", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Dim form As New Form10()
+            form.TampilkanCetakan("CICIL2")
+            form.originalId = originalIdAcara
+            form.pnlCicil.Visible = True
+            form.pnlInvoice.Visible = False
+            form.tampilData()
+            form.invoiceCicil(2)
+            form.Show()
+        End If
     End Sub
 
 
     Private Sub btnCetak3_Click(sender As Object, e As EventArgs) Handles btnCetak3.Click
-        Form10.TampilkanCetakan("CICIL3")
-        Form10.Show()
-        Form10.pnlCicil.Visible = True
-        Form10.pnlInvoice.Visible = False
+        If ParseCurrency(tbBayarCicil3.Text) = 0 Then
+            MessageBox.Show("Anda belum membayar", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Dim form As New Form10()
+            form.TampilkanCetakan("CICIL3")
+            form.originalId = originalIdAcara
+            form.pnlCicil.Visible = True
+            form.pnlInvoice.Visible = False
+            form.tampilData()
+            form.invoiceCicil(3)
+            form.Show()
+        End If
     End Sub
 
 
     Private Sub btnInvoice_Click(sender As Object, e As EventArgs) Handles btnInvoice.Click
-        If Val(lblRpSisa.Text) <> 0 Then
-            MessageBox.Show("Invoice hanya bisa dicetak jika pembayaran sudah lunas.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            btnInvoice.Enabled = False
-            Exit Sub
-        End If
+        'If Val(lblRpSisa.Text) <> 0 Then
+        '    MessageBox.Show("Invoice hanya bisa dicetak jika pembayaran sudah lunas.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        '    btnInvoice.Enabled = False
+        '    Exit Sub
+        'End If
 
-        Form10.TampilkanCetakan("INVOICE")
-        Form10.Show()
-        Form10.pnlInvoice.Visible = True
-        Form10.pnlCicil.Visible = False
+        'Form10.TampilkanCetakan("INVOICE")
+        'Form10.Show()
+        'Form10.pnlInvoice.Visible = True
+        'Form10.pnlCicil.Visible = False
+        If cbPilihBayar.SelectedItem = "Lunas" Then
+            Dim form As New Form10()
+            form.TampilkanCetakan("LUNAS")
+            form.originalId = originalIdAcara
+            form.pnlCicil.Visible = True
+            form.pnlInvoice.Visible = False
+            form.tampilData()
+            form.invoiceCicil(4)
+            form.Show()
+        Else
+            Dim form As New Form10()
+            form.TampilkanCetakan("INVOICE")
+            form.originalId = originalIdAcara
+            form.pnlCicil.Visible = False
+            form.pnlInvoice.Visible = True
+            form.tampilData()
+            form.invoiceCicil(4)
+            form.Show()
+        End If
     End Sub
 
 End Class

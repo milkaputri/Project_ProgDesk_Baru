@@ -7,7 +7,6 @@ Imports SysDraw = System.Drawing
 Public Class Form9
     Public originalIdAcara As String
 
-
     Public Sub TampilDataPaket()
         Dim i
         i = 0
@@ -22,7 +21,7 @@ Public Class Form9
                 DataGridViewPaket.Item(1, i).Value = myDataReader("detail_sub_paket")
                 DataGridViewPaket.Item(2, i).Value = "1"
                 DataGridViewPaket.Item(3, i).Value = myDataReader("id_paket")
-                lblHargaTotalPaket.Text = Convert.ToInt32(myDataReader("harga_paket")).ToString("N0")
+                lblHargaTotalPaket.Text = "Rp " & Convert.ToInt32(myDataReader("harga_paket")).ToString("N0")
                 i = i + 1
             End While
             myDataReader.Close()
@@ -57,8 +56,6 @@ Public Class Form9
                     totalPengeluaran += Convert.ToInt32(row.Cells("colTotalTambahan").Value)
                 End If
             Next
-
-            'lblTotalHargaTambahan.Text = totalPengeluaran.ToString("N0")
             myDataReader.Close()
         End If
         If myDataReader.IsClosed = False Then
@@ -73,16 +70,33 @@ Public Class Form9
         If myDataReader.HasRows Then
             While myDataReader.Read()
                 Dim total As Integer = myDataReader("total_pembayaran")
-                LblRpTagihan.Text = "Rp " & total.ToString("N0")
-                'dateRealLunas.Enabled = False
+                Dim pinalty As Integer = myDataReader("nominal_pinalty")
+                Dim sisaBayar As Integer = myDataReader("sisa_tagihan")
                 If myDataReader("tipe_pembayaran") = "Lunas" Then
+                    pnlCicilan.Visible = False
                     Dim dateRlLunas As Date = myDataReader("tgl_real_lunas")
+                    LblRpTagihan.Text = "Rp " & total.ToString("N0")
                     lblRpLunas.Text = "Rp " & total.ToString("N0")
-                    'dateRealLunas.Value = Convert.ToDateTime(dateRlLunas)
+                    lblLaporanLunas.Text = dateRlLunas.ToString("dd-MM-yyyy")
+                    lblPinaltyBayar.Text = "Rp " & pinalty.ToString("N0")
+                    lblRpSisa.Text = "Rp " & sisaBayar.ToString("N0")
                 Else
+                    pnlLunas.Visible = False
+                    Dim tglRealCicil1 As Date = myDataReader("tgl_real_cicil1")
+                    Dim tglRealCicil2 As Date = myDataReader("tgl_real_cicil2")
                     Dim tglRealCicil3 As Date = myDataReader("tgl_real_cicil3")
-                    lblRpLunas.Text = "Rp " & total.ToString("N0")
-                    'dateRealLunas.Value = Convert.ToDateTime(tglRealCicil3)
+                    Dim pembayaran1 As Integer = myDataReader("nominal_real_cicil1")
+                    Dim pembayaran2 As Integer = myDataReader("nominal_real_cicil2")
+                    Dim pembayaran3 As Integer = myDataReader("nominal_real_cicil3")
+                    lblTagihanCicilan.Text = "Rp " & total.ToString("N0")
+                    lblCicilan1.Text = "Rp " & pembayaran1.ToString("N0")
+                    lblCicilan2.Text = "Rp " & pembayaran2.ToString("N0")
+                    lblCicilan3.Text = "Rp " & pembayaran3.ToString("N0")
+                    lblTglCicilan1.Text = tglRealCicil1.ToString("dd-MM-yyyy")
+                    lblTglCicilan2.Text = tglRealCicil2.ToString("dd-MM-yyyy")
+                    lblTglCicilan3.Text = tglRealCicil3.ToString("dd-MM-yyyy")
+                    lblPinaltyCicilan.Text = "Rp " & pinalty.ToString("N0")
+                    lblSisaCicilan.Text = "Rp " & sisaBayar.ToString("N0")
                 End If
             End While
             myDataReader.Close()
@@ -123,7 +137,7 @@ Public Class Form9
         Dim saveFileDialog As New SaveFileDialog
         saveFileDialog.Filter = "PDF Files|*.pdf"
         saveFileDialog.Title = "Simpan PDF"
-        saveFileDialog.FileName = "CetakPanel.pdf"
+        saveFileDialog.FileName = "Laporan Pemesanan.pdf"
 
         If saveFileDialog.ShowDialog = DialogResult.OK Then
             ' Gunakan halaman landscape
@@ -158,4 +172,11 @@ Public Class Form9
         panelCetak.AutoScroll = True
     End Sub
 
+    Private Sub Label28_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub btnKembali_Click(sender As Object, e As EventArgs) Handles btnKembali.Click
+        Me.Hide()
+    End Sub
 End Class
