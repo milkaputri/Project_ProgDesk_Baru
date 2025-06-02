@@ -23,6 +23,9 @@ Partial Class Form8
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form8))
+        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
         SplitContainer1 = New SplitContainer()
         SplitContainer2 = New SplitContainer()
         panelPaket = New Panel()
@@ -39,7 +42,6 @@ Partial Class Form8
         Label59 = New Label()
         lblTotalTambahan = New Label()
         panelTambahan = New Panel()
-        btnCetakPDF = New Button()
         lblTotalSemua = New Label()
         lblTotalHargaSemua = New Label()
         DataGridViewTambahan = New DataGridView()
@@ -171,6 +173,7 @@ Partial Class Form8
         ' 
         ' DataGridViewPaket
         ' 
+        DataGridViewPaket.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
         DataGridViewPaket.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
         DataGridViewPaket.BorderStyle = BorderStyle.None
         DataGridViewPaket.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -185,6 +188,8 @@ Partial Class Form8
         ' 
         ' DataGridViewTextBoxColumn4
         ' 
+        DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True
+        DataGridViewTextBoxColumn4.DefaultCellStyle = DataGridViewCellStyle1
         DataGridViewTextBoxColumn4.FillWeight = 50F
         DataGridViewTextBoxColumn4.HeaderText = "Item"
         DataGridViewTextBoxColumn4.MinimumWidth = 6
@@ -193,6 +198,8 @@ Partial Class Form8
         ' 
         ' DataGridViewTextBoxColumn5
         ' 
+        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
+        DataGridViewTextBoxColumn5.DefaultCellStyle = DataGridViewCellStyle2
         DataGridViewTextBoxColumn5.HeaderText = "Isi Item"
         DataGridViewTextBoxColumn5.MinimumWidth = 6
         DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
@@ -254,7 +261,6 @@ Partial Class Form8
         ' panelTambahan
         ' 
         panelTambahan.BorderStyle = BorderStyle.Fixed3D
-        panelTambahan.Controls.Add(btnCetakPDF)
         panelTambahan.Controls.Add(lblTotalSemua)
         panelTambahan.Controls.Add(lblTotalHargaSemua)
         panelTambahan.Controls.Add(DataGridViewTambahan)
@@ -263,25 +269,13 @@ Partial Class Form8
         panelTambahan.Size = New Size(1209, 263)
         panelTambahan.TabIndex = 26
         ' 
-        ' btnCetakPDF
-        ' 
-        btnCetakPDF.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnCetakPDF.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnCetakPDF.ForeColor = Color.White
-        btnCetakPDF.Location = New Point(825, 226)
-        btnCetakPDF.Name = "btnCetakPDF"
-        btnCetakPDF.Size = New Size(94, 29)
-        btnCetakPDF.TabIndex = 31
-        btnCetakPDF.Text = "Cetak PDF"
-        btnCetakPDF.UseVisualStyleBackColor = False
-        ' 
         ' lblTotalSemua
         ' 
         lblTotalSemua.AutoSize = True
         lblTotalSemua.BackColor = Color.Transparent
         lblTotalSemua.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         lblTotalSemua.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblTotalSemua.Location = New Point(974, 221)
+        lblTotalSemua.Location = New Point(938, 221)
         lblTotalSemua.Name = "lblTotalSemua"
         lblTotalSemua.Size = New Size(79, 31)
         lblTotalSemua.TabIndex = 30
@@ -293,7 +287,7 @@ Partial Class Form8
         lblTotalHargaSemua.BackColor = Color.Transparent
         lblTotalHargaSemua.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold)
         lblTotalHargaSemua.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblTotalHargaSemua.Location = New Point(1050, 219)
+        lblTotalHargaSemua.Location = New Point(1014, 219)
         lblTotalHargaSemua.Name = "lblTotalHargaSemua"
         lblTotalHargaSemua.Size = New Size(91, 31)
         lblTotalHargaSemua.TabIndex = 29
@@ -301,6 +295,7 @@ Partial Class Form8
         ' 
         ' DataGridViewTambahan
         ' 
+        DataGridViewTambahan.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
         DataGridViewTambahan.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
         DataGridViewTambahan.BorderStyle = BorderStyle.None
         DataGridViewTambahan.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -323,6 +318,8 @@ Partial Class Form8
         ' 
         ' colIsiPaket
         ' 
+        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.True
+        colIsiPaket.DefaultCellStyle = DataGridViewCellStyle3
         colIsiPaket.HeaderText = "Isi Paket"
         colIsiPaket.MinimumWidth = 6
         colIsiPaket.Name = "colIsiPaket"
@@ -413,26 +410,25 @@ Partial Class Form8
     Friend WithEvents Label1 As Label
     Friend WithEvents Label59 As Label
     Friend WithEvents lblNamaPaket As Label
-    Friend WithEvents btnCetakPDF As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button2 As Button
     Friend WithEvents panelTambahan As Panel
     Friend WithEvents DataGridViewTambahan As DataGridView
     Friend WithEvents Label12 As Label
     Friend WithEvents DataGridViewPaket As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents lblTotalHarga As Label
     Friend WithEvents lblHargaTotalPaket As Label
     Friend WithEvents lblTotalTambahan As Label
     Friend WithEvents lblTotalHargaTambahan As Label
+    Friend WithEvents lblTotalHargaSemua As Label
+    Friend WithEvents lblTotalSemua As Label
+    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
     Friend WithEvents colNamaPaket As DataGridViewTextBoxColumn
     Friend WithEvents colIsiPaket As DataGridViewTextBoxColumn
     Friend WithEvents colQty As DataGridViewTextBoxColumn
     Friend WithEvents colTotalTambahan As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents lblTotalHargaSemua As Label
-    Friend WithEvents lblTotalSemua As Label
 End Class
