@@ -111,17 +111,27 @@ Public Class Form2
             g.DrawLine(pena, x1, y1, x2, y2)
         Next
 
-        If garisBantu Then
-            For i As Integer = 0 To data.Length - 1
-                If data(i) > 0 Then
-                    Dim x As Integer = marginLeft + i * 60
-                    Dim y As Integer = marginBottom - CInt(data(i) * pixelsPerUnitY)
+        ' Tambahkan titik dan angka di atasnya
+        For i As Integer = 0 To data.Length - 1
+            If data(i) > 0 Then
+                Dim x As Integer = marginLeft + i * 60
+                Dim y As Integer = marginBottom - CInt(data(i) * pixelsPerUnitY)
+
+                ' Gambar lingkaran kecil di titik data
+                g.FillEllipse(New SolidBrush(pena.Color), x - 3, y - 3, 6, 6)
+
+                ' Gambar nilai data di atas titik
+                g.DrawString(data(i).ToString(), New Font("Arial", 8), New SolidBrush(pena.Color), x - 10, y - 18)
+
+                ' Gambar garis bantu horizontal jika diminta
+                If garisBantu Then
                     Dim dashPen As New Pen(Color.Gray) With {.DashStyle = Drawing2D.DashStyle.Dash}
                     g.DrawLine(dashPen, x, y, marginLeft, y)
                 End If
-            Next
-        End If
+            End If
+        Next
     End Sub
+
 
     Private Sub btnBrosur1_Click_1(sender As Object, e As EventArgs) Handles btnBrosur1.Click
         Dim pdfPath As String = "C:\Users\Sharonnn\Documents\pdf\PL HNEY WEDDING_update JANUARI 2024.pdf" ' Ubah sesuai lokasi file kamu
@@ -172,21 +182,5 @@ Public Class Form2
     Private Sub btnProfile_Click(sender As Object, e As EventArgs) Handles btnProfile.Click
         Form7.Show()
         Me.Hide()
-    End Sub
-
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs)
-
-    End Sub
-
-    Private Sub Panel1_Paint_1(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
     End Sub
 End Class
