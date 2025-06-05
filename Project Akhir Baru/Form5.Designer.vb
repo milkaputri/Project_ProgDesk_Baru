@@ -30,7 +30,6 @@ Partial Class Form5
         Label78 = New Label()
         btnSimpanPembayaran = New Button()
         Panel20 = New Panel()
-        btnCetakLunas = New Button()
         lblTanggalTermin3 = New Label()
         lblTanggalTermin2 = New Label()
         lblTanggalTermin1 = New Label()
@@ -372,6 +371,11 @@ Partial Class Form5
         Label32 = New Label()
         Label27 = New Label()
         btnBersihkanPaket = New Button()
+        DataGridView1 = New DataGridView()
+        colPaket = New DataGridViewTextBoxColumn()
+        colJumlah = New DataGridViewTextBoxColumn()
+        colTotal = New DataGridViewTextBoxColumn()
+        ColId = New DataGridViewTextBoxColumn()
         Label26 = New Label()
         tpDetail = New TabPage()
         btnSimpan = New Button()
@@ -400,11 +404,6 @@ Partial Class Form5
         tbNamaPemesan = New TextBox()
         Label1 = New Label()
         TabControl1 = New TabControl()
-        ColId = New DataGridViewTextBoxColumn()
-        colTotal = New DataGridViewTextBoxColumn()
-        colJumlah = New DataGridViewTextBoxColumn()
-        colPaket = New DataGridViewTextBoxColumn()
-        DataGridView1 = New DataGridView()
         tpPembayaran.SuspendLayout()
         Panel20.SuspendLayout()
         Panel19.SuspendLayout()
@@ -469,11 +468,11 @@ Partial Class Form5
         Panel5.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         Panel7.SuspendLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         tpDetail.SuspendLayout()
         Panel2.SuspendLayout()
         Panel1.SuspendLayout()
         TabControl1.SuspendLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' tpPembayaran
@@ -509,7 +508,6 @@ Partial Class Form5
         ' btnInvoice
         ' 
         btnInvoice.BackColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnInvoice.Enabled = False
         btnInvoice.FlatStyle = FlatStyle.Flat
         btnInvoice.Font = New Font("Segoe UI", 10.2F, FontStyle.Bold)
         btnInvoice.ForeColor = Color.White
@@ -547,7 +545,6 @@ Partial Class Form5
         ' Panel20
         ' 
         Panel20.BackColor = Color.FromArgb(CByte(209), CByte(235), CByte(203))
-        Panel20.Controls.Add(btnCetakLunas)
         Panel20.Controls.Add(lblTanggalTermin3)
         Panel20.Controls.Add(lblTanggalTermin2)
         Panel20.Controls.Add(lblTanggalTermin1)
@@ -570,19 +567,6 @@ Partial Class Form5
         Panel20.Name = "Panel20"
         Panel20.Size = New Size(932, 485)
         Panel20.TabIndex = 17
-        ' 
-        ' btnCetakLunas
-        ' 
-        btnCetakLunas.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        btnCetakLunas.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btnCetakLunas.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        btnCetakLunas.Location = New Point(764, 58)
-        btnCetakLunas.Name = "btnCetakLunas"
-        btnCetakLunas.Size = New Size(84, 29)
-        btnCetakLunas.TabIndex = 34
-        btnCetakLunas.Text = "Cetak"
-        btnCetakLunas.UseVisualStyleBackColor = False
-        btnCetakLunas.Visible = False
         ' 
         ' lblTanggalTermin3
         ' 
@@ -819,7 +803,6 @@ Partial Class Form5
         ' btnCetak3
         ' 
         btnCetak3.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        btnCetak3.Enabled = False
         btnCetak3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnCetak3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         btnCetak3.Location = New Point(809, 313)
@@ -832,7 +815,6 @@ Partial Class Form5
         ' btnCetak2
         ' 
         btnCetak2.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        btnCetak2.Enabled = False
         btnCetak2.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnCetak2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         btnCetak2.Location = New Point(809, 254)
@@ -856,7 +838,6 @@ Partial Class Form5
         ' btnCetak1
         ' 
         btnCetak1.BackColor = Color.FromArgb(CByte(250), CByte(200), CByte(8))
-        btnCetak1.Enabled = False
         btnCetak1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btnCetak1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
         btnCetak1.Location = New Point(809, 194)
@@ -4289,7 +4270,7 @@ Partial Class Form5
         Label10.ForeColor = Color.White
         Label10.Location = New Point(0, -213)
         Label10.Name = "Label10"
-        Label10.Size = New Size(56497, 30)
+        Label10.Size = New Size(56968, 30)
         Label10.TabIndex = 0
         Label10.Text = "PAKET PERNIKAHAN"
         ' 
@@ -4385,6 +4366,48 @@ Partial Class Form5
         btnBersihkanPaket.TabIndex = 22
         btnBersihkanPaket.Text = "Bersihkan"
         btnBersihkanPaket.UseVisualStyleBackColor = False
+        ' 
+        ' DataGridView1
+        ' 
+        DataGridView1.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Columns.AddRange(New DataGridViewColumn() {colPaket, colJumlah, colTotal, ColId})
+        DataGridView1.Location = New Point(0, 77)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.RightToLeft = RightToLeft.No
+        DataGridView1.RowHeadersWidth = 51
+        DataGridView1.Size = New Size(395, 400)
+        DataGridView1.TabIndex = 21
+        ' 
+        ' colPaket
+        ' 
+        colPaket.HeaderText = "Paket"
+        colPaket.MinimumWidth = 6
+        colPaket.Name = "colPaket"
+        colPaket.Width = 125
+        ' 
+        ' colJumlah
+        ' 
+        colJumlah.HeaderText = "Jumlah"
+        colJumlah.MinimumWidth = 6
+        colJumlah.Name = "colJumlah"
+        colJumlah.Width = 125
+        ' 
+        ' colTotal
+        ' 
+        colTotal.HeaderText = "Total"
+        colTotal.MinimumWidth = 6
+        colTotal.Name = "colTotal"
+        colTotal.Width = 125
+        ' 
+        ' ColId
+        ' 
+        ColId.HeaderText = "Id"
+        ColId.MinimumWidth = 6
+        ColId.Name = "ColId"
+        ColId.ReadOnly = True
+        ColId.Visible = False
+        ColId.Width = 125
         ' 
         ' Label26
         ' 
@@ -4691,48 +4714,6 @@ Partial Class Form5
         TabControl1.Size = New Size(1209, 669)
         TabControl1.TabIndex = 0
         ' 
-        ' ColId
-        ' 
-        ColId.HeaderText = "Id"
-        ColId.MinimumWidth = 6
-        ColId.Name = "ColId"
-        ColId.ReadOnly = True
-        ColId.Visible = False
-        ColId.Width = 125
-        ' 
-        ' colTotal
-        ' 
-        colTotal.HeaderText = "Total"
-        colTotal.MinimumWidth = 6
-        colTotal.Name = "colTotal"
-        colTotal.Width = 125
-        ' 
-        ' colJumlah
-        ' 
-        colJumlah.HeaderText = "Jumlah"
-        colJumlah.MinimumWidth = 6
-        colJumlah.Name = "colJumlah"
-        colJumlah.Width = 125
-        ' 
-        ' colPaket
-        ' 
-        colPaket.HeaderText = "Paket"
-        colPaket.MinimumWidth = 6
-        colPaket.Name = "colPaket"
-        colPaket.Width = 125
-        ' 
-        ' DataGridView1
-        ' 
-        DataGridView1.BackgroundColor = Color.FromArgb(CByte(239), CByte(245), CByte(235))
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Columns.AddRange(New DataGridViewColumn() {colPaket, colJumlah, colTotal, ColId})
-        DataGridView1.Location = New Point(0, 77)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RightToLeft = RightToLeft.No
-        DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(395, 400)
-        DataGridView1.TabIndex = 21
-        ' 
         ' Form5
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -4844,6 +4825,7 @@ Partial Class Form5
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         Panel7.ResumeLayout(False)
         Panel7.PerformLayout()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         tpDetail.ResumeLayout(False)
         tpDetail.PerformLayout()
         Panel2.ResumeLayout(False)
@@ -4851,7 +4833,6 @@ Partial Class Form5
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         TabControl1.ResumeLayout(False)
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
@@ -5237,7 +5218,6 @@ Partial Class Form5
     Friend WithEvents dateRealLunas As DateTimePicker
     Friend WithEvents lblPinaltyBayar As Label
     Friend WithEvents lblPinaltiPembayaran As Label
-    Friend WithEvents btnCetakLunas As Button
     Friend WithEvents btnCetak3 As Button
     Friend WithEvents btnCetak2 As Button
     Friend WithEvents btnCetak1 As Button

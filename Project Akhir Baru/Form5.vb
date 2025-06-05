@@ -2169,8 +2169,9 @@ Public Class Form5
                 updateCetak()
             End If
         End If
-        MessageBox.Show("Data berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
         updateCetak()
+        MessageBox.Show("Data berhasil disimpan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        'updateCetak()
     End Sub
 
     Private Sub tbBayarCicil2_TextChanged(sender As Object, e As EventArgs) Handles tbBayarCicil2.TextChanged

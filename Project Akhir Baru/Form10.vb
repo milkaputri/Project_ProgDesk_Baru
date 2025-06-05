@@ -276,6 +276,7 @@ Public Class Form10
                         lblTotalTagihan.Text = "Rp " & (total + pinalty).ToString("N0")
                         lblBayarLunas.Text = "Rp " & total.ToString("N0")
                         lblTglLunas.Text = tglLunas.ToString("dd-MM-yyyy")
+                        lblSisaTagihan.Text = "Rp 0"
                     End If
                 End If
             End While

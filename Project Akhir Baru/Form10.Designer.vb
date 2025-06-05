@@ -24,27 +24,6 @@ Partial Class Form10
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form10))
         pnlCetak = New Panel()
-        pnlInvoice = New Panel()
-        lblInvoiceSisa1 = New Label()
-        Label23 = New Label()
-        lblInvoiceSisa = New Label()
-        PictureBox8 = New PictureBox()
-        PictureBox9 = New PictureBox()
-        lblInvoiceTotal1 = New Label()
-        Label21 = New Label()
-        lblInvoiceTotal = New Label()
-        Label19 = New Label()
-        lblTglInvoice3 = New Label()
-        lblTglInvoice2 = New Label()
-        lblInvoiceCicil3 = New Label()
-        lblTglInvoice1 = New Label()
-        lblInvoice1 = New Label()
-        lblInvoice2 = New Label()
-        lblInvoice3 = New Label()
-        lblInvoiceCicil1 = New Label()
-        Label11 = New Label()
-        lblInvoiceCicil2 = New Label()
-        Label4 = New Label()
         pnlCicil = New Panel()
         pnlInvoiceLunas = New Panel()
         lblInvoiceSisaLunas1 = New Label()
@@ -80,6 +59,27 @@ Partial Class Form10
         lblTotalTagihan = New Label()
         Label6 = New Label()
         Label7 = New Label()
+        pnlInvoice = New Panel()
+        lblInvoiceSisa1 = New Label()
+        Label23 = New Label()
+        lblInvoiceSisa = New Label()
+        PictureBox8 = New PictureBox()
+        PictureBox9 = New PictureBox()
+        lblInvoiceTotal1 = New Label()
+        Label21 = New Label()
+        lblInvoiceTotal = New Label()
+        Label19 = New Label()
+        lblTglInvoice3 = New Label()
+        lblTglInvoice2 = New Label()
+        lblInvoiceCicil3 = New Label()
+        lblTglInvoice1 = New Label()
+        lblInvoice1 = New Label()
+        lblInvoice2 = New Label()
+        lblInvoice3 = New Label()
+        lblInvoiceCicil1 = New Label()
+        Label11 = New Label()
+        lblInvoiceCicil2 = New Label()
+        Label4 = New Label()
         Label3 = New Label()
         PictureBox4 = New PictureBox()
         PictureBox5 = New PictureBox()
@@ -108,15 +108,15 @@ Partial Class Form10
         PictureBox1 = New PictureBox()
         Label59 = New Label()
         pnlCetak.SuspendLayout()
-        pnlInvoice.SuspendLayout()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
         pnlCicil.SuspendLayout()
         pnlInvoiceLunas.SuspendLayout()
         CType(PictureBox10, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox11, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox7, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
+        pnlInvoice.SuspendLayout()
+        CType(PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox9, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
@@ -162,233 +162,6 @@ Partial Class Form10
         pnlCetak.Name = "pnlCetak"
         pnlCetak.Size = New Size(916, 668)
         pnlCetak.TabIndex = 0
-        ' 
-        ' pnlInvoice
-        ' 
-        pnlInvoice.Controls.Add(lblInvoiceSisa1)
-        pnlInvoice.Controls.Add(Label23)
-        pnlInvoice.Controls.Add(lblInvoiceSisa)
-        pnlInvoice.Controls.Add(PictureBox8)
-        pnlInvoice.Controls.Add(PictureBox9)
-        pnlInvoice.Controls.Add(lblInvoiceTotal1)
-        pnlInvoice.Controls.Add(Label21)
-        pnlInvoice.Controls.Add(lblInvoiceTotal)
-        pnlInvoice.Controls.Add(Label19)
-        pnlInvoice.Controls.Add(lblTglInvoice3)
-        pnlInvoice.Controls.Add(lblTglInvoice2)
-        pnlInvoice.Controls.Add(lblInvoiceCicil3)
-        pnlInvoice.Controls.Add(lblTglInvoice1)
-        pnlInvoice.Controls.Add(lblInvoice1)
-        pnlInvoice.Controls.Add(lblInvoice2)
-        pnlInvoice.Controls.Add(lblInvoice3)
-        pnlInvoice.Controls.Add(lblInvoiceCicil1)
-        pnlInvoice.Controls.Add(Label11)
-        pnlInvoice.Controls.Add(lblInvoiceCicil2)
-        pnlInvoice.Controls.Add(Label4)
-        pnlInvoice.Location = New Point(520, 428)
-        pnlInvoice.Name = "pnlInvoice"
-        pnlInvoice.Size = New Size(493, 228)
-        pnlInvoice.TabIndex = 108
-        ' 
-        ' lblInvoiceSisa1
-        ' 
-        lblInvoiceSisa1.AutoSize = True
-        lblInvoiceSisa1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblInvoiceSisa1.Location = New Point(191, 159)
-        lblInvoiceSisa1.Name = "lblInvoiceSisa1"
-        lblInvoiceSisa1.Size = New Size(90, 20)
-        lblInvoiceSisa1.TabIndex = 115
-        lblInvoiceSisa1.Text = "Sisa Tagihan"
-        ' 
-        ' Label23
-        ' 
-        Label23.AutoSize = True
-        Label23.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label23.Location = New Point(169, 159)
-        Label23.Name = "Label23"
-        Label23.Size = New Size(12, 20)
-        Label23.TabIndex = 114
-        Label23.Text = ":"
-        ' 
-        ' lblInvoiceSisa
-        ' 
-        lblInvoiceSisa.AutoSize = True
-        lblInvoiceSisa.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblInvoiceSisa.Location = New Point(10, 159)
-        lblInvoiceSisa.Name = "lblInvoiceSisa"
-        lblInvoiceSisa.Size = New Size(90, 20)
-        lblInvoiceSisa.TabIndex = 113
-        lblInvoiceSisa.Text = "Sisa Tagihan"
-        ' 
-        ' PictureBox8
-        ' 
-        PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
-        PictureBox8.Location = New Point(330, 125)
-        PictureBox8.Name = "PictureBox8"
-        PictureBox8.Size = New Size(23, 21)
-        PictureBox8.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox8.TabIndex = 112
-        PictureBox8.TabStop = False
-        ' 
-        ' PictureBox9
-        ' 
-        PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
-        PictureBox9.Location = New Point(10, 125)
-        PictureBox9.Name = "PictureBox9"
-        PictureBox9.Size = New Size(298, 21)
-        PictureBox9.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox9.TabIndex = 111
-        PictureBox9.TabStop = False
-        ' 
-        ' lblInvoiceTotal1
-        ' 
-        lblInvoiceTotal1.AutoSize = True
-        lblInvoiceTotal1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblInvoiceTotal1.Location = New Point(191, 9)
-        lblInvoiceTotal1.Name = "lblInvoiceTotal1"
-        lblInvoiceTotal1.Size = New Size(97, 20)
-        lblInvoiceTotal1.TabIndex = 109
-        lblInvoiceTotal1.Text = "Total Tagihan"
-        ' 
-        ' Label21
-        ' 
-        Label21.AutoSize = True
-        Label21.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label21.Location = New Point(169, 9)
-        Label21.Name = "Label21"
-        Label21.Size = New Size(12, 20)
-        Label21.TabIndex = 110
-        Label21.Text = ":"
-        ' 
-        ' lblInvoiceTotal
-        ' 
-        lblInvoiceTotal.AutoSize = True
-        lblInvoiceTotal.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblInvoiceTotal.Location = New Point(10, 9)
-        lblInvoiceTotal.Name = "lblInvoiceTotal"
-        lblInvoiceTotal.Size = New Size(97, 20)
-        lblInvoiceTotal.TabIndex = 109
-        lblInvoiceTotal.Text = "Total Tagihan"
-        ' 
-        ' Label19
-        ' 
-        Label19.AutoSize = True
-        Label19.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label19.Location = New Point(169, 102)
-        Label19.Name = "Label19"
-        Label19.Size = New Size(12, 20)
-        Label19.TabIndex = 109
-        Label19.Text = ":"
-        ' 
-        ' lblTglInvoice3
-        ' 
-        lblTglInvoice3.AutoSize = True
-        lblTglInvoice3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblTglInvoice3.Location = New Point(321, 102)
-        lblTglInvoice3.Name = "lblTglInvoice3"
-        lblTglInvoice3.Size = New Size(97, 20)
-        lblTglInvoice3.TabIndex = 105
-        lblTglInvoice3.Text = "(dd:mm:yyyy)"
-        ' 
-        ' lblTglInvoice2
-        ' 
-        lblTglInvoice2.AutoSize = True
-        lblTglInvoice2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblTglInvoice2.Location = New Point(321, 69)
-        lblTglInvoice2.Name = "lblTglInvoice2"
-        lblTglInvoice2.Size = New Size(97, 20)
-        lblTglInvoice2.TabIndex = 106
-        lblTglInvoice2.Text = "(dd:mm:yyyy)"
-        ' 
-        ' lblInvoiceCicil3
-        ' 
-        lblInvoiceCicil3.AutoSize = True
-        lblInvoiceCicil3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblInvoiceCicil3.Location = New Point(191, 102)
-        lblInvoiceCicil3.Name = "lblInvoiceCicil3"
-        lblInvoiceCicil3.Size = New Size(113, 20)
-        lblInvoiceCicil3.TabIndex = 102
-        lblInvoiceCicil3.Text = "Nominal Ketiga"
-        ' 
-        ' lblTglInvoice1
-        ' 
-        lblTglInvoice1.AutoSize = True
-        lblTglInvoice1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblTglInvoice1.Location = New Point(321, 35)
-        lblTglInvoice1.Name = "lblTglInvoice1"
-        lblTglInvoice1.Size = New Size(97, 20)
-        lblTglInvoice1.TabIndex = 107
-        lblTglInvoice1.Text = "(dd:mm:yyyy)"
-        ' 
-        ' lblInvoice1
-        ' 
-        lblInvoice1.AutoSize = True
-        lblInvoice1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblInvoice1.Location = New Point(10, 35)
-        lblInvoice1.Name = "lblInvoice1"
-        lblInvoice1.Size = New Size(111, 20)
-        lblInvoice1.TabIndex = 97
-        lblInvoice1.Text = "Cicilan Pertama"
-        ' 
-        ' lblInvoice2
-        ' 
-        lblInvoice2.AutoSize = True
-        lblInvoice2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblInvoice2.Location = New Point(10, 69)
-        lblInvoice2.Name = "lblInvoice2"
-        lblInvoice2.Size = New Size(99, 20)
-        lblInvoice2.TabIndex = 98
-        lblInvoice2.Text = "Cicilan Kedua"
-        ' 
-        ' lblInvoice3
-        ' 
-        lblInvoice3.AutoSize = True
-        lblInvoice3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblInvoice3.Location = New Point(9, 102)
-        lblInvoice3.Name = "lblInvoice3"
-        lblInvoice3.Size = New Size(100, 20)
-        lblInvoice3.TabIndex = 99
-        lblInvoice3.Text = "Cicilan Ketiga"
-        ' 
-        ' lblInvoiceCicil1
-        ' 
-        lblInvoiceCicil1.AutoSize = True
-        lblInvoiceCicil1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblInvoiceCicil1.Location = New Point(191, 35)
-        lblInvoiceCicil1.Name = "lblInvoiceCicil1"
-        lblInvoiceCicil1.Size = New Size(124, 20)
-        lblInvoiceCicil1.TabIndex = 104
-        lblInvoiceCicil1.Text = "Nominal Pertama"
-        ' 
-        ' Label11
-        ' 
-        Label11.AutoSize = True
-        Label11.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label11.Location = New Point(169, 35)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(12, 20)
-        Label11.TabIndex = 101
-        Label11.Text = ":"
-        ' 
-        ' lblInvoiceCicil2
-        ' 
-        lblInvoiceCicil2.AutoSize = True
-        lblInvoiceCicil2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        lblInvoiceCicil2.Location = New Point(191, 69)
-        lblInvoiceCicil2.Name = "lblInvoiceCicil2"
-        lblInvoiceCicil2.Size = New Size(112, 20)
-        lblInvoiceCicil2.TabIndex = 103
-        lblInvoiceCicil2.Text = "Nominal Kedua"
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
-        Label4.Location = New Point(169, 69)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(12, 20)
-        Label4.TabIndex = 100
-        Label4.Text = ":"
         ' 
         ' pnlCicil
         ' 
@@ -769,6 +542,233 @@ Partial Class Form10
         Label7.TabIndex = 68
         Label7.Text = "Total Tagihan"
         ' 
+        ' pnlInvoice
+        ' 
+        pnlInvoice.Controls.Add(lblInvoiceSisa1)
+        pnlInvoice.Controls.Add(Label23)
+        pnlInvoice.Controls.Add(lblInvoiceSisa)
+        pnlInvoice.Controls.Add(PictureBox8)
+        pnlInvoice.Controls.Add(PictureBox9)
+        pnlInvoice.Controls.Add(lblInvoiceTotal1)
+        pnlInvoice.Controls.Add(Label21)
+        pnlInvoice.Controls.Add(lblInvoiceTotal)
+        pnlInvoice.Controls.Add(Label19)
+        pnlInvoice.Controls.Add(lblTglInvoice3)
+        pnlInvoice.Controls.Add(lblTglInvoice2)
+        pnlInvoice.Controls.Add(lblInvoiceCicil3)
+        pnlInvoice.Controls.Add(lblTglInvoice1)
+        pnlInvoice.Controls.Add(lblInvoice1)
+        pnlInvoice.Controls.Add(lblInvoice2)
+        pnlInvoice.Controls.Add(lblInvoice3)
+        pnlInvoice.Controls.Add(lblInvoiceCicil1)
+        pnlInvoice.Controls.Add(Label11)
+        pnlInvoice.Controls.Add(lblInvoiceCicil2)
+        pnlInvoice.Controls.Add(Label4)
+        pnlInvoice.Location = New Point(21, 428)
+        pnlInvoice.Name = "pnlInvoice"
+        pnlInvoice.Size = New Size(493, 228)
+        pnlInvoice.TabIndex = 108
+        ' 
+        ' lblInvoiceSisa1
+        ' 
+        lblInvoiceSisa1.AutoSize = True
+        lblInvoiceSisa1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblInvoiceSisa1.Location = New Point(191, 159)
+        lblInvoiceSisa1.Name = "lblInvoiceSisa1"
+        lblInvoiceSisa1.Size = New Size(90, 20)
+        lblInvoiceSisa1.TabIndex = 115
+        lblInvoiceSisa1.Text = "Sisa Tagihan"
+        ' 
+        ' Label23
+        ' 
+        Label23.AutoSize = True
+        Label23.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label23.Location = New Point(169, 159)
+        Label23.Name = "Label23"
+        Label23.Size = New Size(12, 20)
+        Label23.TabIndex = 114
+        Label23.Text = ":"
+        ' 
+        ' lblInvoiceSisa
+        ' 
+        lblInvoiceSisa.AutoSize = True
+        lblInvoiceSisa.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblInvoiceSisa.Location = New Point(10, 159)
+        lblInvoiceSisa.Name = "lblInvoiceSisa"
+        lblInvoiceSisa.Size = New Size(90, 20)
+        lblInvoiceSisa.TabIndex = 113
+        lblInvoiceSisa.Text = "Sisa Tagihan"
+        ' 
+        ' PictureBox8
+        ' 
+        PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
+        PictureBox8.Location = New Point(330, 125)
+        PictureBox8.Name = "PictureBox8"
+        PictureBox8.Size = New Size(23, 21)
+        PictureBox8.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox8.TabIndex = 112
+        PictureBox8.TabStop = False
+        ' 
+        ' PictureBox9
+        ' 
+        PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), Image)
+        PictureBox9.Location = New Point(10, 125)
+        PictureBox9.Name = "PictureBox9"
+        PictureBox9.Size = New Size(298, 21)
+        PictureBox9.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox9.TabIndex = 111
+        PictureBox9.TabStop = False
+        ' 
+        ' lblInvoiceTotal1
+        ' 
+        lblInvoiceTotal1.AutoSize = True
+        lblInvoiceTotal1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblInvoiceTotal1.Location = New Point(191, 9)
+        lblInvoiceTotal1.Name = "lblInvoiceTotal1"
+        lblInvoiceTotal1.Size = New Size(97, 20)
+        lblInvoiceTotal1.TabIndex = 109
+        lblInvoiceTotal1.Text = "Total Tagihan"
+        ' 
+        ' Label21
+        ' 
+        Label21.AutoSize = True
+        Label21.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label21.Location = New Point(169, 9)
+        Label21.Name = "Label21"
+        Label21.Size = New Size(12, 20)
+        Label21.TabIndex = 110
+        Label21.Text = ":"
+        ' 
+        ' lblInvoiceTotal
+        ' 
+        lblInvoiceTotal.AutoSize = True
+        lblInvoiceTotal.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblInvoiceTotal.Location = New Point(10, 9)
+        lblInvoiceTotal.Name = "lblInvoiceTotal"
+        lblInvoiceTotal.Size = New Size(97, 20)
+        lblInvoiceTotal.TabIndex = 109
+        lblInvoiceTotal.Text = "Total Tagihan"
+        ' 
+        ' Label19
+        ' 
+        Label19.AutoSize = True
+        Label19.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label19.Location = New Point(169, 102)
+        Label19.Name = "Label19"
+        Label19.Size = New Size(12, 20)
+        Label19.TabIndex = 109
+        Label19.Text = ":"
+        ' 
+        ' lblTglInvoice3
+        ' 
+        lblTglInvoice3.AutoSize = True
+        lblTglInvoice3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTglInvoice3.Location = New Point(321, 102)
+        lblTglInvoice3.Name = "lblTglInvoice3"
+        lblTglInvoice3.Size = New Size(97, 20)
+        lblTglInvoice3.TabIndex = 105
+        lblTglInvoice3.Text = "(dd:mm:yyyy)"
+        ' 
+        ' lblTglInvoice2
+        ' 
+        lblTglInvoice2.AutoSize = True
+        lblTglInvoice2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTglInvoice2.Location = New Point(321, 69)
+        lblTglInvoice2.Name = "lblTglInvoice2"
+        lblTglInvoice2.Size = New Size(97, 20)
+        lblTglInvoice2.TabIndex = 106
+        lblTglInvoice2.Text = "(dd:mm:yyyy)"
+        ' 
+        ' lblInvoiceCicil3
+        ' 
+        lblInvoiceCicil3.AutoSize = True
+        lblInvoiceCicil3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblInvoiceCicil3.Location = New Point(191, 102)
+        lblInvoiceCicil3.Name = "lblInvoiceCicil3"
+        lblInvoiceCicil3.Size = New Size(113, 20)
+        lblInvoiceCicil3.TabIndex = 102
+        lblInvoiceCicil3.Text = "Nominal Ketiga"
+        ' 
+        ' lblTglInvoice1
+        ' 
+        lblTglInvoice1.AutoSize = True
+        lblTglInvoice1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblTglInvoice1.Location = New Point(321, 35)
+        lblTglInvoice1.Name = "lblTglInvoice1"
+        lblTglInvoice1.Size = New Size(97, 20)
+        lblTglInvoice1.TabIndex = 107
+        lblTglInvoice1.Text = "(dd:mm:yyyy)"
+        ' 
+        ' lblInvoice1
+        ' 
+        lblInvoice1.AutoSize = True
+        lblInvoice1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblInvoice1.Location = New Point(10, 35)
+        lblInvoice1.Name = "lblInvoice1"
+        lblInvoice1.Size = New Size(111, 20)
+        lblInvoice1.TabIndex = 97
+        lblInvoice1.Text = "Cicilan Pertama"
+        ' 
+        ' lblInvoice2
+        ' 
+        lblInvoice2.AutoSize = True
+        lblInvoice2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblInvoice2.Location = New Point(10, 69)
+        lblInvoice2.Name = "lblInvoice2"
+        lblInvoice2.Size = New Size(99, 20)
+        lblInvoice2.TabIndex = 98
+        lblInvoice2.Text = "Cicilan Kedua"
+        ' 
+        ' lblInvoice3
+        ' 
+        lblInvoice3.AutoSize = True
+        lblInvoice3.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblInvoice3.Location = New Point(9, 102)
+        lblInvoice3.Name = "lblInvoice3"
+        lblInvoice3.Size = New Size(100, 20)
+        lblInvoice3.TabIndex = 99
+        lblInvoice3.Text = "Cicilan Ketiga"
+        ' 
+        ' lblInvoiceCicil1
+        ' 
+        lblInvoiceCicil1.AutoSize = True
+        lblInvoiceCicil1.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblInvoiceCicil1.Location = New Point(191, 35)
+        lblInvoiceCicil1.Name = "lblInvoiceCicil1"
+        lblInvoiceCicil1.Size = New Size(124, 20)
+        lblInvoiceCicil1.TabIndex = 104
+        lblInvoiceCicil1.Text = "Nominal Pertama"
+        ' 
+        ' Label11
+        ' 
+        Label11.AutoSize = True
+        Label11.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label11.Location = New Point(169, 35)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(12, 20)
+        Label11.TabIndex = 101
+        Label11.Text = ":"
+        ' 
+        ' lblInvoiceCicil2
+        ' 
+        lblInvoiceCicil2.AutoSize = True
+        lblInvoiceCicil2.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        lblInvoiceCicil2.Location = New Point(191, 69)
+        lblInvoiceCicil2.Name = "lblInvoiceCicil2"
+        lblInvoiceCicil2.Size = New Size(112, 20)
+        lblInvoiceCicil2.TabIndex = 103
+        lblInvoiceCicil2.Text = "Nominal Kedua"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.ForeColor = Color.FromArgb(CByte(13), CByte(64), CByte(41))
+        Label4.Location = New Point(169, 69)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(12, 20)
+        Label4.TabIndex = 100
+        Label4.Text = ":"
+        ' 
         ' Label3
         ' 
         Label3.AutoSize = True
@@ -1061,10 +1061,6 @@ Partial Class Form10
         Text = "Form10"
         pnlCetak.ResumeLayout(False)
         pnlCetak.PerformLayout()
-        pnlInvoice.ResumeLayout(False)
-        pnlInvoice.PerformLayout()
-        CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
         pnlCicil.ResumeLayout(False)
         pnlCicil.PerformLayout()
         pnlInvoiceLunas.ResumeLayout(False)
@@ -1073,6 +1069,10 @@ Partial Class Form10
         CType(PictureBox11, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox7, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
+        pnlInvoice.ResumeLayout(False)
+        pnlInvoice.PerformLayout()
+        CType(PictureBox8, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox9, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
